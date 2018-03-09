@@ -1,4 +1,4 @@
-name: fab_env
+name: dl_env
 channels:
 - adam
 - defaults

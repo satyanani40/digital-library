@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(
-    name='fab-promo-codes',
+    name='digitial-library',
     version='1.0',
     installations = [
         'Eve == 0.7.2',

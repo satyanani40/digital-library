@@ -1,4 +1,4 @@
-from fab import app
+from digital_library import app
 from settings import PORT, HOST, DEBUG
 
 # running server

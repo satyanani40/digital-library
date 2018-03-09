@@ -1,9 +1,9 @@
 {
   "LOGGER_JSON_FILE": "logging.json",
   "PASSWORD_CRYPTION_TOKEN": "j++^1k=*raynr-mw(9ux=j#omk@=05p4g=-eg3&hwx5y7#cpo7",
-  "HOST": "127.0.0.1",
+  "HOST": "0.0.0.0",
   "PORT":8000,
-  "SERVER_URL": "http://127.0.0.1:8000",
+  "SERVER_URL": "http://0.0.0.0:8000",
 
   "PROTOCAL": "http",
   "DEBUG": true,
@@ -13,7 +13,7 @@
   "MONGO_PORT": 27017,
   "MONGO_USERNAME": "t",
   "MONGO_PASSWORD": "t",
-  "MONGO_DBNAME": "fb_db",
+  "MONGO_DBNAME": "dl_db",
 
   "MAIL_SERVER": "smtp.gmail.com",
   "MAIL_PORT": 465,
@@ -24,80 +24,14 @@
   "REGISTRATION_EMAIL_TEMPLATE": "static/email_templates/registration_mail_link.html",
   "ADMIN_CREATION_EMAIL_TEMPLATE": "static/email_templates/admin_creation_template.html",
   "ADMIN_CREATION_TITLE": "ADMIN CREATED",
-  "FAB_SUPPORT_TEAM": "support@fab.in",
-  "REGISTRATION_TITLE": "thanks for registration with fab",
+  "FAB_SUPPORT_TEAM": "support@dl.in",
+  "REGISTRATION_TITLE": "thanks for registration with dl",
   "FORGOT_PASSWORD_TITLE": "sent forgot password",
 
   "CREATE_USER_ROLES": ["admin"],
   "FIND_USER_ROLES": ["admin"],
-  "APPLICATION_ROLES":["submitter", "editor", "admin", "user"],
+  "APPLICATION_ROLES":["admin", "user"],
   "ADMIN_ROLES":["admin"],
-  "SUBMITTER_ROLES":["submitter"],
-  "EDITOR_ROLES":["editor"],
-  "USER_ROLES":["user"],
-  "UPLOAD_FOLDER": "static/images/",
-  "DESC_IMAGES_FOLDER": "static/images/desc_images/",
-  "ALLOWED_EXTENSIONS":["png","jpg", "jpeg", "bmp"],
-  "IMAGE_FIELDS": ["image","side_banner","top_banner","all_tag_image", "alt_image", "images"],
-  "FIELD_CLEAR_COLLECTIONS_AFTER_DELETE": {
-    "stores": [
-      {
-        "field_name": "related_coupons",
-        "collection_name": "coupons"
-      },
-      {
-        "field_name": "related_deals",
-        "collection_name": "deals"
-      }
-    ],
-    "categories": [
-      {
-        "field_name": "related_deals",
-        "collection_name": "deals"
-
-      }
-    ]
-  },
-
-  "IGNORE_COLLECTION_NAMES": ["persons","banner","master_seo","coupon_comments",
-    "coupon_reports", "coupons", "deep_link"],
-
-  "NUMBER_OF_CLICKS_COLLECTIONS": ["deal_brands","deal_categories","deals","stores","categories", "coupons"],
-
-  "PRIORITY":{
-    "blog": {"changefreq": "daily", "priority": 0.4, "prefix": "blog"},
-    "categories": {"changefreq": "daily", "priority": 0.8, "prefix": "category"},
-    "cms": {"changefreq": "weekly", "priority": 0.4, "prefix": ""},
-    "deal_brands": {"changefreq": "daily", "priority": 0.8, "prefix": "brands"},
-    "deal_categories": {"changefreq": "daily", "priority": 0.8, "prefix": "categories"},
-    "deals": {"changefreq": "daily", "priority": 0.8, "prefix": "deals"},
-    "stores": {"changefreq": "daily", "priority": 0.8, "prefix": "store"},
-    "cms_pages": {"changefreq": "daily", "priority": 0.8, "prefix": ""}
-
-  },
-
-  "EXTRA_URLS": {
-    "categories":"",
-    "stores":"",
-    "deals":"",
-    "blog":"",
-    "":""
-  },
-
-
-  "LOOK_UP_FIELDS":{
-    "blog": "url",
-    "categories": "url",
-    "cms": "url",
-    "deal_brands": "url",
-    "deal_categories": "url",
-    "deals": "url",
-    "stores": "url",
-    "cms_pages": "url"
-  },
-  "XML_GENERATOR_FILE_PATH": "sitemap_xml_files",
-  "INDEX_XML_TEMPLATE": "static/sitemap_xml_files/sitemap_xml_generator_templates/sitemap_main_index.xml",
-  "SUB_FILE_TEMPLATE": "static/sitemap_xml_files/sitemap_xml_generator_templates/sitemap_sub_file.xml",
-  "IGNORE_SITEMAP_COLLECTIONS": [""]
+  "USER_ROLES":["user"]
 
 }
