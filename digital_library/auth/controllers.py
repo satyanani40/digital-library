@@ -8,6 +8,7 @@ from digital_library import app
 from digital_library import LOGGER
 from digital_library.common_features.views import send_dl_emails
 from digital_library.common_features.views import convert_object_dates_to_string
+from digital_library.common_features.views import delete_some_keys_from_dict
 from settings import CONFIG_DATA, SERVER_URL
 from digital_library.data_validations import Validations
 
@@ -153,6 +154,7 @@ def login():
         message = {}
         message['message']='User already logged in.'
         message['login_token'] = session['login_token']
+        message['user_id'] = session['user_id']
         abort(401, message)
 
     if not user or not check_password_hash(user['password']['password'], request.json['password']):
@@ -177,3 +179,151 @@ def login():
     return response
 
 
+@app.route('/api/1.0/auth/email-activation', methods=['POST'])
+def email_activation():
+    if 'user_id' not in request.json:
+        message = "user_id not found in payload"
+        abort(400, message)
+    if 'token' not in request.json:
+        message = "token not found in payload"
+        abort(400, message)
+    LOGGER.info("payload is:{0}".format(request.json))
+    accounts = app.data.driver.db['persons']
+    user = accounts.find_one(
+        {'_id': ObjectId(str(request.json['user_id'])), "tokens.registration": request.json['token']})
+    if not user:
+        message = "invalid token or user_id."
+        abort(400, message)
+    LOGGER.info("found user for forgot password:{0}".format(user))
+    if user['email_confirmed']:
+        message = "email already confirmed."
+        abort(400, message)
+    accounts.update({'_id': ObjectId(str(request.json['user_id']))}, {"$set": {'tokens.registration': "", "email_confirmed": True}})
+    message = "email has been confirmed."
+    abort(400, message)
+
+
+@app.route('/api/1.0/auth/send-forgot-password-link', methods=['POST'])
+def forgotpassword():
+    try:
+        if 'email' not in request.json:
+            raise ReturnException(message="email not found in payload", status_code=400)
+        LOGGER.info("payload email is:{0}".format(request.json['email']))
+        accounts = app.data.driver.db['persons']
+        user = accounts.find_one({'email': request.json['email']})
+        if not user:
+            raise ReturnException(message="email not found in database.", status_code=400,payload=request.json)
+        LOGGER.info("found user for forgot password:{0}".format(user))
+        token = str(uuid.uuid4())
+        if user['tokens']['forgot_password']:
+            token = str(user['tokens']['forgot_password'])
+        LOGGER.info("updating forgot password token:{0} for user id:{1}".format(token, user['_id']))
+        accounts.update({'_id': ObjectId(str(user['_id']))}, {'$set': {'tokens.forgot_password': token}})
+        # forgot password email code.
+        if send_dl_emails(title=CONFIG_DATA['FORGOT_PASSWORD_TITLE'],
+                   recipients=[request.json['email']],
+                   sender=CONFIG_DATA['FAB_SUPPORT_TEAM'],
+                   user_id=str(user['_id']),
+                   email=user['email'],
+                   first_name= user['first_name'],
+                   token=token,
+                   server_url=SERVER_URL,
+                   template=CONFIG_DATA['FORGOT_PASSWORD_EMAIL_TEMPLATE']):
+            response = jsonify(error='', data={"token": token, "user_id": str(user['_id'])})
+            response.status_code = 200
+            return response
+        else:
+            accounts.update({'_id': ObjectId(str(user['_id']))}, {'$set': {'tokens.forgot_password': ""}})
+            abort(500, "failed to send forgot password email, please try again...")
+
+    except Exception as e:
+        LOGGER.error(str(e))
+        abort(401, str(e))
+
+
+@app.route('/api/1.0/auth/change-password', methods=['POST'])
+def change_password():
+    #try:
+    if 'user_id' not in request.json:
+        message = "user_id not found in payload"
+        abort(400, message)
+
+    if 'token' not in request.json:
+        message="token not found in payload"
+        abort(400, message)
+
+    if 'new_password' not in request.json:
+        message="new_password not found in payload"
+        abort(400, message)
+
+    LOGGER.info("payload is:{0}".format(request.json))
+    accounts = app.data.driver.db['persons']
+    q = {'_id': ObjectId(str(request.json['user_id']))}
+    if not 'user_id' in session:
+        q["tokens.forgot_password"] = request.json['token']
+    elif session['user_id'] != str(request.json['user_id']):
+        message = "something went wrong, please login and logout"
+        abort(400, message)
+    LOGGER.info("find query:{}".format(q))
+    user = accounts.find_one(q)
+    if not user:
+        message="invalid token or user_id."
+        abort(400, message)
+    LOGGER.info("found user for forgot password:{0}".format(user))
+    payload = {
+        'password':{
+            'password': str(generate_password_hash(request.json['new_password'])),
+            'password_raw': str(request.json['new_password']),
+            'last_password_updated_date': datetime.now()
+        }
+    }
+    accounts.update({'_id': ObjectId(str(user['_id']))}, {'$set': {'tokens.forgot_password': ""}})
+    accounts.update({'_id': ObjectId(str(user['_id']))}, {'$set': payload})
+    response = jsonify(error='', data={"new_password": request.json['new_password'], "message": "password has been changed."})
+    response.status_code = 200
+    return response
+    """except Exception as e:
+        print(e,'-=--------------')
+        LOGGER.error(str(e))
+        message = str(e)
+        abort(401, message)"""
+
+
+
+@app.route('/api/1.0/auth/logout', methods=['GET'])
+def logout():
+    try:
+        if 'user_id' not in session:
+            abort(400, "user not logged in.")
+        accounts = app.data.driver.db['persons']
+        accounts.update({'_id': ObjectId(str(session['user_id']))},{"$set": {'tokens.login': ""}})
+        session.clear()
+        response = jsonify(error='', data="successfully logged out.")
+        response.status_code = 200
+        return response
+    except Exception as e:
+        LOGGER.error(str(e))
+        message = str(e)
+        abort(401, message)
+
+@app.route('/api/1.0/auth/me', methods=['GET'])
+def me():
+    LOGGER.info("called api/1.0/auth/me endpoint ...")
+    if 'user_id' in session:
+        accounts = app.data.driver.db['persons']
+        user = accounts.find_one({'_id': ObjectId(session['user_id'])})
+        if not user:
+           error = 'logged user not found in database please contact :{0}'.format(CONFIG_DATA['FAB_SUPPORT_TEAM'])
+           abort(401, error)
+        LOGGER.info("user:{0}".format(user))
+        json_user = convert_object_dates_to_string(user, ['_id', 'created_date', 'modified_date',
+                                                          'last_modified_by',''])
+        del_some_keys = delete_some_keys_from_dict(json_user, ['password','fav_stores', 'fav_coupons'])
+
+        response = jsonify(error='', data = del_some_keys)
+        response.status_code = 200
+        return response
+
+
+    message = "user not logged in."
+    abort(401, message)

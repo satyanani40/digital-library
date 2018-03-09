@@ -46,3 +46,14 @@ def convert_object_dates_to_string(item, lst_keys):
         if isinstance(v, dict):
             convert_object_dates_to_string(v, lst_keys)
     return item
+
+def delete_some_keys_from_dict(item, delete_keys):
+    for k in delete_keys:
+        try:
+            del item[k]
+        except KeyError:
+            pass
+    for v in item.values():
+        if isinstance(v, dict):
+            convert_object_dates_to_string(v, delete_keys)
+    return item
