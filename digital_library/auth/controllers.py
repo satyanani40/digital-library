@@ -109,7 +109,7 @@ def signup():
                 if send_dl_emails(title=CONFIG_DATA['REGISTRATION_TITLE'],
                            recipients = [payload['email']],
                            sender=CONFIG_DATA['FAB_SUPPORT_TEAM'],
-                           user_id=user_id,
+                           user_id=str(user_id),
                             email=payload['email'],
                             first_name=payload['first_name'],
                            token=registration_token,
@@ -327,3 +327,15 @@ def me():
 
     message = "user not logged in."
     abort(401, message)
+
+
+@app.route('/', methods=['GET'])
+def API():
+    LOGGER.info("called api/1.0")
+    data = {
+        "name": "digital-library-api",
+        "version": "1.0"
+    }
+    response = jsonify(data = data)
+    response.status_code = 200
+    return response
