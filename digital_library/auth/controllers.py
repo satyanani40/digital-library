@@ -127,6 +127,7 @@ def signup():
             payload['error'] = ''
             print(payload,'********************')
         except Exception as e:
+            accounts.remove({'_id': ObjectId(user_id)})
             LOGGER.error("got exception in signup:{0}".format(e))
             payload['is_created'] = False
             payload['error'] = str(e)
