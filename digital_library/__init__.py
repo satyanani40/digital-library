@@ -5,38 +5,12 @@ from flask import jsonify
 from flask_mail import Mail
 from flask_cors import CORS
 from binascii import unhexlify, hexlify
-from simplecrypt import encrypt, decrypt
+#from simplecrypt import encrypt, decrypt
 from settings import *
 
 
-class EncrptDecrpt:
 
-    '''
-    encrption and decrption of passwords based on secret key
-    '''
-    def encryption(self, password):
-        '''
-        encryption of plain password into hash password
-        :param passoword:
-        :return:
-        '''
-        LOGGER.info("encryption raw password{0}".format(password))
-        enc_password = encrypt(PASSWORD_CRYPTION_TOKEN, password)
-        hexlify_password = hexlify(enc_password)
-        return hexlify_password
 
-    def decryption(self, encrpted_password):
-        '''
-        decrption of hash password into plain password
-        :param password:
-        :return:
-        '''
-        LOGGER.info("decrypting password...")
-        unhexlify_password = unhexlify(str(encrpted_password))
-        raw_password = decrypt(str(PASSWORD_CRYPTION_TOKEN), unhexlify_password)
-        return raw_password
-
-encrypt_decrypt = EncrptDecrpt()
 
 class MediaClass(MediaStorage):
     def __init__(self, app=None):
@@ -88,6 +62,7 @@ app = Eve(__name__, media=MediaClass)
 app._static_folder = os.path.abspath("static/")
 #UPLOAD_FOLDER = 'static/images'
 #app.config['UPLOAD_FOLDER']= UPLOAD_FOLDER
+print(MAIL_USERNAME, MAIL_PASSWORD,'================')
 app.config.update(
 	DEBUG=True,
     #EMAIL SETTINGS
@@ -95,7 +70,7 @@ app.config.update(
 	MAIL_PORT=MAIL_PORT,
 	MAIL_USE_SSL=MAIL_USE_SSL,
 	MAIL_USERNAME = MAIL_USERNAME,
-	MAIL_PASSWORD = encrypt_decrypt.decryption(MAIL_PASSWORD),
+	MAIL_PASSWORD = MAIL_PASSWORD,
     SECRET_KEY = TOKEN_SECRET
 )
 
