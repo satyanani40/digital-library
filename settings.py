@@ -124,6 +124,97 @@ MONGO_QUERY_BLACKLIST = ['$where']
 
 
 SCHEMAS = {
+    'books': {
+        'no_of_pages': {
+            'type': 'integer'
+        },
+        'book_authors': {
+            'type': 'list'
+        },
+        'book_author_desc': {
+            'type': 'string'
+        },
+        'availability': {
+            'type': 'boolean'
+        },
+        'lease_price': {
+            'type': 'float'
+        },
+        'language': {
+            'type': 'string'
+        },
+        'publisher': {
+            'type': 'string'
+        },
+        'ISBN_10': {
+            'type': 'string'
+        },
+        'ISBN_13': {
+            'type': 'string'
+        },
+        'ebook': {
+            'type': 'string'
+        },
+        'published_date': {
+            'type': 'string'
+        },
+        'image_links': {
+            'type': 'dict',
+            'schema': {
+                'small_thumbnail': {'type': 'string'},
+                'thumbnail': {'type': 'string'}
+            }
+        },
+        'book_categories': {
+            'type': 'list',
+            'schema': {
+                'type': 'objectid',
+                'data_relation': {
+                    'resource': 'categories',
+                    'embeddable': True,
+                    'field': '_id'
+                }
+            }
+        },
+
+        'created_date': {
+            'type': 'datetime',
+            'default': datetime.now(),
+        },
+        'modified_date': {
+            'type': 'datetime',
+            'empty': True
+        }
+    },
+
+    'authors':{
+        'author_name': {
+            'type': 'string',
+            'required': True,
+        },
+        'created_date': {
+            'type': 'datetime',
+            'default': datetime.now(),
+        },
+        'modified_date': {
+            'type': 'datetime',
+            'empty': True
+        }
+    },
+    'categories': {
+        'category_name': {
+            'type': 'string',
+            'required': True,
+        },
+        'created_date': {
+            'type': 'datetime',
+            'default': datetime.now(),
+        },
+        'modified_date': {
+            'type': 'datetime',
+            'empty': True
+        }
+    },
     'persons': {
         'first_name': {
             'type': 'string',
@@ -219,6 +310,9 @@ SCHEMAS = {
 }
 
 PERSONS_SCHEMA = SCHEMAS['persons']
+AUTHORS_SCHEMA = SCHEMAS['authors']
+CATEGORIES_SCHEMA = SCHEMAS['categories']
+BOOKS_SCHEMA = SCHEMAS['books']
 
 
 PERSONS = {
@@ -226,13 +320,32 @@ PERSONS = {
     'schema': PERSONS_SCHEMA,
     'url': 'persons'
 }
+AUTHORS = {
+    'item_title': 'authors',
+    'schema': AUTHORS_SCHEMA,
+    'url': 'authors'
+}
+CATEGORIES = {
+    'item_title': 'categories',
+    'schema': CATEGORIES_SCHEMA,
+    'url': 'categories'
+}
 
+BOOKS = {
+    'item_title': 'books',
+    'schema': BOOKS_SCHEMA,
+    'url': 'books'
+
+}
 
 
 # The DOMAIN dict explains which resources will be available and how they will
 # be accessible to the API consumer.
 DOMAIN = {
-    'persons': PERSONS
+    'persons': PERSONS,
+    'authors': AUTHORS,
+    'categories': CATEGORIES,
+    'books': BOOKS
 }
 
 COLLECTION_NAMES = DOMAIN.keys()
