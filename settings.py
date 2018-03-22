@@ -158,12 +158,11 @@ SCHEMAS = {
         'published_date': {
             'type': 'string'
         },
-        'image_links': {
-            'type': 'dict',
-            'schema': {
-                'small_thumbnail': {'type': 'string'},
-                'thumbnail': {'type': 'string'}
-            }
+        'image_small_thumbnail': {
+            'type': 'string'
+        },
+        'image_thumbnail': {
+            'type': 'string'
         },
         'book_categories': {
             'type': 'list',

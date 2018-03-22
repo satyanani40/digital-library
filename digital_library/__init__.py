@@ -7,6 +7,7 @@ from flask_cors import CORS
 from binascii import unhexlify, hexlify
 #from simplecrypt import encrypt, decrypt
 from settings import *
+#from common_features import hooks
 
 
 
@@ -99,7 +100,11 @@ def handle_invalid_usage(error):
     response.status_code = error.status_code
     return response
 
-
+"""
+app.on_insert += hooks.before_create
+app.on_update += hooks.before_update
+app.on_deleted_item += hooks.after_deleted_item
+"""
 from auth import *
 
 
