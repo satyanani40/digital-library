@@ -1,4 +1,4 @@
-cd /root
 source activate dl_env
-cd funky-style
-gunicorn --bind 0:8000 --timeout 1000 server:app --env env_name=tst
+export env_name=dev
+cd /home/ubuntu/projects/digital-library
+python server.py 
