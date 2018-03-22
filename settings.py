@@ -125,6 +125,19 @@ MONGO_QUERY_BLACKLIST = ['$where']
 
 SCHEMAS = {
     'books': {
+        'book_title': {
+            'type': 'string'
+        },
+        'sub_title': {
+            'type': 'string'
+        },
+        'book_summary': {
+            'type': 'string'
+        },
+
+        'book_keywords': {
+            'type': 'string'
+         },
         'no_of_pages': {
             'type': 'integer'
         },
