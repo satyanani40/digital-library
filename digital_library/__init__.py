@@ -63,7 +63,6 @@ app = Eve(__name__, media=MediaClass)
 app._static_folder = os.path.abspath("static/")
 #UPLOAD_FOLDER = 'static/images'
 #app.config['UPLOAD_FOLDER']= UPLOAD_FOLDER
-print(MAIL_USERNAME, MAIL_PASSWORD,'================')
 app.config.update(
 	DEBUG=True,
     #EMAIL SETTINGS
@@ -74,6 +73,8 @@ app.config.update(
 	MAIL_PASSWORD = MAIL_PASSWORD,
     SECRET_KEY = TOKEN_SECRET
 )
+UPLOAD_FOLDER = os.path.abspath("static/images")
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 mail=Mail(app)
 CORS(app)
@@ -100,11 +101,12 @@ def handle_invalid_usage(error):
     response.status_code = error.status_code
     return response
 
-"""
-app.on_insert += hooks.before_create
+from common_features import hooks
+
+# mainly calling these functions for image processing
 app.on_update += hooks.before_update
 app.on_deleted_item += hooks.after_deleted_item
-"""
+
 from auth import *
 
 

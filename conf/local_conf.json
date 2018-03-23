@@ -18,6 +18,8 @@
   "MAIL_SERVER": "smtp.gmail.com",
   "MAIL_PORT": 465,
   "MAIL_USE_SSL": true,
+
+
   "MAIL_USERNAME": "rrrkassociate@gmail.com",
   "MAIL_PASSWORD": "rrrk@1234",
   "FORGOT_PASSWORD_EMAIL_TEMPLATE": "static/email_templates/forgot_password_link.html",
@@ -32,6 +34,13 @@
   "FIND_USER_ROLES": ["admin"],
   "APPLICATION_ROLES":["admin", "user"],
   "ADMIN_ROLES":["admin"],
-  "USER_ROLES":["user"]
+  "USER_ROLES":["user"],
+
+
+  "UPLOAD_FOLDER": "static/images/",
+  "DESC_IMAGES_FOLDER": "static/images/desc_images/",
+  "ALLOWED_EXTENSIONS":["png","jpg", "jpeg", "bmp"],
+  "IMAGE_FIELDS": ["image_thumbnail", "image_small_thumbnail"]
+
 
 }

@@ -1,3 +1,5 @@
+import os
+import uuid
 from datetime import  datetime
 import jwt, uuid
 from bson.objectid import ObjectId
@@ -11,6 +13,30 @@ from digital_library.common_features.views import convert_object_dates_to_string
 from digital_library.common_features.views import delete_some_keys_from_dict
 from settings import CONFIG_DATA, SERVER_URL
 from digital_library.data_validations import Validations
+
+
+
+@app.route('/api/1.0/upload-file', methods=['POST'])
+def upload_file():
+    if request.method == 'POST':
+        # check if the post request has the file part
+        if 'file' not in request.files:
+            print('No file part')
+            return redirect(request.url)
+        file = request.files['file']
+        # if user does not select file, browser also
+        # submit a empty part without filename
+        if file.filename == '':
+            print('No selected file')
+            return redirect(request.url)
+        if file:
+            filename = file.filename
+            unique_id = str(uuid.uuid4()).replace("-", "_")
+            filename = unique_id+"___"+filename
+
+            final_file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            file.save(final_file_path)
+            return final_file_path
 
 # registration
 @app.route('/api/1.0/auth/signup', methods=['POST'])
