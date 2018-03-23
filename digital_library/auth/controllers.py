@@ -217,17 +217,24 @@ def email_activation():
     LOGGER.info("payload is:{0}".format(request.json))
     accounts = app.data.driver.db['persons']
     user = accounts.find_one(
+        {'_id': ObjectId(str(request.json['user_id']))})
+    if not user:
+        message = "user not found in database records"
+        abort(400, message)
+    if user['email_confirmed']:
+        message = "email already confirmed."
+        abort(400, message)
+    user = accounts.find_one(
         {'_id': ObjectId(str(request.json['user_id'])), "tokens.registration": request.json['token']})
     if not user:
         message = "invalid token or user_id."
         abort(400, message)
     LOGGER.info("found user for forgot password:{0}".format(user))
-    if user['email_confirmed']:
-        message = "email already confirmed."
-        abort(400, message)
     accounts.update({'_id': ObjectId(str(request.json['user_id']))}, {"$set": {'tokens.registration': "", "email_confirmed": True}})
     message = "email has been confirmed."
-    abort(400, message)
+    response = jsonify(error='', data=message)
+    response.status_code = 200
+    return response
 
 
 @app.route('/api/1.0/auth/send-forgot-password-link', methods=['POST'])
@@ -270,7 +277,6 @@ def forgotpassword():
 
 @app.route('/api/1.0/auth/change-password', methods=['POST'])
 def change_password():
-    #try:
     if 'user_id' not in request.json:
         message = "user_id not found in payload"
         abort(400, message)
@@ -285,17 +291,23 @@ def change_password():
 
     LOGGER.info("payload is:{0}".format(request.json))
     accounts = app.data.driver.db['persons']
+
     q = {'_id': ObjectId(str(request.json['user_id']))}
+
     if not 'user_id' in session:
         q["tokens.forgot_password"] = request.json['token']
+
     elif session['user_id'] != str(request.json['user_id']):
         message = "something went wrong, please login and logout"
         abort(400, message)
+
     LOGGER.info("find query:{}".format(q))
     user = accounts.find_one(q)
+
     if not user:
         message="invalid token or user_id."
         abort(400, message)
+
     LOGGER.info("found user for forgot password:{0}".format(user))
     payload = {
         'password':{
@@ -309,29 +321,19 @@ def change_password():
     response = jsonify(error='', data={"new_password": request.json['new_password'], "message": "password has been changed."})
     response.status_code = 200
     return response
-    """except Exception as e:
-        print(e,'-=--------------')
-        LOGGER.error(str(e))
-        message = str(e)
-        abort(401, message)"""
 
 
 
 @app.route('/api/1.0/auth/logout', methods=['GET'])
 def logout():
-    try:
-        if 'user_id' not in session:
-            abort(400, "user not logged in.")
-        accounts = app.data.driver.db['persons']
-        accounts.update({'_id': ObjectId(str(session['user_id']))},{"$set": {'tokens.login': ""}})
-        session.clear()
-        response = jsonify(error='', data="successfully logged out.")
-        response.status_code = 200
-        return response
-    except Exception as e:
-        LOGGER.error(str(e))
-        message = str(e)
-        abort(401, message)
+    if 'user_id' not in session:
+        abort(400, "user not logged in.")
+    accounts = app.data.driver.db['persons']
+    accounts.update({'_id': ObjectId(str(session['user_id']))},{"$set": {'tokens.login': ""}})
+    session.clear()
+    response = jsonify(error='', data="successfully logged out.")
+    response.status_code = 200
+    return response
 
 @app.route('/api/1.0/auth/me', methods=['GET'])
 def me():
