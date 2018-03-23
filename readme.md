@@ -21,14 +21,11 @@
 
         * creating dl_env and installing depences:
 
-                conda create --name dl_env -f environment.yml
+                conda create -f environment.yml
 
         * activate virtualenv:
 
-                source dl_name/bin/activate
-
-        * mongodb installation:
-            conda install -c anaconda mongodb=3.3.9
+                source activate dl_env
 
 ## Running:
 
