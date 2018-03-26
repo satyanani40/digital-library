@@ -13,10 +13,26 @@ def delete_image(path):
     :param path:
     :return:
     """
-    print(path,'deleting image...........')
     if os.path.exists(path):
         full_path = os.path.join(BASE_DIR, path)
         os.remove(full_path)
+
+def process_sequence_membership_id(requests):
+    for request in  requests:
+        accounts = app.data.driver.db['membership']
+        memberships = accounts.find({}).sort([("membership_id",-1)]).limit(1)
+        memebership_id = 1
+        for item in memberships:
+            memebership_id = item['membership_id']
+        request['membership_id'] = memebership_id+1
+    return requests
+
+
+# hooks for stores
+def before_create(resource, request):
+    LOGGER.info("called for create image resource:{}".format(resource))
+    if resource == 'membership':
+        process_sequence_membership_id(request)
 
 def before_update(resource, update, original):
     # getting all image fields of all tables from config file

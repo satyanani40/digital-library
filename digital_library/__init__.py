@@ -104,6 +104,7 @@ def handle_invalid_usage(error):
 from common_features import hooks
 
 # mainly calling these functions for image processing
+app.on_insert  += hooks.before_create
 app.on_update += hooks.before_update
 app.on_deleted_item += hooks.after_deleted_item
 

@@ -124,6 +124,30 @@ MONGO_QUERY_BLACKLIST = ['$where']
 
 
 SCHEMAS = {
+    'membership':{
+        'membership_type': {
+            'type': 'string'
+        },
+        'status': {
+            'type': 'boolean'
+        },
+        'account_balance': {
+            'type': 'float'
+        },
+        'plan_balance': {
+            'type': 'float'
+        },
+        'issue_pending':{
+            'type': 'integer'
+        },
+        'return_pending': {
+            'type': 'integer'
+        },
+        'return_ready': {
+            'type': 'integer'
+        },
+
+    },
     'books': {
         'book_title': {
             'type': 'string'
@@ -325,6 +349,7 @@ PERSONS_SCHEMA = SCHEMAS['persons']
 AUTHORS_SCHEMA = SCHEMAS['authors']
 CATEGORIES_SCHEMA = SCHEMAS['categories']
 BOOKS_SCHEMA = SCHEMAS['books']
+MEMBERSHIP_SCHEMA = SCHEMAS['membership']
 
 
 PERSONS = {
@@ -351,13 +376,21 @@ BOOKS = {
 }
 
 
+MEMBERSHIP = {
+    'item_title': 'membership',
+    'schema': MEMBERSHIP_SCHEMA,
+    'url': 'membership'
+
+}
+
 # The DOMAIN dict explains which resources will be available and how they will
 # be accessible to the API consumer.
 DOMAIN = {
     'persons': PERSONS,
     'authors': AUTHORS,
     'categories': CATEGORIES,
-    'books': BOOKS
+    'books': BOOKS,
+    'membership': MEMBERSHIP
 }
 
 COLLECTION_NAMES = DOMAIN.keys()
