@@ -65,13 +65,28 @@
 			"owner": "1727732",
 			"folders_order": [],
 			"id": "8bb5caed-0ea3-7030-fe92-9c0dd85fcafc"
+		},
+		{
+			"name": "membership",
+			"description": "",
+			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
+			"order": [
+				"e51a24cf-1ab3-0b14-5a41-53bf8fc41105",
+				"f0ad02a7-8fb9-4686-92b9-59ef949476e8",
+				"e4f7a277-975d-a119-dfeb-09600a004512",
+				"7dd818b1-f598-8079-672c-f3280ee6115d"
+			],
+			"owner": "1727732",
+			"folders_order": [],
+			"id": "6d24a6d4-b34a-fea5-a418-ef569bb0a058"
 		}
 	],
 	"folders_order": [
 		"ad65a9af-4a24-99d3-0db6-c67b0c333c17",
 		"b9f69f59-2324-70b6-bc1f-3b66d9c2371b",
 		"8bb5caed-0ea3-7030-fe92-9c0dd85fcafc",
-		"8ba9971e-b0c2-8070-7cd3-47c43836ccba"
+		"8ba9971e-b0c2-8070-7cd3-47c43836ccba",
+		"6d24a6d4-b34a-fea5-a418-ef569bb0a058"
 	],
 	"timestamp": 1520595635855,
 	"owner": "1727732",
@@ -108,15 +123,10 @@
 			"rawModeData": "\n{\n    \"user_id\": \"5ab46182fa5bd80c46f85be5\",\n    \"token\":\"40fb2d64-d360-442f-8392-d3f23db09f51\",\n    \"new_password\":\"1\"\n}"
 		},
 		{
+			"folder": null,
 			"id": "2125022c-724f-ad77-caf0-e734cccdb2d0",
-			"headers": "",
-			"headerData": [],
-			"url": "http://127.0.0.1:38000/api/1.0/upload-file",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "POST",
+			"name": "file upload",
+			"dataMode": "params",
 			"data": [
 				{
 					"key": "file",
@@ -126,46 +136,54 @@
 					"enabled": true
 				}
 			],
-			"dataMode": "params",
-			"version": 2,
+			"auth": null,
+			"events": null,
+			"rawModeData": "\n[{\n   \"author_name\": \"satya\"\n}]",
+			"descriptionFormat": "html",
+			"description": null,
+			"variables": null,
+			"headers": "",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "http://127.0.0.1:38000/api/1.0/upload-file",
+			"preRequestScript": null,
 			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1521734312847,
-			"name": "file upload",
-			"description": "",
-			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
-			"responses": []
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [],
+			"pathVariableData": [],
+			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be"
 		},
 		{
+			"folder": null,
 			"id": "2165d918-bc68-e963-bae2-ba8a241de6cc",
+			"name": "post-image",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": null,
+			"descriptionFormat": "html",
+			"description": null,
+			"variables": null,
 			"headers": "Content-Type: application/json\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "ec2-18-220-81-9.us-east-2.compute.amazonaws.com/api/1.0/books",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
 			"headerData": [
 				{
 					"key": "Content-Type",
 					"value": "application/json",
-					"description": "",
 					"enabled": true
 				}
 			],
-			"url": "ec2-18-220-81-9.us-east-2.compute.amazonaws.com/api/1.0/books",
-			"queryParams": [],
-			"pathVariables": {},
 			"pathVariableData": [],
-			"preRequestScript": null,
-			"method": "POST",
 			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
-			"data": [],
-			"dataMode": "raw",
-			"name": "post-image",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1521732135544,
-			"version": 2,
-			"responses": [],
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
 			"rawModeData": "\n[{\n   \"no_of_pages\": 11,\n   \"book_title\": \"book1\"\n   \n}]"
 		},
 		{
@@ -175,7 +193,6 @@
 				{
 					"key": "Content-Type",
 					"value": "application/json",
-					"description": "",
 					"enabled": true
 				}
 			],
@@ -189,13 +206,17 @@
 			"data": [],
 			"dataMode": "raw",
 			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
+			"currentHelper": null,
+			"helperAttributes": null,
 			"time": 1521772678437,
 			"name": "email_confirmation",
-			"description": "",
+			"description": null,
 			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
 			"responses": [],
+			"auth": null,
+			"events": null,
+			"descriptionFormat": "html",
+			"variables": null,
 			"rawModeData": "{\n\"user_id\":\"5ab46182fa5bd80c46f85be5\",\n\"token\": \"879c2719-6986-4b91-9b05-b6b535bfc9ef\"\n}"
 		},
 		{
@@ -382,6 +403,37 @@
 			"rawModeData": "{\n  \"data\":{\n    \"CHIP_NAME_REV\" : \"napali_12.1\",\n    \"DATA_TYPE\" : \"dv_cfg\",\n    \"DATE\" : \"2017-05-08T23:54:35.313\",\n    \"user\" : \"c_chpete\",\n    \"Q0_DATE\" : \"\",\n    \"Q1_DATE\" : \"11/11/2016\",\n    \"Q2_DATE\" : \"01/13/2017\",\n    \"Q3_DATE\" : \"03/10/2017\",\n    \"threshold\" : 95,\n    \"comment\" : \"test\",\n    \"tag_list\" : [\n        {\n            \"tag\" : \"DL2\",\n            \"iplist\" : \"LLCC\"\n        }\n    ],\n    \"waive_list\" : [\n        {\n            \"IP_NAME\" : \"YES\",\n            \"q_state\" : \"Q0\",\n            \"who_waived\":\"user1\",\n            \"why_waived\":\"coding not started\"\n        }\n    ]\n}\n  \n}\n  \n"
 		},
 		{
+			"id": "7dd818b1-f598-8079-672c-f3280ee6115d",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://127.0.0.1:38000/api/1.0/membership/5ab3d28bfa5bd80b7203fe1b",
+			"folder": "6d24a6d4-b34a-fea5-a418-ef569bb0a058",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PATCH",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1522037146461,
+			"name": "update-membership",
+			"description": "",
+			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
+			"responses": [],
+			"rawModeData": "\n{\n\t\"\"\n}"
+		},
+		{
 			"id": "8b4045ab-79e1-39dd-08b1-a6fb9fd8aac1",
 			"headers": "Content-Type: application/json\n",
 			"headerData": [
@@ -419,7 +471,6 @@
 				{
 					"key": "Content-Type",
 					"value": "application/json",
-					"description": "",
 					"enabled": true
 				}
 			],
@@ -434,13 +485,17 @@
 			"dataMode": "raw",
 			"version": 2,
 			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
+			"currentHelper": null,
+			"helperAttributes": null,
 			"time": 1521770903074,
 			"name": "sign-up",
-			"description": "",
+			"description": null,
 			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
 			"responses": [],
+			"auth": null,
+			"events": null,
+			"descriptionFormat": "html",
+			"variables": null,
 			"rawModeData": "\n[{\n     \"first_name\": \"first name\",\n     \"last_name\": \"last name\",\n     \"email\": \"satya.nani.40@gmail.com\",\n     \"mobile_number\": \"987\",\n     \"password\": \"passowrd\",\n     \"city\": \"coity\",\n     \"age\": 1,\n     \"gender\": \"female\"\n}]"
 		},
 		{
@@ -455,7 +510,7 @@
 				}
 			],
 			"url": "http://127.0.0.1:38000/api/1.0/authors",
-			"folder": "ad65a9af-4a24-99d3-0db6-c67b0c333c17",
+			"folder": "b9f69f59-2324-70b6-bc1f-3b66d9c2371b",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -577,7 +632,7 @@
 				}
 			],
 			"url": "http://127.0.0.1:38000/api/1.0/authors/5ab286e8fa5bd808dbbbd8d4?projection={\"author_name\":1}",
-			"folder": "7e84f8e4-f9eb-aff1-54ce-e2266706a4b8",
+			"folder": "b9f69f59-2324-70b6-bc1f-3b66d9c2371b",
 			"queryParams": [
 				{
 					"key": "projection",
@@ -610,11 +665,11 @@
 				{
 					"key": "Content-Type",
 					"value": "application/json",
-					"description": "",
-					"enabled": true
+					"enabled": true,
+					"description": ""
 				}
 			],
-			"url": "http://localhost:38000/api/1.0/auth/login",
+			"url": "http://ec2-18-220-81-9.us-east-2.compute.amazonaws.com/api/1.0/auth/login",
 			"folder": "ad65a9af-4a24-99d3-0db6-c67b0c333c17",
 			"queryParams": [],
 			"preRequestScript": null,
@@ -624,14 +679,18 @@
 			"data": [],
 			"dataMode": "raw",
 			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1521775572524,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"time": 1521781935701,
 			"name": "user login",
 			"description": null,
 			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
 			"responses": [],
-			"rawModeData": "\n{\n     \"email\": \"satya.nani.40@gmail.com\",\n     \"password\": \"1\"\n}"
+			"auth": null,
+			"events": null,
+			"descriptionFormat": "html",
+			"variables": null,
+			"rawModeData": "\n{\n     \"email\": \"suryamuppalla@gmail.com\",\n     \"password\": \"surya\"\n}"
 		},
 		{
 			"id": "d7b05254-c176-fa64-15d6-fd8eccff46dd",
@@ -665,6 +724,67 @@
 			"rawModeData": "\n{\n   \"image_small_thumbnail\":\"/mnt/git/projects/digital-library/static/images/fd1c8268_9b6c_4a12_bac6_8c882cbf7937___json_formats.txt\",\n   \"image_thumbnail\":\"/mnt/git/projects/digital-library/static/images/fd1c8268_9b6c_4a12_bac6_8c882cbf7937___json_formats.txt\"\n}"
 		},
 		{
+			"id": "e4f7a277-975d-a119-dfeb-09600a004512",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:38000/api/1.0/membership/5ab8608ffa5bd8017cda326a",
+			"folder": "6d24a6d4-b34a-fea5-a418-ef569bb0a058",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1522037144986,
+			"name": "delete-membership",
+			"description": "",
+			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
+			"responses": [],
+			"rawModeData": ""
+		},
+		{
+			"id": "e51a24cf-1ab3-0b14-5a41-53bf8fc41105",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:38000/api/1.0/membership",
+			"folder": "6d24a6d4-b34a-fea5-a418-ef569bb0a058",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1522032790684,
+			"name": "get-membership",
+			"description": "",
+			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
+			"responses": [],
+			"rawModeData": "{\n  \"data\":{\n    \"CHIP_NAME_REV\" : \"napali_12.1\",\n    \"DATA_TYPE\" : \"dv_cfg\",\n    \"DATE\" : \"2017-05-08T23:54:35.313\",\n    \"user\" : \"c_chpete\",\n    \"Q0_DATE\" : \"\",\n    \"Q1_DATE\" : \"11/11/2016\",\n    \"Q2_DATE\" : \"01/13/2017\",\n    \"Q3_DATE\" : \"03/10/2017\",\n    \"threshold\" : 95,\n    \"comment\" : \"test\",\n    \"tag_list\" : [\n        {\n            \"tag\" : \"DL2\",\n            \"iplist\" : \"LLCC\"\n        }\n    ],\n    \"waive_list\" : [\n        {\n            \"IP_NAME\" : \"YES\",\n            \"q_state\" : \"Q0\",\n            \"who_waived\":\"user1\",\n            \"why_waived\":\"coding not started\"\n        }\n    ]\n}\n  \n}\n  \n"
+		},
+		{
 			"id": "ecb4f2fa-0f13-a796-d83e-3f9d6b07a7cc",
 			"headers": "Content-Type: application/json\n",
 			"headerData": [
@@ -694,6 +814,37 @@
 			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
 			"responses": [],
 			"rawModeData": "\n[{\n   \"no_of_pages\": 11,\n   \"image_small_thumbnail\": \"/mnt/git/projects/digital-library/static/images/ca3d2d0f_76f9_4804_b151_9fe89684883d___json_formats.txt\"\n   \n}]"
+		},
+		{
+			"id": "f0ad02a7-8fb9-4686-92b9-59ef949476e8",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://127.0.0.1:38000/api/1.0/membership",
+			"folder": "6d24a6d4-b34a-fea5-a418-ef569bb0a058",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1522037143257,
+			"name": "post-membership",
+			"description": "",
+			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
+			"responses": [],
+			"rawModeData": "\n{\n   \"membership_type\": \"stya\"\n   \n}"
 		},
 		{
 			"id": "f28ae613-1bcb-6754-05dc-a6526dd3c25a",
