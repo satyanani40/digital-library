@@ -124,6 +124,47 @@ MONGO_QUERY_BLACKLIST = ['$where']
 
 
 SCHEMAS = {
+    'orders':{
+        'total_amount': {
+            'type': 'float'
+        },
+        'book_id': {
+            'type': 'objectid',
+            'data_relation': {
+                'resource': 'books',
+                'embeddable': True
+            }
+        },
+        'ordered_date':{
+            'type': 'string'
+        },
+        'delivery_date': {
+            'type': 'string'
+        },
+        'delivery_status': {
+            'type': 'string'
+        },
+        'payment_id': {
+            'type': 'objectid',
+            'data_relation': {
+                'resource': 'payments',
+                'embeddable': True
+            }
+        }
+    },
+    'payments':{
+        'total_amount': {
+            'type': 'float'
+        },
+        'payment_date': {
+            'type': 'string'
+        },
+        'payment_status': {
+            'type': 'string'
+        },
+
+    },
+
     'membership':{
         'membership_type': {
             'type': 'string'
@@ -252,6 +293,33 @@ SCHEMAS = {
         }
     },
     'persons': {
+        'shipping_address':{
+            'type': 'dict',
+            'schema':{
+                'name': {
+                    'type': 'string'
+                },
+                'address': {
+                    'type': 'string'
+                },
+                'city': {
+                    'type': 'string'
+                },
+                'state': {
+                    'type': 'string'
+                },
+                'pin_code': {
+                    'type': 'string'
+                },
+                'status': {
+                    'type': 'string'
+                },
+                'phone_number': {
+                    'type': 'string'
+                }
+            }
+
+        },
         'first_name': {
             'type': 'string',
             'required': True,
@@ -350,6 +418,8 @@ AUTHORS_SCHEMA = SCHEMAS['authors']
 CATEGORIES_SCHEMA = SCHEMAS['categories']
 BOOKS_SCHEMA = SCHEMAS['books']
 MEMBERSHIP_SCHEMA = SCHEMAS['membership']
+PAYMENTS_SCHEMA = SCHEMAS['payments']
+ORDERS_SCHEMA = SCHEMAS['orders']
 
 
 PERSONS = {
@@ -375,6 +445,19 @@ BOOKS = {
 
 }
 
+PAYMENTS = {
+    'item_title': 'payments',
+    'schema': PAYMENTS_SCHEMA,
+    'url': 'payments'
+
+}
+
+ORDERS = {
+    'item_title': 'orders',
+    'schema': ORDERS_SCHEMA,
+    'url': 'orders'
+
+}
 
 MEMBERSHIP = {
     'item_title': 'membership',
@@ -390,7 +473,9 @@ DOMAIN = {
     'authors': AUTHORS,
     'categories': CATEGORIES,
     'books': BOOKS,
-    'membership': MEMBERSHIP
+    'membership': MEMBERSHIP,
+    'orders': ORDERS,
+    'payments': PAYMENTS
 }
 
 COLLECTION_NAMES = DOMAIN.keys()

@@ -8,11 +8,6 @@ from binascii import unhexlify, hexlify
 #from simplecrypt import encrypt, decrypt
 from settings import *
 #from common_features import hooks
-
-
-
-
-
 class MediaClass(MediaStorage):
     def __init__(self, app=None):
         """
