@@ -79,6 +79,48 @@
 			"owner": "1727732",
 			"folders_order": [],
 			"id": "6d24a6d4-b34a-fea5-a418-ef569bb0a058"
+		},
+		{
+			"name": "orders",
+			"description": "",
+			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
+			"order": [
+				"7f9b51b9-13d3-b403-3057-94c089b06aa7",
+				"007866ee-e6d5-72f8-a4e6-ea89b569b6a5",
+				"f0f97c0d-5348-820a-4146-5bf272046b8a",
+				"34d1fcb4-6753-195a-be3e-fed0efc3d274"
+			],
+			"owner": "1727732",
+			"folders_order": [],
+			"id": "1f43b2c5-fb69-b4e7-a43f-8380861e8d6a"
+		},
+		{
+			"name": "payments",
+			"description": "",
+			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
+			"order": [
+				"142d7fc8-3106-4ca0-86aa-e2375c57a4da",
+				"e37be2b8-8c00-7361-92ba-5acf317cb3a5",
+				"a962f696-5218-a102-0168-b704d8cecf25",
+				"c5d7cf70-bab6-641a-4b4d-e12c49f16c64"
+			],
+			"owner": "1727732",
+			"folders_order": [],
+			"id": "c2b7624b-6c67-8b9b-d52d-f5c51545b745"
+		},
+		{
+			"name": "persons",
+			"description": "",
+			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
+			"order": [
+				"5f1a0480-840f-e7e5-744a-4a5ab29a349e",
+				"6d319040-ff4e-416d-f04d-b34275c58f82",
+				"4747c127-ef9a-cbaf-97ee-444533a9aefe",
+				"33c917f3-baa2-c083-3235-8dc529d7e9d6"
+			],
+			"owner": "1727732",
+			"folders_order": [],
+			"id": "7c206211-897e-3bc7-1db4-d7d08b4c012e"
 		}
 	],
 	"folders_order": [
@@ -86,12 +128,76 @@
 		"b9f69f59-2324-70b6-bc1f-3b66d9c2371b",
 		"8bb5caed-0ea3-7030-fe92-9c0dd85fcafc",
 		"8ba9971e-b0c2-8070-7cd3-47c43836ccba",
+		"c2b7624b-6c67-8b9b-d52d-f5c51545b745",
+		"1f43b2c5-fb69-b4e7-a43f-8380861e8d6a",
+		"7c206211-897e-3bc7-1db4-d7d08b4c012e",
 		"6d24a6d4-b34a-fea5-a418-ef569bb0a058"
 	],
 	"timestamp": 1520595635855,
 	"owner": "1727732",
 	"public": false,
 	"requests": [
+		{
+			"id": "007866ee-e6d5-72f8-a4e6-ea89b569b6a5",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://127.0.0.1:38000/api/1.0/orders",
+			"folder": "1f43b2c5-fb69-b4e7-a43f-8380861e8d6a",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1522256310175,
+			"name": "post",
+			"description": "",
+			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
+			"responses": [],
+			"rawModeData": "\n[{\n   \"no_of_pages\": 11,\n   \"image_small_thumbnail\": \"/mnt/git/projects/digital-library/static/images/ca3d2d0f_76f9_4804_b151_9fe89684883d___json_formats.txt\"\n   \n}]"
+		},
+		{
+			"id": "142d7fc8-3106-4ca0-86aa-e2375c57a4da",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:38000/api/1.0/payments",
+			"folder": "c2b7624b-6c67-8b9b-d52d-f5c51545b745",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1522255500125,
+			"name": "get",
+			"description": "",
+			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
+			"responses": [],
+			"rawModeData": "{\n  \"data\":{\n    \"CHIP_NAME_REV\" : \"napali_12.1\",\n    \"DATA_TYPE\" : \"dv_cfg\",\n    \"DATE\" : \"2017-05-08T23:54:35.313\",\n    \"user\" : \"c_chpete\",\n    \"Q0_DATE\" : \"\",\n    \"Q1_DATE\" : \"11/11/2016\",\n    \"Q2_DATE\" : \"01/13/2017\",\n    \"Q3_DATE\" : \"03/10/2017\",\n    \"threshold\" : 95,\n    \"comment\" : \"test\",\n    \"tag_list\" : [\n        {\n            \"tag\" : \"DL2\",\n            \"iplist\" : \"LLCC\"\n        }\n    ],\n    \"waive_list\" : [\n        {\n            \"IP_NAME\" : \"YES\",\n            \"q_state\" : \"Q0\",\n            \"who_waived\":\"user1\",\n            \"why_waived\":\"coding not started\"\n        }\n    ]\n}\n  \n}\n  \n"
+		},
 		{
 			"id": "14c90413-2fee-e4fd-2477-9645aabef69a",
 			"headers": "Content-Type: application/json\n",
@@ -312,6 +418,68 @@
 			"rawModeData": ""
 		},
 		{
+			"id": "33c917f3-baa2-c083-3235-8dc529d7e9d6",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://127.0.0.1:38000/api/1.0/persons/5ab3d28bfa5bd80b7203fe1b",
+			"folder": "7c206211-897e-3bc7-1db4-d7d08b4c012e",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PATCH",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1522256378402,
+			"name": "update",
+			"description": "",
+			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
+			"responses": [],
+			"rawModeData": "\n{\n   \"image_small_thumbnail\":\"/mnt/git/projects/digital-library/static/images/fd1c8268_9b6c_4a12_bac6_8c882cbf7937___json_formats.txt\",\n   \"image_thumbnail\":\"/mnt/git/projects/digital-library/static/images/fd1c8268_9b6c_4a12_bac6_8c882cbf7937___json_formats.txt\"\n}"
+		},
+		{
+			"id": "34d1fcb4-6753-195a-be3e-fed0efc3d274",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://127.0.0.1:38000/api/1.0/orders/5ab3d28bfa5bd80b7203fe1b",
+			"folder": "1f43b2c5-fb69-b4e7-a43f-8380861e8d6a",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PATCH",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1522256306589,
+			"name": "update",
+			"description": "",
+			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
+			"responses": [],
+			"rawModeData": "\n{\n   \"image_small_thumbnail\":\"/mnt/git/projects/digital-library/static/images/fd1c8268_9b6c_4a12_bac6_8c882cbf7937___json_formats.txt\",\n   \"image_thumbnail\":\"/mnt/git/projects/digital-library/static/images/fd1c8268_9b6c_4a12_bac6_8c882cbf7937___json_formats.txt\"\n}"
+		},
+		{
 			"id": "4351663b-6714-af3d-6e5e-b4d47dd81f95",
 			"headers": "Content-Type: application/json\n",
 			"headerData": [
@@ -343,6 +511,67 @@
 			"rawModeData": "\n[{\n   \"category_name\": \"satya\"\n}]"
 		},
 		{
+			"id": "4747c127-ef9a-cbaf-97ee-444533a9aefe",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:38000/api/1.0/persons/5ab45e50fa5bd80c0acedee5",
+			"folder": "7c206211-897e-3bc7-1db4-d7d08b4c012e",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1522256376603,
+			"name": "delete",
+			"description": "",
+			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
+			"responses": [],
+			"rawModeData": ""
+		},
+		{
+			"id": "5f1a0480-840f-e7e5-744a-4a5ab29a349e",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:38000/api/1.0/persons",
+			"folder": "7c206211-897e-3bc7-1db4-d7d08b4c012e",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1522256373585,
+			"name": "get",
+			"description": "",
+			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
+			"responses": [],
+			"rawModeData": "{\n  \"data\":{\n    \"CHIP_NAME_REV\" : \"napali_12.1\",\n    \"DATA_TYPE\" : \"dv_cfg\",\n    \"DATE\" : \"2017-05-08T23:54:35.313\",\n    \"user\" : \"c_chpete\",\n    \"Q0_DATE\" : \"\",\n    \"Q1_DATE\" : \"11/11/2016\",\n    \"Q2_DATE\" : \"01/13/2017\",\n    \"Q3_DATE\" : \"03/10/2017\",\n    \"threshold\" : 95,\n    \"comment\" : \"test\",\n    \"tag_list\" : [\n        {\n            \"tag\" : \"DL2\",\n            \"iplist\" : \"LLCC\"\n        }\n    ],\n    \"waive_list\" : [\n        {\n            \"IP_NAME\" : \"YES\",\n            \"q_state\" : \"Q0\",\n            \"who_waived\":\"user1\",\n            \"why_waived\":\"coding not started\"\n        }\n    ]\n}\n  \n}\n  \n"
+		},
+		{
 			"id": "6688f5f8-88ce-3bf7-054d-8e04ac80061f",
 			"headers": "Content-Type: application/json\n",
 			"headerData": [
@@ -371,6 +600,37 @@
 			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
 			"responses": [],
 			"rawModeData": "\n{\n    \"email\": \"satya.nani.40@gmail.com\"\n}"
+		},
+		{
+			"id": "6d319040-ff4e-416d-f04d-b34275c58f82",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://127.0.0.1:38000/api/1.0/persons",
+			"folder": "7c206211-897e-3bc7-1db4-d7d08b4c012e",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1522256970813,
+			"name": "post",
+			"description": "",
+			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
+			"responses": [],
+			"rawModeData": "\n[{\n   \n            \"status\": \"active\",\n            \"city\": \"coity\",\n            \"first_name\": \"first name\",\n            \"last_name\": \"last name\",\n            \"gender\": \"female\",\n            \"age\": 1,\n            \"mobile_number\": \"98887\",\n            \"password\": {\n                \"password_raw\": \"1\",\n                \"last_password_updated_date\": \"Fri, 23 Mar 2018 03:19:20 GMT\",\n                \"password\": \"pbkdf2:sha1:1000$6o0SVTM9$37d4e5fa827e014623051beaea70268bc91a4028\"\n            },\n            \"user_level\": \"user\",\n            \"email_confirmed\": true,\n            \"created_date\": \"Fri, 23 Mar 2018 02:08:02 GMT\",\n            \"pictures\": {\n                \"large\": \"\",\n                \"medium\": \"\",\n                \"thumbnail\": \"\"\n            },\n            \"email\": \"satya.nani.9940@gmail.com\",\n        \n   \"shipping_address\":{\n   \t\"name\":\"satya\"\n   }\n   \n}]"
 		},
 		{
 			"id": "75ed5360-95b4-c7d7-1cdd-93fa8c6e7ff5",
@@ -432,6 +692,36 @@
 			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
 			"responses": [],
 			"rawModeData": "\n{\n\t\"\"\n}"
+		},
+		{
+			"id": "7f9b51b9-13d3-b403-3057-94c089b06aa7",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:38000/api/1.0/orders",
+			"folder": "1f43b2c5-fb69-b4e7-a43f-8380861e8d6a",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1522256311588,
+			"name": "get",
+			"description": "",
+			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
+			"responses": [],
+			"rawModeData": "{\n  \"data\":{\n    \"CHIP_NAME_REV\" : \"napali_12.1\",\n    \"DATA_TYPE\" : \"dv_cfg\",\n    \"DATE\" : \"2017-05-08T23:54:35.313\",\n    \"user\" : \"c_chpete\",\n    \"Q0_DATE\" : \"\",\n    \"Q1_DATE\" : \"11/11/2016\",\n    \"Q2_DATE\" : \"01/13/2017\",\n    \"Q3_DATE\" : \"03/10/2017\",\n    \"threshold\" : 95,\n    \"comment\" : \"test\",\n    \"tag_list\" : [\n        {\n            \"tag\" : \"DL2\",\n            \"iplist\" : \"LLCC\"\n        }\n    ],\n    \"waive_list\" : [\n        {\n            \"IP_NAME\" : \"YES\",\n            \"q_state\" : \"Q0\",\n            \"who_waived\":\"user1\",\n            \"why_waived\":\"coding not started\"\n        }\n    ]\n}\n  \n}\n  \n"
 		},
 		{
 			"id": "8b4045ab-79e1-39dd-08b1-a6fb9fd8aac1",
@@ -591,6 +881,68 @@
 			"rawModeData": "\n{\n   \"author_name\": \"satya123\"\n}"
 		},
 		{
+			"id": "a962f696-5218-a102-0168-b704d8cecf25",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:38000/api/1.0/payments/5ab45e50fa5bd80c0acedee5",
+			"folder": "c2b7624b-6c67-8b9b-d52d-f5c51545b745",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1522255509916,
+			"name": "delete",
+			"description": "",
+			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
+			"responses": [],
+			"rawModeData": ""
+		},
+		{
+			"id": "c5d7cf70-bab6-641a-4b4d-e12c49f16c64",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://127.0.0.1:38000/api/1.0/payments/5ab3d28bfa5bd80b7203fe1b",
+			"folder": "c2b7624b-6c67-8b9b-d52d-f5c51545b745",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PATCH",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1522255516918,
+			"name": "update",
+			"description": "",
+			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
+			"responses": [],
+			"rawModeData": "\n{\n   \"image_small_thumbnail\":\"/mnt/git/projects/digital-library/static/images/fd1c8268_9b6c_4a12_bac6_8c882cbf7937___json_formats.txt\",\n   \"image_thumbnail\":\"/mnt/git/projects/digital-library/static/images/fd1c8268_9b6c_4a12_bac6_8c882cbf7937___json_formats.txt\"\n}"
+		},
+		{
 			"id": "c962b3a3-912b-454b-8bd2-6ee57bfad734",
 			"headers": "Content-Type: application/json\n",
 			"headerData": [
@@ -724,6 +1076,37 @@
 			"rawModeData": "\n{\n   \"image_small_thumbnail\":\"/mnt/git/projects/digital-library/static/images/fd1c8268_9b6c_4a12_bac6_8c882cbf7937___json_formats.txt\",\n   \"image_thumbnail\":\"/mnt/git/projects/digital-library/static/images/fd1c8268_9b6c_4a12_bac6_8c882cbf7937___json_formats.txt\"\n}"
 		},
 		{
+			"id": "e37be2b8-8c00-7361-92ba-5acf317cb3a5",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://127.0.0.1:38000/api/1.0/payments",
+			"folder": "c2b7624b-6c67-8b9b-d52d-f5c51545b745",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1522255498685,
+			"name": "post",
+			"description": "",
+			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
+			"responses": [],
+			"rawModeData": "\n[{\n   \"no_of_pages\": 11,\n   \"image_small_thumbnail\": \"/mnt/git/projects/digital-library/static/images/ca3d2d0f_76f9_4804_b151_9fe89684883d___json_formats.txt\"\n   \n}]"
+		},
+		{
 			"id": "e4f7a277-975d-a119-dfeb-09600a004512",
 			"headers": "Content-Type: application/json\n",
 			"headerData": [
@@ -845,6 +1228,37 @@
 			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
 			"responses": [],
 			"rawModeData": "\n{\n   \"membership_type\": \"stya\"\n   \n}"
+		},
+		{
+			"id": "f0f97c0d-5348-820a-4146-5bf272046b8a",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:38000/api/1.0/orders/5ab45e50fa5bd80c0acedee5",
+			"folder": "1f43b2c5-fb69-b4e7-a43f-8380861e8d6a",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1522256308419,
+			"name": "delete",
+			"description": "",
+			"collectionId": "d8c2a2bb-fff0-1099-e117-54b96dcd98be",
+			"responses": [],
+			"rawModeData": ""
 		},
 		{
 			"id": "f28ae613-1bcb-6754-05dc-a6526dd3c25a",
