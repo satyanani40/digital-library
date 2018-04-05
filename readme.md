@@ -200,3 +200,36 @@ sudo apt-get install libxml2-dev libxslt-dev python-dev
 pip install lxml
 
 
+### schema fields:
+card details:
+'card_details':{
+'type': 'dict',
+'schema':{
+    'user_id':{
+        'type': 'objectid',
+        'data_relation': {
+            'resource': 'persons',
+            'embeddable': True,
+            'field':'_id'
+        },
+    },
+
+    'card_number':{
+        'type': 'integer',
+    },
+    'card_type':{
+        'type': 'string'
+    },
+    'expire_date':{
+        'type':'string'
+    },
+    'cvv':{
+        'type': 'integer'
+    },
+    'name_on_card':{
+        'type': 'string'
+    }
+}
+}
+### Search books by id
+/api/1.0/books?where={"book_title": {"$regex": ".*surya.*"}}

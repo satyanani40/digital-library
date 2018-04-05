@@ -125,6 +125,33 @@ MONGO_QUERY_BLACKLIST = ['$where']
 
 SCHEMAS = {
     'orders':{
+        'shipping_address':{
+            'type': 'dict',
+            'schema':{
+                'name': {
+                    'type': 'string'
+                },
+                'address': {
+                    'type': 'string'
+                },
+                'city': {
+                    'type': 'string'
+                },
+                'state': {
+                    'type': 'string'
+                },
+                'pin_code': {
+                    'type': 'string'
+                },
+                'status': {
+                    'type': 'string'
+                },
+                'phone_number': {
+                    'type': 'string'
+                }
+            }
+
+        },
         'total_amount': {
             'type': 'float'
         },
@@ -135,6 +162,14 @@ SCHEMAS = {
                 'embeddable': True
             }
         },
+        'user_id': {
+            'type': 'objectid',
+            'data_relation': {
+                'resource': 'persons',
+                'embeddable': True
+            }
+        },
+
         'ordered_date':{
             'type': 'string'
         },
@@ -162,10 +197,53 @@ SCHEMAS = {
         'payment_status': {
             'type': 'string'
         },
+        'card_details':{
+            'type': 'dict',
+            'schema':{
+                'user_id':{
+                    'type': 'objectid',
+                    'data_relation': {
+                        'resource': 'persons',
+                        'embeddable': True,
+                        'field':'_id'
+                    },
+                },
+
+                'card_number':{
+                    'type': 'integer',
+                },
+                'card_type':{
+                    'type': 'string'
+                },
+                'expire_date':{
+                    'type':'string'
+                },
+                'cvv':{
+                    'type': 'integer'
+                },
+                'name_on_card':{
+                    'type': 'string'
+                }
+            }
+
+        }
 
     },
 
     'membership':{
+
+        'user_id': {
+            'type': 'objectid',
+            'data_relation': {
+                'resource': 'persons',
+                'embeddable': True,
+                'field': '_id'
+            },
+        },
+        'plan_expiry': {
+            'type': 'string'
+        },
+
         'membership_type': {
             'type': 'string'
         },
@@ -215,9 +293,13 @@ SCHEMAS = {
         'availability': {
             'type': 'boolean'
         },
-        'lease_price': {
+        'ecopy_price': {
             'type': 'float'
         },
+        'hcopy_price': {
+            'type': 'float'
+        },
+
         'language': {
             'type': 'string'
         },
