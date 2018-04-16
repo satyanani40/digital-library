@@ -68,7 +68,7 @@ app.config.update(
 	MAIL_PASSWORD = MAIL_PASSWORD,
     SECRET_KEY = TOKEN_SECRET
 )
-UPLOAD_FOLDER = os.path.abspath("static/images")
+UPLOAD_FOLDER = "static/images"
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 mail=Mail(app)

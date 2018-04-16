@@ -197,6 +197,9 @@ SCHEMAS = {
         'payment_status': {
             'type': 'string'
         },
+        'payment_for': {
+            'type': 'string'
+        },
         'card_details':{
             'type': 'dict',
             'schema':{
@@ -376,28 +379,31 @@ SCHEMAS = {
     },
     'persons': {
         'shipping_address':{
-            'type': 'dict',
+            'type': 'list',
             'schema':{
-                'name': {
-                    'type': 'string'
-                },
-                'address': {
-                    'type': 'string'
-                },
-                'city': {
-                    'type': 'string'
-                },
-                'state': {
-                    'type': 'string'
-                },
-                'pin_code': {
-                    'type': 'string'
-                },
-                'status': {
-                    'type': 'string'
-                },
-                'phone_number': {
-                    'type': 'string'
+                'type':'dict',
+                'schema':{
+                    'name': {
+                        'type': 'string'
+                    },
+                    'address': {
+                        'type': 'string'
+                    },
+                    'city': {
+                        'type': 'string'
+                    },
+                    'state': {
+                        'type': 'string'
+                    },
+                    'pin_code': {
+                        'type': 'string'
+                    },
+                    'status': {
+                        'type': 'string'
+                    },
+                    'phone_number': {
+                        'type': 'string'
+                    }
                 }
             }
 

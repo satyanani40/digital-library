@@ -3,7 +3,7 @@ import uuid
 from datetime import  datetime
 import jwt, uuid
 from bson.objectid import ObjectId
-from flask import jsonify, request,make_response, g, session, abort
+from flask import jsonify, request,make_response, g, abort
 from werkzeug.security import generate_password_hash, check_password_hash
 
 from digital_library import app
@@ -36,7 +36,10 @@ def upload_file():
 
             final_file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             file.save(final_file_path)
-            return final_file_path
+            response = jsonify(data={"path": final_file_path}, errors=[])
+            response.status_code = 200
+            return response
+
 
 # registration
 @app.route('/api/1.0/auth/signup', methods=['POST'])
@@ -81,8 +84,9 @@ def signup():
         payload['status'] = 'active'
         # check logged user can assign role or not otherwise default role will be 'user'
         can_assign = False
-        if 'user_level' in payload and 'user_level' in session:
-            if session['user_level'] in CONFIG_DATA['CREATE_USER_ROLES']:
+        if 'user_level' in payload and 'loggin_token' in payload:
+            user = accounts.find_one({"tokens.login": str(payload['login_token'])})
+            if user and user['user_level'] in CONFIG_DATA['CREATE_USER_ROLES']:
                 can_assign = True
         if not can_assign:
             payload['user_level'] = "user"
@@ -177,11 +181,11 @@ def login():
         message = user['first_name']+" you are Inactive, Please contact your Admin."
         abort(401, message)
 
-    if 'user_id' in session:
+    if 'tokens' in user and user['tokens'] and 'login' in user['tokens'] and user['tokens']['login']:
         message = {}
         message['message']='User already logged in.'
-        message['login_token'] = session['login_token']
-        message['user_id'] = session['user_id']
+        message['login_token'] = user['tokens']['login']
+        message['user_id'] = str(user['_id'])
         abort(401, message)
 
     if not user or not check_password_hash(user['password']['password'], request.json['password']):
@@ -197,9 +201,6 @@ def login():
     json_user = convert_object_dates_to_string(user, ['_id', 'created_date', 'modified_date',
                                                       'last_modified_by',''])
 
-    session['user_id'] = json_user['_id']
-    session['user_level'] = json_user['user_level']
-    session['login_token'] = user['login_token']
 
     response = jsonify(data=json_user, errors = [])
     response.status_code = 200
@@ -294,14 +295,15 @@ def change_password():
 
     q = {'_id': ObjectId(str(request.json['user_id']))}
 
-    if not 'user_id' in session:
-        q["tokens.forgot_password"] = request.json['token']
-
-    elif session['user_id'] != str(request.json['user_id']):
-        message = "something went wrong, please login and logout"
-        abort(400, message)
-
     LOGGER.info("find query:{}".format(q))
+    user = accounts.find_one(q)
+
+    if user and 'tokens' in user and 'login' in user['tokens'] and user['tokens']['login']:
+        if str(user['_id']) != str(request.json['user_id']):
+            message = "something went wrong, please login and logout"
+            abort(400, message)
+    else:
+        q.update({"tokens.forgot_password":request.json['token']})
     user = accounts.find_one(q)
 
     if not user:
@@ -326,11 +328,14 @@ def change_password():
 
 @app.route('/api/1.0/auth/logout', methods=['GET'])
 def logout():
-    if 'user_id' not in session:
-        abort(400, "user not logged in.")
+    login = request.args.get('login_token', None)
+    if not login:
+        abort(400, "login_token should be in url params")
     accounts = app.data.driver.db['persons']
-    accounts.update({'_id': ObjectId(str(session['user_id']))},{"$set": {'tokens.login': ""}})
-    session.clear()
+    user = accounts.find_one({"tokens.login": str(login)})
+    if not user:
+        abort(400, "user not logged in.")
+    accounts.update({'_id': ObjectId(str(user['_id']))},{"$set": {'tokens.login': ""}})
     response = jsonify(error='', data="successfully logged out.")
     response.status_code = 200
     return response
@@ -338,25 +343,23 @@ def logout():
 @app.route('/api/1.0/auth/me', methods=['GET'])
 def me():
     LOGGER.info("called api/1.0/auth/me endpoint ...")
-    if 'user_id' in session:
-        accounts = app.data.driver.db['persons']
-        user = accounts.find_one({'_id': ObjectId(session['user_id'])})
-        if not user:
-           error = 'logged user not found in database please contact :{0}'.format(CONFIG_DATA['FAB_SUPPORT_TEAM'])
-           abort(401, error)
-        LOGGER.info("user:{0}".format(user))
-        json_user = convert_object_dates_to_string(user, ['_id', 'created_date', 'modified_date',
-                                                          'last_modified_by',''])
-        del_some_keys = delete_some_keys_from_dict(json_user, ['password','fav_stores', 'fav_coupons'])
+    login = request.args.get('login_token', None)
+    if not login:
+        abort(400, "login_token should be in url params")
 
-        response = jsonify(error='', data = del_some_keys)
-        response.status_code = 200
-        return response
+    accounts = app.data.driver.db['persons']
+    user = accounts.find_one({'tokens.login': str(login)})
+    if not user:
+       error = 'user not loggedin or not registered'
+       abort(401, error)
+    LOGGER.info("user:{0}".format(user))
+    json_user = convert_object_dates_to_string(user, ['_id', 'created_date', 'modified_date',
+                                                      'last_modified_by',''])
+    del_some_keys = delete_some_keys_from_dict(json_user, ['password','fav_stores', 'fav_coupons'])
 
-
-    message = "user not logged in."
-    abort(401, message)
-
+    response = jsonify(error='', data = del_some_keys)
+    response.status_code = 200
+    return response
 
 @app.route('/', methods=['GET'])
 def API():

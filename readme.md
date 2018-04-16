@@ -232,4 +232,4 @@ card details:
 }
 }
 ### Search books by id
-/api/1.0/books?where={"book_title": {"$regex": ".*surya.*"}}
+/api/1.0/books?where={"book_title": {"$regex": ".*Surya.*", "$options": "i"}}
