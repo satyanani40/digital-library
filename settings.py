@@ -230,6 +230,27 @@ SCHEMAS = {
             }
 
         }
+    },
+    'cart':{
+        'book_type': {
+            'type': 'string'
+        },
+        'book': {
+            'type': 'objectid',
+            'data_relation': {
+                'resource': 'books',
+                'embeddable': True,
+                'field': '_id'
+            }
+        },
+        'user_id': {
+            'type': 'objectid',
+            'data_relation': {
+                'resource': 'persons',
+                'embeddable': True,
+                'field': '_id'
+            },
+        }
 
     },
 
@@ -508,6 +529,7 @@ BOOKS_SCHEMA = SCHEMAS['books']
 MEMBERSHIP_SCHEMA = SCHEMAS['membership']
 PAYMENTS_SCHEMA = SCHEMAS['payments']
 ORDERS_SCHEMA = SCHEMAS['orders']
+CART_SCHEMA = SCHEMAS['cart']
 
 
 PERSONS = {
@@ -554,6 +576,13 @@ MEMBERSHIP = {
 
 }
 
+CART = {
+    'item_title': 'cart',
+    'schema': CART_SCHEMA,
+    'url': 'cart'
+
+}
+
 # The DOMAIN dict explains which resources will be available and how they will
 # be accessible to the API consumer.
 DOMAIN = {
@@ -563,7 +592,8 @@ DOMAIN = {
     'books': BOOKS,
     'membership': MEMBERSHIP,
     'orders': ORDERS,
-    'payments': PAYMENTS
+    'payments': PAYMENTS,
+    'cart': CART
 }
 
 COLLECTION_NAMES = DOMAIN.keys()
