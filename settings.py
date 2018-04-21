@@ -476,8 +476,7 @@ SCHEMAS = {
             'required': True
         },
         'age': {
-            'type': 'integer',
-            'required': True
+            'type': 'integer'
         },
         'gender': {
             'type': 'string',
