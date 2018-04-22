@@ -493,7 +493,7 @@ SCHEMAS = {
             'type': 'dict',
             'schema': {
                 'registration': {'type': 'string', 'empty': True},
-                'login': {'type': 'string', 'empty': True},
+                'login': {'type': 'list', 'empty': True},
                 'forgot_password': {'type': 'string', 'empty': True}
             },
         }
