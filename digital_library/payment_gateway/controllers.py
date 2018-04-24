@@ -1,45 +1,61 @@
 import os
-import copy
 import uuid
 from datetime import  datetime
 import jwt, uuid
 from bson.objectid import ObjectId
 from flask import jsonify, request,make_response, g, abort
-from werkzeug.security import generate_password_hash, check_password_hash
 
 from digital_library import app
 from digital_library import LOGGER
-from digital_library.common_features.views import send_dl_emails
-from digital_library.common_features.views import convert_object_dates_to_string
-from digital_library.common_features.views import delete_some_keys_from_dict
 from settings import CONFIG_DATA, SERVER_URL
-from digital_library.data_validations import Validations
 
 
 
-@app.route('/api/1.0/upload-file', methods=['POST'])
-def upload_file():
-    if request.method == 'POST':
-        # check if the post request has the file part
-        if 'file' not in request.files:
-            print('No file part')
-            return redirect(request.url)
-        file = request.files['file']
-        # if user does not select file, browser also
-        # submit a empty part without filename
-        if file.filename == '':
-            print('No selected file')
-            return redirect(request.url)
-        if file:
-            filename = file.filename
-            unique_id = str(uuid.uuid4()).replace("-", "_")
-            filename = unique_id+"___"+filename
+@app.route('/api/1.0/payment-gateway/hash-generate', methods=['POST'])
+def hash_generate():
+    MERCHANT_KEY = CONFIG_DATA['MERCHANT_KEY']
+    key = CONFIG_DATA['key']
+    SALT = CONFIG_DATA['SALT']
+    PAYU_BASE_URL = CONFIG_DATA['PAYU_BASE_URL']
+    action = ''
+    posted = {}
+    # Merchant Key and Salt provided y the PayU.
+    for i in request.POST:
+        posted[i] = request.POST[i]
+    hash_object = hashlib.sha256(b'randint(0,20)')
+    txnid = hash_object.hexdigest()[0:20]
+    hashh = ''
+    posted['txnid'] = txnid
+    hashSequence = "key|txnid|amount|productinfo|firstname|email|udf1|udf2|udf3|udf4|udf5|udf6|udf7|udf8|udf9|udf10"
+    posted['key'] = key
+    hash_string = ''
+    hashVarsSeq = hashSequence.split('|')
+    for i in hashVarsSeq:
+        try:
+            hash_string += str(posted[i])
+        except Exception:
+            hash_string += ''
+        hash_string += '|'
+    hash_string += SALT
+    hashh = hashlib.sha512(hash_string).hexdigest().lower()
+    action = PAYU_BASE_URL
+    if (posted.get("key") != None and posted.get("txnid") != None and posted.get("productinfo") != None and posted.get(
+            "firstname") != None and posted.get("email") != None):
+        return render_to_response('current_datetime.html', RequestContext(request, {"posted": posted, "hashh": hashh,
+                                                                                    "MERCHANT_KEY": MERCHANT_KEY,
+                                                                                    "txnid": txnid,
+                                                                                    "hash_string": hash_string,
+                                                                                    "action": "https://test.payu.in/_payment"}))
+    else:
+        return render_to_response('current_datetime.html', RequestContext(request, {"posted": posted, "hashh": hashh,
+                                                                                    "MERCHANT_KEY": MERCHANT_KEY,
+                                                                                    "txnid": txnid,
+                                                                                    "hash_string": hash_string,
+                                                                                    "action": "."}))
 
-            final_file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-            file.save(final_file_path)
-            response = jsonify(data={"path": final_file_path}, errors=[])
-            response.status_code = 200
-            return response
+    response = jsonify(data={"path": final_file_path}, errors=[])
+    response.status_code = 200
+    return response
 
 
 # registration
@@ -67,7 +83,7 @@ def signup():
         }
         payload['tokens'] = {
             'registration': '',
-            'login': [],
+            'login': '',
             'forgot_password':''
         }
         payload['created_date'] = datetime.now()
@@ -86,7 +102,7 @@ def signup():
         # check logged user can assign role or not otherwise default role will be 'user'
         can_assign = False
         if 'user_level' in payload and 'loggin_token' in payload:
-            user = accounts.find_one({"tokens.login": {"$elemMatch": {"$eq":str(payload['login_token'])}}})
+            user = accounts.find_one({"tokens.login": str(payload['login_token'])})
             if user and user['user_level'] in CONFIG_DATA['CREATE_USER_ROLES']:
                 can_assign = True
         if not can_assign:
@@ -182,33 +198,22 @@ def login():
         message = user['first_name']+" you are Inactive, Please contact your Admin."
         abort(401, message)
 
+    if 'tokens' in user and user['tokens'] and 'login' in user['tokens'] and user['tokens']['login']:
+        message = {}
+        message['message']='User already logged in.'
+        message['login_token'] = user['tokens']['login']
+        message['user_id'] = str(user['_id'])
+        abort(401, message)
 
     if not user or not check_password_hash(user['password']['password'], request.json['password']):
         message='Wrong Email or Password'
         abort(401, message)
 
-    clear_all_tokens = False
-    if 'tokens' in user and user['tokens'] and 'login' in user['tokens'] and user['tokens']['login'] and \
-        isinstance(user['tokens']['login'], list) and len(user['tokens']['login']) > 20:
-        clear_all_tokens = True
-        """message = {}
-        message['message']='User already logged in.'
-        message['login_token'] = user['tokens']['login']
-        message['user_id'] = str(user['_id'])
-        abort(401, message)
-        """
-
-
     token = str(uuid.uuid4())
     user['login_token'] = token
-    user['tokens']['login'].append(token)
-    tokens = user['tokens']['login'][:]
     del user['tokens']
     del user['password']
-    if clear_all_tokens:
-        accounts.update({'email': request.json['email']}, {"$set": {'tokens.login': [token]}})
-    else:
-        accounts.update({'email': request.json['email']}, {"$set": {'tokens.login': tokens}})
+    accounts.update({'email': request.json['email']}, {"$set": {'tokens.login': token}})
 
     json_user = convert_object_dates_to_string(user, ['_id', 'created_date', 'modified_date',
                                                       'last_modified_by',''])
@@ -344,12 +349,10 @@ def logout():
     if not login:
         abort(400, "login_token should be in url params")
     accounts = app.data.driver.db['persons']
-    user = accounts.find_one({"tokens.login": {"$elemMatch": {"$eq":  str(login)}}})
+    user = accounts.find_one({"tokens.login": str(login)})
     if not user:
         abort(400, "user not logged in.")
-    tokens = user['tokens']['login']
-    tokens.remove(login)
-    accounts.update({'_id': ObjectId(str(user['_id']))},{"$set": {'tokens.login': tokens}})
+    accounts.update({'_id': ObjectId(str(user['_id']))},{"$set": {'tokens.login': ""}})
     response = jsonify(error='', data="successfully logged out.")
     response.status_code = 200
     return response
@@ -362,7 +365,7 @@ def me():
         abort(400, "login_token should be in url params")
 
     accounts = app.data.driver.db['persons']
-    user = accounts.find_one({"tokens.login": {"$elemMatch": {"$eq": str(login)}}})
+    user = accounts.find_one({'tokens.login': str(login)})
     if not user:
        error = 'user not loggedin or not registered'
        abort(401, error)
