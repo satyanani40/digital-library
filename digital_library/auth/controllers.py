@@ -375,7 +375,7 @@ def me():
     response.status_code = 200
     return response
 
-@app.route('/', methods=['GET'])
+@app.route('/api', methods=['GET'])
 def API():
     LOGGER.info("called api/1.0")
     data = {
@@ -385,3 +385,15 @@ def API():
     response = jsonify(data = data)
     response.status_code = 200
     return response
+
+
+@app.route('/')
+def admin_index():
+    LOGGER.info("called ADMIN panel index point")
+    return app.send_static_file('public/index.html')
+
+
+@app.route('/<path:dummy>')
+def fallback(dummy):
+    LOGGER.info("called dummy end point:{}".format(dummy))
+    return app.send_static_file('public/index.html')
