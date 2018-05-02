@@ -267,12 +267,15 @@ SCHEMAS = {
         'book_type': {
             'type': 'string'
         },
-        'book': {
-            'type': 'objectid',
-            'data_relation': {
-                'resource': 'books',
-                'embeddable': True,
-                'field': '_id'
+        'books': {
+            'type': 'list',
+            'schema': {
+                'type': 'objectid',
+                'data_relation': {
+                    'resource': 'books',
+                    'embeddable': True,
+                    'field': '_id'
+                }
             }
         },
         'user_id': {
