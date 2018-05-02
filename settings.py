@@ -209,7 +209,7 @@ SCHEMAS = {
             }
         },
         'amount': {
-            'type': 'string'
+            'type': 'float'
         }
     },
     'payments':{
