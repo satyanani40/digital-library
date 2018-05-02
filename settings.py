@@ -191,6 +191,13 @@ SCHEMAS = {
         }
     },
     'transactions': {
+        'wallet_id': {
+            'type': 'objectid',
+            'data_relation': {
+                'resource': 'wallet',
+                'embeddable': True
+            }
+        },
         'amount': {'type': 'float'},
         'transaction_type': {'type': 'string'},
         'transaction_for': {'type': 'string'},
