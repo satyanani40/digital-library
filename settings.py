@@ -155,11 +155,15 @@ SCHEMAS = {
         'total_amount': {
             'type': 'float'
         },
-        'book_id': {
-            'type': 'objectid',
-            'data_relation': {
-                'resource': 'books',
-                'embeddable': True
+        'books': {
+            'type': 'list',
+            'schema': {
+                'type': 'objectid',
+                'data_relation': {
+                    'resource': 'books',
+                    'embeddable': True,
+                    'field': '_id'
+                }
             }
         },
         'user_id': {
@@ -169,7 +173,6 @@ SCHEMAS = {
                 'embeddable': True
             }
         },
-
         'ordered_date':{
             'type': 'string'
         },
@@ -179,12 +182,34 @@ SCHEMAS = {
         'delivery_status': {
             'type': 'string'
         },
-        'payment_id': {
+        'transaction_id': {
             'type': 'objectid',
             'data_relation': {
-                'resource': 'payments',
+                'resource': 'transactions',
                 'embeddable': True
             }
+        }
+    },
+    'transactions': {
+        'amount': {'type': 'float'},
+        'transaction_type': {'type': 'string'},
+        'transaction_for': {'type': 'string'},
+        'status': {'type': 'string'},
+        'email': {'type': 'string'},
+        'name': {'type': 'string'},
+        'txnid': {'type': 'string'},
+        'product_info': {'type': 'string'},
+    },
+    'wallet': {
+        'user_id': {
+            'type': 'objectid',
+            'data_relation': {
+                'resource': 'persons',
+                'embeddable': True
+            }
+        },
+        'amount': {
+            'type': 'string'
         }
     },
     'payments':{
@@ -424,6 +449,10 @@ SCHEMAS = {
                     },
                     'phone_number': {
                         'type': 'string'
+                    },
+                    'default': {
+                        'type': 'boolean',
+                        'default': False
                     }
                 }
             }
@@ -529,6 +558,8 @@ MEMBERSHIP_SCHEMA = SCHEMAS['membership']
 PAYMENTS_SCHEMA = SCHEMAS['payments']
 ORDERS_SCHEMA = SCHEMAS['orders']
 CART_SCHEMA = SCHEMAS['cart']
+TRANSACTIONS_SCHEMA = SCHEMAS['transactions']
+WALLET_SCHEMA = SCHEMAS['wallet']
 
 
 PERSONS = {
@@ -582,6 +613,20 @@ CART = {
 
 }
 
+TRANSACTIONS = {
+    'item_title': 'transactions',
+    'schema': TRANSACTIONS_SCHEMA,
+    'url': 'transactions'
+
+}
+
+WALLET = {
+    'item_title': 'wallet',
+    'schema': WALLET_SCHEMA,
+    'url': 'wallet'
+
+}
+
 # The DOMAIN dict explains which resources will be available and how they will
 # be accessible to the API consumer.
 DOMAIN = {
@@ -592,7 +637,9 @@ DOMAIN = {
     'membership': MEMBERSHIP,
     'orders': ORDERS,
     'payments': PAYMENTS,
-    'cart': CART
+    'cart': CART,
+    'transactions': TRANSACTIONS,
+    'wallet': WALLET
 }
 
 COLLECTION_NAMES = DOMAIN.keys()
