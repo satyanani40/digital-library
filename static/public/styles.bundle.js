@@ -151,7 +151,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n.navbar-nav.nav li.active a {\n  background: none !important;\n  font-weight: bold;\n  background-image: none !important;\n}\n#toast {\n  visibility: hidden;\n  min-width: 250px;\n  color: #fff;\n  padding: 16px;\n  position: fixed;\n  z-index: 1;\n  right: 20px;\n  top: 5%;\n}\n#toast.green {\n  background-color: green;\n}\n#toast.red {\n  background-color: red;\n}\n#toast.show {\n  visibility: visible;\n  -webkit-animation: fadein 0.5s;\n  animation: fadein 0.5s;\n}\n.container {\n  margin-bottom: 30px;\n}\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n.navbar-nav.nav li.active a {\n  background: none !important;\n  font-weight: bold;\n  background-image: none !important;\n}\n#toast {\n  visibility: hidden;\n  min-width: 250px;\n  color: #fff;\n  padding: 16px;\n  position: fixed;\n  z-index: 1;\n  right: 20px;\n  top: 5%;\n}\n#toast.green {\n  background-color: green;\n}\n#toast.red {\n  background-color: red;\n}\n#toast.show {\n  visibility: visible;\n  -webkit-animation: fadein 0.5s;\n  animation: fadein 0.5s;\n}\n.pointer {\n  cursor: pointer;\n}\n.container {\n  margin-bottom: 30px;\n}\ndiv, input, textarea {\n  border-radius: 3px !important;\n}\n", ""]);
 
 // exports
 
