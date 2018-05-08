@@ -333,7 +333,9 @@ SCHEMAS = {
         'book_summary': {
             'type': 'string'
         },
-
+        'no_of_copies': {
+            'type': 'integer'
+        },
         'book_keywords': {
             'type': 'string'
          },
@@ -390,15 +392,6 @@ SCHEMAS = {
                     'field': '_id'
                 }
             }
-        },
-
-        'created_date': {
-            'type': 'datetime',
-            'default': datetime.now(),
-        },
-        'modified_date': {
-            'type': 'datetime',
-            'empty': True
         }
     },
 
@@ -406,28 +399,12 @@ SCHEMAS = {
         'author_name': {
             'type': 'string',
             'required': True,
-        },
-        'created_date': {
-            'type': 'datetime',
-            'default': datetime.now(),
-        },
-        'modified_date': {
-            'type': 'datetime',
-            'empty': True
         }
     },
     'categories': {
         'category_name': {
             'type': 'string',
             'required': True,
-        },
-        'created_date': {
-            'type': 'datetime',
-            'default': datetime.now(),
-        },
-        'modified_date': {
-            'type': 'datetime',
-            'empty': True
         }
     },
     'persons': {
@@ -523,15 +500,6 @@ SCHEMAS = {
             'type': 'string',
             'allowed': CONFIG_DATA['APPLICATION_ROLES'],
             'required': True
-        },
-        'created_date': {
-            'type': 'datetime',
-            'default': datetime.now(),
-            'required': True
-        },
-        'modified_date': {
-            'type': 'datetime',
-            'empty': True
         },
         'last_modified_by': {
             'type': 'objectid',
