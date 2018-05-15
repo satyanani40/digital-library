@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\r\n\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "<app-navbar></app-navbar>\r\n"
 
 /***/ }),
 
@@ -99,12 +99,14 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__edit_book_edit_book_component__ = __webpack_require__("../../../../../src/app/edit-book/edit-book.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__categories_categories_component__ = __webpack_require__("../../../../../src/app/categories/categories.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__app_pipe__ = __webpack_require__("../../../../../src/app/app.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__orders_orders_component__ = __webpack_require__("../../../../../src/app/orders/orders.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -140,7 +142,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_15__persons_persons_component__["a" /* PersonsComponent */],
                 __WEBPACK_IMPORTED_MODULE_17__edit_book_edit_book_component__["a" /* EditBookComponent */],
                 __WEBPACK_IMPORTED_MODULE_18__categories_categories_component__["a" /* CategoriesComponent */],
-                __WEBPACK_IMPORTED_MODULE_19__app_pipe__["a" /* FilterPipe */]
+                __WEBPACK_IMPORTED_MODULE_19__app_pipe__["a" /* FilterPipe */],
+                __WEBPACK_IMPORTED_MODULE_20__orders_orders_component__["a" /* OrdersComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -149,7 +152,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_14__angular_forms__["c" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__config_router_config__["a" /* routes */]),
                 __WEBPACK_IMPORTED_MODULE_16_ngx_bootstrap__["a" /* BsDatepickerModule */].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_16_ngx_bootstrap__["b" /* ModalModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_16_ngx_bootstrap__["c" /* ModalModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_3_ag_grid_angular__["AgGridModule"].withComponents([])
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_12__shared_app_service_module__["a" /* AppServiceModule */], __WEBPACK_IMPORTED_MODULE_13__config_constant_config__["a" /* AppUrls */], __WEBPACK_IMPORTED_MODULE_12__shared_app_service_module__["c" /* AuthService */], __WEBPACK_IMPORTED_MODULE_12__shared_app_service_module__["b" /* AuthGuardService */], __WEBPACK_IMPORTED_MODULE_12__shared_app_service_module__["d" /* Languages */]],
@@ -225,7 +228,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/categories/categories.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-lg-6 col-lg-offset-3\">\n      <input type=\"text\" placeholder=\"Search...\"\n             [(ngModel)]=\"search\" class=\"form-control\">\n    </div>\n    <div class=\"col-lg-3\">\n      <button class=\"btn btn-primary btn-sm\" (click)=\"openModal(addTemplate, {})\">Add new Category</button>\n    </div>\n  </div>\n  <br>\n  <div class=\"row\">\n    <div class=\"col-lg-3\" *ngFor=\"let item of categories | filter: search: 'category_name'; let index = index;\">\n      <div class=\"panel panel-default\" (mouseover)=\"hoverCategory[item['_id']] = true;\"\n           (mouseleave)=\"hoverCategory[item['_id']] = false;\">\n        <div class=\"panel-body pointer\">\n          <h5><b>{{ item.category_name }}</b></h5>\n          <span class=\"_created\">Created: {{ item['_created'] | date: 'yyyy-MM-dd hh:mm a' }}</span>\n        </div>\n        <div class=\"panel-footer category-footer\" *ngIf=\"hoverCategory[item['_id']]\">\n          <button class=\"btn btn-primary btn-xs\" (click)=\"openModal(template, item)\">Update</button>&nbsp;&nbsp;\n          <button class=\"btn btn-danger btn-xs\" (click)=\"deleteCategory(item, index)\">Delete</button>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"row\" *ngIf=\"(categories | filter: search: 'category_name').length === 0\">\n    <div class=\"col-lg-12\">\n      <div class=\"jumbotron text-center\">\n        <h2>Sorry!</h2>\n        <h4>No results found your criteria...</h4>\n      </div>\n    </div>\n  </div>\n</div>\n\n\n<ng-template #addTemplate>\n  <div class=\"modal-header\">\n    <h4 class=\"modal-title pull-left\">Category : {{ modalItem['category_name'] }}</h4>\n    <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"modalRef.hide()\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\">\n    <div class=\"row\">\n      <div class=\"col-lg-8\">\n        <form (submit)=\"addCategory(modalItem, false)\">\n          <div class=\"form-group\">\n            <input autocomplete=\"off\" type=\"text\" class=\"form-control\" name=\"category_name\" [(ngModel)]=\"modalItem['category_name']\" />\n          </div>\n          <div class=\"form-group\">\n            <button type=\"submit\" class=\"btn btn-sm btn-primary\">Create</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</ng-template>\n\n\n<ng-template #template>\n  <div class=\"modal-header\">\n    <h4 class=\"modal-title pull-left\">Category : {{ modalItem['category_name'] }}</h4>\n    <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"modalRef.hide()\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\">\n    <div class=\"row\">\n      <div class=\"col-lg-8\">\n        <form (submit)=\"updateCategory(modalItem, true)\">\n          <div class=\"form-group\">\n            <input autocomplete=\"off\" type=\"text\" class=\"form-control\" name=\"category_name\" [(ngModel)]=\"modalItem['category_name']\" />\n          </div>\n          <div class=\"form-group\">\n            <button type=\"submit\" class=\"btn btn-sm btn-primary\">Update</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</ng-template>\n"
+module.exports = "<div class=\"\">\n  <br>\n  <div class=\"row\">\n    <div class=\"col-lg-6 col-lg-offset-3\">\n      <input type=\"text\" placeholder=\"Search...\"\n             [(ngModel)]=\"search\" class=\"form-control\">\n    </div>\n    <div class=\"col-lg-3\">\n      <button class=\"btn btn-primary btn-sm\" (click)=\"openModal(addTemplate, {})\">Add new Category</button>\n    </div>\n  </div>\n  <br>\n  <div class=\"row\">\n    <div class=\"col-lg-3\" *ngFor=\"let item of categories | filter: search: 'category_name'; let index = index;\">\n      <div class=\"panel panel-default\" (mouseover)=\"hoverCategory[item['_id']] = true;\"\n           (mouseleave)=\"hoverCategory[item['_id']] = false;\">\n        <div class=\"panel-body pointer\">\n          <h5><b>{{ item.category_name }}</b></h5>\n          <span class=\"_created\">Created: {{ item['_created'] | date: 'yyyy-MM-dd hh:mm a' }}</span>\n        </div>\n        <div class=\"panel-footer category-footer\" *ngIf=\"hoverCategory[item['_id']]\">\n          <button class=\"btn btn-primary btn-xs\" (click)=\"openModal(template, item)\">Update</button>&nbsp;&nbsp;\n          <button class=\"btn btn-danger btn-xs\" (click)=\"deleteCategory(item, index)\">Delete</button>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"row\" *ngIf=\"(categories | filter: search: 'category_name').length === 0\">\n    <div class=\"col-lg-12\">\n      <div class=\"jumbotron text-center\">\n        <h2>Sorry!</h2>\n        <h4>No results found your criteria...</h4>\n      </div>\n    </div>\n  </div>\n</div>\n\n\n<ng-template #addTemplate>\n  <div class=\"modal-header\">\n    <h4 class=\"modal-title pull-left\">Category : {{ modalItem['category_name'] }}</h4>\n    <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"modalRef.hide()\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\">\n    <div class=\"row\">\n      <div class=\"col-lg-8\">\n        <form (submit)=\"addCategory(modalItem, false)\">\n          <div class=\"form-group\">\n            <input autocomplete=\"off\" type=\"text\" class=\"form-control\" name=\"category_name\" [(ngModel)]=\"modalItem['category_name']\" />\n          </div>\n          <div class=\"form-group\">\n            <button type=\"submit\" class=\"btn btn-sm btn-primary\">Create</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</ng-template>\n\n\n<ng-template #template>\n  <div class=\"modal-header\">\n    <h4 class=\"modal-title pull-left\">Category : {{ modalItem['category_name'] }}</h4>\n    <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"modalRef.hide()\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\">\n    <div class=\"row\">\n      <div class=\"col-lg-8\">\n        <form (submit)=\"updateCategory(modalItem, true)\">\n          <div class=\"form-group\">\n            <input autocomplete=\"off\" type=\"text\" class=\"form-control\" name=\"category_name\" [(ngModel)]=\"modalItem['category_name']\" />\n          </div>\n          <div class=\"form-group\">\n            <button type=\"submit\" class=\"btn btn-sm btn-primary\">Update</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</ng-template>\n"
 
 /***/ }),
 
@@ -262,6 +265,12 @@ var CategoriesComponent = /** @class */ (function () {
     CategoriesComponent.prototype.ngOnInit = function () {
         this.getCategories();
     };
+    CategoriesComponent.prototype.stopLoading = function () {
+        var _this = this;
+        setTimeout(function () {
+            _this.appUrls.loadingIcon = false;
+        }, 500);
+    };
     CategoriesComponent.prototype.openModal = function (template, item) {
         this.modalRef = this.modalService.show(template);
         this.modalItem = item;
@@ -278,6 +287,7 @@ var CategoriesComponent = /** @class */ (function () {
     };
     CategoriesComponent.prototype.addCategory = function (item, type) {
         var _this = this;
+        this.appUrls.loadingIcon = true;
         var url = this.appUrls.categories;
         this.appService.post(url, { category_name: item['category_name'] })
             .subscribe(function (success) {
@@ -285,23 +295,28 @@ var CategoriesComponent = /** @class */ (function () {
             _this.categories.push(success);
             _this.modalRef.hide();
             _this.appService.toast(item['category_name'], 'Successfully Created!', 's');
+            _this.stopLoading();
         });
     };
     CategoriesComponent.prototype.updateCategory = function (item, type) {
         var _this = this;
+        this.appUrls.loadingIcon = true;
         var url = this.appUrls.categories + '/' + item['_id'];
         this.appService.update(url, { category_name: item['category_name'] })
             .subscribe(function (success) {
             console.log(success);
             _this.modalRef.hide();
             _this.appService.toast(item['category_name'], 'Successfully updated!', 's');
+            _this.stopLoading();
         });
     };
     CategoriesComponent.prototype.deleteCategory = function (item, index) {
         var _this = this;
+        this.appUrls.loadingIcon = true;
         this.appService.delete(this.appUrls.categories + '/' + item['_id']).subscribe(function (success) {
             _this.appService.toast(item['category_name'], 'successfully deleted!', 's');
             _this.categories.splice(index, 1);
+            _this.stopLoading();
         });
     };
     CategoriesComponent = __decorate([
@@ -331,6 +346,7 @@ var CategoriesComponent = /** @class */ (function () {
 var AppUrls = /** @class */ (function () {
     function AppUrls() {
         this.baseUrl = 'http://ec2-18-220-81-9.us-east-2.compute.amazonaws.com/api/1.0/';
+        this.custUrl = 'http://18.220.81.9:8080/';
         // REST End points
         this.login = this.baseUrl + 'auth/login';
         this.register = this.baseUrl + 'auth/signup';
@@ -341,9 +357,11 @@ var AppUrls = /** @class */ (function () {
         this.sendForgotPasswordMail = this.baseUrl + 'Password/SendForgotPasswordMail';
         this.books_list = this.baseUrl + 'books';
         this.categories = this.baseUrl + 'categories';
+        this.orders = this.baseUrl + 'orders';
         this.authors = this.baseUrl + 'authors';
         this.users = this.baseUrl + 'persons';
         this.upload_file = this.baseUrl + 'upload-file';
+        this.loadingIcon = false;
     }
     return AppUrls;
 }());
@@ -365,6 +383,8 @@ var AppUrls = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__edit_book_edit_book_component__ = __webpack_require__("../../../../../src/app/edit-book/edit-book.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__categories_categories_component__ = __webpack_require__("../../../../../src/app/categories/categories.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__orders_orders_component__ = __webpack_require__("../../../../../src/app/orders/orders.component.ts");
+
 
 
 
@@ -381,6 +401,7 @@ var routes = [
     { path: 'edit-book/:_id', component: __WEBPACK_IMPORTED_MODULE_6__edit_book_edit_book_component__["a" /* EditBookComponent */] },
     { path: 'categories', component: __WEBPACK_IMPORTED_MODULE_7__categories_categories_component__["a" /* CategoriesComponent */] },
     { path: 'persons', component: __WEBPACK_IMPORTED_MODULE_4__persons_persons_component__["a" /* PersonsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_5__shared_app_service_module__["b" /* AuthGuardService */]] },
+    { path: 'orders', component: __WEBPACK_IMPORTED_MODULE_8__orders_orders_component__["a" /* OrdersComponent */] },
     { path: '',
         redirectTo: '/login',
         pathMatch: 'full'
@@ -411,7 +432,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/edit-book/edit-book.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <h3>Book: {{ bookInfo['book_title'] }}</h3>\n  <hr>\n  <form [formGroup]=\"bookForm\" (submit)=\"updateBookDetails(bookForm.value)\">\n    <div class=\"row\">\n      <div class=\"col-lg-4\">\n        <div class=\"form-group\">\n          <label for=\"title\">Book Title</label>\n          <input type=\"text\" id=\"title\" class=\"form-control\" placeholder=\"Book title\"\n                 formControlName=\"book_title\" />\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"sub_title\">Sub Title</label>\n          <input type=\"text\" id=\"sub_title\" class=\"form-control\" placeholder=\"Sub title\"\n                 formControlName=\"sub_title\" />\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"summary\">Book Summary</label>\n          <textarea type=\"text\" id=\"summary\" class=\"form-control\" placeholder=\"Book Summary\"\n                    formControlName=\"book_summary\" rows=\"2\"></textarea>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"keywords\">Book Keywords</label>\n          <textarea type=\"text\" id=\"keywords\" class=\"form-control\" placeholder=\"Book keywords\"\n                    formControlName=\"book_keywords\" rows=\"2\"></textarea>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"pages\">No.of Pages</label>\n          <input type=\"text\" id=\"pages\" class=\"form-control\" placeholder=\"No.of Pages\"\n                 formControlName=\"no_of_pages\" />\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"Author\">Authors</label>\n          <input type=\"text\" id=\"Author\" class=\"form-control\" placeholder=\"Author\" formControlName=\"book_authors\" />\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"book_author_desc\">Book Author Description</label>\n          <textarea formControlName=\"book_author_desc\" id=\"book_author_desc\" rows=\"2\"\n                    placeholder=\"Book Author Description\" class=\"form-control\"></textarea>\n        </div>\n        <div class=\"form-group\">\n          <label for=\"Availability\">Availability</label>\n          <select formControlName=\"availability\" id=\"Availability\" class=\"form-control\">\n            <option *ngFor=\"let av of trueFalseArray\" value=\"{{ av.val }}\">{{ av.text }}</option>\n          </select>\n        </div>\n      </div>\n      <div class=\"col-lg-4\">\n        <div class=\"form-group\">\n          <label for=\"hcopy_price\">Hard copy Price</label>\n          <input type=\"number\" id=\"hcopy_price\" class=\"form-control\"\n                 placeholder=\"Hard copy Price\" formControlName=\"hcopy_price\" />\n        </div>\n        <div class=\"form-group\">\n          <label for=\"ecopy_price\">E-copy Price</label>\n          <input type=\"number\" id=\"ecopy_price\" class=\"form-control\"\n                 placeholder=\"E-copy Price\" formControlName=\"ecopy_price\" />\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"book_image\">Book Image</label>\n          <input type=\"file\" (change)=\"fileChangeEvent($event)\" #imageUpload id=\"book_image\"\n                 class=\"form-control\" placeholder=\"Book Image\" required />\n        </div>\n\n        <div class=\"form-group image-preview\" *ngIf=\"imagePreview['src']\">\n          <img src=\"{{ imagePreview.src }}\" alt=\"{{ imagePreview.title }}\">\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"m_group\">Book Category</label>\n          <select name=\"m_group\" id=\"m_group\" formControlName=\"book_categories\" class=\"form-control\">\n            <option *ngFor=\"let item of categories\" value=\"{{ item._id }}\">{{ item.category_name }}</option>\n          </select>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"language\">Language</label>\n          <select formControlName=\"language\" id=\"language\" class=\"form-control\">\n            <option *ngFor=\"let av of languages\" value=\"{{ av.val }}\">{{ av.text }}</option>\n          </select>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"publisher\">Publisher</label>\n          <input type=\"text\" id=\"publisher\" class=\"form-control\" placeholder=\"Publisher\" formControlName=\"publisher\" />\n        </div>\n        <div class=\"form-group\">\n          <label for=\"ISBN\">ISBN 10</label>\n          <input type=\"text\" id=\"ISBN\" class=\"form-control\" placeholder=\"ISBN\" formControlName=\"ISBN_10\" />\n        </div>\n        <div class=\"form-group\">\n          <label for=\"ISBN_13\">ISBN 13</label>\n          <input type=\"text\" id=\"ISBN_13\" class=\"form-control\" placeholder=\"ISBN\" formControlName=\"ISBN_13\" />\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"published_date\">Published date</label>\n          <!--<input type=\"text\" id=\"published_date\" class=\"form-control\" placeholder=\"Published date\"\n                 formControlName=\"published_date\" />-->\n          <input type=\"text\" id=\"published_date\" placeholder=\"Published date\" class=\"form-control\" bsDatepicker\n                 formControlName=\"published_date\" />\n        </div>\n\n      </div> <!-- end col -->\n      <div class=\"col-lg-4\">\n        <h5 class=\"text-uppercase\" style=\"color: orangered;\"><b>Do you have E-Book?</b></h5>\n        <div class=\"form-group\">\n          <label for=\"e-book\">E-Book</label>\n          <input type=\"file\" class=\"form-control\" placeholder=\"E-book\" formControlName=\"ebook\" id=\"e-book\" />\n        </div>\n      </div> <!-- end col -->\n    </div> <!-- end row -->\n    <div class=\"row\">\n      <div class=\"col-lg-3\">\n        <button type=\"submit\" class=\"btn btn-sm btn-primary\">Update</button>\n        <button class=\"btn-default btn-sm btn\" type=\"reset\">Cancel</button>\n      </div>\n    </div>\n  </form>\n</div>\n"
+module.exports = "<div class=\"\">\n  <h3>Book: {{ bookInfo['book_title'] }}</h3>\n  <hr>\n  <form [formGroup]=\"bookForm\" (submit)=\"updateBookDetails(bookForm.value)\">\n    <div class=\"row\">\n      <div class=\"col-lg-4\">\n        <div class=\"form-group\">\n          <label for=\"title\">Book Title</label>\n          <input type=\"text\" id=\"title\" class=\"form-control\" placeholder=\"Book title\"\n                 formControlName=\"book_title\" />\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"sub_title\">Sub Title</label>\n          <input type=\"text\" id=\"sub_title\" class=\"form-control\" placeholder=\"Sub title\"\n                 formControlName=\"sub_title\" />\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"summary\">Book Summary</label>\n          <textarea type=\"text\" id=\"summary\" class=\"form-control\" placeholder=\"Book Summary\"\n                    formControlName=\"book_summary\" rows=\"2\"></textarea>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"keywords\">Book Keywords</label>\n          <textarea type=\"text\" id=\"keywords\" class=\"form-control\" placeholder=\"Book keywords\"\n                    formControlName=\"book_keywords\" rows=\"2\"></textarea>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"pages\">No.of Pages</label>\n          <input type=\"text\" id=\"pages\" class=\"form-control\" placeholder=\"No.of Pages\"\n                 formControlName=\"no_of_pages\" />\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"Author\">Authors</label>\n          <input type=\"text\" id=\"Author\" class=\"form-control\" placeholder=\"Author\" formControlName=\"book_authors\" />\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"book_author_desc\">Book Author Description</label>\n          <textarea formControlName=\"book_author_desc\" id=\"book_author_desc\" rows=\"2\"\n                    placeholder=\"Book Author Description\" class=\"form-control\"></textarea>\n        </div>\n        <div class=\"form-group\">\n          <label for=\"Availability\">Availability</label>\n          <select formControlName=\"availability\" id=\"Availability\" class=\"form-control\">\n            <option *ngFor=\"let av of trueFalseArray\" value=\"{{ av.val }}\">{{ av.text }}</option>\n          </select>\n        </div>\n      </div>\n      <div class=\"col-lg-4\">\n        <div class=\"form-group\">\n          <label for=\"hcopy_price\">Hard copy Price</label>\n          <input type=\"number\" id=\"hcopy_price\" class=\"form-control\"\n                 placeholder=\"Hard copy Price\" formControlName=\"hcopy_price\" />\n        </div>\n        <div class=\"form-group\">\n          <label for=\"ecopy_price\">E-copy Price</label>\n          <input type=\"number\" id=\"ecopy_price\" class=\"form-control\"\n                 placeholder=\"E-copy Price\" formControlName=\"ecopy_price\" />\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"book_image\">Book Image</label>\n          <input type=\"file\" (change)=\"fileChangeEvent($event)\" #imageUpload id=\"book_image\"\n                 class=\"form-control\" placeholder=\"Book Image\" required />\n        </div>\n\n        <div class=\"form-group image-preview\" *ngIf=\"imagePreview['src']\">\n          <img src=\"{{ imagePreview.src }}\" alt=\"{{ imagePreview.title }}\">\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"m_group\">Book Category</label>\n          <select name=\"m_group\" id=\"m_group\" formControlName=\"book_categories\" class=\"form-control\">\n            <option *ngFor=\"let item of categories\" value=\"{{ item._id }}\">{{ item.category_name }}</option>\n          </select>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"language\">Language</label>\n          <select formControlName=\"language\" id=\"language\" class=\"form-control\">\n            <option *ngFor=\"let av of languages\" value=\"{{ av.val }}\">{{ av.text }}</option>\n          </select>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"publisher\">Publisher</label>\n          <input type=\"text\" id=\"publisher\" class=\"form-control\" placeholder=\"Publisher\" formControlName=\"publisher\" />\n        </div>\n        <div class=\"form-group\">\n          <label for=\"ISBN\">ISBN 10</label>\n          <input type=\"text\" id=\"ISBN\" class=\"form-control\" placeholder=\"ISBN\" formControlName=\"ISBN_10\" />\n        </div>\n        <div class=\"form-group\">\n          <label for=\"ISBN_13\">ISBN 13</label>\n          <input type=\"text\" id=\"ISBN_13\" class=\"form-control\" placeholder=\"ISBN\" formControlName=\"ISBN_13\" />\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"published_date\">Published date</label>\n          <input type=\"text\" id=\"published_date\" placeholder=\"Published date\" class=\"form-control\" bsDatepicker\n                 formControlName=\"published_date\" />\n        </div>\n\n      </div> <!-- end col -->\n      <div class=\"col-lg-4\">\n        <h5 class=\"text-uppercase\" style=\"color: orangered;\"><b>Do you have E-Book?</b></h5>\n        <div class=\"form-group\">\n          <label for=\"e-book\">E-Book</label>\n          <input type=\"file\" class=\"form-control\" #eBookUpload placeholder=\"E-book\" id=\"e-book\" />\n        </div>\n      </div> <!-- end col -->\n    </div> <!-- end row -->\n    <div class=\"row\">\n      <div class=\"col-lg-3\">\n        <button type=\"submit\" class=\"btn btn-sm btn-primary\">Update</button>\n        <button class=\"btn-default btn-sm btn\" type=\"reset\">Cancel</button>\n      </div>\n    </div>\n  </form>\n</div>\n"
 
 /***/ }),
 
@@ -467,7 +488,6 @@ var EditBookComponent = /** @class */ (function () {
             publisher: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
             ISBN_10: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
             ISBN_13: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
-            ebook: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](''),
             published_date: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
             image_small_thumbnail: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
             image_thumbnail: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]()
@@ -511,6 +531,7 @@ var EditBookComponent = /** @class */ (function () {
         this.appService.get(this.appUrls.books_list + '/' + this.myParams['_id']).subscribe(function (data) {
             console.log(data);
             _this.bookInfo = data;
+            data['published_date'] = new Date(data['published_date']).toLocaleString().split(',')[0];
             _this.bookForm.patchValue(data);
         }, function (err) {
             console.log(err);
@@ -518,8 +539,14 @@ var EditBookComponent = /** @class */ (function () {
     };
     EditBookComponent.prototype.updateBook = function (bookForm) {
         var _this = this;
-        bookForm['book_categories'] = [bookForm['book_categories']];
-        console.log('-------', bookForm, bookForm['_id']);
+        if (typeof bookForm['book_authors'] === 'string') {
+            bookForm['book_authors'] = bookForm['book_authors'].split(',');
+        }
+        if (typeof bookForm['book_categories'] === 'string') {
+            bookForm['book_categories'] = [bookForm['book_categories']];
+        }
+        bookForm['published_date'] = new Date(bookForm['published_date']).toISOString();
+        console.log('-------', bookForm, bookForm['book_categories']);
         this.appService.update(this.appUrls.books_list + '/' + this.myParams['_id'], bookForm).subscribe(function (data) {
             console.log(data);
             _this.appService.toast(bookForm['book_title'], 'Successfully updated!', 's');
@@ -579,7 +606,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".pagination {\r\n  margin: 0;\r\n}\r\n", ""]);
 
 // exports
 
@@ -592,7 +619,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/homepage/homepage.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <br>\n\n  <ag-grid-angular #agGrid style=\"width: 100%; height: 700px;\" class=\"ag-theme-balham\"\n                   [gridOptions]=\"gridOptions\" [enableSorting]=\"true\"\n                   [enableFilter]=\"true\" [pagination]=\"true\" [rowSelection]=\"rowSelection\"\n                   [enableColResize]=\"true\" [suppressRowClickSelection]=\"true\"\n                   (selectionChanged)=\"onSelectionChanged($event)\" (cellClicked)=\"cellClicked($event)\">\n  </ag-grid-angular>\n</div>\n"
+module.exports = "<div class=\"\">\n  <br>\n  <div class=\"row\">\n    <div class=\"col-lg-3\">\n      <label>Search for</label>\n      <input type=\"text\" (keyup)=\"searchBooks(filter.search, $event)\"\n             class=\"form-control\" [(ngModel)]=\"filter.search\" placeholder=\"Search records from Database\">\n    </div>\n    <div class=\"col-lg-3 col-md-3\">\n      <label>Sort by</label>\n      <select name=\"sort\" id=\"sort\" class=\"form-control\" [(ngModel)]=\"query['sort']\" (change)=\"changeParams(query)\">\n        <option value=\"-_updated\">Updated on</option>\n        <option value=\"book_title\">Book Title</option>\n        <option value=\"-_created\">Created on</option>\n        <option value=\"publisher\">Publisher</option>\n        <option value=\"language\">Language</option>\n      </select>\n    </div>\n    <div class=\"col-lg-2 col-md-2\">\n      <label for=\"max_results\">Results per page</label>\n      <select name=\"max_results\" id=\"max_results\" class=\"form-control\"\n              [(ngModel)]=\"query.max_results\" (change)=\"changeParams(query)\">\n        <option value=\"15\">15</option>\n        <option value=\"30\">30</option>\n        <option value=\"50\">50</option>\n        <option value=\"100\">100</option>\n        <option value=\"150\">150</option>\n      </select>\n    </div>\n  </div>\n  <br>\n  <div class=\"table-responsive\">\n    <table class=\"table table-bordered\">\n      <thead>\n      <tr>\n        <th>Action</th>\n        <th>Book title</th>\n        <th>Authors</th>\n        <th>availability</th>\n        <th>E - Book</th>\n        <th>Hard copy Price</th>\n        <th>E - Copy Price</th>\n        <th>ISBN 13</th>\n        <th>Publisher</th>\n        <th>Language</th>\n        <th>Created on</th>\n        <th>Updated on</th>\n      </tr>\n      </thead>\n      <tbody>\n      <tr class=\"pointer\" *ngFor=\"let item of books; let index = index;\">\n        <td>\n          <button title=\"Delete {{ item['book_title'] }}\" class=\"btn btn-xs\" (click)=\"openModal(deleteTemplate, item)\">\n            <span class=\"glyphicon glyphicon-trash\"></span>\n          </button>\n        </td>\n        <td (click)=\"cellClicked(item)\">{{ item['book_title'] }}</td>\n        <td>{{ item['book_authors'] }}</td>\n        <td>{{ (item['availability']) ? 'Available' : 'Not Available' }}</td>\n        <td>{{ (item['ebook']) ? 'Click to open' : 'Not Available' }}</td>\n        <td>{{ item['hcopy_price'] }}</td>\n        <td>{{ item['ecopy_price'] }}</td>\n        <td>{{ item['ISBN_13'] }}</td>\n        <td>{{ item['publisher'] }} </td>\n        <td>{{ item['language'] }} </td>\n        <td>{{ item['_created'] | date: 'dd/MM/yyyy hh:mm a' }}</td>\n        <td>{{ item['_updated'] | date: 'dd/MM/yyyy hh:mm a' }}</td>\n      </tr>\n      </tbody>\n    </table>\n  </div>\n  <br>\n  <div class=\"row\" *ngIf=\"_meta\">\n    <div class=\"col-lg-1 col-md-1\">\n      <button class=\"btn btn-xs btn-default text-center\" (click)=\"pagination(_meta['page'] - 1)\">\n        <span class=\"glyphicon glyphicon-backward\"></span>\n      </button>&nbsp;\n      <button (click)=\"pagination(_meta['page'] + 1)\" class=\"btn btn-xs btn-default text-center\">\n        <span class=\"glyphicon glyphicon-forward\"></span>\n      </button>\n    </div>\n    <div class=\"col-lg-2 col-md-2 pull-right text-right\">\n      <h6 class=\"margin-5\">Total Records: <b>{{ _meta['total'] }}</b></h6>\n    </div>\n  </div>\n</div>\n\n\n\n<ng-template #deleteTemplate>\n  <div class=\"modal-header\">\n    <h5 class=\"modal-title pull-left\">Title : {{ modalItem['book_title'] }}</h5>\n    <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"modalRef.hide()\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\">\n    <div class=\"row\">\n      <div class=\"col-lg-8\">\n        <h4>Are you sure you want to Delete?</h4>\n        <h6>Book Title: <b>{{ modalItem['book_title'] }}</b></h6>\n        <br>\n        <button class=\"btn btn-sm btn-primary\" (click)=\"deleteBook(modalItem)\">Delete Anyway</button>\n      </div>\n    </div>\n  </div>\n</ng-template>\n"
 
 /***/ }),
 
@@ -605,6 +632,7 @@ module.exports = "<div class=\"container\">\n  <br>\n\n  <ag-grid-angular #agGri
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ngx_bootstrap__ = __webpack_require__("../../../../ngx-bootstrap/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -618,57 +646,81 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var HomepageComponent = /** @class */ (function () {
-    function HomepageComponent(appService, appUrls, route) {
+    function HomepageComponent(appService, appUrls, router, activatedRoute, modalService) {
+        var _this = this;
         this.appService = appService;
         this.appUrls = appUrls;
-        this.route = route;
-        this.gridApi = {};
-        this.gridOptions = {};
-        this.gridOptions.rowData = [];
-        this.rowSelection = 'single';
-        this.gridOptions.columnDefs = [{
-                headerName: 'Book Title', field: 'book_title',
-            }, {
-                headerName: 'Author', field: 'book_authors'
-            }, {
-                headerName: 'Book Image', field: 'book_image'
-            },
-            {
-                headerName: 'ISBN 13', field: 'ISBN_13', width: 100
-            },
-            {
-                headerName: 'Lease Price', field: 'lease_price', width: 100
-            }, {
-                headerName: 'Languages', field: 'language', width: 100
-            }, {
-                headerName: 'Year', field: 'published_date', width: 100
-            }, {
-                headerName: 'No.of Pages', field: 'no_of_pages', width: 100
-            }, {
-                headerName: 'Book Summary', field: 'book_summary', width: 100
+        this.router = router;
+        this.activatedRoute = activatedRoute;
+        this.modalService = modalService;
+        this.query = { sort: '-_updated', max_results: 15, page: 1 };
+        this.filter = { search: '' };
+        this.books = [];
+        // Optional parameters
+        this.activatedRoute.queryParams.subscribe(function (parameters) {
+            var where = {}, params = parameters;
+            console.log(params);
+            if (Object.keys(parameters).length <= 0) {
+                _this.router.navigate(['/homepage'], { queryParams: _this.query });
             }
-        ];
+            else {
+                _this.query = Object.assign({}, params);
+                _this.getBooks();
+            }
+        });
     }
     HomepageComponent.prototype.ngOnInit = function () {
+        this.getBooks();
+    };
+    HomepageComponent.prototype.openModal = function (template, item) {
+        this.modalRef = this.modalService.show(template);
+        this.modalItem = item;
+    };
+    HomepageComponent.prototype.getBooks = function () {
         var _this = this;
-        console.log(this.appUrls.books_list);
-        this.appService.get(this.appUrls.books_list).subscribe(function (data) {
+        this.books = [];
+        this.appUrls.loadingIcon = true;
+        this.appService.get(this.appUrls.books_list, this.query).subscribe(function (data) {
             var items = data['_items'];
-            _this.gridOptions.api.setRowData(items);
+            _this._meta = data['_meta'];
+            _this.books = data['_items'];
+            setTimeout(function () { _this.appUrls.loadingIcon = false; }, 500);
         });
     };
-    HomepageComponent.prototype.cellClicked = function (event) {
-        console.log(event['data']['_id']);
-        if (event['data'] && event['data']['_id']) {
-            this.route.navigate(['/edit-book', event['data']['_id']]);
+    HomepageComponent.prototype.pagination = function (page) {
+        this.query['page'] = page;
+        this.router.navigate(['/homepage'], { queryParams: this.query });
+    };
+    HomepageComponent.prototype.deleteBook = function (item, index) {
+        var _this = this;
+        this.books.splice(index, 1);
+        this.appService.toast(item['book_title'], 'Deleted from Database', 's');
+        this._meta['total'] = this._meta['total'] - 1;
+        this.appService.delete(this.appUrls.books_list + '/' + item['_id']).subscribe(function (success) {
+            console.log(success);
+            _this.modalRef.hide();
+        }, function (err) {
+            console.log(err);
+        });
+    };
+    HomepageComponent.prototype.searchBooks = function (search, event) {
+        if (search) {
+            this.query['where'] = JSON.stringify({ book_title: { $regex: '.*' + search + '.*', '$options': 'i' } });
         }
+        else {
+            delete this.query['where'];
+        }
+        this.router.navigate(['/homepage'], { queryParams: this.query });
     };
-    HomepageComponent.prototype.onSelectionChanged = function (event) {
-        var selectedRows = this.gridApi.getSelectedRows();
-        selectedRows.forEach(function (selectedRow, index) {
-            console.log(selectedRow);
-        });
+    HomepageComponent.prototype.changeParams = function (filter) {
+        console.log(this.query, '-------', filter);
+        this.router.navigate(['/homepage'], { queryParams: this.query });
+    };
+    HomepageComponent.prototype.cellClicked = function (item) {
+        console.log(item['_id']);
+        this.router.navigate(['/edit-book', item['_id']]);
     };
     HomepageComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -678,7 +730,9 @@ var HomepageComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["a" /* AppServiceModule */],
             __WEBPACK_IMPORTED_MODULE_2__config_constant_config__["a" /* AppUrls */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]])
+            __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_4_ngx_bootstrap__["b" /* BsModalService */]])
     ], HomepageComponent);
     return HomepageComponent;
 }());
@@ -708,7 +762,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<br>\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-md-4 col-md-offset-4\">\n      <div class=\"account-box\">\n        <div class=\"logo\">\n          <img src=\"http://www.ala.org/tools/sites/ala.org.tools/files/content/libfactsheets/large-librarysymbol.jpg\" alt=\"\"/>\n        </div>\n        <hr>\n        <form [formGroup]=\"lForm\" class=\"form-signin\" (submit)=\"login(lForm.value, lForm)\">\n          <div class=\"form-group\">\n            <input type=\"text\" class=\"form-control\" formControlName=\"email\" name=\"email\" placeholder=\"Email\" required autofocus />\n          </div>\n          <div class=\"form-group\">\n            <input type=\"password\" class=\"form-control\" formControlName=\"password\" name=\"pass\" placeholder=\"Password\" required />\n          </div>\n          <button class=\"btn btn-md btn-default btn-block\" type=\"submit\">\n            Sign in\n          </button>\n        </form>\n        <a class=\"forgotLnk\">I can't access my account</a>\n        <div class=\"or-box row-block\">\n          <div class=\"row\">\n            <div class=\"col-md-12 row-block\">\n              <a routerLink=\"/register\" class=\"btn btn-primary btn-block\">Create New Account</a>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<br>\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-md-4 col-md-offset-2\">\n      <div class=\"account-box\">\n        <div class=\"logo\">\n          <img src=\"http://www.ala.org/tools/sites/ala.org.tools/files/content/libfactsheets/large-librarysymbol.jpg\" alt=\"\"/>\n        </div>\n        <hr>\n        <form [formGroup]=\"lForm\" class=\"form-signin\" (submit)=\"login(lForm.value, lForm)\">\n          <div class=\"form-group\">\n            <input type=\"text\" class=\"form-control\" formControlName=\"email\" name=\"email\" placeholder=\"Email\" required autofocus />\n          </div>\n          <div class=\"form-group\">\n            <input type=\"password\" class=\"form-control\" formControlName=\"password\" name=\"pass\" placeholder=\"Password\" required />\n          </div>\n          <button class=\"btn btn-md btn-default btn-block\" type=\"submit\">\n            Sign in\n          </button>\n        </form>\n        <a class=\"forgotLnk\">I can't access my account</a>\n        <div class=\"or-box row-block\">\n          <div class=\"row\">\n            <div class=\"col-md-12 row-block\">\n              <a routerLink=\"/register\" class=\"btn btn-primary btn-block\">Create New Account</a>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -749,7 +803,7 @@ var LoginComponent = /** @class */ (function () {
     }
     LoginComponent.prototype.ngOnInit = function () {
         if (this.authService.isAuthenticated()) {
-            this.router.navigate(['/homepage']);
+            this.router.navigate(['/homepage'], { queryParams: { page: 1, max_results: 25, sort: '-_updated' } });
         }
     };
     LoginComponent.prototype.login = function (user, lform) {
@@ -789,7 +843,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "@-webkit-keyframes blinker {\r\n  from {opacity: 1.0;}\r\n  to {opacity: 0.0;}\r\n}\r\n.blink{\r\n  color: orangered !important;\r\n  font-weight: bold !important;\r\n  text-decoration: blink;\r\n  -webkit-animation-name: blinker;\r\n  -webkit-animation-duration: 0.6s;\r\n  -webkit-animation-iteration-count:infinite;\r\n  -webkit-animation-timing-function:ease-in-out;\r\n  -webkit-animation-direction: alternate;\r\n}\r\n.pointer {\r\n  cursor: pointer;\r\n}\r\n.navbar-nav.left li a {\r\n  text-transform: uppercase;\r\n  font-weight: bold;\r\n}\r\n", ""]);
+exports.push([module.i, "@-webkit-keyframes blinker {\r\n  from {opacity: 1.0;}\r\n  to {opacity: 0.0;}\r\n}\r\n.blink{\r\n  color: orangered !important;\r\n  font-weight: bold !important;\r\n  text-decoration: blink;\r\n  -webkit-animation-name: blinker;\r\n  -webkit-animation-duration: 0.6s;\r\n  -webkit-animation-iteration-count:infinite;\r\n  -webkit-animation-timing-function:ease-in-out;\r\n  -webkit-animation-direction: alternate;\r\n}\r\n.pointer {\r\n  cursor: pointer;\r\n}\r\n.navbar-nav.left li a {\r\n  text-transform: uppercase;\r\n  font-weight: bold;\r\n}\r\n.side-menu {\r\n  position: fixed;\r\n  width: 300px;\r\n  height: 100%;\r\n  background-color: #f8f8f8;\r\n  border-right: 1px solid #e7e7e7;\r\n}\r\n.side-menu .navbar {\r\n  border: none;\r\n}\r\n.side-menu .navbar-header {\r\n  width: 100%;\r\n  border-bottom: 1px solid #e7e7e7;\r\n}\r\n.side-menu .navbar-nav .active a {\r\n  background-color: transparent;\r\n  margin-right: -1px;\r\n  border-right: 5px solid #e7e7e7;\r\n}\r\n.side-menu .navbar-nav li {\r\n  display: block;\r\n  width: 100%;\r\n  border-bottom: 1px solid #e7e7e7;\r\n}\r\n.side-menu .navbar-nav li a {\r\n  padding: 15px;\r\n}\r\n.side-menu .navbar-nav li a .glyphicon {\r\n  padding-right: 10px;\r\n}\r\n.side-menu #dropdown {\r\n  border: 0;\r\n  margin-bottom: 0;\r\n  border-radius: 0;\r\n  background-color: transparent;\r\n  -webkit-box-shadow: none;\r\n          box-shadow: none;\r\n}\r\n.side-menu #dropdown .caret {\r\n  float: right;\r\n  margin: 9px 5px 0;\r\n}\r\n.side-menu #dropdown .indicator {\r\n  float: right;\r\n}\r\n.side-menu #dropdown > a {\r\n  border-bottom: 1px solid #e7e7e7;\r\n}\r\n.side-menu #dropdown .panel-body {\r\n  padding: 0;\r\n  background-color: #f3f3f3;\r\n}\r\n.side-menu #dropdown .panel-body .navbar-nav {\r\n  width: 100%;\r\n}\r\n.side-menu #dropdown .panel-body .navbar-nav li {\r\n  padding-left: 15px;\r\n  border-bottom: 1px solid #e7e7e7;\r\n}\r\n.side-menu #dropdown .panel-body .navbar-nav li:last-child {\r\n  border-bottom: none;\r\n}\r\n.side-menu #dropdown .panel-body .panel > a {\r\n  margin-left: -20px;\r\n  padding-left: 35px;\r\n}\r\n.side-menu #dropdown .panel-body .panel-body {\r\n  margin-left: -15px;\r\n}\r\n.side-menu #dropdown .panel-body .panel-body li {\r\n  padding-left: 30px;\r\n}\r\n.side-menu #dropdown .panel-body .panel-body li:last-child {\r\n  border-bottom: 1px solid #e7e7e7;\r\n}\r\n.side-menu #search-trigger {\r\n  background-color: #f3f3f3;\r\n  border: 0;\r\n  border-radius: 0;\r\n  position: absolute;\r\n  top: 0;\r\n  right: 0;\r\n  padding: 15px 18px;\r\n}\r\n.side-menu .brand-name-wrapper {\r\n  min-height: 50px;\r\n}\r\n.side-menu .brand-name-wrapper .navbar-brand {\r\n  display: block;\r\n}\r\n.side-menu #search {\r\n  position: relative;\r\n  z-index: 1000;\r\n}\r\n.side-menu #search .panel-body {\r\n  padding: 0;\r\n}\r\n.side-menu #search .panel-body .navbar-form {\r\n  padding: 0;\r\n  padding-right: 50px;\r\n  width: 100%;\r\n  margin: 0;\r\n  position: relative;\r\n  border-top: 1px solid #e7e7e7;\r\n}\r\n.side-menu #search .panel-body .navbar-form .form-group {\r\n  width: 100%;\r\n  position: relative;\r\n}\r\n.side-menu #search .panel-body .navbar-form input {\r\n  border: 0;\r\n  border-radius: 0;\r\n  -webkit-box-shadow: none;\r\n          box-shadow: none;\r\n  width: 100%;\r\n  height: 50px;\r\n}\r\n.side-menu #search .panel-body .navbar-form .btn {\r\n  position: absolute;\r\n  right: 0;\r\n  top: 0;\r\n  border: 0;\r\n  border-radius: 0;\r\n  background-color: #f3f3f3;\r\n  padding: 15px 18px;\r\n}\r\n/* Main body section */\r\n.side-body {\r\n  margin-left: 310px;\r\n}\r\n/* small screen */\r\n@media (max-width: 768px) {\r\n  .side-menu {\r\n    position: relative;\r\n    width: 100%;\r\n    height: 0;\r\n    border-right: 0;\r\n    border-bottom: 1px solid #e7e7e7;\r\n  }\r\n  .side-menu .brand-name-wrapper .navbar-brand {\r\n    display: inline-block;\r\n  }\r\n  /* Slide in animation */\r\n  @-webkit-keyframes slidein {\r\n    0% {\r\n      left: -300px;\r\n    }\r\n    100% {\r\n      left: 10px;\r\n    }\r\n  }\r\n  @keyframes slidein {\r\n    0% {\r\n      left: -300px;\r\n    }\r\n    100% {\r\n      left: 10px;\r\n    }\r\n  }\r\n  @-webkit-keyframes slideout {\r\n    0% {\r\n      left: 0;\r\n    }\r\n    100% {\r\n      left: -300px;\r\n    }\r\n  }\r\n  @keyframes slideout {\r\n    0% {\r\n      left: 0;\r\n    }\r\n    100% {\r\n      left: -300px;\r\n    }\r\n  }\r\n  /* Slide side menu*/\r\n  /* Add .absolute-wrapper.slide-in for scrollable menu -> see top comment */\r\n  .side-menu-container > .navbar-nav.slide-in {\r\n    -webkit-animation: slidein 300ms forwards;\r\n    animation: slidein 300ms forwards;\r\n    -webkit-transform-style: preserve-3d;\r\n    transform-style: preserve-3d;\r\n  }\r\n  .side-menu-container > .navbar-nav {\r\n    /* Add position:absolute for scrollable menu -> see top comment */\r\n    position: fixed;\r\n    left: -300px;\r\n    width: 300px;\r\n    top: 43px;\r\n    height: 100%;\r\n    border-right: 1px solid #e7e7e7;\r\n    background-color: #f8f8f8;\r\n    -webkit-animation: slideout 300ms forwards;\r\n    animation: slideout 300ms forwards;\r\n    -webkit-transform-style: preserve-3d;\r\n    transform-style: preserve-3d;\r\n  }\r\n  /* Uncomment for scrollable menu -> see top comment */\r\n  /*.absolute-wrapper{\r\n        width:285px;\r\n        -moz-animation: slideout 300ms forwards;\r\n        -o-animation: slideout 300ms forwards;\r\n        -webkit-animation: slideout 300ms forwards;\r\n        animation: slideout 300ms forwards;\r\n        -webkit-transform-style: preserve-3d;\r\n        transform-style: preserve-3d;\r\n    }*/\r\n  @-webkit-keyframes bodyslidein {\r\n    0% {\r\n      left: 0;\r\n    }\r\n    100% {\r\n      left: 300px;\r\n    }\r\n  }\r\n  @keyframes bodyslidein {\r\n    0% {\r\n      left: 0;\r\n    }\r\n    100% {\r\n      left: 300px;\r\n    }\r\n  }\r\n  @-webkit-keyframes bodyslideout {\r\n    0% {\r\n      left: 300px;\r\n    }\r\n    100% {\r\n      left: 0;\r\n    }\r\n  }\r\n  @keyframes bodyslideout {\r\n    0% {\r\n      left: 300px;\r\n    }\r\n    100% {\r\n      left: 0;\r\n    }\r\n  }\r\n  /* Slide side body*/\r\n  .side-body {\r\n    margin-left: 5px;\r\n    margin-top: 70px;\r\n    position: relative;\r\n    -webkit-animation: bodyslideout 300ms forwards;\r\n    animation: bodyslideout 300ms forwards;\r\n    -webkit-transform-style: preserve-3d;\r\n    transform-style: preserve-3d;\r\n  }\r\n  .body-slide-in {\r\n    -webkit-animation: bodyslidein 300ms forwards;\r\n    animation: bodyslidein 300ms forwards;\r\n    -webkit-transform-style: preserve-3d;\r\n    transform-style: preserve-3d;\r\n  }\r\n  /* Hamburger */\r\n  .navbar-toggle {\r\n    border: 0;\r\n    float: left;\r\n    padding: 18px;\r\n    margin: 0;\r\n    border-radius: 0;\r\n    background-color: #f3f3f3;\r\n  }\r\n  /* Search */\r\n  #search .panel-body .navbar-form {\r\n    border-bottom: 0;\r\n  }\r\n  #search .panel-body .navbar-form .form-group {\r\n    margin: 0;\r\n  }\r\n  .navbar-header {\r\n    /* this is probably redundant */\r\n    position: fixed;\r\n    z-index: 3;\r\n    background-color: #f8f8f8;\r\n  }\r\n  /* Dropdown tweek */\r\n  #dropdown .panel-body .navbar-nav {\r\n    margin: 0;\r\n  }\r\n}\r\n/*------------------- Loading icon css -----------------*/\r\n.loading {\r\n  position: absolute;\r\n  top: 0;\r\n  height: 100%;\r\n  width: 100%;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  background: #ffffff61;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\r\n}\r\n.lds-roller {\r\n  display: inline-block;\r\n  position: relative;\r\n  width: 64px;\r\n  height: 64px;\r\n}\r\n.lds-roller div {\r\n  -webkit-animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;\r\n          animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;\r\n  -webkit-transform-origin: 32px 32px;\r\n          transform-origin: 32px 32px;\r\n}\r\n.lds-roller div:after {\r\n  content: \" \";\r\n  display: block;\r\n  position: absolute;\r\n  width: 6px;\r\n  height: 6px;\r\n  border-radius: 50%;\r\n  background: #000000;\r\n  margin: -3px 0 0 -3px;\r\n}\r\n.lds-roller div:nth-child(1) {\r\n  -webkit-animation-delay: -0.036s;\r\n          animation-delay: -0.036s;\r\n}\r\n.lds-roller div:nth-child(1):after {\r\n  top: 50px;\r\n  left: 50px;\r\n}\r\n.lds-roller div:nth-child(2) {\r\n  -webkit-animation-delay: -0.072s;\r\n          animation-delay: -0.072s;\r\n}\r\n.lds-roller div:nth-child(2):after {\r\n  top: 54px;\r\n  left: 45px;\r\n}\r\n.lds-roller div:nth-child(3) {\r\n  -webkit-animation-delay: -0.108s;\r\n          animation-delay: -0.108s;\r\n}\r\n.lds-roller div:nth-child(3):after {\r\n  top: 57px;\r\n  left: 39px;\r\n}\r\n.lds-roller div:nth-child(4) {\r\n  -webkit-animation-delay: -0.144s;\r\n          animation-delay: -0.144s;\r\n}\r\n.lds-roller div:nth-child(4):after {\r\n  top: 58px;\r\n  left: 32px;\r\n}\r\n.lds-roller div:nth-child(5) {\r\n  -webkit-animation-delay: -0.18s;\r\n          animation-delay: -0.18s;\r\n}\r\n.lds-roller div:nth-child(5):after {\r\n  top: 57px;\r\n  left: 25px;\r\n}\r\n.lds-roller div:nth-child(6) {\r\n  -webkit-animation-delay: -0.216s;\r\n          animation-delay: -0.216s;\r\n}\r\n.lds-roller div:nth-child(6):after {\r\n  top: 54px;\r\n  left: 19px;\r\n}\r\n.lds-roller div:nth-child(7) {\r\n  -webkit-animation-delay: -0.252s;\r\n          animation-delay: -0.252s;\r\n}\r\n.lds-roller div:nth-child(7):after {\r\n  top: 50px;\r\n  left: 14px;\r\n}\r\n.lds-roller div:nth-child(8) {\r\n  -webkit-animation-delay: -0.288s;\r\n          animation-delay: -0.288s;\r\n}\r\n.lds-roller div:nth-child(8):after {\r\n  top: 45px;\r\n  left: 10px;\r\n}\r\n@-webkit-keyframes lds-roller {\r\n  0% {\r\n    -webkit-transform: rotate(0deg);\r\n            transform: rotate(0deg);\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(360deg);\r\n            transform: rotate(360deg);\r\n  }\r\n}\r\n@keyframes lds-roller {\r\n  0% {\r\n    -webkit-transform: rotate(0deg);\r\n            transform: rotate(0deg);\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(360deg);\r\n            transform: rotate(360deg);\r\n  }\r\n}\r\n/* -------------------- Loading end --------------------*/\r\n", ""]);
 
 // exports
 
@@ -802,7 +856,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default\">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\n        <span class=\"sr-only\">Menu</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand\" routerLink=\"/homepage\">Brand</a>\n    </div>\n    <div id=\"navbar\" class=\"navbar-collapse collapse\">\n      <ul class=\"nav navbar-nav left\">\n        <li routerLinkActive=\"active\">\n          <a routerLink=\"/book-catelog\" class=\"blink\">Book Catelog</a>\n        </li>\n        <li><a routerLink=\"/categories\">Categories</a></li>\n      </ul>\n      <ul class=\"nav navbar-nav navbar-right\" *ngIf=\"!authService.isAuthenticated()\">\n        <li><a routerLink=\"/login\"><b>Login</b></a></li>\n      </ul>\n      <ul class=\"nav navbar-nav navbar-right\" *ngIf=\"authService.isAuthenticated()\">\n        <li><a>{{ user['email'] }}</a></li>\n        <li>\n          <a class=\"pointer\" (click)=\"logout()\">Logout</a>\n        </li>\n      </ul>\n    </div>\n  </div>\n</nav>\n"
+module.exports = "\n<div class=\"side-menu\" *ngIf=\"authService.isAuthenticated()\">\n\n  <nav class=\"navbar navbar-default\" role=\"navigation\">\n    <!-- Brand and toggle get grouped for better mobile display -->\n    <div class=\"navbar-header\">\n      <div class=\"brand-wrapper\">\n        <!-- Hamburger -->\n        <button type=\"button\" class=\"navbar-toggle\">\n          <span class=\"sr-only\">Toggle navigation</span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n        </button>\n\n        <!-- Brand -->\n        <div class=\"brand-name-wrapper\">\n          <a class=\"navbar-brand\" routerLink=\"/homepage\"\n             [queryParams]=\"{page: 1, max_results: 15, sort: '-_updated'}\">\n            Brand\n          </a>\n        </div>\n\n        <!-- Search -->\n        <a data-toggle=\"collapse\" href=\"#search\" class=\"btn btn-default\" id=\"search-trigger\">\n          <span class=\"glyphicon glyphicon-user\"></span>\n        </a>\n\n        <!-- Search body -->\n        <div id=\"search\" class=\"panel-collapse collapse\">\n          <div class=\"panel-body\">\n            <ul class=\"nav navbar-nav\">\n              <li routerLinkActive=\"active\">\n                <a>\n                  <span class=\"glyphicon glyphicon-grain\"></span> Settings\n                </a>\n              </li>\n              <li>\n                <a (click)=\"logout()\">\n                  <span class=\"glyphicon glyphicon-log-out\"></span> Logout\n                </a>\n              </li>\n            </ul>\n          </div>\n        </div>\n      </div>\n\n    </div>\n\n    <!-- Main Menu -->\n    <div class=\"side-menu-container\">\n      <ul class=\"nav navbar-nav\">\n        <li routerLinkActive=\"active\">\n          <a routerLink=\"/book-catelog\">\n            <span class=\"glyphicon glyphicon-book\"></span> Publish Book\n          </a>\n        </li>\n        <li routerLinkActive=\"active\">\n          <a routerLink=\"/homepage\"\n               [queryParams]=\"{page: 1, max_results: 15, sort: '-_updated'}\">\n            <span class=\"glyphicon glyphicon-send\"></span> Books\n          </a>\n        </li>\n        <li routerLinkActive=\"active\">\n          <a routerLink=\"/categories\"><span class=\"glyphicon glyphicon-plane\"></span> Categories</a>\n        </li>\n        <li routerLinkActive=\"active\"><a routerLink=\"/persons\"><span class=\"glyphicon glyphicon-cloud\"></span> Persons</a></li>\n        <!-- Dropdown-->\n        <!--<li class=\"panel panel-default\" id=\"dropdown\">\n          <a data-toggle=\"collapse\" href=\"#dropdown-lvl1\">\n            <span class=\"glyphicon glyphicon-user\"></span> Sub Level <span class=\"caret\"></span>\n          </a>\n\n          &lt;!&ndash; Dropdown level 1 &ndash;&gt;\n          <div id=\"dropdown-lvl1\" class=\"panel-collapse collapse\">\n            <div class=\"panel-body\">\n              <ul class=\"nav navbar-nav\">\n                <li><a href=\"#\">Link</a></li>\n                <li><a href=\"#\">Link</a></li>\n                <li><a href=\"#\">Link</a></li>\n\n                &lt;!&ndash; Dropdown level 2 &ndash;&gt;\n                <li class=\"panel panel-default\" id=\"dropdown\">\n                  <a data-toggle=\"collapse\" href=\"#dropdown-lvl2\">\n                    <span class=\"glyphicon glyphicon-off\"></span> Sub Level <span class=\"caret\"></span>\n                  </a>\n                  <div id=\"dropdown-lvl2\" class=\"panel-collapse collapse\">\n                    <div class=\"panel-body\">\n                      <ul class=\"nav navbar-nav\">\n                        <li><a href=\"#\">Link</a></li>\n                        <li><a href=\"#\">Link</a></li>\n                        <li><a href=\"#\">Link</a></li>\n                      </ul>\n                    </div>\n                  </div>\n                </li>\n              </ul>\n            </div>\n          </div>\n        </li>-->\n        <li routerLinkActive=\"active\"><a routerLink=\"/orders\"><span class=\"glyphicon glyphicon-signal\"></span> Orders</a></li>\n\n      </ul>\n    </div><!-- /.navbar-collapse -->\n  </nav>\n\n</div>\n\n<!-- Main Content -->\n<div class=\"container-fluid\">\n  <div class=\"side-body\">\n    <router-outlet></router-outlet>\n  </div>\n</div>\n\n<div class=\"loading\" *ngIf=\"appUrls.loadingIcon\">\n  <div class=\"lds-roller\"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>\n</div>\n"
 
 /***/ }),
 
@@ -877,7 +931,7 @@ var NavbarComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/persons/persons.component.css":
+/***/ "../../../../../src/app/orders/orders.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
@@ -885,7 +939,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "table tr th:nth-child(3), table tr td:nth-child(3) {\r\n  min-width: 60px !important;\r\n}\r\ntable tr td p {\r\n  margin-bottom: 0;\r\n}\r\ntable tr td, table tr td p {\r\n  font-size: 13px;\r\n}\r\ntextarea {\r\n  resize: none;\r\n}\r\n", ""]);
 
 // exports
 
@@ -895,21 +949,23 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ "../../../../../src/app/persons/persons.component.html":
+/***/ "../../../../../src/app/orders/orders.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <br>\r\n  <h5><b>{{ usersMeta.total }}</b> users in our database!</h5>\r\n  <ag-grid-angular #agGrid style=\"width: 100%; height: 700px;\" class=\"ag-theme-balham\"\r\n                   [gridOptions]=\"gridOptions\" [enableSorting]=\"true\"\r\n                   [enableFilter]=\"true\" [pagination]=\"true\" [rowSelection]=\"rowSelection\"\r\n                   [enableColResize]=\"true\" [suppressRowClickSelection]=\"true\">\r\n  </ag-grid-angular>\r\n</div>\r\n"
+module.exports = "<div>\n  <br>\n  <h5><b>Orders from the customers</b></h5>\n  <hr>\n  <div class=\"row\">\n    <div class=\"col-lg-3 col-md-3\">\n      <label>Sort by</label>\n      <select name=\"sort\" id=\"sort\" class=\"form-control\" [(ngModel)]=\"query['sort']\" (change)=\"changeParams(query)\">\n        <option value=\"-_updated\">Updated on</option>\n        <option value=\"-_created\">Created on</option>\n      </select>\n    </div>\n    <div class=\"col-lg-2 col-md-2\">\n      <label for=\"max_results\">Results per page</label>\n      <select name=\"max_results\" id=\"max_results\" class=\"form-control\"\n              [(ngModel)]=\"query.max_results\" (change)=\"changeParams(query)\">\n        <option value=\"15\">15</option>\n        <option value=\"30\">30</option>\n        <option value=\"50\">50</option>\n        <option value=\"100\">100</option>\n        <option value=\"150\">150</option>\n      </select>\n    </div>\n  </div>\n  <hr>\n  <!-- table stands -->\n  <div class=\"table-responsive\">\n    <table class=\"table table-bordered table-hover\">\n      <thead>\n        <tr>\n          <th>Action</th>\n          <th>Order Id</th>\n          <th>Ordered Books </th>\n          <th>Ordered Date</th>\n          <th>Delivery Date</th>\n          <th>Delivery Status</th>\n          <th>Customer</th>\n          <!--<th>Transaction ID</th>-->\n          <th>Shipping Address</th>\n          <th>Amount Paid</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let item of orders\" class=\"pointer\">\n          <td>\n            <button title=\"View {{ item['_id'] }}\" (click)=\"openModal(viewTemplate, item)\" class=\"btn btn-xs btn-default\">\n              <span class=\"glyphicon glyphicon-eye-open\"></span>\n            </button>\n            <button title=\"Update {{ item['_id'] }}\" (click)=\"openModal(editTemplate, item)\" class=\"btn btn-xs btn-default\">\n              <span class=\"glyphicon glyphicon-edit\"></span>\n            </button>\n          </td>\n          <td>{{ item['_id'] }}</td>\n          <td>{{ item['books'].length }}</td>\n          <td>{{ item['_created'] | date: 'dd/MM/yyyy hh:mm a' }}</td>\n          <td>{{ item['delivery_date'] | date: 'dd/MM/yyyy hh:mm a' }}</td>\n          <td>{{ item['delivery_status'] }}</td>\n          <td>{{ item['user_id']['first_name'] }}, {{ item['user_id']['last_name'] }}</td>\n          <!--<td>{{ item['transaction_id'] }}</td>-->\n          <td *ngIf=\"item['shipping_address']\">\n            <h5><b>{{ item['shipping_address']['name'] }}</b></h5>\n            <p>{{ item['shipping_address']['phone_number'] }}</p>\n            <p>{{ item['shipping_address']['address'] }}</p>\n            <p>{{ item['shipping_address']['city'] }}, {{ item['shipping_address']['state'] }}</p>\n            <p>{{ item['shipping_address']['pin_code'] }}</p>\n          </td>\n          <td>Rs. {{ item['total_amount'] }}</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n</div>\n\n\n\n<ng-template #viewTemplate>\n  <div class=\"modal-header\" *ngIf=\"modalItem\">\n    <h5 class=\"modal-title pull-left\">Order ID : {{ modalItem['_id'] }}</h5>\n    <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"modalRef.hide()\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\" *ngIf=\"modalItem\">\n    <div class=\"row\">\n      <div class=\"col-lg-12\">\n        <div class=\"table-responsive\">\n          <table class=\"table table-hover table-bordered\">\n            <tbody>\n            <tr>\n              <td>Order ID</td>\n              <td>{{ modalItem['_id'] }}</td>\n            </tr>\n            <tr *ngIf=\"modalItem['user_id']\">\n              <td>Customer</td>\n              <td>\n                <p>{{ modalItem['user_id']['first_name'] }}, {{ modalItem['user_id']['last_name'] }}</p>\n                <p>Email: {{ modalItem['user_id']['email'] }}, Phone: {{ modalItem['user_id']['mobile_number'] }}</p>\n              </td>\n            </tr>\n            <tr *ngIf=\"modalItem['books']\">\n              <td>\n                Ordered Books <strong>({{ modalItem['books'].length }})</strong>\n              </td>\n              <td>\n                <p *ngFor=\"let book of modalItem['books']\">\n                  <a target=\"_blank\"\n                     href=\"{{ appUrls.custUrl + 'book_details/' + parseTitle(book.book_title) + '/' + book.ISBN_13}}\">\n                    {{ book['book_title'] }}\n                  </a>\n                </p>\n              </td>\n            </tr>\n            <tr>\n              <td>Ordered Date</td>\n              <td>{{ modalItem['_created'] | date: 'dd/MM/yyyy hh:mm a' }}</td>\n            </tr>\n            <tr>\n              <td>Delivery Date</td>\n              <td>{{ modalItem['delivery_date'] | date: 'dd/MM/yyyy hh:mm a' }}</td>\n            </tr>\n            <tr>\n              <td>Delivery Status</td>\n              <td>{{ modalItem['delivery_status'] }}</td>\n            </tr>\n            <tr>\n              <td>Shipping Address</td>\n              <td *ngIf=\"modalItem['shipping_address']\">\n                <h5><b>{{ modalItem['shipping_address']['name'] }}</b></h5>\n                <p>{{ modalItem['shipping_address']['phone_number'] }}</p>\n                <p>{{ modalItem['shipping_address']['address'] }}</p>\n                <p>{{ modalItem['shipping_address']['city'] }}, {{ modalItem['shipping_address']['state'] }}</p>\n                <p>{{ modalItem['shipping_address']['pin_code'] }}</p>\n              </td>\n            </tr>\n            <tr>\n              <td>Amount paid</td>\n              <td><b>Rs. {{ modalItem['total_amount'] }}</b></td>\n            </tr>\n            <tr>\n              <td>Notes</td>\n              <td>{{ modalItem['notes'] }}</td>\n            </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n    </div>\n  </div>\n</ng-template>\n\n\n\n<ng-template #editTemplate>\n  <div class=\"modal-header\" *ngIf=\"modalItem\">\n    <h4 class=\"modal-title pull-left\">Order ID : {{ modalItem['_id'] }}</h4>\n    <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"modalRef.hide()\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\" *ngIf=\"modalItem\">\n    <div class=\"row\">\n      <div class=\"col-lg-8\">\n        <form (submit)=\"updateOrder(modalItem)\" name=\"update_order\">\n          <div class=\"form-group\">\n            <label>Delivery Status</label>\n            <input type=\"text\" class=\"form-control\" placeholder=\"Delivery status\"\n                   name=\"delivery_status\" [(ngModel)]=\"modalItem['delivery_status']\">\n          </div>\n          <div class=\"form-group\">\n            <label for=\"notes\">Notes</label>\n            <textarea name=\"notes\" id=\"notes\" rows=\"4\" class=\"form-control\"\n                      [(ngModel)]=\"modalItem['notes']\" placeholder=\"Notes\"></textarea>\n          </div>\n          <div class=\"form-group\">\n            <button type=\"submit\" class=\"btn btn-primary btn-sm\">Update</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</ng-template>\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/persons/persons.component.ts":
+/***/ "../../../../../src/app/orders/orders.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PersonsComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrdersComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ngx_bootstrap__ = __webpack_require__("../../../../ngx-bootstrap/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -922,30 +978,228 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
+var OrdersComponent = /** @class */ (function () {
+    function OrdersComponent(appService, router, appUrls, activatedRoute, modalService) {
+        var _this = this;
+        this.appService = appService;
+        this.router = router;
+        this.appUrls = appUrls;
+        this.activatedRoute = activatedRoute;
+        this.modalService = modalService;
+        this.embedded = { user_id: 1 };
+        this.query = {
+            sort: '-_created', page: 1, max_results: 15,
+            embedded: JSON.stringify(this.embedded)
+        };
+        this.orders = [];
+        this._meta = {};
+        this.activatedRoute.queryParams.subscribe(function (parameters) {
+            var where = {}, params = parameters;
+            console.log(params);
+            if (Object.keys(parameters).length === 0) {
+                _this.router.navigate(['/orders'], { queryParams: _this.query });
+            }
+            else {
+                _this.query = Object.assign({}, params);
+                _this.getOrders();
+            }
+        });
+    }
+    OrdersComponent.prototype.ngOnInit = function () {
+    };
+    OrdersComponent.prototype.parseTitle = function (title) {
+        return title.replace(/\//g, '').replace(/ /g, '-');
+    };
+    OrdersComponent.prototype.openModal = function (template, item) {
+        var _this = this;
+        this.modalRef = this.modalService.show(template);
+        var query = { embedded: { user_id: 1, books: 1 } };
+        this.appService.get(this.appUrls.orders + '/' + item['_id'], query)
+            .subscribe(function (data) {
+            console.log(data);
+            _this.modalItem = data;
+        }, function (err) {
+            console.log(err);
+        });
+    };
+    OrdersComponent.prototype.stopLoading = function () {
+        var _this = this;
+        setTimeout(function () {
+            _this.appUrls.loadingIcon = false;
+        }, 500);
+    };
+    OrdersComponent.prototype.changeParams = function (filter) {
+        console.log(this.query, '-------', filter);
+        this.router.navigate(['/orders'], { queryParams: this.query });
+    };
+    OrdersComponent.prototype.getOrders = function () {
+        var _this = this;
+        this.appUrls.loadingIcon = true;
+        this.appService.get(this.appUrls.orders, this.query).subscribe(function (data) {
+            console.log(data);
+            _this.orders = data['_items'];
+            _this._meta = data['_meta'];
+            _this.stopLoading();
+        }, function (err) {
+            console.log(err);
+            _this.stopLoading();
+        });
+    };
+    OrdersComponent.prototype.updateOrder = function (order) {
+        var _this = this;
+        console.log(order);
+        this.appService.update(this.appUrls.orders + '/' + order['_id'], order)
+            .subscribe(function (data) {
+            _this.appService.toast(order['_id'], 'Successfully Updated!', 's');
+            _this.modalRef.hide();
+        }, function (err) {
+            console.log(err);
+        });
+    };
+    OrdersComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-orders',
+            template: __webpack_require__("../../../../../src/app/orders/orders.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/orders/orders.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["a" /* AppServiceModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_3__config_constant_config__["a" /* AppUrls */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_4_ngx_bootstrap__["b" /* BsModalService */]])
+    ], OrdersComponent);
+    return OrdersComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/persons/persons.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".margin-5 {\r\n  margin-top: 5px;\r\n}\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/persons/persons.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"\">\r\n  <br>\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-3\">\r\n      <input type=\"text\" (keydown)=\"searchPersons(filter.search, $event)\"\r\n             class=\"form-control\" [(ngModel)]=\"filter.search\" placeholder=\"Search records from Database\">\r\n    </div>\r\n  </div>\r\n  <br>\r\n  <div class=\"table-responsive\">\r\n    <table class=\"table table-bordered\">\r\n      <thead>\r\n      <tr>\r\n        <th>Action</th>\r\n        <th>First name</th>\r\n        <th>Email</th>\r\n        <th>Phone</th>\r\n        <th>Status</th>\r\n        <th>City</th>\r\n        <th>Gender</th>\r\n        <th>Age</th>\r\n        <th>Registered on</th>\r\n      </tr>\r\n      </thead>\r\n      <tbody>\r\n      <tr class=\"pointer\" *ngFor=\"let item of persons; let index = index;\">\r\n        <td>\r\n          <button title=\"Delete {{ item['first_name'] }}\" class=\"btn btn-xs btn-danger\" (click)=\"deletePerson(item, index)\">\r\n            <span class=\"glyphicon glyphicon-trash\"></span>\r\n          </button>&nbsp;\r\n          <button title=\"Make {{ item['first_name'] }} as Inactive\"\r\n                  (click)=\"toggleStatus('inactive', item, index)\" *ngIf=\"item['status'] === 'active'\" class=\"btn btn-xs btn-default\">\r\n            <span class=\"glyphicon glyphicon-ban-circle\"></span>\r\n          </button>\r\n          <button title=\"Make {{ item['first_name'] }} as Active\"\r\n                  (click)=\"toggleStatus('active', item, index)\" *ngIf=\"item['status'] === 'inactive'\" class=\"btn btn-xs btn-default\">\r\n            <span class=\"glyphicon glyphicon-ok-circle\"></span>\r\n          </button>\r\n        </td>\r\n        <td>{{ item['first_name'] }}</td>\r\n        <td>{{ item['email'] }}</td>\r\n        <td>{{ item['mobile_number'] }}</td>\r\n        <td>{{ item['status'] }}</td>\r\n        <td>{{ item['city'] }}</td>\r\n        <td>{{ item['gender'] }}</td>\r\n        <td>{{ item['age'] }}</td>\r\n        <td>{{ item['created_date'] | date: 'dd/MM/yyyy hh:mm a' }}</td>\r\n      </tr>\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-1 col-md-1\">\r\n      <button class=\"btn btn-xs btn-default text-center\" (click)=\"pagination(usersMeta['page'] - 1)\">\r\n        <span class=\"glyphicon glyphicon-backward\"></span>\r\n      </button>&nbsp;\r\n      <button (click)=\"pagination(usersMeta['page'] + 1)\" class=\"btn btn-xs btn-default text-center\">\r\n        <span class=\"glyphicon glyphicon-forward\"></span>\r\n      </button>\r\n    </div>\r\n    <div class=\"col-lg-2 col-md-2 pull-right text-right\">\r\n      <h6 class=\"margin-5\">Total Records: <b>{{ usersMeta['total'] }}</b></h6>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/persons/persons.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PersonsComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
 var PersonsComponent = /** @class */ (function () {
-    function PersonsComponent(appService, appUrls) {
+    function PersonsComponent(appService, appUrls, activatedRoute, router) {
+        var _this = this;
         this.appService = appService;
         this.appUrls = appUrls;
+        this.activatedRoute = activatedRoute;
+        this.router = router;
         this.usersMeta = {};
-        this.gridOptions = {};
-        this.gridOptions.rowData = [];
-        this.rowSelection = 'multiple';
-        this.gridOptions.columnDefs = [
-            { headerName: 'Name', field: 'first_name' },
-            { headerName: 'Email', field: 'email' },
-            { headerName: 'Mobile', field: 'mobile_number' },
-            { headerName: 'Registered on ', field: '_created' },
-            { headerName: 'Gender', field: 'gender' },
-            { headerName: 'Status', field: 'status' }
-        ];
+        this.persons = [];
+        this.filter = { search: '' };
+        this.query = { max_results: 15, page: 1, sort: 'first_name' };
+        this.activatedRoute.queryParams.subscribe(function (params) {
+            if (Object.keys(params).length <= 0) {
+                _this.router.navigate(['/persons'], { queryParams: _this.query });
+            }
+            else {
+                _this.query = Object.assign({}, params);
+                _this.getPersons();
+            }
+        });
     }
-    PersonsComponent.prototype.ngOnInit = function () {
+    PersonsComponent.prototype.stopLoading = function () {
         var _this = this;
-        console.log(this.appUrls.books_list);
-        this.appService.get(this.appUrls.users).subscribe(function (data) {
+        setTimeout(function () {
+            _this.appUrls.loadingIcon = false;
+        }, 500);
+    };
+    PersonsComponent.prototype.pagination = function (page) {
+        this.query['page'] = page;
+        this.router.navigate(['/persons'], { queryParams: this.query });
+    };
+    PersonsComponent.prototype.toggleStatus = function (status, object, index) {
+        object['status'] = status;
+        this.persons[index] = object;
+        this.appService.toast(object['first_name'], 'Now ' + status, 's');
+        this.appService.update(this.appUrls.users + '/' + object['_id'], { status: status }).subscribe(function (success) {
+            console.log(success);
+        }, function (err) {
+            console.log(err);
+        });
+    };
+    PersonsComponent.prototype.deletePerson = function (item, index) {
+        this.persons.splice(index, 1);
+        this.appService.toast(item['first_name'], 'Deleted from Database', 's');
+        this.usersMeta['total'] = this.usersMeta['total'] - 1;
+        this.appService.delete(this.appUrls.users + '/' + item['_id']).subscribe(function (success) {
+            console.log(success);
+        }, function (err) {
+            console.log(err);
+        });
+    };
+    PersonsComponent.prototype.searchPersons = function (search, event) {
+        if (!event || event.keyCode === 13) {
+            if (search) {
+                this.query['where'] = JSON.stringify({ first_name: search });
+            }
+            else {
+                delete this.query['where'];
+            }
+            this.router.navigate(['/persons'], { queryParams: this.query });
+        }
+    };
+    PersonsComponent.prototype.ngOnInit = function () {
+        this.getPersons();
+    };
+    PersonsComponent.prototype.getPersons = function () {
+        var _this = this;
+        this.persons = [];
+        this.appUrls.loadingIcon = true;
+        this.appService.get(this.appUrls.users, this.query).subscribe(function (data) {
             console.log(data);
             _this.usersMeta = data['_meta'];
-            _this.gridOptions.api.setRowData(data['_items']);
+            _this.persons = data['_items'];
+            _this.stopLoading();
+        }, function (err) {
+            _this.stopLoading();
         });
     };
     PersonsComponent = __decorate([
@@ -954,7 +1208,10 @@ var PersonsComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/persons/persons.component.html"),
             styles: [__webpack_require__("../../../../../src/app/persons/persons.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["a" /* AppServiceModule */], __WEBPACK_IMPORTED_MODULE_2__config_constant_config__["a" /* AppUrls */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["a" /* AppServiceModule */],
+            __WEBPACK_IMPORTED_MODULE_2__config_constant_config__["a" /* AppUrls */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]])
     ], PersonsComponent);
     return PersonsComponent;
 }());
@@ -984,7 +1241,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/publish-book/publish-book.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <h3>Book Catelog with ISBN number</h3>\r\n\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-4\">\r\n      <form (submit)=\"getBookDetails(isbnSearch)\" >\r\n        <div class=\"form-group\">\r\n          <input id=\"isbnInput\" onClick=\"javascript:this.form.isbn.select();\" type=\"text\"\r\n                  class=\"form-control\" placeholder=\"Enter ISBN number\"\r\n                  name=\"isbn\" [(ngModel)]=\"isbnSearch\" required=\"required\" autocomplete=\"off\" />\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <button type=\"submit\" class=\"btn btn-default btn-sm\">Get Details</button>\r\n        </div>\r\n      </form>\r\n    </div>\r\n  </div>\r\n\r\n  <hr>\r\n  <form [formGroup]=\"bookForm\" (submit)=\"postBookDetails(bookForm.value)\">\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-4\">\r\n        <div class=\"form-group\">\r\n          <label for=\"title\">Book Title</label>\r\n          <input type=\"text\" id=\"title\" class=\"form-control\" placeholder=\"Book title\"\r\n                 formControlName=\"book_title\" required />\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"sub_title\">Sub Title</label>\r\n          <input type=\"text\" id=\"sub_title\" class=\"form-control\" placeholder=\"Sub title\"\r\n                 formControlName=\"sub_title\" />\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"summary\">Book Summary</label>\r\n          <textarea type=\"text\" id=\"summary\" class=\"form-control\" placeholder=\"Book Summary\"\r\n                    formControlName=\"book_summary\" rows=\"2\"></textarea>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"keywords\">Book Keywords</label>\r\n          <textarea type=\"text\" id=\"keywords\" class=\"form-control\" placeholder=\"Book keywords\"\r\n                    formControlName=\"book_keywords\" rows=\"2\"></textarea>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"pages\">No.of Pages</label>\r\n          <input type=\"text\" id=\"pages\" class=\"form-control\" placeholder=\"No.of Pages\"\r\n                 formControlName=\"no_of_pages\" />\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"Author\">Authors</label>\r\n          <input type=\"text\" id=\"Author\" class=\"form-control\" placeholder=\"Author\" formControlName=\"book_authors\" />\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"book_author_desc\">Book Author Description</label>\r\n          <textarea formControlName=\"book_author_desc\" id=\"book_author_desc\" rows=\"2\"\r\n                    placeholder=\"Book Author Description\" class=\"form-control\"></textarea>\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <label for=\"Availability\">Availability</label>\r\n          <select formControlName=\"availability\" id=\"Availability\" class=\"form-control\">\r\n            <option *ngFor=\"let av of trueFalseArray\" value=\"{{ av.val }}\">{{ av.text }}</option>\r\n          </select>\r\n        </div>\r\n      </div>\r\n      <div class=\"col-lg-4\">\r\n        <div class=\"form-group\">\r\n          <label for=\"hcopy_price\">Hard copy Price</label>\r\n          <input type=\"number\" id=\"hcopy_price\" class=\"form-control\"\r\n                 placeholder=\"Hard copy Price\" formControlName=\"hcopy_price\" />\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <label for=\"ecopy_price\">E-copy Price</label>\r\n          <input type=\"number\" id=\"ecopy_price\" class=\"form-control\"\r\n                 placeholder=\"E-copy Price\" formControlName=\"ecopy_price\" />\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"book_image\">Book Image</label>\r\n          <input type=\"file\" (change)=\"fileChangeEvent($event)\" #imageUpload id=\"book_image\"\r\n                 class=\"form-control\" placeholder=\"Book Image\" required />\r\n        </div>\r\n\r\n        <div class=\"form-group image-preview\" *ngIf=\"imagePreview['src']\">\r\n          <img src=\"{{ imagePreview.src }}\" alt=\"{{ imagePreview.title }}\">\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"m_group\">Book Category</label>\r\n          <select name=\"m_group\" id=\"m_group\" formControlName=\"book_categories\" class=\"form-control\">\r\n            <option *ngFor=\"let item of categories\" value=\"{{ item._id }}\">{{ item.category_name }}</option>\r\n          </select>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"language\">Language</label>\r\n          <select formControlName=\"language\" id=\"language\" class=\"form-control\">\r\n            <option *ngFor=\"let av of languages\" value=\"{{ av.val }}\">{{ av.text }}</option>\r\n          </select>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"publisher\">Publisher</label>\r\n          <input type=\"text\" id=\"publisher\" class=\"form-control\" placeholder=\"Publisher\" formControlName=\"publisher\" />\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <label for=\"ISBN\">ISBN 10</label>\r\n          <input type=\"text\" id=\"ISBN\" class=\"form-control\" placeholder=\"ISBN\" formControlName=\"ISBN_10\" />\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <label for=\"ISBN_13\">ISBN 13</label>\r\n          <input type=\"text\" id=\"ISBN_13\" class=\"form-control\" placeholder=\"ISBN\" formControlName=\"ISBN_13\" />\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"published_date\">Published date</label>\r\n          <!--<input type=\"text\" id=\"published_date\" class=\"form-control\" placeholder=\"Published date\"\r\n                 formControlName=\"published_date\" />-->\r\n          <input type=\"text\" required id=\"published_date\" placeholder=\"Published date\" class=\"form-control\" bsDatepicker\r\n            formControlName=\"published_date\" />\r\n        </div>\r\n\r\n      </div> <!-- end col -->\r\n      <div class=\"col-lg-4\">\r\n        <h5 class=\"text-uppercase\" style=\"color: orangered;\"><b>Do you have E-Book?</b></h5>\r\n        <div class=\"form-group\">\r\n          <label for=\"e-book\">E-Book</label>\r\n          <input type=\"file\" class=\"form-control\" placeholder=\"E-book\" formControlName=\"ebook\" id=\"e-book\" />\r\n        </div>\r\n      </div> <!-- end col -->\r\n    </div> <!-- end row -->\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-3\">\r\n        <button type=\"submit\" class=\"btn btn-sm btn-primary\">Publish</button>\r\n        <button class=\"btn-default btn-sm btn\" type=\"reset\">Cancel</button>\r\n      </div>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
+module.exports = "<div class=\"\">\r\n  <h3>Book Catelog with ISBN number</h3>\r\n\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-4\">\r\n      <form (submit)=\"getBookDetails(isbnSearch)\" >\r\n        <div class=\"form-group\">\r\n          <input id=\"isbnInput\" onClick=\"javascript:this.form.isbn.select();\" type=\"text\"\r\n                  class=\"form-control\" placeholder=\"Enter ISBN number\"\r\n                  name=\"isbn\" [(ngModel)]=\"isbnSearch\" required=\"required\" autocomplete=\"off\" />\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <button type=\"submit\" class=\"btn btn-default btn-sm\">Get Details</button>\r\n        </div>\r\n      </form>\r\n    </div>\r\n  </div>\r\n\r\n  <hr>\r\n  <form [formGroup]=\"bookForm\" (submit)=\"postBookDetails(bookForm.value)\">\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-4\">\r\n        <div class=\"form-group\">\r\n          <label for=\"title\">Book Title</label>\r\n          <input type=\"text\" id=\"title\" class=\"form-control\" placeholder=\"Book title\"\r\n                 formControlName=\"book_title\" required />\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"sub_title\">Sub Title</label>\r\n          <input type=\"text\" id=\"sub_title\" class=\"form-control\" placeholder=\"Sub title\"\r\n                 formControlName=\"sub_title\" />\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"summary\">Book Summary</label>\r\n          <textarea type=\"text\" id=\"summary\" class=\"form-control\" placeholder=\"Book Summary\"\r\n                    formControlName=\"book_summary\" rows=\"2\"></textarea>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"keywords\">Book Keywords</label>\r\n          <textarea type=\"text\" id=\"keywords\" class=\"form-control\" placeholder=\"Book keywords\"\r\n                    formControlName=\"book_keywords\" rows=\"2\"></textarea>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"pages\">No.of Pages</label>\r\n          <input type=\"text\" id=\"pages\" class=\"form-control\" placeholder=\"No.of Pages\"\r\n                 formControlName=\"no_of_pages\" />\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"Author\">Authors</label>\r\n          <input type=\"text\" id=\"Author\" class=\"form-control\" placeholder=\"Author\" formControlName=\"book_authors\" />\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"book_author_desc\">Book Author Description</label>\r\n          <textarea formControlName=\"book_author_desc\" id=\"book_author_desc\" rows=\"2\"\r\n                    placeholder=\"Book Author Description\" class=\"form-control\"></textarea>\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <label for=\"Availability\">Availability</label>\r\n          <select formControlName=\"availability\" id=\"Availability\" class=\"form-control\">\r\n            <option *ngFor=\"let av of trueFalseArray\" value=\"{{ av.val }}\">{{ av.text }}</option>\r\n          </select>\r\n        </div>\r\n      </div>\r\n      <div class=\"col-lg-4\">\r\n        <div class=\"form-group\">\r\n          <label for=\"hcopy_price\">Hard copy Price</label>\r\n          <input type=\"number\" id=\"hcopy_price\" class=\"form-control\"\r\n                 placeholder=\"Hard copy Price\" formControlName=\"hcopy_price\" />\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <label for=\"ecopy_price\">E-copy Price</label>\r\n          <input type=\"number\" id=\"ecopy_price\" class=\"form-control\"\r\n                 placeholder=\"E-copy Price\" formControlName=\"ecopy_price\" />\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"book_image\">Book Image</label>\r\n          <input type=\"file\" (change)=\"fileChangeEvent($event)\" #imageUpload id=\"book_image\"\r\n                 class=\"form-control\" placeholder=\"Book Image\" required />\r\n        </div>\r\n\r\n        <div class=\"form-group image-preview\" *ngIf=\"imagePreview['src']\">\r\n          <img src=\"{{ imagePreview.src }}\" alt=\"{{ imagePreview.title }}\">\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"m_group\">Book Category</label>\r\n          <select name=\"m_group\" id=\"m_group\" formControlName=\"book_categories\" class=\"form-control\">\r\n            <option *ngFor=\"let item of categories\" value=\"{{ item._id }}\">{{ item.category_name }}</option>\r\n          </select>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"language\">Language</label>\r\n          <select formControlName=\"language\" id=\"language\" class=\"form-control\">\r\n            <option *ngFor=\"let av of languages\" value=\"{{ av.val }}\">{{ av.text }}</option>\r\n          </select>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"publisher\">Publisher</label>\r\n          <input type=\"text\" id=\"publisher\" class=\"form-control\" placeholder=\"Publisher\" formControlName=\"publisher\" />\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <label for=\"ISBN\">ISBN 10</label>\r\n          <input type=\"text\" id=\"ISBN\" class=\"form-control\" placeholder=\"ISBN\" formControlName=\"ISBN_10\" />\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <label for=\"ISBN_13\">ISBN 13</label>\r\n          <input type=\"text\" id=\"ISBN_13\" class=\"form-control\" placeholder=\"ISBN\" formControlName=\"ISBN_13\" />\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"published_date\">Published date</label>\r\n          <!--<input type=\"text\" id=\"published_date\" class=\"form-control\" placeholder=\"Published date\"\r\n                 formControlName=\"published_date\" />-->\r\n          <input type=\"text\" required id=\"published_date\" placeholder=\"Published date\" class=\"form-control\" bsDatepicker\r\n            formControlName=\"published_date\" />\r\n        </div>\r\n\r\n      </div> <!-- end col -->\r\n      <div class=\"col-lg-4\">\r\n        <div class=\"form-group\">\r\n          <label>No.of Copies</label>\r\n          <input type=\"number\" class=\"form-control\" formControlName=\"no_of_copies\" placeholder=\"No.of Copies\">\r\n        </div>\r\n        <h5 class=\"text-uppercase\" style=\"color: orangered;\"><b>Do you have E-Book?</b></h5>\r\n        <div class=\"form-group\">\r\n          <label for=\"e-book\">E-Book</label>\r\n          <input type=\"file\"  (change)=\"eBookChangeEvent($event)\" #eBookUpload class=\"form-control\"\r\n                 placeholder=\"E-book\" id=\"e-book\" />\r\n        </div>\r\n      </div> <!-- end col -->\r\n    </div> <!-- end row -->\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-3\">\r\n        <button type=\"submit\" class=\"btn btn-sm btn-primary\">Publish</button>\r\n        <button class=\"btn-default btn-sm btn\" type=\"reset\">Cancel</button>\r\n      </div>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -997,6 +1254,7 @@ module.exports = "<div class=\"container\">\r\n  <h3>Book Catelog with ISBN numb
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1010,11 +1268,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var PublishBookComponent = /** @class */ (function () {
-    function PublishBookComponent(appService, langs, appUrls) {
+    function PublishBookComponent(appService, langs, appUrls, router) {
         this.appService = appService;
         this.langs = langs;
         this.appUrls = appUrls;
+        this.router = router;
         this.bookInfo = {};
         this.googleBookInfo = {};
         this.categories = [];
@@ -1035,10 +1295,10 @@ var PublishBookComponent = /** @class */ (function () {
             publisher: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
             ISBN_10: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
             ISBN_13: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
-            ebook: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](''),
             published_date: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
             image_small_thumbnail: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
-            image_thumbnail: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required)
+            image_thumbnail: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
+            no_of_copies: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](1, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required)
         });
     }
     PublishBookComponent.prototype.ngOnInit = function () {
@@ -1051,6 +1311,7 @@ var PublishBookComponent = /** @class */ (function () {
     };
     PublishBookComponent.prototype.getBookDetails = function (isbnNumber) {
         var _this = this;
+        this.appUrls.loadingIcon = true;
         if (!isbnNumber) {
             return;
         }
@@ -1071,7 +1332,7 @@ var PublishBookComponent = /** @class */ (function () {
                 _this.bookInfo['book_title'] = _this.googleBookInfo['title'];
                 _this.bookInfo['sub_title'] = _this.googleBookInfo['subtitle'];
                 _this.bookInfo['publisher'] = _this.googleBookInfo['publisher'];
-                // this.bookInfo['published_date'] = this.googleBookInfo['publishedDate'];
+                _this.bookInfo['published_date'] = new Date(_this.googleBookInfo['publishedDate']).toLocaleString().split(',')[0];
                 /*if (this.googleBookInfo['categories']) {
                   this.bookInfo['book_category'] = this.googleBookInfo.categories.toString();
                 }*/
@@ -1089,10 +1350,18 @@ var PublishBookComponent = /** @class */ (function () {
                 }
                 console.log(_this.bookInfo);
                 _this.bookForm.patchValue(_this.bookInfo);
+                _this.stopLoading();
             }
         }, function (err) {
             console.log(err);
+            _this.stopLoading();
         });
+    };
+    PublishBookComponent.prototype.stopLoading = function () {
+        var _this = this;
+        setTimeout(function () {
+            _this.appUrls.loadingIcon = false;
+        }, 500);
     };
     PublishBookComponent.prototype.fileChangeEvent = function (event) {
         var _this = this;
@@ -1106,6 +1375,14 @@ var PublishBookComponent = /** @class */ (function () {
         };
         reader.readAsDataURL(this.imageInput.nativeElement['files'][0]);
     };
+    PublishBookComponent.prototype.eBookChangeEvent = function (event) {
+        var file = this.eBookInput.nativeElement['files'][0];
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            console.log(e);
+        };
+        reader.readAsDataURL(this.eBookInput.nativeElement['files'][0]);
+    };
     PublishBookComponent.prototype.getCategories = function () {
         var _this = this;
         this.appService.get(this.appUrls.categories).subscribe(function (data) {
@@ -1116,15 +1393,40 @@ var PublishBookComponent = /** @class */ (function () {
         });
     };
     PublishBookComponent.prototype.postBook = function (bookForm) {
+        var _this = this;
         bookForm['book_categories'] = [bookForm['book_categories']];
         this.appService.post(this.appUrls.books_list, bookForm).subscribe(function (data) {
             console.log(data);
+            _this.appService.toast(bookForm['book_title'], 'Successfully added in Database', 's');
+            _this.router.navigate(['/homepage']);
+            _this.stopLoading();
         }, function (err) {
             console.log(err);
+            _this.stopLoading();
         });
+    };
+    PublishBookComponent.prototype.checkEBookUpload = function (bookForm) {
+        var _this = this;
+        if (this.eBookInput.nativeElement.value) {
+            var formData = new FormData();
+            formData.append('file', this.eBookInput.nativeElement['files'][0]);
+            this.appService.post(this.appUrls.upload_file, formData, true).subscribe(function (data) {
+                if (data && data['data']) {
+                    bookForm['ebook'] = data['data']['path'];
+                }
+                _this.postBook(bookForm);
+            }, function (err) {
+                console.log(err);
+                _this.stopLoading();
+            });
+        }
+        else {
+            this.postBook(bookForm);
+        }
     };
     PublishBookComponent.prototype.postBookDetails = function (bookForm) {
         var _this = this;
+        this.appUrls.loadingIcon = true;
         if (this.imageInput.nativeElement.value) {
             var formData = new FormData();
             formData.append('file', this.imageInput.nativeElement['files'][0]);
@@ -1135,19 +1437,24 @@ var PublishBookComponent = /** @class */ (function () {
                     bookForm['image_thumbnail'] = data['data']['path'];
                 }
                 console.log('Book data', bookForm);
-                _this.postBook(bookForm);
+                _this.checkEBookUpload(bookForm);
             }, function (err) {
                 console.log(err);
+                _this.stopLoading();
             });
         }
         else {
-            this.postBook(bookForm);
+            this.checkEBookUpload(bookForm);
         }
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('imageUpload'),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
     ], PublishBookComponent.prototype, "imageInput", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('eBookUpload'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
+    ], PublishBookComponent.prototype, "eBookInput", void 0);
     PublishBookComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-publish-book',
@@ -1156,7 +1463,8 @@ var PublishBookComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["a" /* AppServiceModule */],
             __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["d" /* Languages */],
-            __WEBPACK_IMPORTED_MODULE_3__config_constant_config__["a" /* AppUrls */]])
+            __WEBPACK_IMPORTED_MODULE_3__config_constant_config__["a" /* AppUrls */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]])
     ], PublishBookComponent);
     return PublishBookComponent;
 }());
@@ -1186,7 +1494,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/register/register.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<br>\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-md-4 col-md-offset-4\">\n      <div class=\"account-box\">\n        <div class=\"logo\">\n          <img src=\"http://www.ala.org/tools/sites/ala.org.tools/files/content/libfactsheets/large-librarysymbol.jpg\" alt=\"\"/>\n        </div>\n        <hr>\n        <form class=\"form-signin\">\n          <div class=\"form-group\">\n            <input type=\"text\" class=\"form-control\" placeholder=\"Email\" required autofocus />\n          </div>\n          <div class=\"form-group\">\n            <input type=\"text\" class=\"form-control\" placeholder=\"Email\" required autofocus />\n          </div>\n          <div class=\"form-group\">\n            <input type=\"text\" class=\"form-control\" placeholder=\"Email\" required autofocus />\n          </div>\n          <div class=\"form-group\">\n            <input type=\"text\" class=\"form-control\" placeholder=\"Email\" required autofocus />\n          </div>\n          <div class=\"form-group\">\n            <input type=\"text\" class=\"form-control\" placeholder=\"Email\" required autofocus />\n          </div>\n          <div class=\"form-group\">\n            <input type=\"text\" class=\"form-control\" placeholder=\"Email\" required autofocus />\n          </div>\n          <div class=\"form-group\">\n            <input type=\"password\" class=\"form-control\" placeholder=\"Password\" required />\n          </div>\n          <div class=\"form-group\">\n            <input type=\"checkbox\" value=\"remember-me\" />\n            Keep me signed in\n          </div>\n          <button class=\"btn btn-md btn-default btn-block\" type=\"submit\">\n            Register Now\n          </button>\n        </form>\n        <div class=\"or-box row-block\">\n          <div class=\"row\">\n            <div class=\"col-md-12 row-block\">\n              <a routerLink=\"/login\" class=\"btn btn-primary btn-block\">Login Now</a>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<br>\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-md-4 col-md-offset-2\">\n      <div class=\"account-box\">\n        <div class=\"logo\">\n          <img src=\"http://www.ala.org/tools/sites/ala.org.tools/files/content/libfactsheets/large-librarysymbol.jpg\" alt=\"\"/>\n        </div>\n        <hr>\n        <form class=\"form-signin\">\n          <div class=\"form-group\">\n            <input type=\"text\" class=\"form-control\" placeholder=\"Email\" required autofocus />\n          </div>\n          <div class=\"form-group\">\n            <input type=\"text\" class=\"form-control\" placeholder=\"Email\" required autofocus />\n          </div>\n          <div class=\"form-group\">\n            <input type=\"text\" class=\"form-control\" placeholder=\"Email\" required autofocus />\n          </div>\n          <div class=\"form-group\">\n            <input type=\"text\" class=\"form-control\" placeholder=\"Email\" required autofocus />\n          </div>\n          <div class=\"form-group\">\n            <input type=\"text\" class=\"form-control\" placeholder=\"Email\" required autofocus />\n          </div>\n          <div class=\"form-group\">\n            <input type=\"text\" class=\"form-control\" placeholder=\"Email\" required autofocus />\n          </div>\n          <div class=\"form-group\">\n            <input type=\"password\" class=\"form-control\" placeholder=\"Password\" required />\n          </div>\n          <div class=\"form-group\">\n            <input type=\"checkbox\" value=\"remember-me\" />\n            Keep me signed in\n          </div>\n          <button class=\"btn btn-md btn-default btn-block\" type=\"submit\">\n            Register Now\n          </button>\n        </form>\n        <div class=\"or-box row-block\">\n          <div class=\"row\">\n            <div class=\"col-md-12 row-block\">\n              <a routerLink=\"/login\" class=\"btn btn-primary btn-block\">Login Now</a>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1342,7 +1650,7 @@ var AuthGuardService = /** @class */ (function () {
     }
     AuthGuardService.prototype.canActivate = function () {
         if (!this.auth.isAuthenticated()) {
-            this.router.navigate(['login']);
+            this.router.navigate(['/login']);
             return false;
         }
         return true;

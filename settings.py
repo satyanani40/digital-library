@@ -173,9 +173,6 @@ SCHEMAS = {
                 'embeddable': True
             }
         },
-        'ordered_date':{
-            'type': 'string'
-        },
         'delivery_date': {
             'type': 'string'
         },
@@ -188,6 +185,9 @@ SCHEMAS = {
                 'resource': 'transactions',
                 'embeddable': True
             }
+        },
+        'notes': {
+            'type': 'string'
         }
     },
     'transactions': {
