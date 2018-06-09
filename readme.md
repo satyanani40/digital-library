@@ -21,7 +21,7 @@
 
         * creating dl_env and installing depences:
 
-                conda create -f environment.yml
+                conda env create -f environment.yml
 
         * activate virtualenv:
 
