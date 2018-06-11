@@ -334,7 +334,11 @@ SCHEMAS = {
             'type': 'string'
         },
         'no_of_copies': {
-            'type': 'integer'
+            'type': 'dict',
+            'schema': {
+                'outstore': {'type': 'integer'},
+                'instore': {'type': 'integer'}
+            },
         },
         'book_keywords': {
             'type': 'string'
