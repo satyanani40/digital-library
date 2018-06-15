@@ -179,6 +179,17 @@ SCHEMAS = {
         'delivery_status': {
             'type': 'string'
         },
+        'return_summary': {
+            'type': 'dict',
+            'schema': {
+                'return_date': {
+                    'type': 'string'
+                },
+                'return_notes': {
+                    'type': 'string'
+                }
+            }
+        },
         'transaction_id': {
             'type': 'objectid',
             'data_relation': {
