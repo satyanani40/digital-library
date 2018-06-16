@@ -12,14 +12,14 @@
 </head>
  
 <body bgcolor="#FFFFFF">
-<table class="body-wrap" bgcolor="#ffa73b">
+<table class="body-wrap">
 	<tr>
 		<td class="container">
 			<div class="content" style="padding:0px;">
 				<table bgcolor="#fff">
 					<tr>
 						<td align="center">
-							<h2 align="center" style="margin-bottom: 0px;padding: 30px 0px;">Welcome! {first_name}</h2>
+							<h2 align="center">Welcome! {first_name}, {last_name}</h2>
 						</td>
 					</tr>
 				</table>
@@ -41,7 +41,7 @@
 						<p class="lead">we're excited to have get started. First, you need to confirm your account. Just press the button below.</p>
 						
 						<p class="btn" align="center">
-							<a href="http://{server_url}/confirm_account/users/{user_id}/confirm/{token}">
+							<a href="http://libraryindia.org/confirm_account/users/{user_id}/confirm/{token}">
 								Confirm Account!
 							</a>
 						</p>
@@ -49,8 +49,8 @@
 						<p class="lead">If that doesn't work, copy and paste the follwing link in your browser:</p>		
 
 						<p style="padding: 10px 0px;">
-							<a href="http://{server_url}/confirm_account/users/{user_id}/confirm/{token}">
-								http://{server_url}/#/confirm_account/users/{user_id}/confirm/{token}
+							<a href="http://libraryindia.org/confirm_account/users/{user_id}/confirm/{token}">
+								http://libraryindia.org/confirm_account/users/{user_id}/confirm/{token}
 							</a>
 						</p>
 
@@ -65,28 +65,5 @@
 		<td></td>
 	</tr>
 </table><!-- /BODY -->
-
-<table class="body-wrap" bgcolor="#f4f4f4">
-	<tr>
-		<td></td>
-		<td class="container" bgcolor="#FFFFFF" style="margin-top: -5px !important;">
-
-			<div class="content">
-			<table>
-				<tr>
-					<td>
-						<p class="" style="color: #7a848e;margin-bottom: 30px;">You received this email because you just signed up for a new account. If it looks weird, <a href="" style="color: #2d2d2d;font-weight: bold;">view it in your browser.</a></p>	
-						<p class="" style="color: #7a848e;">If this emails get annoying, please feel free to <a href="" style="color: #2d2d2d;font-weight: bold;">unsubscribe</a></p>
-					</td>
-				</tr>
-			</table>
-			</div>
-									
-		</td>
-		<td></td>
-	</tr>
-</table><!-- /BODY -->
-
-
 </body>
 </html>
