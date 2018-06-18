@@ -70,7 +70,6 @@ def signup():
             'login': [],
             'forgot_password':''
         }
-        payload['created_date'] = datetime.now()
         payload['email_confirmed'] = False
 
         if admin_creation_token and admin_creation_token == PASSWORD_CRYPTION_TOKEN:
@@ -81,7 +80,6 @@ def signup():
             'large': '',
             'medium': ''
         }
-        payload['modified_date'] = datetime.now()
         payload['status'] = 'active'
         # check logged user can assign role or not otherwise default role will be 'user'
         can_assign = False

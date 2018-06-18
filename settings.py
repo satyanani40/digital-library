@@ -179,6 +179,17 @@ SCHEMAS = {
         'delivery_status': {
             'type': 'string'
         },
+        'return_summary': {
+            'type': 'dict',
+            'schema': {
+                'return_date': {
+                    'type': 'string'
+                },
+                'return_notes': {
+                    'type': 'string'
+                }
+            }
+        },
         'transaction_id': {
             'type': 'objectid',
             'data_relation': {
@@ -334,7 +345,11 @@ SCHEMAS = {
             'type': 'string'
         },
         'no_of_copies': {
-            'type': 'integer'
+            'type': 'dict',
+            'schema': {
+                'outstore': {'type': 'integer'},
+                'instore': {'type': 'integer'}
+            },
         },
         'book_keywords': {
             'type': 'string'
