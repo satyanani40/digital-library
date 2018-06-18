@@ -19,10 +19,10 @@
   "MAIL_SERVER": "smtp.gmail.com",
   "MAIL_PORT": 465,
   "MAIL_USE_SSL": true,
-
-
   "MAIL_USERNAME": "rrrkassociate@gmail.com",
   "MAIL_PASSWORD": "rrrk@1234",
+
+
   "FORGOT_PASSWORD_EMAIL_TEMPLATE": "static/email_templates/forgot_password_link.html",
   "REGISTRATION_EMAIL_TEMPLATE": "static/email_templates/registration_mail_link.html",
   "ADMIN_CREATION_EMAIL_TEMPLATE": "static/email_templates/admin_creation_template.html",

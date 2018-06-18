@@ -17,12 +17,14 @@ def send_dl_emails(**kwargs):
                                          token=kwargs['token'],
                                          user_id=kwargs['user_id'],
                                          email=kwargs['email'],
+                                         last_name=kwargs['last_name'],
                                          first_name=kwargs['first_name']
                                          )
         else:
             html_data = html_data.format(server_url=kwargs['server_url'],
                                          token=kwargs['token'],
                                          email=kwargs['email'],
+                                         last_name=kwargs['last_name'],
                                          first_name=kwargs['first_name']
                                          )
         msg.html = html_data
