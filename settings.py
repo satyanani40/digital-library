@@ -520,6 +520,12 @@ SCHEMAS = {
                 'login': {'type': 'list', 'empty': True},
                 'forgot_password': {'type': 'string', 'empty': True}
             },
+        },
+        'created_date': {
+            'type': 'datetime'
+        },
+        'modified_date':{
+            'type': 'datetime'
         }
     }
 
