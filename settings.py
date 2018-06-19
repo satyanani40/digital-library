@@ -294,11 +294,8 @@ SCHEMAS = {
                 'field': '_id'
             },
         }
-
     },
-
     'membership':{
-
         'user_id': {
             'type': 'objectid',
             'data_relation': {
@@ -310,7 +307,12 @@ SCHEMAS = {
         'plan_expiry': {
             'type': 'string'
         },
-
+        'books_at_a_time': {
+            'type': 'float'
+        },
+        'no_of_months': {
+            'type': 'float'
+        },
         'membership_type': {
             'type': 'string'
         },
@@ -323,16 +325,9 @@ SCHEMAS = {
         'plan_balance': {
             'type': 'float'
         },
-        'issue_pending':{
-            'type': 'integer'
-        },
-        'return_pending': {
-            'type': 'integer'
-        },
-        'return_ready': {
-            'type': 'integer'
-        },
-
+        'membership_notes': {
+            'type': 'string'
+        }
     },
     'books': {
         'book_title': {
