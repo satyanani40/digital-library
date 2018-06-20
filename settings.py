@@ -319,6 +319,9 @@ SCHEMAS = {
         'status': {
             'type': 'boolean'
         },
+        'new_member': {
+            'type': 'boolean'
+        },
         'account_balance': {
             'type': 'float'
         },
