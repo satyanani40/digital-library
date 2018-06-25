@@ -339,6 +339,9 @@ SCHEMAS = {
                 },
                 'one_time_security_deposit': {
                     'type': 'float'
+                },
+                'amount_paid': {
+                    'type': 'boolean'
                 }
             },
         }
