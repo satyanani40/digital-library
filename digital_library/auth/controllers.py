@@ -235,7 +235,7 @@ def email_activation():
         message = "user not found in database records"
         abort(400, message)
     if user['email_confirmed']:
-        message = "email already confirmed."
+        message = "Email is already confirmed."
         abort(400, message)
     user = accounts.find_one(
         {'_id': ObjectId(str(request.json['user_id'])), "tokens.registration": request.json['token']})
@@ -243,7 +243,7 @@ def email_activation():
         message = "invalid token or user_id."
         abort(400, message)
     LOGGER.info("found user for forgot password:{0}".format(user))
-    accounts.update({'_id': ObjectId(str(request.json['user_id']))}, {"$set": {'tokens.registration': "", "email_confirmed": True}})
+    accounts.update({'_id': ObjectId(str(request.json['user_id']))}, {"$set": {'tokens.registration': "", "email_confirmed": True, "status": 'active'}})
     message = "email has been confirmed."
     response = jsonify(error='', data=message)
     response.status_code = 200
