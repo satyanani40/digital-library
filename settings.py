@@ -322,14 +322,25 @@ SCHEMAS = {
         'new_member': {
             'type': 'boolean'
         },
-        'account_balance': {
-            'type': 'float'
-        },
-        'plan_balance': {
-            'type': 'float'
-        },
         'membership_notes': {
             'type': 'string'
+        },
+        'amount': {
+            'type': 'dict',
+            'schema': {
+                'account_balance': {
+                    'type': 'float'
+                },
+                'plan_balance': {
+                    'type': 'float'
+                },
+                'one_time_reg_fee': {
+                    'type': 'float'
+                },
+                'one_time_security_deposit': {
+                    'type': 'float'
+                }
+            },
         }
     },
     'books': {
