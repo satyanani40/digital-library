@@ -553,7 +553,6 @@ PAYMENTS_SCHEMA = SCHEMAS['payments']
 ORDERS_SCHEMA = SCHEMAS['orders']
 CART_SCHEMA = SCHEMAS['cart']
 TRANSACTIONS_SCHEMA = SCHEMAS['transactions']
-WALLET_SCHEMA = SCHEMAS['wallet']
 
 
 PERSONS = {
@@ -614,13 +613,6 @@ TRANSACTIONS = {
 
 }
 
-WALLET = {
-    'item_title': 'wallet',
-    'schema': WALLET_SCHEMA,
-    'url': 'wallet'
-
-}
-
 # The DOMAIN dict explains which resources will be available and how they will
 # be accessible to the API consumer.
 DOMAIN = {
@@ -632,8 +624,7 @@ DOMAIN = {
     'orders': ORDERS,
     'payments': PAYMENTS,
     'cart': CART,
-    'transactions': TRANSACTIONS,
-    'wallet': WALLET
+    'transactions': TRANSACTIONS
 }
 
 COLLECTION_NAMES = DOMAIN.keys()
