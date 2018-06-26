@@ -202,23 +202,6 @@ SCHEMAS = {
         }
     },
     'transactions': {
-        'wallet_id': {
-            'type': 'objectid',
-            'data_relation': {
-                'resource': 'wallet',
-                'embeddable': True
-            }
-        },
-        'amount': {'type': 'float'},
-        'transaction_type': {'type': 'string'},
-        'transaction_for': {'type': 'string'},
-        'status': {'type': 'string'},
-        'email': {'type': 'string'},
-        'name': {'type': 'string'},
-        'txnid': {'type': 'string'},
-        'product_info': {'type': 'string'},
-    },
-    'wallet': {
         'user_id': {
             'type': 'objectid',
             'data_relation': {
@@ -226,9 +209,12 @@ SCHEMAS = {
                 'embeddable': True
             }
         },
-        'amount': {
-            'type': 'float'
-        }
+        'amount': {'type': 'float'},
+        'transaction_type': {'type': 'string'},
+        'transaction_for': {'type': 'string'},
+        'status': {'type': 'string'},
+        'txnid': {'type': 'string'},
+        'product_info': {'type': 'string'},
     },
     'payments':{
         'total_amount': {

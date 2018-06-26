@@ -28,7 +28,7 @@
   "ADMIN_CREATION_EMAIL_TEMPLATE": "static/email_templates/admin_creation_template.html",
   "ADMIN_CREATION_TITLE": "ADMIN CREATED",
   "FAB_SUPPORT_TEAM": "support@dl.in",
-  "REGISTRATION_TITLE": "thanks for registration with dl",
+  "REGISTRATION_TITLE": "Your login Email Id verification",
   "FORGOT_PASSWORD_TITLE": "sent forgot password",
 
   "CREATE_USER_ROLES": ["admin"],
