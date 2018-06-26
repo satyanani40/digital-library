@@ -158,12 +158,28 @@ SCHEMAS = {
         'books': {
             'type': 'list',
             'schema': {
-                'type': 'objectid',
-                'data_relation': {
-                    'resource': 'books',
-                    'embeddable': True,
-                    'field': '_id'
-                }
+                'book_id': {
+                    'type': 'objectid',
+                    'data_relation': {
+                        'resource': 'books',
+                        'embeddable': True,
+                        'field': '_id'
+                    }
+                },
+                'requested_for': {
+                    'type': 'string'
+                },
+                'return_summary': {
+                    'type': 'dict',
+                    'schema': {
+                        'return_date': {
+                            'type': 'string'
+                        },
+                        'return_notes': {
+                            'type': 'string'
+                        }
+                    }
+                },
             }
         },
         'user_id': {
@@ -178,17 +194,6 @@ SCHEMAS = {
         },
         'delivery_status': {
             'type': 'string'
-        },
-        'return_summary': {
-            'type': 'dict',
-            'schema': {
-                'return_date': {
-                    'type': 'string'
-                },
-                'return_notes': {
-                    'type': 'string'
-                }
-            }
         },
         'transaction_id': {
             'type': 'objectid',
