@@ -158,28 +158,31 @@ SCHEMAS = {
         'books': {
             'type': 'list',
             'schema': {
-                'book_id': {
-                    'type': 'objectid',
-                    'data_relation': {
-                        'resource': 'books',
-                        'embeddable': True,
-                        'field': '_id'
-                    }
-                },
-                'requested_for': {
-                    'type': 'string'
-                },
-                'return_summary': {
-                    'type': 'dict',
-                    'schema': {
-                        'return_date': {
-                            'type': 'string'
-                        },
-                        'return_notes': {
-                            'type': 'string'
+                'type': 'dict',
+                'schema': {
+                    'book_id': {
+                        'type': 'objectid',
+                        'data_relation': {
+                            'resource': 'books',
+                            'embeddable': True,
+                            'field': '_id'
+                        }
+                    },
+                    'requested_for': {
+                        'type': 'string'
+                    },
+                    'return_summary': {
+                        'type': 'dict',
+                        'schema': {
+                            'return_date': {
+                                'type': 'string'
+                            },
+                            'return_notes': {
+                                'type': 'string'
+                            }
                         }
                     }
-                },
+                }
             }
         },
         'user_id': {
