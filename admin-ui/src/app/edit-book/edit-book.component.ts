@@ -1,8 +1,8 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {AppServiceModule, Languages} from '../shared/app.service.module';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {AppUrls} from '../config/constant.config';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-edit-book',
@@ -36,14 +36,19 @@ export class EditBookComponent implements OnInit {
     ISBN_13: new FormControl(),
     published_date: new FormControl(),
     image_small_thumbnail: new FormControl(),
-    image_thumbnail: new FormControl()
+    image_thumbnail: new FormControl(),
+    no_of_copies: new FormGroup({
+      outstore: new FormControl(0, Validators.required),
+      instore: new FormControl(1, Validators.compose([Validators.required, Validators.maxLength(1)]))
+    })
   });
   @ViewChild('imageUpload') imageInput: ElementRef;
   @ViewChild('eBookUpload') eBookInput: ElementRef;
   constructor(private appService: AppServiceModule,
               private langs: Languages,
               private appUrls: AppUrls,
-              private activatedRoute: ActivatedRoute) {
+              private activatedRoute: ActivatedRoute,
+              private router: Router) {
     this.activatedRoute.params.subscribe((params) => {
       this.myParams = params;
     });
@@ -125,6 +130,7 @@ export class EditBookComponent implements OnInit {
     this.appService.update(this.appUrls.books_list + '/' + this.myParams['_id'], bookForm).subscribe((data) => {
       console.log(data);
       this.appService.toast(bookForm['book_title'], 'Successfully updated!', 's');
+      this.router.navigate(['/homepage']);
     }, (err) => {
       console.log(err);
       this.appService.toast('Something went wrong!', '', 'e');

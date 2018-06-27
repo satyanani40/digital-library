@@ -106,10 +106,10 @@
                 Ordered Books <strong>({{ modalItem['books'].length }})</strong>
               </td>
               <td>
-                <p *ngFor="let book of modalItem['books']">
-                  <a target="_blank"
-                     href="{{ appUrls.custUrl + 'book_details/' + parseTitle(book.book_title) + '/' + book.ISBN_13}}">
-                    {{ book['book_title'] }}
+                <p *ngFor="let item of modalItem['books']">
+                  <a *ngIf="item && item['book_id']" target="_blank"
+                     href="{{ appUrls.custUrl + 'book_details/' + parseTitle(item['book_id'].book_title) + '/' + item['book_id'].ISBN_13}}">
+                    {{ item['book_id']['book_title'] }}
                   </a>
                 </p>
               </td>

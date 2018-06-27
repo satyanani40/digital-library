@@ -171,6 +171,9 @@ SCHEMAS = {
                     'requested_for': {
                         'type': 'string'
                     },
+                    'rent_fee': {
+                        'type': 'float'
+                    },
                     'return_summary': {
                         'type': 'dict',
                         'schema': {

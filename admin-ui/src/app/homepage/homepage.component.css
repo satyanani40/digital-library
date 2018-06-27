@@ -1,3 +1,9 @@
 .pagination {
   margin: 0;
 }
+.table-responsive table tr th:nth-child(2) {
+  min-width: 300px;
+}
+.table-responsive table {
+  font-size: 13px !important;
+}

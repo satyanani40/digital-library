@@ -11,7 +11,7 @@ import {BsModalService} from 'ngx-bootstrap';
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit {
-  public embedded: any = {user_id: 1};
+  public embedded: any = {'user_id': 1, 'books.book_id': 1};
   public query: any = {
     sort: '-_created', page: 1, max_results: 15,
     embedded: JSON.stringify(this.embedded)
@@ -37,21 +37,13 @@ export class OrdersComponent implements OnInit {
       }
     });
   }
-  ngOnInit() {
-  }
+  ngOnInit() {}
   parseTitle(title) {
     return title.replace(/\//g, '').replace(/ /g, '-');
   }
   openModal(template: TemplateRef<any>, item) {
     this.modalRef = this.modalService.show(template);
-    const query = {embedded: {user_id: 1, books: {book_id: 1}}};
-    this.appService.get(this.appUrls.orders + '/' + item['_id'], query)
-      .subscribe((data) => {
-        console.log(data);
-        this.modalItem = data;
-      }, (err) => {
-        console.log(err);
-      });
+    this.modalItem = item;
   }
   stopLoading () {
     setTimeout(() => {

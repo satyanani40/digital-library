@@ -59,7 +59,10 @@
         <td>{{ (item['availability']) ? 'Available' : 'Not Available' }}</td>
         <td>{{ (item['ebook']) ? 'Available' : 'Not Available' }}</td>
         <td>{{ item['hcopy_price'] }}</td>
-        <td>{{ item['ecopy_price'] }}</td>
+        <td>
+          <span *ngIf="item['ebook']">{{ item['ecopy_price'] }}</span>
+          <span *ngIf="!item['ebook']">-</span>
+        </td>
         <td>{{ item['ISBN_13'] }}</td>
         <td>{{ item['publisher'] }} </td>
         <td>{{ item['language'] }} </td>
