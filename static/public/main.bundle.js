@@ -43,24 +43,24 @@ module.exports = "<app-navbar></app-navbar>\r\n"
 /***/ }),
 
 /***/ "../../../../../src/app/app.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
         this.title = 'app';
     }
     AppComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-root',
             template: __webpack_require__("../../../../../src/app/app.component.html"),
             styles: [__webpack_require__("../../../../../src/app/app.component.css")]
@@ -68,132 +68,106 @@ var AppComponent = /** @class */ (function () {
     ], AppComponent);
     return AppComponent;
 }());
-
+exports.AppComponent = AppComponent;
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/app.module.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ag_grid_angular__ = __webpack_require__("../../../../ag-grid-angular/main.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ag_grid_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ag_grid_angular__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__config_router_config__ = __webpack_require__("../../../../../src/app/config/router.config.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__navbar_navbar_component__ = __webpack_require__("../../../../../src/app/navbar/navbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__register_register_component__ = __webpack_require__("../../../../../src/app/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__homepage_homepage_component__ = __webpack_require__("../../../../../src/app/homepage/homepage.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__publish_book_publish_book_component__ = __webpack_require__("../../../../../src/app/publish-book/publish-book.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__membership_membership_component__ = __webpack_require__("../../../../../src/app/membership/membership.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_ngx_bootstrap__ = __webpack_require__("../../../../ngx-bootstrap/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__edit_book_edit_book_component__ = __webpack_require__("../../../../../src/app/edit-book/edit-book.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__categories_categories_component__ = __webpack_require__("../../../../../src/app/categories/categories.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__app_pipe__ = __webpack_require__("../../../../../src/app/app.pipe.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__orders_orders_component__ = __webpack_require__("../../../../../src/app/orders/orders.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__forgotpassword_forgotpassword_component__ = __webpack_require__("../../../../../src/app/forgotpassword/forgotpassword.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__updatepersons_updatepersons_component__ = __webpack_require__("../../../../../src/app/updatepersons/updatepersons.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__joinedmembers_joinedmembers_component__ = __webpack_require__("../../../../../src/app/joinedmembers/joinedmembers.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_angular2_moment__ = __webpack_require__("../../../../angular2-moment/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_angular2_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24_angular2_moment__);
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var platform_browser_1 = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var router_1 = __webpack_require__("../../../router/esm5/router.js");
+var ag_grid_angular_1 = __webpack_require__("../../../../ag-grid-angular/main.js");
+var http_1 = __webpack_require__("../../../common/esm5/http.js");
+var app_component_1 = __webpack_require__("../../../../../src/app/app.component.ts");
+var router_config_1 = __webpack_require__("../../../../../src/app/config/router.config.ts");
+var login_component_1 = __webpack_require__("../../../../../src/app/login/login.component.ts");
+var navbar_component_1 = __webpack_require__("../../../../../src/app/navbar/navbar.component.ts");
+var register_component_1 = __webpack_require__("../../../../../src/app/register/register.component.ts");
+var homepage_component_1 = __webpack_require__("../../../../../src/app/homepage/homepage.component.ts");
+var publish_book_component_1 = __webpack_require__("../../../../../src/app/publish-book/publish-book.component.ts");
+var app_service_module_1 = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
+var constant_config_1 = __webpack_require__("../../../../../src/app/config/constant.config.ts");
+var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
+var membership_component_1 = __webpack_require__("../../../../../src/app/membership/membership.component.ts");
+var ngx_bootstrap_1 = __webpack_require__("../../../../ngx-bootstrap/index.js");
+var edit_book_component_1 = __webpack_require__("../../../../../src/app/edit-book/edit-book.component.ts");
+var categories_component_1 = __webpack_require__("../../../../../src/app/categories/categories.component.ts");
+var app_pipe_1 = __webpack_require__("../../../../../src/app/app.pipe.ts");
+var orders_component_1 = __webpack_require__("../../../../../src/app/orders/orders.component.ts");
+var forgotpassword_component_1 = __webpack_require__("../../../../../src/app/forgotpassword/forgotpassword.component.ts");
+var updatepersons_component_1 = __webpack_require__("../../../../../src/app/updatepersons/updatepersons.component.ts");
+var joinedmembers_component_1 = __webpack_require__("../../../../../src/app/joinedmembers/joinedmembers.component.ts");
+var angular2_moment_1 = __webpack_require__("../../../../angular2-moment/index.js");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
+        core_1.NgModule({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_7__login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_8__navbar_navbar_component__["a" /* NavbarComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__register_register_component__["a" /* RegisterComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__homepage_homepage_component__["a" /* HomepageComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__publish_book_publish_book_component__["a" /* PublishBookComponent */],
-                __WEBPACK_IMPORTED_MODULE_15__membership_membership_component__["a" /* MembershipComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__edit_book_edit_book_component__["a" /* EditBookComponent */],
-                __WEBPACK_IMPORTED_MODULE_18__categories_categories_component__["a" /* CategoriesComponent */],
-                __WEBPACK_IMPORTED_MODULE_19__app_pipe__["a" /* FilterPipe */],
-                __WEBPACK_IMPORTED_MODULE_20__orders_orders_component__["a" /* OrdersComponent */],
-                __WEBPACK_IMPORTED_MODULE_21__forgotpassword_forgotpassword_component__["a" /* ForgotpasswordComponent */],
-                __WEBPACK_IMPORTED_MODULE_22__updatepersons_updatepersons_component__["a" /* UpdatepersonsComponent */],
-                __WEBPACK_IMPORTED_MODULE_23__joinedmembers_joinedmembers_component__["a" /* JoinedmembersComponent */]
+                app_component_1.AppComponent,
+                login_component_1.LoginComponent,
+                navbar_component_1.NavbarComponent,
+                register_component_1.RegisterComponent,
+                homepage_component_1.HomepageComponent,
+                publish_book_component_1.PublishBookComponent,
+                membership_component_1.MembershipComponent,
+                edit_book_component_1.EditBookComponent,
+                categories_component_1.CategoriesComponent,
+                app_pipe_1.FilterPipe,
+                orders_component_1.OrdersComponent,
+                forgotpassword_component_1.ForgotpasswordComponent,
+                updatepersons_component_1.UpdatepersonsComponent,
+                joinedmembers_component_1.JoinedmembersComponent
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_24_angular2_moment__["MomentModule"],
-                __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["b" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_14__angular_forms__["g" /* ReactiveFormsModule */],
-                __WEBPACK_IMPORTED_MODULE_14__angular_forms__["c" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__config_router_config__["a" /* routes */]),
-                __WEBPACK_IMPORTED_MODULE_16_ngx_bootstrap__["a" /* BsDatepickerModule */].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_16_ngx_bootstrap__["c" /* ModalModule */].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_16_ngx_bootstrap__["d" /* PopoverModule */].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_16_ngx_bootstrap__["e" /* TooltipModule */].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_3_ag_grid_angular__["AgGridModule"].withComponents([])
+                platform_browser_1.BrowserModule,
+                angular2_moment_1.MomentModule,
+                http_1.HttpClientModule,
+                forms_1.ReactiveFormsModule,
+                forms_1.FormsModule,
+                router_1.RouterModule.forRoot(router_config_1.routes),
+                ngx_bootstrap_1.BsDatepickerModule.forRoot(),
+                ngx_bootstrap_1.ModalModule.forRoot(),
+                ngx_bootstrap_1.PopoverModule.forRoot(),
+                ngx_bootstrap_1.TooltipModule.forRoot(),
+                ag_grid_angular_1.AgGridModule.withComponents([])
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_12__shared_app_service_module__["a" /* AppServiceModule */], __WEBPACK_IMPORTED_MODULE_13__config_constant_config__["a" /* AppUrls */], __WEBPACK_IMPORTED_MODULE_12__shared_app_service_module__["c" /* AuthService */], __WEBPACK_IMPORTED_MODULE_12__shared_app_service_module__["b" /* AuthGuardService */], __WEBPACK_IMPORTED_MODULE_12__shared_app_service_module__["d" /* Languages */]],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
+            providers: [app_service_module_1.AppServiceModule, constant_config_1.AppUrls, app_service_module_1.AuthService, app_service_module_1.AuthGuardService, app_service_module_1.Languages],
+            bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);
     return AppModule;
 }());
-
+exports.AppModule = AppModule;
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/app.pipe.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FilterPipe; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
 var FilterPipe = /** @class */ (function () {
     function FilterPipe() {
     }
@@ -210,14 +184,14 @@ var FilterPipe = /** @class */ (function () {
         return myItems;
     };
     FilterPipe = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({
+        core_1.Pipe({
             name: 'filter',
             pure: false
         })
     ], FilterPipe);
     return FilterPipe;
 }());
-
+exports.FilterPipe = FilterPipe;
 
 
 /***/ }),
@@ -248,14 +222,10 @@ module.exports = "<div class=\"\">\n  <br>\n  <div class=\"row\">\n    <div clas
 /***/ }),
 
 /***/ "../../../../../src/app/categories/categories.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoriesComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ngx_bootstrap_modal__ = __webpack_require__("../../../../ngx-bootstrap/modal/index.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -265,10 +235,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var app_service_module_1 = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
+var constant_config_1 = __webpack_require__("../../../../../src/app/config/constant.config.ts");
+var modal_1 = __webpack_require__("../../../../ngx-bootstrap/modal/index.js");
 var CategoriesComponent = /** @class */ (function () {
     function CategoriesComponent(appService, appUrls, modalService) {
         this.appService = appService;
@@ -336,28 +307,29 @@ var CategoriesComponent = /** @class */ (function () {
         });
     };
     CategoriesComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-categories',
             template: __webpack_require__("../../../../../src/app/categories/categories.component.html"),
             styles: [__webpack_require__("../../../../../src/app/categories/categories.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["a" /* AppServiceModule */],
-            __WEBPACK_IMPORTED_MODULE_2__config_constant_config__["a" /* AppUrls */],
-            __WEBPACK_IMPORTED_MODULE_3_ngx_bootstrap_modal__["a" /* BsModalService */]])
+        __metadata("design:paramtypes", [app_service_module_1.AppServiceModule,
+            constant_config_1.AppUrls,
+            modal_1.BsModalService])
     ], CategoriesComponent);
     return CategoriesComponent;
 }());
-
+exports.CategoriesComponent = CategoriesComponent;
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/config/constant.config.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppUrls; });
+
 /* Application Constants */
+Object.defineProperty(exports, "__esModule", { value: true });
 // API End points
 var AppUrls = /** @class */ (function () {
     function AppUrls() {
@@ -382,52 +354,41 @@ var AppUrls = /** @class */ (function () {
     }
     return AppUrls;
 }());
-
+exports.AppUrls = AppUrls;
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/config/router.config.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return routes; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__register_register_component__ = __webpack_require__("../../../../../src/app/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__homepage_homepage_component__ = __webpack_require__("../../../../../src/app/homepage/homepage.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__publish_book_publish_book_component__ = __webpack_require__("../../../../../src/app/publish-book/publish-book.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__membership_membership_component__ = __webpack_require__("../../../../../src/app/membership/membership.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__edit_book_edit_book_component__ = __webpack_require__("../../../../../src/app/edit-book/edit-book.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__categories_categories_component__ = __webpack_require__("../../../../../src/app/categories/categories.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__orders_orders_component__ = __webpack_require__("../../../../../src/app/orders/orders.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__forgotpassword_forgotpassword_component__ = __webpack_require__("../../../../../src/app/forgotpassword/forgotpassword.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__updatepersons_updatepersons_component__ = __webpack_require__("../../../../../src/app/updatepersons/updatepersons.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__joinedmembers_joinedmembers_component__ = __webpack_require__("../../../../../src/app/joinedmembers/joinedmembers.component.ts");
 
-
-
-
-
-
-
-
-
-
-
-
-var routes = [
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_0__login_login_component__["a" /* LoginComponent */] },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_1__register_register_component__["a" /* RegisterComponent */] },
-    { path: 'forgot-password', component: __WEBPACK_IMPORTED_MODULE_9__forgotpassword_forgotpassword_component__["a" /* ForgotpasswordComponent */] },
-    { path: 'homepage', component: __WEBPACK_IMPORTED_MODULE_2__homepage_homepage_component__["a" /* HomepageComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_5__shared_app_service_module__["b" /* AuthGuardService */]] },
-    { path: 'book-catelog', component: __WEBPACK_IMPORTED_MODULE_3__publish_book_publish_book_component__["a" /* PublishBookComponent */] },
-    { path: 'edit-book/:_id', component: __WEBPACK_IMPORTED_MODULE_6__edit_book_edit_book_component__["a" /* EditBookComponent */] },
-    { path: 'categories', component: __WEBPACK_IMPORTED_MODULE_7__categories_categories_component__["a" /* CategoriesComponent */] },
-    { path: 'membership', component: __WEBPACK_IMPORTED_MODULE_4__membership_membership_component__["a" /* MembershipComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_5__shared_app_service_module__["b" /* AuthGuardService */]] },
-    { path: 'joined-members', component: __WEBPACK_IMPORTED_MODULE_11__joinedmembers_joinedmembers_component__["a" /* JoinedmembersComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_5__shared_app_service_module__["b" /* AuthGuardService */]] },
-    { path: 'update-person/:_id', component: __WEBPACK_IMPORTED_MODULE_10__updatepersons_updatepersons_component__["a" /* UpdatepersonsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_5__shared_app_service_module__["b" /* AuthGuardService */]] },
-    { path: 'orders', component: __WEBPACK_IMPORTED_MODULE_8__orders_orders_component__["a" /* OrdersComponent */] },
+Object.defineProperty(exports, "__esModule", { value: true });
+var login_component_1 = __webpack_require__("../../../../../src/app/login/login.component.ts");
+var register_component_1 = __webpack_require__("../../../../../src/app/register/register.component.ts");
+var homepage_component_1 = __webpack_require__("../../../../../src/app/homepage/homepage.component.ts");
+var publish_book_component_1 = __webpack_require__("../../../../../src/app/publish-book/publish-book.component.ts");
+var membership_component_1 = __webpack_require__("../../../../../src/app/membership/membership.component.ts");
+var app_service_module_1 = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
+var edit_book_component_1 = __webpack_require__("../../../../../src/app/edit-book/edit-book.component.ts");
+var categories_component_1 = __webpack_require__("../../../../../src/app/categories/categories.component.ts");
+var orders_component_1 = __webpack_require__("../../../../../src/app/orders/orders.component.ts");
+var forgotpassword_component_1 = __webpack_require__("../../../../../src/app/forgotpassword/forgotpassword.component.ts");
+var updatepersons_component_1 = __webpack_require__("../../../../../src/app/updatepersons/updatepersons.component.ts");
+var joinedmembers_component_1 = __webpack_require__("../../../../../src/app/joinedmembers/joinedmembers.component.ts");
+exports.routes = [
+    { path: 'login', component: login_component_1.LoginComponent },
+    { path: 'register', component: register_component_1.RegisterComponent },
+    { path: 'forgot-password', component: forgotpassword_component_1.ForgotpasswordComponent },
+    { path: 'homepage', component: homepage_component_1.HomepageComponent, canActivate: [app_service_module_1.AuthGuardService] },
+    { path: 'book-catelog', component: publish_book_component_1.PublishBookComponent },
+    { path: 'edit-book/:_id', component: edit_book_component_1.EditBookComponent },
+    { path: 'categories', component: categories_component_1.CategoriesComponent },
+    { path: 'membership', component: membership_component_1.MembershipComponent, canActivate: [app_service_module_1.AuthGuardService] },
+    { path: 'joined-members', component: joinedmembers_component_1.JoinedmembersComponent, canActivate: [app_service_module_1.AuthGuardService] },
+    { path: 'update-person/:_id', component: updatepersons_component_1.UpdatepersonsComponent, canActivate: [app_service_module_1.AuthGuardService] },
+    { path: 'orders', component: orders_component_1.OrdersComponent },
     { path: '',
         redirectTo: '/login',
         pathMatch: 'full'
@@ -463,15 +424,10 @@ module.exports = "<div class=\"\">\n  <h3>Book: {{ bookInfo['book_title'] }}</h3
 /***/ }),
 
 /***/ "../../../../../src/app/edit-book/edit-book.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditBookComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -481,11 +437,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var app_service_module_1 = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
+var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
+var constant_config_1 = __webpack_require__("../../../../../src/app/config/constant.config.ts");
+var router_1 = __webpack_require__("../../../router/esm5/router.js");
 var EditBookComponent = /** @class */ (function () {
     function EditBookComponent(appService, langs, appUrls, activatedRoute) {
         var _this = this;
@@ -499,25 +456,25 @@ var EditBookComponent = /** @class */ (function () {
         this.categories = [];
         this.imagePreview = {};
         this.ebookPreview = {};
-        this.bookForm = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormGroup */]({
-            book_title: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
-            sub_title: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
-            book_summary: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
-            book_keywords: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
-            no_of_pages: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
-            book_authors: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
-            book_author_desc: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
-            availability: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](true),
-            hcopy_price: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
-            ecopy_price: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
-            book_categories: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
-            language: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
-            publisher: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
-            ISBN_10: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
-            ISBN_13: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
-            published_date: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
-            image_small_thumbnail: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
-            image_thumbnail: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]()
+        this.bookForm = new forms_1.FormGroup({
+            book_title: new forms_1.FormControl(),
+            sub_title: new forms_1.FormControl(),
+            book_summary: new forms_1.FormControl(),
+            book_keywords: new forms_1.FormControl(),
+            no_of_pages: new forms_1.FormControl(),
+            book_authors: new forms_1.FormControl(),
+            book_author_desc: new forms_1.FormControl(),
+            availability: new forms_1.FormControl(true),
+            hcopy_price: new forms_1.FormControl(),
+            ecopy_price: new forms_1.FormControl(),
+            book_categories: new forms_1.FormControl(),
+            language: new forms_1.FormControl(),
+            publisher: new forms_1.FormControl(),
+            ISBN_10: new forms_1.FormControl(),
+            ISBN_13: new forms_1.FormControl(),
+            published_date: new forms_1.FormControl(),
+            image_small_thumbnail: new forms_1.FormControl(),
+            image_thumbnail: new forms_1.FormControl()
         });
         this.activatedRoute.params.subscribe(function (params) {
             _this.myParams = params;
@@ -631,27 +588,27 @@ var EditBookComponent = /** @class */ (function () {
         }
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('imageUpload'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
+        core_1.ViewChild('imageUpload'),
+        __metadata("design:type", core_1.ElementRef)
     ], EditBookComponent.prototype, "imageInput", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('eBookUpload'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
+        core_1.ViewChild('eBookUpload'),
+        __metadata("design:type", core_1.ElementRef)
     ], EditBookComponent.prototype, "eBookInput", void 0);
     EditBookComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-edit-book',
             template: __webpack_require__("../../../../../src/app/edit-book/edit-book.component.html"),
             styles: [__webpack_require__("../../../../../src/app/edit-book/edit-book.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["a" /* AppServiceModule */],
-            __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["d" /* Languages */],
-            __WEBPACK_IMPORTED_MODULE_3__config_constant_config__["a" /* AppUrls */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */]])
+        __metadata("design:paramtypes", [app_service_module_1.AppServiceModule,
+            app_service_module_1.Languages,
+            constant_config_1.AppUrls,
+            router_1.ActivatedRoute])
     ], EditBookComponent);
     return EditBookComponent;
 }());
-
+exports.EditBookComponent = EditBookComponent;
 
 
 /***/ }),
@@ -682,11 +639,10 @@ module.exports = "<div class=\"\">\n  <br><br><br><br><br><br>\n  <div class=\"r
 /***/ }),
 
 /***/ "../../../../../src/app/forgotpassword/forgotpassword.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ForgotpasswordComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -696,14 +652,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
 var ForgotpasswordComponent = /** @class */ (function () {
     function ForgotpasswordComponent() {
     }
     ForgotpasswordComponent.prototype.ngOnInit = function () {
     };
     ForgotpasswordComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-forgotpassword',
             template: __webpack_require__("../../../../../src/app/forgotpassword/forgotpassword.component.html"),
             styles: [__webpack_require__("../../../../../src/app/forgotpassword/forgotpassword.component.css")]
@@ -712,7 +669,7 @@ var ForgotpasswordComponent = /** @class */ (function () {
     ], ForgotpasswordComponent);
     return ForgotpasswordComponent;
 }());
-
+exports.ForgotpasswordComponent = ForgotpasswordComponent;
 
 
 /***/ }),
@@ -743,15 +700,10 @@ module.exports = "<div class=\"\">\n  <br>\n  <div class=\"row\">\n    <div clas
 /***/ }),
 
 /***/ "../../../../../src/app/homepage/homepage.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomepageComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ngx_bootstrap__ = __webpack_require__("../../../../ngx-bootstrap/index.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -761,11 +713,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var app_service_module_1 = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
+var constant_config_1 = __webpack_require__("../../../../../src/app/config/constant.config.ts");
+var router_1 = __webpack_require__("../../../router/esm5/router.js");
+var ngx_bootstrap_1 = __webpack_require__("../../../../ngx-bootstrap/index.js");
 var HomepageComponent = /** @class */ (function () {
     function HomepageComponent(appService, appUrls, router, activatedRoute, modalService) {
         var _this = this;
@@ -842,20 +795,20 @@ var HomepageComponent = /** @class */ (function () {
         this.router.navigate(['/edit-book', item['_id']]);
     };
     HomepageComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-homepage',
             template: __webpack_require__("../../../../../src/app/homepage/homepage.component.html"),
             styles: [__webpack_require__("../../../../../src/app/homepage/homepage.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["a" /* AppServiceModule */],
-            __WEBPACK_IMPORTED_MODULE_2__config_constant_config__["a" /* AppUrls */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_4_ngx_bootstrap__["b" /* BsModalService */]])
+        __metadata("design:paramtypes", [app_service_module_1.AppServiceModule,
+            constant_config_1.AppUrls,
+            router_1.Router,
+            router_1.ActivatedRoute,
+            ngx_bootstrap_1.BsModalService])
     ], HomepageComponent);
     return HomepageComponent;
 }());
-
+exports.HomepageComponent = HomepageComponent;
 
 
 /***/ }),
@@ -886,14 +839,10 @@ module.exports = "<div class=\"\">\n  <br>\n  <h4 class=\"text-capitalize\">Join
 /***/ }),
 
 /***/ "../../../../../src/app/joinedmembers/joinedmembers.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return JoinedmembersComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -903,10 +852,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var app_service_module_1 = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
+var router_1 = __webpack_require__("../../../router/esm5/router.js");
+var constant_config_1 = __webpack_require__("../../../../../src/app/config/constant.config.ts");
 var JoinedmembersComponent = /** @class */ (function () {
     function JoinedmembersComponent(appService, appUrls, activatedRoute, router) {
         var _this = this;
@@ -959,19 +909,19 @@ var JoinedmembersComponent = /** @class */ (function () {
         });
     };
     JoinedmembersComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-joinedmembers',
             template: __webpack_require__("../../../../../src/app/joinedmembers/joinedmembers.component.html"),
             styles: [__webpack_require__("../../../../../src/app/joinedmembers/joinedmembers.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["a" /* AppServiceModule */],
-            __WEBPACK_IMPORTED_MODULE_3__config_constant_config__["a" /* AppUrls */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]])
+        __metadata("design:paramtypes", [app_service_module_1.AppServiceModule,
+            constant_config_1.AppUrls,
+            router_1.ActivatedRoute,
+            router_1.Router])
     ], JoinedmembersComponent);
     return JoinedmembersComponent;
 }());
-
+exports.JoinedmembersComponent = JoinedmembersComponent;
 
 
 /***/ }),
@@ -1002,15 +952,10 @@ module.exports = "<br>\n<div class=\"container\">\n  <div class=\"row\">\n    <d
 /***/ }),
 
 /***/ "../../../../../src/app/login/login.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1020,20 +965,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var app_service_module_1 = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
+var router_1 = __webpack_require__("../../../router/esm5/router.js");
+var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
+var constant_config_1 = __webpack_require__("../../../../../src/app/config/constant.config.ts");
 var LoginComponent = /** @class */ (function () {
     function LoginComponent(authService, appService, router, appUrls) {
         this.authService = authService;
         this.appService = appService;
         this.router = router;
         this.appUrls = appUrls;
-        this.lForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* FormGroup */]({
-            email: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormControl */]('suryamuppalla@gmail.com'),
-            password: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormControl */]('surya')
+        this.lForm = new forms_1.FormGroup({
+            email: new forms_1.FormControl('suryamuppalla@gmail.com'),
+            password: new forms_1.FormControl('surya')
         });
     }
     LoginComponent.prototype.ngOnInit = function () {
@@ -1054,19 +1000,19 @@ var LoginComponent = /** @class */ (function () {
         });
     };
     LoginComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-login',
             template: __webpack_require__("../../../../../src/app/login/login.component.html"),
             styles: [__webpack_require__("../../../../../src/app/login/login.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["c" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["a" /* AppServiceModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_4__config_constant_config__["a" /* AppUrls */]])
+        __metadata("design:paramtypes", [app_service_module_1.AuthService,
+            app_service_module_1.AppServiceModule,
+            router_1.Router,
+            constant_config_1.AppUrls])
     ], LoginComponent);
     return LoginComponent;
 }());
-
+exports.LoginComponent = LoginComponent;
 
 
 /***/ }),
@@ -1092,20 +1038,15 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/membership/membership.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"\">\r\n  <br>\r\n  <h4 class=\"text-capitalize\">Membership Management</h4>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-2\">\r\n      <label>Filter by Status</label>\r\n      <select class=\"form-control\" name=\"status\" id=\"status\" (change)=\"toggleStatus()\" [(ngModel)]=\"query['status']\">\r\n        <option value=\"all\">All Members</option>\r\n        <option value=\"{{ item['value'] }}\" *ngFor=\"let item of status\">{{ item['text'] }}</option>\r\n      </select>\r\n    </div>\r\n    <div class=\"col-lg-2\">\r\n      <label>Membership Type</label>\r\n      <select class=\"form-control\" name=\"status\" id=\"membership_type\" (change)=\"toggleStatus()\" [(ngModel)]=\"query['membership_type']\">\r\n        <option value=\"all\">All Types</option>\r\n        <option value=\"{{ item }}\" *ngFor=\"let item of membershipTypes\">{{ item }}</option>\r\n      </select>\r\n    </div>\r\n    <div class=\"col-lg-2\">\r\n      <label>Filter By</label>\r\n      <select class=\"form-control\" name=\"status\" id=\"sort_by\" (change)=\"toggleStatus()\" [(ngModel)]=\"query['sort']\">\r\n        <option value=\"-_created\">Created</option>\r\n        <option value=\"-_updated\">Updated</option>\r\n      </select>\r\n    </div>\r\n  </div>\r\n  <br>\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-12\">\r\n      <button (click)=\"getMembers()\" class=\"btn btn-xs btn-default pointer\">\r\n        <i class=\"glyphicon glyphicon-refresh\"></i>&nbsp;Refresh\r\n      </button>&nbsp;\r\n      <button class=\"btn btn-xs btn-default\" (click)=\"getMembers(true)\">\r\n        <i class=\"glyphicon glyphicon-user\"></i>&nbsp;All Members\r\n      </button>&nbsp;\r\n      <button class=\"btn btn-xs btn-default\" (click)=\"getMembersByExpiration()\">\r\n        <i class=\"glyphicon glyphicon-user\"></i>&nbsp;Expired members\r\n      </button>&nbsp;\r\n      <button class=\"btn btn-xs btn-default\" (click)=\"getMembersByExpiration(4)\">\r\n        <i class=\"glyphicon glyphicon-user\"></i>&nbsp;Members to Expire\r\n      </button>&nbsp;\r\n    </div>\r\n  </div>\r\n  <br>\r\n  <div class=\"table-responsive\">\r\n    <table class=\"table table-bordered\">\r\n      <thead>\r\n        <tr>\r\n          <th>Action</th>\r\n          <th>First name</th>\r\n          <th>Membership Type</th>\r\n          <th>Status</th>\r\n          <th>Plan Expiry</th>\r\n          <th>No.of Books</th>\r\n          <th>Plan Balance</th>\r\n          <th>Account Balance</th>\r\n          <th>No.of Months</th>\r\n          <th>Notes</th>\r\n          <th>Created on</th>\r\n        </tr>\r\n      </thead>\r\n      <tbody>\r\n      <tr class=\"pointer\" *ngFor=\"let item of membership; let index = index;\">\r\n        <td>\r\n          <div>\r\n            <button tooltip=\"click to edit membership\" placement=\"top\"\r\n                    class=\"btn btn-xs btn-primary\" (click)=\"openModal(editTemplate, item)\">\r\n              <i class=\"glyphicon glyphicon-edit\"></i>\r\n            </button> &nbsp;\r\n            <button placement=\"top\" tooltip=\"Make Membership {{ item['status'] ? 'Inactive' : 'Active' }}!\"\r\n                    class=\"btn btn-xs btn-warning\" (click)=\"openModal(statusToggleTemplate, item)\">\r\n              <i class=\"glyphicon glyphicon-remove-sign\"></i>\r\n            </button>\r\n          </div>\r\n        </td>\r\n        <td>\r\n          <a placement=\"top\" [popover]=\"addressTemplate\" popoverTitle=\"Address details of {{ item['user_id']['first_name'] }}\"\r\n             [outsideClick]=\"true\" class=\"pointer\" (click)=\"showAddress(item['user_id'])\">{{ item['user_id']['first_name'] }}</a>\r\n        </td>\r\n        <td>{{ item['membership_type'] }}</td>\r\n        <td>{{ item['status'] ? 'Active' : 'In Active' }}</td>\r\n        <td>\r\n          <div tooltip=\"Click date to Send the notification via Email\" placement=\"top\" (click)=\"openModal(reminderTemplate, item)\"\r\n               [ngClass]=\"{'red-alert': (item['plan_expiry'] | amDifference: toDay : 'days') <= 4}\">\r\n            {{ item['plan_expiry'] | date: 'dd-MM-yyyy' }}\r\n            ({{ item['plan_expiry'] | amDifference: toDay : 'days'}})\r\n          </div>\r\n        </td>\r\n        <td>{{ item['books_at_a_time'] }}</td>\r\n        <td>{{ item['plan_balance'] }}</td>\r\n        <td>{{ item['account_balance'] }}</td>\r\n        <td>{{ item['no_of_months'] }}</td>\r\n        <td *ngIf=\"item['membership_notes']\" popover=\"{{ item['membership_notes'] }}\" placement=\"left\"\r\n            triggers=\"mouseenter:mouseleave\">\r\n          {{ getString(item['membership_notes']) }}\r\n        </td>\r\n        <td>{{ item['_created'] | date: 'dd-MMM-yyyy' }}</td>\r\n      </tr>\r\n\r\n      <tr *ngIf=\"!membership.length\">\r\n        <td colspan=\"9\" class=\"text-center\"><b>No records found!</b></td>\r\n      </tr>\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n  <br>\r\n  <div class=\"row\" *ngIf=\"membership.length\">\r\n    <div class=\"col-lg-1 col-md-1\">\r\n      <button class=\"btn btn-xs btn-default text-center\" (click)=\"pagination(_meta['page'] - 1)\">\r\n        <i class=\"glyphicon glyphicon-backward\"></i>\r\n      </button>&nbsp;\r\n      <button (click)=\"pagination(_meta['page'] + 1)\" class=\"btn btn-xs btn-default text-center\">\r\n        <i class=\"glyphicon glyphicon-forward\"></i>\r\n      </button>\r\n    </div>\r\n    <div class=\"col-lg-2 col-md-2 pull-right text-right\">\r\n      <h6 class=\"margin-5\">Total Records: <b>{{ _meta['total'] }}</b></h6>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n<ng-template #addressTemplate>\r\n  <h5>Name: <b>{{ checkAddress['first_name'] }}</b></h5>\r\n  <p>Email: {{ checkAddress['email'] }}</p>\r\n  <p>Phone: {{ checkAddress['mobile_number'] }}</p>\r\n</ng-template>\r\n\r\n\r\n<ng-template #statusToggleTemplate>\r\n  <div class=\"modal-header\">\r\n    <h5 class=\"modal-title pull-left\"><b>Membership Status change</b></h5>\r\n    <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"modalRef.hide()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n  </div>\r\n  <div class=\"modal-body\">\r\n    <h4>Are you sure you want to <b>{{ modalItem['status'] ? 'In active' : 'Active' }}</b>?</h4>\r\n    <h5>Membership ID: <b>{{ modalItem['_id'] }}</b></h5>\r\n    <br><br>\r\n    <div class=\"form-group\">\r\n      <button class=\"btn btn-sm btn-primary\" type=\"submit\" (click)=\"statusToggle(!modalItem['status'])\">Submit</button>&nbsp;\r\n      <button class=\"btn btn-sm btn-default\" type=\"reset\" (click)=\"modalRef.hide()\">Close</button>\r\n    </div>\r\n  </div>\r\n</ng-template>\r\n\r\n<ng-template #reminderTemplate>\r\n  <div class=\"modal-header\">\r\n    <h5 class=\"modal-title pull-left\"><b>Plan Expiry reminder notification</b></h5>\r\n    <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"modalRef.hide()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n  </div>\r\n  <div class=\"modal-body\">\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-8\">\r\n        <form>\r\n          <div class=\"form-group\">\r\n            <label>User Email</label>\r\n            <input type=\"email\" class=\"form-control\" name=\"modal_email\" [(ngModel)]=\"modalItem['user_id']['email']\" />\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label>Plan will expire on</label>\r\n            <div class=\"form-control\" disabled readonly>\r\n              {{ modalItem['plan_expiry'] | date: 'dd-MM-yyyy' }}({{ modalItem['plan_expiry'] | amDifference: toDay : 'days'}} days)\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label>Notes</label>\r\n            <textarea class=\"form-control\" placeholder=\"Notes\"\r\n                      name=\"notes\" id=\"notes\" rows=\"2\" [(ngModel)]=\"modalItem['notes']\"></textarea>\r\n          </div>\r\n\r\n          <br>\r\n          <div class=\"form-group\">\r\n            <button class=\"btn btn-sm btn-primary\" type=\"submit\">Send Reminder</button>&nbsp;\r\n            <button class=\"btn btn-sm btn-default\" (click)=\"modalRef.hide()\" type=\"reset\">Close</button>\r\n          </div>\r\n        </form>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</ng-template>\r\n\r\n\r\n\r\n<ng-template #editTemplate>\r\n  <div class=\"modal-header\">\r\n    <h5 class=\"modal-title pull-left\"><b>Edit Membership: {{ modalItem['_id'] }}</b></h5>\r\n    <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"modalRef.hide()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n  </div>\r\n  <div class=\"modal-body\">\r\n    <form (submit)=\"requestMembership()\">\r\n      <div class=\"row\">\r\n        <div class=\"col-lg-12 text-center\">\r\n          <h5 class=\"text-uppercase text-center\">\r\n            <strong>{{ membershipType[readingCalculation['books']] }} </strong>Membership Selected!\r\n          </h5>\r\n        </div>\r\n      </div>\r\n      <br>\r\n      <div class=\"row\">\r\n        <div class=\"col-lg-6\">\r\n          <label>No of books</label>\r\n          <select name=\"no_of_books\" (change)=\"getPriceDetails(readingCalculation)\"\r\n                  class=\"form-control\" id=\"no_of_books\" [(ngModel)]=\"readingCalculation['books']\">\r\n            <option value=\"{{ item }}\" *ngFor=\"let item of [3,6,9,12]\">{{ item }} book(s) at a time</option>\r\n          </select>\r\n        </div>\r\n        <div class=\"col-lg-6\">\r\n          <label>No of Months</label>\r\n          <select name=\"no_of_months\" (change)=\"getPriceDetails(readingCalculation)\"\r\n                  class=\"form-control\" id=\"no_of_months\" [(ngModel)]=\"readingCalculation['months']\">\r\n            <option value=\"{{ item }}\" *ngFor=\"let item of [3,6,9,12]\">{{ item }} month(s)</option>\r\n          </select>\r\n        </div>\r\n      </div>\r\n      <br>\r\n      <div class=\"form-group\">\r\n        <label>Plan Balance</label>\r\n        <input type=\"number\" name=\"plan_balance\" class=\"form-control\" placeholder=\"Plan balance\"\r\n               [(ngModel)]=\"readingCalculation['totalFee']\" />\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label>Account Balance</label>\r\n        <input type=\"number\" name=\"account_balance\" class=\"form-control\" placeholder=\"Account balance\"\r\n               [(ngModel)]=\"modalItem['account_balance']\" />\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label>Membership notes</label>\r\n        <textarea class=\"form-control\" name=\"membership_notes\" id=\"membership_notes\" rows=\"2\"\r\n                  [(ngModel)]=\"modalItem['membership_notes']\"></textarea>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <button class=\"btn btn-sm btn-primary\" type=\"submit\">Update Membership</button>&nbsp;\r\n        <button class=\"btn btn-sm btn-default\" type=\"reset\" (click)=\"modalRef.hide()\">Close</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</ng-template>\r\n"
+module.exports = "<div class=\"\">\r\n  <br>\r\n  <h4 class=\"text-capitalize\">Membership Management</h4>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-2\">\r\n      <label>Filter by Status</label>\r\n      <select class=\"form-control\" name=\"status\" id=\"status\" (change)=\"toggleStatus()\" [(ngModel)]=\"query['status']\">\r\n        <option value=\"all\">All Members</option>\r\n        <option value=\"{{ item['value'] }}\" *ngFor=\"let item of bstatus\">{{ item['text'] }}</option>\r\n      </select>\r\n    </div>\r\n    <div class=\"col-lg-2\">\r\n      <label>Membership Type</label>\r\n      <select class=\"form-control\" name=\"status\" id=\"membership_type\" (change)=\"toggleStatus()\" [(ngModel)]=\"query['membership_type']\">\r\n        <option value=\"all\">All Types</option>\r\n        <option value=\"{{ item }}\" *ngFor=\"let item of membershipTypes\">{{ item }}</option>\r\n      </select>\r\n    </div>\r\n    <div class=\"col-lg-2\">\r\n      <label>Filter By</label>\r\n      <select class=\"form-control\" name=\"status\" id=\"sort_by\" (change)=\"toggleStatus()\" [(ngModel)]=\"query['sort']\">\r\n        <option value=\"-_created\">Created</option>\r\n        <option value=\"-_updated\">Updated</option>\r\n      </select>\r\n    </div>\r\n  </div>\r\n  <br>\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-12\">\r\n      <button (click)=\"getMembers()\" class=\"btn btn-xs btn-default pointer\">\r\n        <i class=\"glyphicon glyphicon-refresh\"></i>&nbsp;Refresh\r\n      </button>&nbsp;\r\n      <button class=\"btn btn-xs btn-default\" (click)=\"getMembers(true)\">\r\n        <i class=\"glyphicon glyphicon-user\"></i>&nbsp;All Members\r\n      </button>&nbsp;\r\n      <button class=\"btn btn-xs btn-default\" (click)=\"getMembersByExpiration()\">\r\n        <i class=\"glyphicon glyphicon-user\"></i>&nbsp;Expired members\r\n      </button>&nbsp;\r\n      <button class=\"btn btn-xs btn-default\" (click)=\"getMembersByExpiration(4)\">\r\n        <i class=\"glyphicon glyphicon-user\"></i>&nbsp;Members to Expire\r\n      </button>&nbsp;\r\n    </div>\r\n  </div>\r\n  <br>\r\n  <div class=\"table-responsive\">\r\n    <table class=\"table table-bordered\">\r\n      <thead>\r\n        <tr>\r\n          <th>Action</th>\r\n          <th>First name</th>\r\n          <th>Membership Type</th>\r\n          <th>Status</th>\r\n          <th>Plan Expiry</th>\r\n          <th>No.of Books</th>\r\n          <th>Plan Balance</th>\r\n          <th>Account Balance</th>\r\n          <th>No.of Months</th>\r\n          <th>Notes</th>\r\n          <th>Created on</th>\r\n        </tr>\r\n      </thead>\r\n      <tbody>\r\n      <tr class=\"pointer\" *ngFor=\"let item of membership; let index = index;\">\r\n        <td>\r\n          <div>\r\n            <button tooltip=\"click to edit membership\" placement=\"top\"\r\n                    class=\"btn btn-xs btn-primary\" (click)=\"openModal(editTemplate, item)\">\r\n              <i class=\"glyphicon glyphicon-edit\"></i>\r\n            </button> &nbsp;\r\n            <button placement=\"top\" tooltip=\"Make Membership {{ item['status'] ? 'Inactive' : 'Active' }}!\"\r\n                    class=\"btn btn-xs btn-warning\" (click)=\"openModal(statusToggleTemplate, item)\">\r\n              <i class=\"glyphicon glyphicon-remove-sign\"></i>\r\n            </button>\r\n          </div>\r\n        </td>\r\n        <td>\r\n          <a placement=\"top\" [popover]=\"addressTemplate\" popoverTitle=\"Address details of {{ item['user_id']['first_name'] }}\"\r\n             [outsideClick]=\"true\" class=\"pointer\" (click)=\"showAddress(item['user_id'])\">{{ item['user_id']['first_name'] }}</a>\r\n        </td>\r\n        <td>{{ item['membership_type'] }}</td>\r\n        <td>{{ item['status'] ? 'Active' : 'In Active' }}</td>\r\n        <td>\r\n          <div tooltip=\"Click date to Send the notification via Email\" placement=\"top\" (click)=\"openModal(reminderTemplate, item)\"\r\n               [ngClass]=\"{'red-alert': (item['plan_expiry'] | amDifference: toDay : 'days') <= 4}\">\r\n            {{ item['plan_expiry'] | date: 'dd-MM-yyyy' }}\r\n            ({{ item['plan_expiry'] | amDifference: toDay : 'days'}})\r\n          </div>\r\n        </td>\r\n        <td>{{ item['books_at_a_time'] }}</td>\r\n        <td *ngIf=\"item['amount']\">{{ item['amount']['plan_balance'] }}</td>\r\n        <td *ngIf=\"item['amount']\">{{ item['amount']['account_balance'] }}</td>\r\n        <td>{{ item['no_of_months'] }}</td>\r\n        <td *ngIf=\"item['membership_notes']\" popover=\"{{ item['membership_notes'] }}\" placement=\"left\"\r\n            triggers=\"mouseenter:mouseleave\">\r\n          {{ getString(item['membership_notes']) }}\r\n        </td>\r\n        <td>{{ item['_created'] | date: 'dd-MMM-yyyy' }}</td>\r\n      </tr>\r\n\r\n      <tr *ngIf=\"!membership.length\">\r\n        <td colspan=\"9\" class=\"text-center\"><b>No records found!</b></td>\r\n      </tr>\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n  <br>\r\n  <div class=\"row\" *ngIf=\"membership.length\">\r\n    <div class=\"col-lg-1 col-md-1\">\r\n      <button class=\"btn btn-xs btn-default text-center\" (click)=\"pagination(_meta['page'] - 1)\">\r\n        <i class=\"glyphicon glyphicon-backward\"></i>\r\n      </button>&nbsp;\r\n      <button (click)=\"pagination(_meta['page'] + 1)\" class=\"btn btn-xs btn-default text-center\">\r\n        <i class=\"glyphicon glyphicon-forward\"></i>\r\n      </button>\r\n    </div>\r\n    <div class=\"col-lg-2 col-md-2 pull-right text-right\">\r\n      <h6 class=\"margin-5\">Total Records: <b>{{ _meta['total'] }}</b></h6>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n<ng-template #addressTemplate>\r\n  <h5>Name: <b>{{ checkAddress['first_name'] }}</b></h5>\r\n  <p>Email: {{ checkAddress['email'] }}</p>\r\n  <p>Phone: {{ checkAddress['mobile_number'] }}</p>\r\n</ng-template>\r\n\r\n\r\n<ng-template #statusToggleTemplate>\r\n  <div class=\"modal-header\">\r\n    <h5 class=\"modal-title pull-left\"><b>Membership Status change</b></h5>\r\n    <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"modalRef.hide()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n  </div>\r\n  <div class=\"modal-body\">\r\n    <h4>Are you sure you want to <b>{{ modalItem['status'] ? 'In active' : 'Active' }}</b>?</h4>\r\n    <h5>Membership ID: <b>{{ modalItem['_id'] }}</b></h5>\r\n    <br><br>\r\n    <div class=\"form-group\">\r\n      <button class=\"btn btn-sm btn-primary\" type=\"submit\" (click)=\"statusToggle(!modalItem['status'])\">Submit</button>&nbsp;\r\n      <button class=\"btn btn-sm btn-default\" type=\"reset\" (click)=\"modalRef.hide()\">Close</button>\r\n    </div>\r\n  </div>\r\n</ng-template>\r\n\r\n<ng-template #reminderTemplate>\r\n  <div class=\"modal-header\">\r\n    <h5 class=\"modal-title pull-left\"><b>Plan Expiry reminder notification</b></h5>\r\n    <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"modalRef.hide()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n  </div>\r\n  <div class=\"modal-body\">\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-8\">\r\n        <form>\r\n          <div class=\"form-group\">\r\n            <label>User Email</label>\r\n            <input type=\"email\" class=\"form-control\" name=\"modal_email\" [(ngModel)]=\"modalItem['user_id']['email']\" />\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label>Plan will expire on</label>\r\n            <div class=\"form-control\" disabled readonly>\r\n              {{ modalItem['plan_expiry'] | date: 'dd-MM-yyyy' }}({{ modalItem['plan_expiry'] | amDifference: toDay : 'days'}} days)\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label>Notes</label>\r\n            <textarea class=\"form-control\" placeholder=\"Notes\"\r\n                      name=\"notes\" id=\"notes\" rows=\"2\" [(ngModel)]=\"modalItem['notes']\"></textarea>\r\n          </div>\r\n\r\n          <br>\r\n          <div class=\"form-group\">\r\n            <button class=\"btn btn-sm btn-primary\" type=\"submit\">Send Reminder</button>&nbsp;\r\n            <button class=\"btn btn-sm btn-default\" (click)=\"modalRef.hide()\" type=\"reset\">Close</button>\r\n          </div>\r\n        </form>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</ng-template>\r\n\r\n\r\n\r\n<ng-template #editTemplate>\r\n  <div class=\"modal-header\">\r\n    <h5 class=\"modal-title pull-left\"><b>Edit Membership: {{ modalItem['_id'] }}</b></h5>\r\n    <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"modalRef.hide()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n  </div>\r\n  <div class=\"modal-body\">\r\n    <form (submit)=\"requestMembership()\">\r\n      <div class=\"row\">\r\n        <div class=\"col-lg-12 text-center\">\r\n          <h5 class=\"text-uppercase text-center\">\r\n            <strong>{{ membershipType[readingCalculation['books']] }} </strong>Membership Selected!\r\n          </h5>\r\n        </div>\r\n      </div>\r\n      <br>\r\n      <div class=\"row\">\r\n        <div class=\"col-lg-6\">\r\n          <label>No of books</label>\r\n          <select name=\"no_of_books\" (change)=\"getPriceDetails(readingCalculation)\"\r\n                  class=\"form-control\" id=\"no_of_books\" [(ngModel)]=\"readingCalculation['books']\">\r\n            <option value=\"{{ item }}\" *ngFor=\"let item of [3,6,9,12]\">{{ item }} book(s) at a time</option>\r\n          </select>\r\n        </div>\r\n        <div class=\"col-lg-6\">\r\n          <label>No of Months</label>\r\n          <select name=\"no_of_months\" (change)=\"getPriceDetails(readingCalculation)\"\r\n                  class=\"form-control\" id=\"no_of_months\" [(ngModel)]=\"readingCalculation['months']\">\r\n            <option value=\"{{ item }}\" *ngFor=\"let item of [3,6,9,12]\">{{ item }} month(s)</option>\r\n          </select>\r\n        </div>\r\n      </div>\r\n      <br>\r\n      <div class=\"form-group\">\r\n        <label>Plan Balance</label>\r\n        <input type=\"number\" name=\"plan_balance\" class=\"form-control\" placeholder=\"Plan balance\"\r\n               [(ngModel)]=\"readingCalculation['totalFee']\" />\r\n      </div>\r\n      <div class=\"form-group\" *ngIf=\"modalItem['amount']\">\r\n        <label>Account Balance</label>\r\n        <input type=\"number\" name=\"account_balance\" class=\"form-control\" placeholder=\"Account balance\"\r\n               [(ngModel)]=\"modalItem['amount']['account_balance']\" />\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"editstatus\">Membership Status</label>\r\n        <select class=\"form-control\" name=\"status\" id=\"editstatus\" [(ngModel)]=\"modalItem['status']\">\r\n          <option value=\"{{ item['value'] }}\" *ngFor=\"let item of bstatus\">{{ item['text'] }}</option>\r\n        </select>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label>Membership notes</label>\r\n        <textarea class=\"form-control\" name=\"membership_notes\" id=\"membership_notes\" rows=\"2\"\r\n                  [(ngModel)]=\"modalItem['membership_notes']\"></textarea>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <button class=\"btn btn-sm btn-primary\" type=\"submit\">Update Membership</button>&nbsp;\r\n        <button class=\"btn btn-sm btn-default\" type=\"reset\" (click)=\"modalRef.hide()\">Close</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</ng-template>\r\n"
 
 /***/ }),
 
 /***/ "../../../../../src/app/membership/membership.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MembershipComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ngx_bootstrap__ = __webpack_require__("../../../../ngx-bootstrap/index.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1115,11 +1056,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var app_service_module_1 = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
+var constant_config_1 = __webpack_require__("../../../../../src/app/config/constant.config.ts");
+var router_1 = __webpack_require__("../../../router/esm5/router.js");
+var ngx_bootstrap_1 = __webpack_require__("../../../../ngx-bootstrap/index.js");
 var MembershipComponent = /** @class */ (function () {
     function MembershipComponent(appService, appUrls, activatedRoute, router, modalService) {
         var _this = this;
@@ -1139,7 +1081,7 @@ var MembershipComponent = /** @class */ (function () {
             '12': 'Ultimate reader'
         };
         this.readingCalculation = { books: 3, months: 3, totalFee: 0 };
-        this.status = [{ text: 'Active', value: true }, { text: 'In Active', value: false }];
+        this.bstatus = [{ text: 'Active', value: true }, { text: 'In Active', value: false }];
         this.query = { sort: '-_created', max_results: 15, page: 1, membership_type: 'all' };
         this.membershipTypes = ['Economy reader', 'Value reader', 'Deluxe reader', 'Ultimate reader'];
         this.activatedRoute.queryParams.subscribe(function (params) {
@@ -1172,7 +1114,7 @@ var MembershipComponent = /** @class */ (function () {
         this.modalItem = Object.assign({}, item);
         this.readingCalculation['books'] = this.modalItem['books_at_a_time'];
         this.readingCalculation['months'] = this.modalItem['no_of_months'];
-        this.readingCalculation['totalFee'] = this.modalItem['plan_balance'];
+        this.readingCalculation['totalFee'] = this.modalItem['amount']['plan_balance'];
     };
     MembershipComponent.prototype.getPriceDetails = function (calcData) {
         var month = Number(calcData['months']);
@@ -1227,8 +1169,12 @@ var MembershipComponent = /** @class */ (function () {
             no_of_months: months,
             plan_expiry: plan_expiry,
             membership_type: this.membershipType[this.readingCalculation['books']],
-            account_balance: this.modalItem['account_balance'],
-            plan_balance: this.readingCalculation['totalFee'],
+            amount: {
+                account_balance: this.modalItem['amount']['account_balance'],
+                plan_balance: this.readingCalculation['totalFee']
+            },
+            new_member: false,
+            status: this.modalItem['status'],
             membership_notes: this.modalItem['membership_notes']
         };
         console.log(membership);
@@ -1278,20 +1224,20 @@ var MembershipComponent = /** @class */ (function () {
         });
     };
     MembershipComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-persons',
             template: __webpack_require__("../../../../../src/app/membership/membership.component.html"),
             styles: [__webpack_require__("../../../../../src/app/membership/membership.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["a" /* AppServiceModule */],
-            __WEBPACK_IMPORTED_MODULE_2__config_constant_config__["a" /* AppUrls */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_4_ngx_bootstrap__["b" /* BsModalService */]])
+        __metadata("design:paramtypes", [app_service_module_1.AppServiceModule,
+            constant_config_1.AppUrls,
+            router_1.ActivatedRoute,
+            router_1.Router,
+            ngx_bootstrap_1.BsModalService])
     ], MembershipComponent);
     return MembershipComponent;
 }());
-
+exports.MembershipComponent = MembershipComponent;
 
 
 /***/ }),
@@ -1322,14 +1268,10 @@ module.exports = "\n<div class=\"side-menu\" *ngIf=\"authService.isAuthenticated
 /***/ }),
 
 /***/ "../../../../../src/app/navbar/navbar.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavbarComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1339,10 +1281,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var app_service_module_1 = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
+var constant_config_1 = __webpack_require__("../../../../../src/app/config/constant.config.ts");
+var router_1 = __webpack_require__("../../../router/esm5/router.js");
 var NavbarComponent = /** @class */ (function () {
     function NavbarComponent(appService, authService, appUrls, route) {
         this.appService = appService;
@@ -1375,19 +1318,19 @@ var NavbarComponent = /** @class */ (function () {
         this.appService.toast('Successfully logged out', '', 's');
     };
     NavbarComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-navbar',
             template: __webpack_require__("../../../../../src/app/navbar/navbar.component.html"),
             styles: [__webpack_require__("../../../../../src/app/navbar/navbar.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["a" /* AppServiceModule */],
-            __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["c" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_2__config_constant_config__["a" /* AppUrls */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]])
+        __metadata("design:paramtypes", [app_service_module_1.AppServiceModule,
+            app_service_module_1.AuthService,
+            constant_config_1.AppUrls,
+            router_1.Router])
     ], NavbarComponent);
     return NavbarComponent;
 }());
-
+exports.NavbarComponent = NavbarComponent;
 
 
 /***/ }),
@@ -1413,20 +1356,15 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/orders/orders.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <br>\n  <h5><b>Sales logistics</b></h5>\n  <hr>\n  <div class=\"row\">\n    <div class=\"col-lg-3 col-md-3\">\n      <label>Sort by</label>\n      <select name=\"sort\" id=\"sort\" class=\"form-control\" [(ngModel)]=\"query['sort']\" (change)=\"changeParams(query)\">\n        <option value=\"-_updated\">Updated on</option>\n        <option value=\"-_created\">Created on</option>\n      </select>\n    </div>\n    <div class=\"col-lg-2 col-md-2\">\n      <label for=\"max_results\">Results per page</label>\n      <select name=\"max_results\" id=\"max_results\" class=\"form-control\"\n              [(ngModel)]=\"query.max_results\" (change)=\"changeParams(query)\">\n        <option value=\"15\">15</option>\n        <option value=\"30\">30</option>\n        <option value=\"50\">50</option>\n        <option value=\"100\">100</option>\n        <option value=\"150\">150</option>\n      </select>\n    </div>\n  </div>\n  <hr>\n  <!-- table stands -->\n  <div class=\"table-responsive\">\n    <table class=\"table table-bordered table-hover\">\n      <thead>\n        <tr>\n          <th>Action</th>\n          <th>Order Id</th>\n          <th>Ordered Books </th>\n          <th>Ordered Date</th>\n          <th>Return Summary</th>\n          <th>Delivery Date</th>\n          <th>Delivery Status</th>\n          <th>Customer</th>\n          <!--<th>Transaction ID</th>-->\n          <th>Shipping Address</th>\n          <th>Amount Paid</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let item of orders\" class=\"pointer\">\n          <td>\n            <button title=\"View {{ item['_id'] }}\" (click)=\"openModal(viewTemplate, item)\" class=\"btn btn-xs btn-default\">\n              <span class=\"glyphicon glyphicon-eye-open\"></span>\n            </button>\n            <button title=\"Update {{ item['_id'] }}\" (click)=\"openModal(editTemplate, item)\" class=\"btn btn-xs btn-default\">\n              <span class=\"glyphicon glyphicon-edit\"></span>\n            </button>\n          </td>\n          <td>{{ item['_id'] }}</td>\n          <td>{{ item['books'].length }}</td>\n          <td>{{ item['_created'] | date: 'dd/MM/yyyy hh:mm a' }}</td>\n          <td>\n            <div *ngIf=\"item['return_summary']\">\n              {{ item['return_summary']['return_date'] | date: 'dd/MM/yyyy hh:mm a' }}\n            </div>\n          </td>\n          <td>{{ item['delivery_date'] | date: 'dd/MM/yyyy hh:mm a' }}</td>\n          <td>{{ item['delivery_status'] }}</td>\n          <td popover=\"Mobile number: {{ item['user_id']['mobile_number'] }}\"\n              triggers=\"mouseenter:mouseleave\">{{ item['user_id']['first_name'] }}, {{ item['user_id']['last_name'] }}</td>\n          <!--<td>{{ item['transaction_id'] }}</td>-->\n          <td>\n            <a placement=\"auto\" [popover]=\"addressTemplate\" popoverTitle=\"Address details of {{ item['user_id']['first_name'] }}\"\n               [outsideClick]=\"true\" (click)=\"showAddress(item['shipping_address'])\">Address details</a>\n          </td>\n          <td>Rs. {{ item['total_amount'] }}</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n</div>\n\n<ng-template #addressTemplate>\n  <h5><b>{{ checkAddress['name'] }}</b></h5>\n  <p>{{ checkAddress['phone_number'] }}</p>\n  <p>{{ checkAddress['address'] }}</p>\n  <p>{{ checkAddress['city'] }}, {{ checkAddress['state'] }}</p>\n  <p>{{ checkAddress['pin_code'] }}</p>\n</ng-template>\n\n<ng-template #viewTemplate>\n  <div class=\"modal-header\" *ngIf=\"modalItem\">\n    <h5 class=\"modal-title pull-left\">Order ID : {{ modalItem['_id'] }}</h5>\n    <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"modalRef.hide()\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\" *ngIf=\"modalItem\">\n    <div class=\"row\">\n      <div class=\"col-lg-12\">\n        <div class=\"table-responsive\">\n          <table class=\"table table-hover table-bordered\">\n            <tbody>\n            <tr>\n              <td>Order ID</td>\n              <td>{{ modalItem['_id'] }}</td>\n            </tr>\n            <tr *ngIf=\"modalItem['user_id']\">\n              <td>Customer</td>\n              <td>\n                <p>{{ modalItem['user_id']['first_name'] }}, {{ modalItem['user_id']['last_name'] }}</p>\n                <p>Email: {{ modalItem['user_id']['email'] }}, Phone: {{ modalItem['user_id']['mobile_number'] }}</p>\n              </td>\n            </tr>\n            <tr *ngIf=\"modalItem['books']\">\n              <td>\n                Ordered Books <strong>({{ modalItem['books'].length }})</strong>\n              </td>\n              <td>\n                <p *ngFor=\"let book of modalItem['books']\">\n                  <a target=\"_blank\"\n                     href=\"{{ appUrls.custUrl + 'book_details/' + parseTitle(book.book_title) + '/' + book.ISBN_13}}\">\n                    {{ book['book_title'] }}\n                  </a>\n                </p>\n              </td>\n            </tr>\n            <tr>\n              <td>Ordered Date</td>\n              <td>{{ modalItem['_created'] | date: 'dd/MM/yyyy hh:mm a' }}</td>\n            </tr>\n            <tr>\n              <td>Delivery Date</td>\n              <td>{{ modalItem['delivery_date'] | date: 'dd/MM/yyyy hh:mm a' }}</td>\n            </tr>\n            <tr>\n              <td>Delivery Status</td>\n              <td>{{ modalItem['delivery_status'] }}</td>\n            </tr>\n            <tr>\n              <td>Shipping Address</td>\n              <td *ngIf=\"modalItem['shipping_address']\">\n                <h5><b>{{ modalItem['shipping_address']['name'] }}</b></h5>\n                <p>{{ modalItem['shipping_address']['phone_number'] }}</p>\n                <p>{{ modalItem['shipping_address']['address'] }}</p>\n                <p>{{ modalItem['shipping_address']['city'] }}, {{ modalItem['shipping_address']['state'] }}</p>\n                <p>{{ modalItem['shipping_address']['pin_code'] }}</p>\n              </td>\n            </tr>\n            <tr>\n              <td>Amount paid</td>\n              <td><b>Rs. {{ modalItem['total_amount'] }}</b></td>\n            </tr>\n            <tr>\n              <td>Notes</td>\n              <td>{{ modalItem['notes'] }}</td>\n            </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n    </div>\n  </div>\n</ng-template>\n\n\n\n<ng-template #editTemplate>\n  <div class=\"modal-header\" *ngIf=\"modalItem\">\n    <h4 class=\"modal-title pull-left\">Order ID : {{ modalItem['_id'] }}</h4>\n    <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"modalRef.hide()\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\" *ngIf=\"modalItem\">\n    <div class=\"row\">\n      <div class=\"col-lg-8\">\n        <form (submit)=\"updateOrder(modalItem)\" name=\"update_order\">\n          <div class=\"form-group\">\n            <label>Delivery Status</label>\n            <input type=\"text\" class=\"form-control\" placeholder=\"Delivery status\"\n                   name=\"delivery_status\" [(ngModel)]=\"modalItem['delivery_status']\">\n          </div>\n          <div class=\"form-group\">\n            <label for=\"notes\">Notes</label>\n            <textarea name=\"notes\" id=\"notes\" rows=\"4\" class=\"form-control\"\n                      [(ngModel)]=\"modalItem['notes']\" placeholder=\"Notes\"></textarea>\n          </div>\n          <div class=\"form-group\">\n            <button type=\"submit\" class=\"btn btn-primary btn-sm\">Update</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</ng-template>\n"
+module.exports = "<div>\n  <br>\n  <h5><b>Sales logistics</b></h5>\n  <hr>\n  <div class=\"row\">\n    <div class=\"col-lg-3 col-md-3\">\n      <label>Sort by</label>\n      <select name=\"sort\" id=\"sort\" class=\"form-control\" [(ngModel)]=\"query['sort']\" (change)=\"changeParams(query)\">\n        <option value=\"-_updated\">Updated on</option>\n        <option value=\"-_created\">Created on</option>\n      </select>\n    </div>\n    <div class=\"col-lg-2 col-md-2\">\n      <label for=\"max_results\">Results per page</label>\n      <select name=\"max_results\" id=\"max_results\" class=\"form-control\"\n              [(ngModel)]=\"query.max_results\" (change)=\"changeParams(query)\">\n        <option value=\"15\">15</option>\n        <option value=\"30\">30</option>\n        <option value=\"50\">50</option>\n        <option value=\"100\">100</option>\n        <option value=\"150\">150</option>\n      </select>\n    </div>\n  </div>\n  <hr>\n  <!-- table stands -->\n  <div class=\"table-responsive\">\n    <table class=\"table table-bordered table-hover\">\n      <thead>\n        <tr>\n          <th>Action</th>\n          <th>Order Id</th>\n          <th>Ordered Books </th>\n          <th>Ordered Date</th>\n          <th>Delivery Date</th>\n          <th>Delivery Status</th>\n          <th>Customer</th>\n          <!--<th>Transaction ID</th>-->\n          <th>Shipping Address</th>\n          <th>Amount Paid</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let item of orders\" class=\"pointer\">\n          <td>\n            <button title=\"View {{ item['_id'] }}\" (click)=\"openModal(viewTemplate, item)\" class=\"btn btn-xs btn-default\">\n              <span class=\"glyphicon glyphicon-eye-open\"></span>\n            </button>\n            <button title=\"Update {{ item['_id'] }}\" (click)=\"openModal(editTemplate, item)\" class=\"btn btn-xs btn-default\">\n              <span class=\"glyphicon glyphicon-edit\"></span>\n            </button>\n          </td>\n          <td>{{ item['_id'] }}</td>\n          <td>{{ item['books'].length }}</td>\n          <td>{{ item['_created'] | date: 'dd/MM/yyyy hh:mm a' }}</td>\n          <td>{{ item['delivery_date'] | date: 'dd/MM/yyyy hh:mm a' }}</td>\n          <td>{{ item['delivery_status'] }}</td>\n          <td popover=\"Mobile number: {{ item['user_id']['mobile_number'] }}\"\n              triggers=\"mouseenter:mouseleave\">{{ item['user_id']['first_name'] }}, {{ item['user_id']['last_name'] }}</td>\n          <!--<td>{{ item['transaction_id'] }}</td>-->\n          <td>\n            <a placement=\"top\" [popover]=\"addressTemplate\" popoverTitle=\"Address details of {{ item['user_id']['first_name'] }}\"\n               [outsideClick]=\"true\" (click)=\"showAddress(item['shipping_address'])\">Address details</a>\n          </td>\n          <td>Rs. {{ item['total_amount'] }}</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n</div>\n\n<ng-template #addressTemplate>\n  <h5><b>{{ checkAddress['name'] }}</b></h5>\n  <p>{{ checkAddress['phone_number'] }}</p>\n  <p>{{ checkAddress['address'] }}</p>\n  <p>{{ checkAddress['city'] }}, {{ checkAddress['state'] }}</p>\n  <p>{{ checkAddress['pin_code'] }}</p>\n</ng-template>\n\n<ng-template #viewTemplate>\n  <div class=\"modal-header\" *ngIf=\"modalItem\">\n    <h5 class=\"modal-title pull-left\">Order ID : {{ modalItem['_id'] }}</h5>\n    <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"modalRef.hide()\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\" *ngIf=\"modalItem\">\n    <div class=\"row\">\n      <div class=\"col-lg-12\">\n        <div class=\"table-responsive\">\n          <table class=\"table table-hover table-bordered\">\n            <tbody>\n            <tr>\n              <td>Order ID</td>\n              <td>{{ modalItem['_id'] }}</td>\n            </tr>\n            <tr *ngIf=\"modalItem['user_id']\">\n              <td>Customer</td>\n              <td>\n                <p>{{ modalItem['user_id']['first_name'] }}, {{ modalItem['user_id']['last_name'] }}</p>\n                <p>Email: {{ modalItem['user_id']['email'] }}, Phone: {{ modalItem['user_id']['mobile_number'] }}</p>\n              </td>\n            </tr>\n            <tr *ngIf=\"modalItem['books']\">\n              <td>\n                Ordered Books <strong>({{ modalItem['books'].length }})</strong>\n              </td>\n              <td>\n                <p *ngFor=\"let book of modalItem['books']\">\n                  <a target=\"_blank\"\n                     href=\"{{ appUrls.custUrl + 'book_details/' + parseTitle(book.book_title) + '/' + book.ISBN_13}}\">\n                    {{ book['book_title'] }}\n                  </a>\n                </p>\n              </td>\n            </tr>\n            <tr>\n              <td>Ordered Date</td>\n              <td>{{ modalItem['_created'] | date: 'dd/MM/yyyy hh:mm a' }}</td>\n            </tr>\n            <tr>\n              <td>Delivery Date</td>\n              <td>{{ modalItem['delivery_date'] | date: 'dd/MM/yyyy hh:mm a' }}</td>\n            </tr>\n            <tr>\n              <td>Delivery Status</td>\n              <td>{{ modalItem['delivery_status'] }}</td>\n            </tr>\n            <tr>\n              <td>Shipping Address</td>\n              <td *ngIf=\"modalItem['shipping_address']\">\n                <h5><b>{{ modalItem['shipping_address']['name'] }}</b></h5>\n                <p>{{ modalItem['shipping_address']['phone_number'] }}</p>\n                <p>{{ modalItem['shipping_address']['address'] }}</p>\n                <p>{{ modalItem['shipping_address']['city'] }}, {{ modalItem['shipping_address']['state'] }}</p>\n                <p>{{ modalItem['shipping_address']['pin_code'] }}</p>\n              </td>\n            </tr>\n            <tr>\n              <td>Amount paid</td>\n              <td><b>Rs. {{ modalItem['total_amount'] }}</b></td>\n            </tr>\n            <tr>\n              <td>Notes</td>\n              <td>{{ modalItem['notes'] }}</td>\n            </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n    </div>\n  </div>\n</ng-template>\n\n\n\n<ng-template #editTemplate>\n  <div class=\"modal-header\" *ngIf=\"modalItem\">\n    <h4 class=\"modal-title pull-left\">Order ID : {{ modalItem['_id'] }}</h4>\n    <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"modalRef.hide()\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\" *ngIf=\"modalItem\">\n    <div class=\"row\">\n      <div class=\"col-lg-8\">\n        <form (submit)=\"updateOrder(modalItem)\" name=\"update_order\">\n          <div class=\"form-group\">\n            <label>Delivery Status</label>\n            <input type=\"text\" class=\"form-control\" placeholder=\"Delivery status\"\n                   name=\"delivery_status\" [(ngModel)]=\"modalItem['delivery_status']\">\n          </div>\n          <div class=\"form-group\">\n            <label for=\"notes\">Notes</label>\n            <textarea name=\"notes\" id=\"notes\" rows=\"4\" class=\"form-control\"\n                      [(ngModel)]=\"modalItem['notes']\" placeholder=\"Notes\"></textarea>\n          </div>\n          <div class=\"form-group\">\n            <button type=\"submit\" class=\"btn btn-primary btn-sm\">Update</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</ng-template>\n"
 
 /***/ }),
 
 /***/ "../../../../../src/app/orders/orders.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrdersComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ngx_bootstrap__ = __webpack_require__("../../../../ngx-bootstrap/index.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1436,11 +1374,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var app_service_module_1 = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
+var router_1 = __webpack_require__("../../../router/esm5/router.js");
+var constant_config_1 = __webpack_require__("../../../../../src/app/config/constant.config.ts");
+var ngx_bootstrap_1 = __webpack_require__("../../../../ngx-bootstrap/index.js");
 var OrdersComponent = /** @class */ (function () {
     function OrdersComponent(appService, router, appUrls, activatedRoute, modalService) {
         var _this = this;
@@ -1477,7 +1416,7 @@ var OrdersComponent = /** @class */ (function () {
     OrdersComponent.prototype.openModal = function (template, item) {
         var _this = this;
         this.modalRef = this.modalService.show(template);
-        var query = { embedded: { user_id: 1, books: 1 } };
+        var query = { embedded: { user_id: 1, books: { book_id: 1 } } };
         this.appService.get(this.appUrls.orders + '/' + item['_id'], query)
             .subscribe(function (data) {
             console.log(data);
@@ -1525,20 +1464,20 @@ var OrdersComponent = /** @class */ (function () {
         });
     };
     OrdersComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-orders',
             template: __webpack_require__("../../../../../src/app/orders/orders.component.html"),
             styles: [__webpack_require__("../../../../../src/app/orders/orders.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["a" /* AppServiceModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_3__config_constant_config__["a" /* AppUrls */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_4_ngx_bootstrap__["b" /* BsModalService */]])
+        __metadata("design:paramtypes", [app_service_module_1.AppServiceModule,
+            router_1.Router,
+            constant_config_1.AppUrls,
+            router_1.ActivatedRoute,
+            ngx_bootstrap_1.BsModalService])
     ], OrdersComponent);
     return OrdersComponent;
 }());
-
+exports.OrdersComponent = OrdersComponent;
 
 
 /***/ }),
@@ -1569,15 +1508,10 @@ module.exports = "<div class=\"\">\r\n  <h3>Book Data Entry with ISBN number</h3
 /***/ }),
 
 /***/ "../../../../../src/app/publish-book/publish-book.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PublishBookComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1587,11 +1521,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var app_service_module_1 = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
+var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
+var constant_config_1 = __webpack_require__("../../../../../src/app/config/constant.config.ts");
+var router_1 = __webpack_require__("../../../router/esm5/router.js");
 var PublishBookComponent = /** @class */ (function () {
     function PublishBookComponent(appService, langs, appUrls, router) {
         this.appService = appService;
@@ -1603,28 +1538,28 @@ var PublishBookComponent = /** @class */ (function () {
         this.categories = [];
         this.imagePreview = {};
         this.ebookPreview = {};
-        this.bookForm = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormGroup */]({
-            book_title: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
-            sub_title: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](''),
-            book_summary: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
-            book_keywords: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
-            no_of_pages: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
-            book_authors: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
-            book_author_desc: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
-            availability: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](true),
-            hcopy_price: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](0, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
-            ecopy_price: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](0, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
-            book_categories: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
-            language: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
-            publisher: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
-            ISBN_10: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
-            ISBN_13: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
-            published_date: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
-            image_small_thumbnail: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
-            image_thumbnail: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
-            no_of_copies: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormGroup */]({
-                outstore: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](0, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
-                instore: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](1, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].maxLength(1)]))
+        this.bookForm = new forms_1.FormGroup({
+            book_title: new forms_1.FormControl('', forms_1.Validators.required),
+            sub_title: new forms_1.FormControl(''),
+            book_summary: new forms_1.FormControl(),
+            book_keywords: new forms_1.FormControl(),
+            no_of_pages: new forms_1.FormControl('', forms_1.Validators.required),
+            book_authors: new forms_1.FormControl('', forms_1.Validators.required),
+            book_author_desc: new forms_1.FormControl(),
+            availability: new forms_1.FormControl(true),
+            hcopy_price: new forms_1.FormControl(0, forms_1.Validators.required),
+            ecopy_price: new forms_1.FormControl(0, forms_1.Validators.required),
+            book_categories: new forms_1.FormControl('', forms_1.Validators.required),
+            language: new forms_1.FormControl('', forms_1.Validators.required),
+            publisher: new forms_1.FormControl('', forms_1.Validators.required),
+            ISBN_10: new forms_1.FormControl('', forms_1.Validators.required),
+            ISBN_13: new forms_1.FormControl('', forms_1.Validators.required),
+            published_date: new forms_1.FormControl('', forms_1.Validators.required),
+            image_small_thumbnail: new forms_1.FormControl('', forms_1.Validators.required),
+            image_thumbnail: new forms_1.FormControl('', forms_1.Validators.required),
+            no_of_copies: new forms_1.FormGroup({
+                outstore: new forms_1.FormControl(0, forms_1.Validators.required),
+                instore: new forms_1.FormControl(1, forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.maxLength(1)]))
             })
         });
     }
@@ -1788,27 +1723,27 @@ var PublishBookComponent = /** @class */ (function () {
         }
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('imageUpload'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
+        core_1.ViewChild('imageUpload'),
+        __metadata("design:type", core_1.ElementRef)
     ], PublishBookComponent.prototype, "imageInput", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('eBookUpload'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
+        core_1.ViewChild('eBookUpload'),
+        __metadata("design:type", core_1.ElementRef)
     ], PublishBookComponent.prototype, "eBookInput", void 0);
     PublishBookComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-publish-book',
             template: __webpack_require__("../../../../../src/app/publish-book/publish-book.component.html"),
             styles: [__webpack_require__("../../../../../src/app/publish-book/publish-book.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["a" /* AppServiceModule */],
-            __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["d" /* Languages */],
-            __WEBPACK_IMPORTED_MODULE_3__config_constant_config__["a" /* AppUrls */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]])
+        __metadata("design:paramtypes", [app_service_module_1.AppServiceModule,
+            app_service_module_1.Languages,
+            constant_config_1.AppUrls,
+            router_1.Router])
     ], PublishBookComponent);
     return PublishBookComponent;
 }());
-
+exports.PublishBookComponent = PublishBookComponent;
 
 
 /***/ }),
@@ -1839,11 +1774,10 @@ module.exports = "<br>\n<div class=\"container\">\n  <div class=\"row\">\n    <d
 /***/ }),
 
 /***/ "../../../../../src/app/register/register.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1853,14 +1787,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
 var RegisterComponent = /** @class */ (function () {
     function RegisterComponent() {
     }
     RegisterComponent.prototype.ngOnInit = function () {
     };
     RegisterComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-register',
             template: __webpack_require__("../../../../../src/app/register/register.component.html"),
             styles: [__webpack_require__("../../../../../src/app/register/register.component.css")]
@@ -1869,23 +1804,16 @@ var RegisterComponent = /** @class */ (function () {
     ], RegisterComponent);
     return RegisterComponent;
 }());
-
+exports.RegisterComponent = RegisterComponent;
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/shared/app.service.module.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppServiceModule; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return AuthService; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return AuthGuardService; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return Languages; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_BehaviorSubject__ = __webpack_require__("../../../../rxjs/_esm5/BehaviorSubject.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1895,22 +1823,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var http_1 = __webpack_require__("../../../common/esm5/http.js");
+var router_1 = __webpack_require__("../../../router/esm5/router.js");
+var BehaviorSubject_1 = __webpack_require__("../../../../rxjs/_esm5/BehaviorSubject.js");
 var AppServiceModule = /** @class */ (function () {
     function AppServiceModule(httpClient) {
         this.httpClient = httpClient;
-        this.CurrentUser = new __WEBPACK_IMPORTED_MODULE_3_rxjs_BehaviorSubject__["a" /* BehaviorSubject */]({});
+        this.CurrentUser = new BehaviorSubject_1.BehaviorSubject({});
         this.userCast = this.CurrentUser.asObservable();
-        this.options = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]({ 'Content-Type': 'application/json' });
+        this.options = new http_1.HttpHeaders({ 'Content-Type': 'application/json' });
     }
     AppServiceModule.prototype.get = function (url, parameters) {
         console.log('get URL -----', url);
         var params;
         // Setup log namespace query parameter
-        params = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpParams */]();
+        params = new http_1.HttpParams();
         params = params.set('rand', Math.random());
         if (parameters) {
             for (var key in parameters) {
@@ -1957,12 +1886,12 @@ var AppServiceModule = /** @class */ (function () {
         return Math.ceil(timeDiff / (1000 * 3600 * 24));
     };
     AppServiceModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.HttpClient])
     ], AppServiceModule);
     return AppServiceModule;
 }());
-
+exports.AppServiceModule = AppServiceModule;
 var AuthService = /** @class */ (function () {
     function AuthService() {
     }
@@ -1983,12 +1912,12 @@ var AuthService = /** @class */ (function () {
         return true;
     };
     AuthService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        core_1.Injectable(),
         __metadata("design:paramtypes", [])
     ], AuthService);
     return AuthService;
 }());
-
+exports.AuthService = AuthService;
 var AuthGuardService = /** @class */ (function () {
     function AuthGuardService(auth, router) {
         this.auth = auth;
@@ -2002,12 +1931,12 @@ var AuthGuardService = /** @class */ (function () {
         return true;
     };
     AuthGuardService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [AuthService, __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [AuthService, router_1.Router])
     ], AuthGuardService);
     return AuthGuardService;
 }());
-
+exports.AuthGuardService = AuthGuardService;
 var Languages = /** @class */ (function () {
     function Languages() {
         this.languages = [
@@ -2020,12 +1949,12 @@ var Languages = /** @class */ (function () {
         return this.languages;
     };
     Languages = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        core_1.Injectable(),
         __metadata("design:paramtypes", [])
     ], Languages);
     return Languages;
 }());
-
+exports.Languages = Languages;
 
 
 /***/ }),
@@ -2056,16 +1985,10 @@ module.exports = "<div class=\"\">\n  <br>\n  <h4><b>Quick Actions on</b></h4>\n
 /***/ }),
 
 /***/ "../../../../../src/app/updatepersons/updatepersons.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UpdatepersonsComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ngx_bootstrap__ = __webpack_require__("../../../../ngx-bootstrap/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2075,12 +1998,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var router_1 = __webpack_require__("../../../router/esm5/router.js");
+var app_service_module_1 = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
+var constant_config_1 = __webpack_require__("../../../../../src/app/config/constant.config.ts");
+var ngx_bootstrap_1 = __webpack_require__("../../../../ngx-bootstrap/index.js");
+var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
 var UpdatepersonsComponent = /** @class */ (function () {
     function UpdatepersonsComponent(aRoute, appService, authService, router, appUrls, modalService) {
         var _this = this;
@@ -2090,22 +2014,22 @@ var UpdatepersonsComponent = /** @class */ (function () {
         this.router = router;
         this.appUrls = appUrls;
         this.modalService = modalService;
-        this.updateForm = new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["b" /* FormGroup */]({
-            membership_type: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].required),
-            plan_balance: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormControl */](0, __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].required),
-            status: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormControl */](true, __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].required),
-            plan_expiry: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormControl */](null, __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].required)
+        this.updateForm = new forms_1.FormGroup({
+            membership_type: new forms_1.FormControl('', forms_1.Validators.required),
+            plan_balance: new forms_1.FormControl(0, forms_1.Validators.required),
+            status: new forms_1.FormControl(true, forms_1.Validators.required),
+            plan_expiry: new forms_1.FormControl(null, forms_1.Validators.required)
         });
-        this.rForm = new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["b" /* FormGroup */]({
-            email: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].email]),
-            password: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].required]),
-            first_name: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].required]),
-            last_name: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].required]),
-            mobile_number: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].required]),
-            gender: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormControl */]('male'),
-            status: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormControl */]('inactive'),
-            city: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormControl */](''),
-            user_level: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormControl */]('user')
+        this.rForm = new forms_1.FormGroup({
+            email: new forms_1.FormControl('', [forms_1.Validators.required, forms_1.Validators.email]),
+            password: new forms_1.FormControl('', [forms_1.Validators.required]),
+            first_name: new forms_1.FormControl('', [forms_1.Validators.required]),
+            last_name: new forms_1.FormControl('', [forms_1.Validators.required]),
+            mobile_number: new forms_1.FormControl('', [forms_1.Validators.required]),
+            gender: new forms_1.FormControl('male'),
+            status: new forms_1.FormControl('inactive'),
+            city: new forms_1.FormControl(''),
+            user_level: new forms_1.FormControl('user')
         });
         this.myStatus = [
             { text: 'Active', value: true },
@@ -2175,35 +2099,36 @@ var UpdatepersonsComponent = /** @class */ (function () {
         });
     };
     UpdatepersonsComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-updatepersons',
             template: __webpack_require__("../../../../../src/app/updatepersons/updatepersons.component.html"),
             styles: [__webpack_require__("../../../../../src/app/updatepersons/updatepersons.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__shared_app_service_module__["a" /* AppServiceModule */],
-            __WEBPACK_IMPORTED_MODULE_2__shared_app_service_module__["c" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_3__config_constant_config__["a" /* AppUrls */],
-            __WEBPACK_IMPORTED_MODULE_4_ngx_bootstrap__["b" /* BsModalService */]])
+        __metadata("design:paramtypes", [router_1.ActivatedRoute,
+            app_service_module_1.AppServiceModule,
+            app_service_module_1.AuthService,
+            router_1.Router,
+            constant_config_1.AppUrls,
+            ngx_bootstrap_1.BsModalService])
     ], UpdatepersonsComponent);
     return UpdatepersonsComponent;
 }());
-
+exports.UpdatepersonsComponent = UpdatepersonsComponent;
 
 
 /***/ }),
 
 /***/ "../../../../../src/environments/environment.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
+
 // The file contents for the current environment will overwrite these during build.
 // The build system defaults to the dev environment which uses `environment.ts`, but if you do
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
-var environment = {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.environment = {
     production: false
 };
 
@@ -2211,22 +2136,19 @@ var environment = {
 /***/ }),
 
 /***/ "../../../../../src/main.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/esm5/platform-browser-dynamic.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 
-
-
-
-if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["enableProdMode"])();
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var platform_browser_dynamic_1 = __webpack_require__("../../../platform-browser-dynamic/esm5/platform-browser-dynamic.js");
+var app_module_1 = __webpack_require__("../../../../../src/app/app.module.ts");
+var environment_1 = __webpack_require__("../../../../../src/environments/environment.ts");
+if (environment_1.environment.production) {
+    core_1.enableProdMode();
 }
-Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
+platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule)
     .catch(function (err) { return console.log(err); });
 
 
