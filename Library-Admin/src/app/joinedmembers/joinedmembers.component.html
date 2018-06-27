@@ -1,0 +1,76 @@
+<div class="">
+  <br>
+  <h4 class="text-capitalize">Joined Members</h4>
+  <div class="row">
+    <div class="col-lg-3">
+      <label>Search records</label>
+      <select class="form-control" name="status" id="status" (change)="toggleStatus()" [(ngModel)]="query['status']">
+        <option value="{{ item['value'] }}" *ngFor="let item of status">{{ item['text'] }}</option>
+      </select>
+    </div>
+    <div class="col-lg-3">
+      <label>Sort By</label>
+      <select class="form-control" name="status" id="sort_by" (change)="toggleStatus()" [(ngModel)]="query['sort']">
+        <option value="-_created">Created by</option>
+        <option value="-_updated">Updated by</option>
+      </select>
+    </div>
+  </div>
+  <br>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>Action</th>
+        <th>First name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Status</th>
+        <th>City</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Registered on</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="pointer" *ngFor="let item of persons; let index = index;">
+        <td>
+          <button title="Make {{ item['first_name'] }} as Inactive"
+                  (click)="toggleStatus('inactive', item, index)" *ngIf="item['status'] === 'active'" class="btn btn-xs btn-default">
+            <span class="glyphicon glyphicon-ban-circle"></span>
+          </button>
+          <button title="Make {{ item['first_name'] }} as Active"
+                  (click)="toggleStatus('active', item, index)" *ngIf="item['status'] === 'inactive'" class="btn btn-xs btn-default">
+            <span class="glyphicon glyphicon-ok-circle"></span>
+          </button>
+        </td>
+        <td><a class="pointer" routerLink="/update-person/{{ item['_id'] }}">{{ item['first_name'] }}</a></td>
+        <td>{{ item['email'] }}</td>
+        <td>{{ item['mobile_number'] }}</td>
+        <td>{{ item['status'] }}</td>
+        <td>{{ item['city'] }}</td>
+        <td>{{ item['gender'] }}</td>
+        <td>{{ item['age'] }}</td>
+        <td>{{ item['_created'] | date: 'dd/MM/yyyy hh:mm a' }}</td>
+      </tr>
+
+      <tr *ngIf="!persons.length">
+        <td colspan="9" class="text-center"><b>No records found!</b></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="row" *ngIf="persons.length">
+    <div class="col-lg-1 col-md-1">
+      <button class="btn btn-xs btn-default text-center" (click)="pagination(usersMeta['page'] - 1)">
+        <span class="glyphicon glyphicon-backward"></span>
+      </button>&nbsp;
+      <button (click)="pagination(usersMeta['page'] + 1)" class="btn btn-xs btn-default text-center">
+        <span class="glyphicon glyphicon-forward"></span>
+      </button>
+    </div>
+    <div class="col-lg-2 col-md-2 pull-right text-right">
+      <h6 class="margin-5">Total Records: <b>{{ usersMeta['total'] }}</b></h6>
+    </div>
+  </div>
+</div>

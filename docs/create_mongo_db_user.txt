@@ -1,0 +1,30 @@
+db.persons.update({"_id" : ObjectId("58fb1e1b1d41c84079ba5655")},{"$set":{"user_level":["admin"]}})
+
+db.createUser({
+ user: "t",
+  pwd: "t",
+  roles: [
+    { role: "dbAdmin", db: "dl_db" }
+  ]
+})
+
+
+
+db.createUser({
+ user: "fab_admin",
+  pwd: "fab_password",
+  roles: [
+    { role: "dbAdmin", db: "fab_db" }
+  ]
+})
+
+use admin
+db.createUser(
+  {
+    user: "user_fab",
+    pwd: "password_fab",
+    roles: [ { role: "dbAdmin", db: "fab_db" } ]
+  }
+)
+
+

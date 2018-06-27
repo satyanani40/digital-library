@@ -1,0 +1,250 @@
+<div class="">
+  <br>
+  <h4 class="text-capitalize">Membership Management</h4>
+  <hr>
+  <div class="row">
+    <div class="col-lg-2">
+      <label>Filter by Status</label>
+      <select class="form-control" name="status" id="status" (change)="toggleStatus()" [(ngModel)]="query['status']">
+        <option value="all">All Members</option>
+        <option value="{{ item['value'] }}" *ngFor="let item of bstatus">{{ item['text'] }}</option>
+      </select>
+    </div>
+    <div class="col-lg-2">
+      <label>Membership Type</label>
+      <select class="form-control" name="status" id="membership_type" (change)="toggleStatus()" [(ngModel)]="query['membership_type']">
+        <option value="all">All Types</option>
+        <option value="{{ item }}" *ngFor="let item of membershipTypes">{{ item }}</option>
+      </select>
+    </div>
+    <div class="col-lg-2">
+      <label>Filter By</label>
+      <select class="form-control" name="status" id="sort_by" (change)="toggleStatus()" [(ngModel)]="query['sort']">
+        <option value="-_created">Created</option>
+        <option value="-_updated">Updated</option>
+      </select>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-lg-12">
+      <button (click)="getMembers()" class="btn btn-xs btn-default pointer">
+        <i class="glyphicon glyphicon-refresh"></i>&nbsp;Refresh
+      </button>&nbsp;
+      <button class="btn btn-xs btn-default" (click)="getMembers(true)">
+        <i class="glyphicon glyphicon-user"></i>&nbsp;All Members
+      </button>&nbsp;
+      <button class="btn btn-xs btn-default" (click)="getMembersByExpiration()">
+        <i class="glyphicon glyphicon-user"></i>&nbsp;Expired members
+      </button>&nbsp;
+      <button class="btn btn-xs btn-default" (click)="getMembersByExpiration(4)">
+        <i class="glyphicon glyphicon-user"></i>&nbsp;Members to Expire
+      </button>&nbsp;
+    </div>
+  </div>
+  <br>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Action</th>
+          <th>First name</th>
+          <th>Membership Type</th>
+          <th>Status</th>
+          <th>Plan Expiry</th>
+          <th>No.of Books</th>
+          <th>Plan Balance</th>
+          <th>Account Balance</th>
+          <th>No.of Months</th>
+          <th>Notes</th>
+          <th>Created on</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr class="pointer" *ngFor="let item of membership; let index = index;">
+        <td>
+          <div>
+            <button tooltip="click to edit membership" placement="top"
+                    class="btn btn-xs btn-primary" (click)="openModal(editTemplate, item)">
+              <i class="glyphicon glyphicon-edit"></i>
+            </button> &nbsp;
+            <button placement="top" tooltip="Make Membership {{ item['status'] ? 'Inactive' : 'Active' }}!"
+                    class="btn btn-xs btn-warning" (click)="openModal(statusToggleTemplate, item)">
+              <i class="glyphicon glyphicon-remove-sign"></i>
+            </button>
+          </div>
+        </td>
+        <td>
+          <a placement="top" [popover]="addressTemplate" popoverTitle="Address details of {{ item['user_id']['first_name'] }}"
+             [outsideClick]="true" class="pointer" (click)="showAddress(item['user_id'])">{{ item['user_id']['first_name'] }}</a>
+        </td>
+        <td>{{ item['membership_type'] }}</td>
+        <td>{{ item['status'] ? 'Active' : 'In Active' }}</td>
+        <td>
+          <div tooltip="Click date to Send the notification via Email" placement="top" (click)="openModal(reminderTemplate, item)"
+               [ngClass]="{'red-alert': (item['plan_expiry'] | amDifference: toDay : 'days') <= 4}">
+            {{ item['plan_expiry'] | date: 'dd-MM-yyyy' }}
+            ({{ item['plan_expiry'] | amDifference: toDay : 'days'}})
+          </div>
+        </td>
+        <td>{{ item['books_at_a_time'] }}</td>
+        <td *ngIf="item['amount']">{{ item['amount']['plan_balance'] }}</td>
+        <td *ngIf="item['amount']">{{ item['amount']['account_balance'] }}</td>
+        <td>{{ item['no_of_months'] }}</td>
+        <td *ngIf="item['membership_notes']" popover="{{ item['membership_notes'] }}" placement="left"
+            triggers="mouseenter:mouseleave">
+          {{ getString(item['membership_notes']) }}
+        </td>
+        <td>{{ item['_created'] | date: 'dd-MMM-yyyy' }}</td>
+      </tr>
+
+      <tr *ngIf="!membership.length">
+        <td colspan="9" class="text-center"><b>No records found!</b></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <br>
+  <div class="row" *ngIf="membership.length">
+    <div class="col-lg-1 col-md-1">
+      <button class="btn btn-xs btn-default text-center" (click)="pagination(_meta['page'] - 1)">
+        <i class="glyphicon glyphicon-backward"></i>
+      </button>&nbsp;
+      <button (click)="pagination(_meta['page'] + 1)" class="btn btn-xs btn-default text-center">
+        <i class="glyphicon glyphicon-forward"></i>
+      </button>
+    </div>
+    <div class="col-lg-2 col-md-2 pull-right text-right">
+      <h6 class="margin-5">Total Records: <b>{{ _meta['total'] }}</b></h6>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #addressTemplate>
+  <h5>Name: <b>{{ checkAddress['first_name'] }}</b></h5>
+  <p>Email: {{ checkAddress['email'] }}</p>
+  <p>Phone: {{ checkAddress['mobile_number'] }}</p>
+</ng-template>
+
+
+<ng-template #statusToggleTemplate>
+  <div class="modal-header">
+    <h5 class="modal-title pull-left"><b>Membership Status change</b></h5>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <h4>Are you sure you want to <b>{{ modalItem['status'] ? 'In active' : 'Active' }}</b>?</h4>
+    <h5>Membership ID: <b>{{ modalItem['_id'] }}</b></h5>
+    <br><br>
+    <div class="form-group">
+      <button class="btn btn-sm btn-primary" type="submit" (click)="statusToggle(!modalItem['status'])">Submit</button>&nbsp;
+      <button class="btn btn-sm btn-default" type="reset" (click)="modalRef.hide()">Close</button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #reminderTemplate>
+  <div class="modal-header">
+    <h5 class="modal-title pull-left"><b>Plan Expiry reminder notification</b></h5>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-lg-8">
+        <form>
+          <div class="form-group">
+            <label>User Email</label>
+            <input type="email" class="form-control" name="modal_email" [(ngModel)]="modalItem['user_id']['email']" />
+          </div>
+          <div class="form-group">
+            <label>Plan will expire on</label>
+            <div class="form-control" disabled readonly>
+              {{ modalItem['plan_expiry'] | date: 'dd-MM-yyyy' }}({{ modalItem['plan_expiry'] | amDifference: toDay : 'days'}} days)
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Notes</label>
+            <textarea class="form-control" placeholder="Notes"
+                      name="notes" id="notes" rows="2" [(ngModel)]="modalItem['notes']"></textarea>
+          </div>
+
+          <br>
+          <div class="form-group">
+            <button class="btn btn-sm btn-primary" type="submit">Send Reminder</button>&nbsp;
+            <button class="btn btn-sm btn-default" (click)="modalRef.hide()" type="reset">Close</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+
+
+<ng-template #editTemplate>
+  <div class="modal-header">
+    <h5 class="modal-title pull-left"><b>Edit Membership: {{ modalItem['_id'] }}</b></h5>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form (submit)="requestMembership()">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h5 class="text-uppercase text-center">
+            <strong>{{ membershipType[readingCalculation['books']] }} </strong>Membership Selected!
+          </h5>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-lg-6">
+          <label>No of books</label>
+          <select name="no_of_books" (change)="getPriceDetails(readingCalculation)"
+                  class="form-control" id="no_of_books" [(ngModel)]="readingCalculation['books']">
+            <option value="{{ item }}" *ngFor="let item of [3,6,9,12]">{{ item }} book(s) at a time</option>
+          </select>
+        </div>
+        <div class="col-lg-6">
+          <label>No of Months</label>
+          <select name="no_of_months" (change)="getPriceDetails(readingCalculation)"
+                  class="form-control" id="no_of_months" [(ngModel)]="readingCalculation['months']">
+            <option value="{{ item }}" *ngFor="let item of [3,6,9,12]">{{ item }} month(s)</option>
+          </select>
+        </div>
+      </div>
+      <br>
+      <div class="form-group">
+        <label>Plan Balance</label>
+        <input type="number" name="plan_balance" class="form-control" placeholder="Plan balance"
+               [(ngModel)]="readingCalculation['totalFee']" />
+      </div>
+      <div class="form-group" *ngIf="modalItem['amount']">
+        <label>Account Balance</label>
+        <input type="number" name="account_balance" class="form-control" placeholder="Account balance"
+               [(ngModel)]="modalItem['amount']['account_balance']" />
+      </div>
+      <div class="form-group">
+        <label for="editstatus">Membership Status</label>
+        <select class="form-control" name="status" id="editstatus" [(ngModel)]="modalItem['status']">
+          <option value="{{ item['value'] }}" *ngFor="let item of bstatus">{{ item['text'] }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Membership notes</label>
+        <textarea class="form-control" name="membership_notes" id="membership_notes" rows="2"
+                  [(ngModel)]="modalItem['membership_notes']"></textarea>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-sm btn-primary" type="submit">Update Membership</button>&nbsp;
+        <button class="btn btn-sm btn-default" type="reset" (click)="modalRef.hide()">Close</button>
+      </div>
+    </form>
+  </div>
+</ng-template>

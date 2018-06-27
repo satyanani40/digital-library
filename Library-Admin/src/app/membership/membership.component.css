@@ -1,0 +1,19 @@
+.margin-5 {
+  margin-top: 5px;
+}
+.table-responsive table td, .table-responsive table th {
+  min-width: 130px;
+  font-size: 12px;
+}
+.red-alert {
+  color: red;
+}
+span{
+  font-family: cursive;
+  animation: blink 1s linear infinite;
+}
+@keyframes blink{
+  0%{opacity: 0;}
+  50%{opacity: .5;}
+  100%{opacity: 1;}
+}

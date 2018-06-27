@@ -1,0 +1,135 @@
+<div class="">
+  <br>
+  <h4><b>Quick Actions on</b></h4>
+  <div class="row" *ngIf="myUser && membership">
+    <div class="col-lg-6 col-md-6">
+      <button class="btn btn-sm btn-warning" (click)="makeInactive(myParams)">
+        <i class="glyphicon glyphicon-unchecked"></i>&nbsp;
+        Make as {{ myUser['status'] === 'active' ? 'Inactive' : 'Active' }} User
+      </button>
+      <button *ngIf="membership" class="btn btn-danger btn-sm" (click)="toggleMembership(myParams)">
+        <i class="glyphicon glyphicon-log-in"></i>&nbsp;{{ membership['status'] ? 'Close' : 'Activate' }} Membership
+      </button>
+      <!--<button class="btn btn-primary btn-sm" (click)="openModal(updateTemplate, membership)">
+        Update Membership
+      </button>-->
+    </div>
+  </div>
+  <hr>
+  <form [formGroup]="rForm" (submit)="updatePersonDetails(rForm.value)">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="form-group">
+          <label>Email<span class="star-red">*</span></label>
+          <input type="email" class="form-control" autocomplete="off" autofocus
+                 placeholder="Email" formControlName="email" [email] required />
+        </div>
+        <div class="form-group">
+          <div *ngIf="rForm.controls['email'].errors && !rForm.controls['email'].pristine"
+               class="alert-danger alert">
+            <div [hidden]="!rForm.controls['email'].errors.required">Email is required.</div>
+            <div [hidden]="rForm.controls['email'].errors === null && rForm.controls['email'].value">Email is invalid. </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Mobile number <span class="star-red">*</span> </label>
+          <input type="text" formControlName="mobile_number" placeholder="Mobile number" class="form-control" required />
+        </div>
+        <div class="form-group">
+          <label>First name</label>
+          <input type="text" class="form-control" placeholder="First name" formControlName="first_name">
+        </div>
+        <div class="form-group">
+          <label>Last name</label>
+          <input type="text" class="form-control" placeholder="Last name" formControlName="last_name">
+        </div>
+        <div class="form-group">
+          <label>Gender</label>
+          <select class="form-control" name="gender" id="gender" formControlName="gender">
+            <option value="{{ item }}" *ngFor="let item of ['male', 'female']">{{ item }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
+          <button class="btn btn-md btn-primary" type="submit">Update</button> &nbsp;&nbsp;
+          <button routerLink="/persons" [queryParams]="{max_results: 15, page: 1, sort: 'first_name', status: 'paid_members'}"
+                  type="reset" class="btn btn-md btn-default">Cancel</button> &nbsp;&nbsp;&nbsp;
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+
+
+<ng-template #updateTemplate>
+  <div class="modal-header" *ngIf="modalItem">
+    <h5 class="modal-title pull-left">
+      <b>Title : {{ modalItem['user_id']['first_name'] }} {{ modalItem['user_id']['last_name'] }}</b>
+    </h5>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" *ngIf="modalItem">
+    <div class="row">
+      <div class="col-lg-8">
+        <form [formGroup]="updateForm">
+          <div class="form-group">
+            <label for="">Membership Type</label>
+            <input type="text" class="form-control" formControlName="membership_type" name="membership_type">
+          </div>
+          <div class="form-group">
+            <label for="">Plan Balance</label>
+            <input type="number" class="form-control" formControlName="plan_balance" name="plan_balance">
+          </div>
+          <div class="form-group">
+            <label for="">Status</label>
+            <select name="status" formControlName="status" class="form-control">
+              <option value="{{ item['value'] }}" *ngFor="let item of myStatus">{{ item['text'] }}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="">Plan Expiry</label>
+            <input type="date" class="form-control" formControlName="plan_expiry" name="plan_expiry">
+          </div>
+          <br>
+          <div class="form-group">
+            <button class="btn btn-sm btn-primary">Update</button>
+            &nbsp;
+            <button class="btn btn-sm btn-default">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+
+
+
+
+<ng-template #deleteTemplate>
+  <div class="modal-header">
+    <h5 class="modal-title pull-left">Title : {{ modalItem['book_title'] }}</h5>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-lg-8">
+        <h4>Are you sure you want to Delete?</h4>
+        <h6>Book Title: <b>{{ modalItem['book_title'] }}</b></h6>
+        <h6>Created on: {{ modalItem['_created'] | date: 'dd MMMM yyyy' }}</h6>
+        <br>
+        <button class="btn btn-sm btn-primary">Delete Anyway</button>
+      </div>
+    </div>
+  </div>
+</ng-template>
