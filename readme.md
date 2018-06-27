@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # DIGITAL-LIBRARY API
 
 ## Installation:
@@ -470,4 +469,3 @@ card details:
 }
 ### Search books by id
 /api/1.0/books?where={"book_title": {"$regex": ".*Surya.*", "$options": "i"}}
->>>>>>> 6fa8e7667987e260e5f21606a0289cb2d133aabd
