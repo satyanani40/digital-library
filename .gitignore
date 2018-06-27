@@ -5,7 +5,7 @@ access_logs/*
 *.log
 fab_key.pem
 nohup.out
-Library-Admin/node_modules
+admin-ui/node_modules
 sitemap_index.xml
 sitemap_stores.xml
 sitemap_blog.xml
