@@ -1,0 +1,23 @@
+.pl-ziro {
+  padding-left: 0;
+}
+label {
+  display: block;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+  padding: 12px;
+}
+.nav > li > a {
+  background-color: #eee;
+  margin-top: 5px;
+}
+.price-btn {
+  margin-top: -3px;
+}
+.card {
+  padding: 15px;
+  margin: 0 auto;
+}
+.membership-notes {
+  color: red;
+}

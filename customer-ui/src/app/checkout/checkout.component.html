@@ -1,0 +1,79 @@
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-lg-8 col-md-8">
+      <div class="panel panel-default">
+        <div class="panel-heading" (click)="toggle = {address: true}">
+          <h5 class="panel-title">Delivery address</h5>
+        </div>
+        <div class="panel-body" *ngIf="toggle.address">
+          <div>
+            <a routerLink="/profile/shipping"><i class="fa fa-plus"></i>&nbsp;Add New Shipping Address</a>
+          </div>
+          <br>
+          <div class="shipping-address" *ngFor="let shipping_address of shipping_address; let i = index;">
+            <div>
+              <span class="address-title"><b>{{ shipping_address.name }}</b></span>
+              <span>{{ shipping_address.phone_number }}</span>
+            </div>
+            <div class="address">
+              <p>{{ shipping_address.address }}</p>
+              <p>
+                <span>{{ shipping_address.city }}</span>&nbsp;
+                <span>{{ shipping_address.state }}</span>&nbsp;
+                <span>{{ shipping_address.pin_code }}</span>
+              </p>
+            </div>
+            <button (click)="selectedShipping = i; myShippingAddress = shipping_address"
+                    class="btn btn-primary btn-xs my-button">
+              Deliver here!
+            </button> &nbsp;
+            <span class="selected-mark" *ngIf="selectedShipping === i;">
+              <b>Your order will be shipped to this address!</b>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div> <!-- end col  -->
+    <div class="col-lg-4 col-md-4">
+      <div class="card price-card">
+        <div class="card-header">
+          <h5 class="text-uppercase"><b>Reading Fee</b></h5>
+        </div>
+        <hr>
+        <div class="card-body">
+          <h5>
+            Price ({{ cartResults.length }} items)
+            <span class="pull-right"><b>₹ {{ totalPrice}}</b></span>
+          </h5>
+          <h5>
+            Delivery charges
+            <span class="pull-right"><b>₹ {{ appConstants.del_charges }}</b></span>
+          </h5>
+          <hr>
+          <h5>
+            Amount payable
+            <span class="pull-right"><b>₹ {{ totalPrice + appConstants.del_charges }}</b></span>
+          </h5>
+        </div>
+        <hr>
+        <div class="card-footer" *ngIf="membership && membership['status']">
+          <button class="btn btn-default btn-block btn-md text-uppercase proceed" (click)="orderNow()">
+            Proceed to Pay
+          </button>
+          <h5 *ngIf="membership['amount']">
+            Account Balance&nbsp;
+            <b class="text-right">₹  {{ membership['amount']['account_balance'] }}</b>
+          </h5>
+        </div>
+        <div class="card-footer">
+          <h5 class="error-message" *ngIf="membership && !membership['status']">
+            Your membership is InActive, Please contact the customer care!
+          </h5>
+        </div>
+      </div>
+    </div> <!-- end col -->
+  </div> <!-- end row -->
+</div>
+
+<br><br><br><br><br><br>

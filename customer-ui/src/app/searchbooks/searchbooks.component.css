@@ -1,0 +1,62 @@
+.no-search-results {
+  display: block !important;
+  padding-top: 7%;
+}
+.no-search-results i.fa {
+  font-size: 60px;
+  color: #FF4081;
+}
+.panel-body {
+  padding: 10px;
+}
+.filter-heading {
+  margin-bottom: 0;
+}
+hr {
+  margin: 10px 0;
+}
+.search-card {
+  border: 1px solid #EEEEEE;
+  margin-bottom: 20px;
+  min-height: 220px;
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+}
+.show-more {
+  padding: 8px;
+}
+.show-more-btn, .show-more-btn:hover, .show-more-btn:focus, .show-more-btn:active {
+  background-color: #FF4081;
+  border: 1px solid #FF4081;
+}
+.results-length {
+  color: #818181;
+  font-size: 12px;
+}
+div.img-sec {
+  width: 18%;
+  height: 150px;
+  text-align: center;
+}
+div.search-desc {
+  width: 65%;
+  height: 220px;
+  padding-top: 7px;
+}
+.book-desc {
+  font-size: 13px;
+}
+.search-card .search-title {
+  font-size: 16px;
+  margin-bottom: 7px;
+}
+.search-card .search-author {
+  font-size: 13px;
+}
+.search-card img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+}

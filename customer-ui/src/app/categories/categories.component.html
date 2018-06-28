@@ -1,0 +1,17 @@
+<div class="container">
+  <br>
+  <h4>List of Categories</h4>
+  <br>
+  <div class="row">
+    <div class="col-lg-3 pointer" *ngFor="let item of categories"
+         routerLink="/search" [queryParams]="{q: '', category: item._id, author: ''}">
+      <div class="panel panel-default category">
+        <div class="panel-body" title="{{ item['category_name'] }}">
+          <a class="text-uppercase">
+            {{ (item['category_name'].length > 20) ? getSubString(item['category_name']) : item['category_name'] }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

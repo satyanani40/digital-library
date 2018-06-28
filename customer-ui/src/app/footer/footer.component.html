@@ -1,0 +1,102 @@
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <h5>
+          FEATURES
+        </h5>
+        <ul class="list-unstyled categories">
+          <li>
+            <a id="hypFtLibFeatures" title="Library Features" routerLink="/libraryfeatures">Library Features</a>
+          </li>
+          <li>
+            <a title="Our Reading Schemes" routerLink="/readingschemes">Our Reading Schemes</a></li>
+          <li>
+            <a title="Reading Promotion Program" routerLink="/readingspromotionprogram">Reading Promotion Program</a>
+          </li>
+          <li>
+            <a title="Corporate Membership" routerLink="/corporatememberships">Corporate Memberships</a>
+          </li>
+          <li>
+            <a id="hypBookSharing" title="Book Sharing Program" routerLink="/booksharingprogram">Book Sharing Program</a>
+          </li>
+          <li>
+            <a id="hypRequestBook" title="Request any Book!" routerLink="/requestanybook">Request any Book!</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h5>
+          CATEGORIES
+        </h5>
+        <ul class="list-unstyled categories">
+          <li *ngFor="let item of categories">
+            <a routerLink="/search" [queryParams]="{q: '', category: item['_id'], author: ''}">
+              {{ item['category_name'] }}
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h5>
+          HELP
+        </h5>
+        <ul class="list-unstyled categories">
+          <li>
+            <a title="LetUsRead – Quickstart" routerLink="/quickstart">LetUsRead – Quickstart</a>
+          </li>
+          <li>
+            <a id="hypFtFaq" title="Frequently Asked Questions (FAQs)" routerLink="/faq">Frequently Asked Questions (FAQs)</a>
+          </li>
+          <li>
+            <a id="hypFtBookcare" title="Publication Care" routerLink="/publicationcare">Publication Care</a>
+          </li>
+          <li>
+            <a id="hypFtContactUs" title="Contact Us" routerLink="/contactus">Contact Us</a>
+          </li>
+          <li>
+            <a id="hypBenefitsofReading" title="Benefits of Reading" routerLink="/benifitsofreading">Benefits of Reading</a>
+          </li>
+          <li>
+            <a id="hypFtDeliveryLocations" title="Delivery Locations" routerLink="/deliverylocations">Delivery Locations</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-12">
+        <h5>ABOUT US</h5>
+        <ul class="list-unstyled categories">
+          <li>
+            <a id="hypFtAboutUs" title="About LetUsRead" routerLink="/aboutus">About Library</a>
+          </li>
+          <li>
+            <a id="hypFtPrivacyPolicy" title="Privacy Policy" routerLink="/privacypolicy">Privacy Policy</a>
+          </li>
+          <li>
+            <a id="hypFtTermsandConditions" title="Terms &amp; Conditions" routerLink="/termsconditions">Terms &amp; Conditions</a>
+          </li>
+          <li>
+            <a id="hypFtTestimonials" title="Testimonials" routerLink="/testimonials">Testimonials</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footerbottom">
+    <div class="container">
+      <div class="col-sm-7">
+        <p>
+          <strong>
+            Copyright {{ copyDate | date: 'yyyy' }},
+          </strong>
+          <a target="_blank" href="http://rrrkassociates.com/">RRRK Associates.com</a>, All rights reserved.
+          <strong>
+            by RRRK Associates
+          </strong>
+        </p>
+      </div>
+      <div class="col-sm-5 ">
+
+      </div>
+    </div>
+  </div>
+</footer>
