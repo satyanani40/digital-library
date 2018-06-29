@@ -1,9 +1,8 @@
 /* Application Constants */
-
 // API End points
 export class AppUrls {
-  public staticPath = 'https://ebb6d30da8424649a17f36ac33a52265.vfs.cloud9.us-east-2.amazonaws.com/';
-  public baseUrl = 'https://ebb6d30da8424649a17f36ac33a52265.vfs.cloud9.us-east-2.amazonaws.com/api/1.0/';
+  public staticPath = '/';
+  public baseUrl = '/api/1.0/';
   // REST End points
   public login = this.baseUrl + 'auth/login';
   public register = this.baseUrl + 'auth/signup';

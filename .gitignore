@@ -6,6 +6,7 @@ access_logs/*
 fab_key.pem
 nohup.out
 admin-ui/node_modules
+customer-ui/node_modules
 sitemap_index.xml
 sitemap_stores.xml
 sitemap_blog.xml
