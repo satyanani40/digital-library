@@ -8,3 +8,13 @@
   height: auto;
   width: auto;
 }
+.order-details-table td {
+  border: 0 solid;
+  padding: 5px;
+}
+.delivery-address, .order-details-table td {
+  font-size: 13px;
+}
+.delivery-address * {
+  margin-bottom: 2px;
+}
