@@ -393,14 +393,9 @@ def customer_index():
     LOGGER.info("called Customer panel index point")
     return app.send_static_file('public/customer/index.html')
 
-@app.route('/admin')
+@app.route('/admin/')
 def admin_index():
     LOGGER.info("called ADMIN panel index point")
-    return app.send_static_file('public/admin/index.html')
-
-@app.route('/admin/<path:dummy>')
-def admin_dummy_index():
-    LOGGER.info("called ADMIN panel Dummy index point")
     return app.send_static_file('public/admin/index.html')
 
 @app.route('/<path:dummy>')
