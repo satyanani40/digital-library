@@ -396,7 +396,12 @@ def customer_index():
 @app.route('/admin')
 def admin_index():
     LOGGER.info("called ADMIN panel index point")
-    return app.send_static_file('public/index.html')
+    return app.send_static_file('public/admin-ui/index.html')
+
+@app.route('/admin/<path:dummy>')
+def admin_dummy_index():
+    LOGGER.info("called ADMIN panel Dummy index point")
+    return app.send_static_file('public/admin/index.html')
 
 @app.route('/<path:dummy>')
 def fallback(dummy):
