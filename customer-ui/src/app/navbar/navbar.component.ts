@@ -37,7 +37,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     if (this.authService.isAuthenticated()) {
       // check user is logged in or not from the server
-      const token = this.authService.getToken('access_token');
+      const token = this.authService.getToken('customer_token');
       this.appService.get(this.appUrls.me, {login_token: token}).then((data) => {
         console.log(data);
         this.appService.updateUser(data['data']);
@@ -54,7 +54,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   }
   ngAfterViewInit() {}
   logout() {
-    const lToken = this.authService.getToken('access_token');
+    const lToken = this.authService.getToken('cutomer_token');
     this.appService.get(this.appUrls.logout, {login_token: lToken});
     this.authService.removeToken();
     this.route.navigate(['/welcome']);

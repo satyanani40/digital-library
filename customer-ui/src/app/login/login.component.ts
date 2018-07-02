@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
       if (data['data']) {
         this.authService.setToken(data['data']['login_token']);
         const obj = JSON.stringify({email: data['data']['email'], _id: data['data']['_id']});
-        localStorage.setItem('user', obj);
+        localStorage.setItem('user_customer', obj);
         this.appService.toast(data['data']['email'], 'Successfully Logged in!', 's');
         this.appService.updateUser(data['data']);
         this.router.navigate([(this.returnUrl) ? this.returnUrl : '/membership']);

@@ -726,9 +726,9 @@ var ChangePasswordComponent = (function () {
     }
     ChangePasswordComponent.prototype.ngOnInit = function () {
         var _this = this;
-        if (localStorage.getItem('user')) {
-            console.log(JSON.parse(localStorage.getItem('user')));
-            var _id = '/' + JSON.parse(localStorage.getItem('user'))['_id'];
+        if (localStorage.getItem('user_customer')) {
+            console.log(JSON.parse(localStorage.getItem('user_customer')));
+            var _id = '/' + JSON.parse(localStorage.getItem('user_customer'))['_id'];
             this.appService.get(this.appUrls.users + _id).then(function (data) {
                 console.log(data);
                 if (data) {
@@ -743,7 +743,7 @@ var ChangePasswordComponent = (function () {
         var _this = this;
         console.log(obj);
         obj['user_id'] = this.userInfo['_id'];
-        obj['token'] = this.authService.getToken('access_token');
+        obj['token'] = this.authService.getToken('customer_token');
         this.appService.post(this.appUrls.change_password, obj).then(function (data) {
             console.log(data);
             _this.appService.toast('Password changed Successfully', _this.userInfo['email'], 's');
@@ -1624,7 +1624,7 @@ var LoginComponent = (function () {
             if (data['data']) {
                 _this.authService.setToken(data['data']['login_token']);
                 var obj = JSON.stringify({ email: data['data']['email'], _id: data['data']['_id'] });
-                localStorage.setItem('user', obj);
+                localStorage.setItem('user_customer', obj);
                 _this.appService.toast(data['data']['email'], 'Successfully Logged in!', 's');
                 _this.appService.updateUser(data['data']);
                 _this.router.navigate([(_this.returnUrl) ? _this.returnUrl : '/membership']);
@@ -1864,7 +1864,7 @@ var NavbarComponent = (function () {
         var _this = this;
         if (this.authService.isAuthenticated()) {
             // check user is logged in or not from the server
-            var token = this.authService.getToken('access_token');
+            var token = this.authService.getToken('customer_token');
             this.appService.get(this.appUrls.me, { login_token: token }).then(function (data) {
                 console.log(data);
                 _this.appService.updateUser(data['data']);
@@ -1881,7 +1881,7 @@ var NavbarComponent = (function () {
     };
     NavbarComponent.prototype.ngAfterViewInit = function () { };
     NavbarComponent.prototype.logout = function () {
-        var lToken = this.authService.getToken('access_token');
+        var lToken = this.authService.getToken('cutomer_token');
         this.appService.get(this.appUrls.logout, { login_token: lToken });
         this.authService.removeToken();
         this.route.navigate(['/welcome']);
@@ -3059,6 +3059,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // API End points
 var AppUrls = (function () {
     function AppUrls() {
+        // TODO check for API change
+        /*
+        * REST URLS for checking
+        * */
+        /*public staticPath = 'http://18.217.226.103:8080/';
+        public baseUrl = 'http://18.217.226.103:8080/api/1.0/';*/
+        /*
+        * PROD set ul
+        */
         this.staticPath = '/';
         this.baseUrl = '/api/1.0/';
         // REST End points
@@ -3327,24 +3336,24 @@ var AuthService = (function () {
     };
     // ...
     AuthService.prototype.isAuthenticated = function () {
-        var token = localStorage.getItem('access_token');
+        var token = localStorage.getItem('customer_token');
         return !!(token);
     };
     AuthService.prototype.setToken = function (token) {
-        localStorage.setItem('access_token', token);
+        localStorage.setItem('customer_token', token);
         return true;
     };
     AuthService.prototype.getToken = function (token) {
         return localStorage.getItem(token);
     };
     AuthService.prototype.removeToken = function () {
-        localStorage.removeItem('access_token');
-        localStorage.removeItem('user');
+        localStorage.removeItem('customer_token');
+        localStorage.removeItem('user_customer');
         this.router.navigate(['/welcome']);
         return true;
     };
     AuthService.prototype.getUser = function () {
-        return JSON.parse(localStorage.getItem('user'));
+        return JSON.parse(localStorage.getItem('user_customer'));
     };
     return AuthService;
 }());

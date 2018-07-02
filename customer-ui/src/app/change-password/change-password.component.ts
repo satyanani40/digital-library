@@ -17,9 +17,9 @@ export class ChangePasswordComponent implements OnInit {
               private router: Router) {}
 
   ngOnInit() {
-    if (localStorage.getItem('user')) {
-      console.log(JSON.parse(localStorage.getItem('user')));
-      const _id = '/' + JSON.parse(localStorage.getItem('user'))['_id'];
+    if (localStorage.getItem('user_customer')) {
+      console.log(JSON.parse(localStorage.getItem('user_customer')));
+      const _id = '/' + JSON.parse(localStorage.getItem('user_customer'))['_id'];
       this.appService.get(this.appUrls.users + _id).then((data) => {
         console.log(data);
         if (data) {
@@ -33,7 +33,7 @@ export class ChangePasswordComponent implements OnInit {
   changePassword(obj: any) {
     console.log(obj);
     obj['user_id'] = this.userInfo['_id'];
-    obj['token'] = this.authService.getToken('access_token');
+    obj['token'] = this.authService.getToken('customer_token');
     this.appService.post(this.appUrls.change_password, obj).then((data) => {
       console.log(data);
       this.appService.toast('Password changed Successfully', this.userInfo['email'], 's');

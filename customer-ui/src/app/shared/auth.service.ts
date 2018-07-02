@@ -18,24 +18,24 @@ export class AuthService {
   }
   // ...
   public isAuthenticated(): boolean {
-    const token = localStorage.getItem('access_token');
+    const token = localStorage.getItem('customer_token');
     return !!(token);
   }
   public setToken(token): boolean {
-    localStorage.setItem('access_token', token);
+    localStorage.setItem('customer_token', token);
     return true;
   }
   public getToken(token: string): string {
     return localStorage.getItem(token);
   }
   public removeToken(): boolean {
-    localStorage.removeItem('access_token');
-    localStorage.removeItem('user');
+    localStorage.removeItem('customer_token');
+    localStorage.removeItem('user_customer');
     this.router.navigate(['/welcome']);
     return true;
   }
   public getUser(): any {
-    return JSON.parse(localStorage.getItem('user'));
+    return JSON.parse(localStorage.getItem('user_customer'));
   }
 }
 

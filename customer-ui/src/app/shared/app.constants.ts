@@ -1,8 +1,18 @@
 /* Application Constants */
 // API End points
 export class AppUrls {
+  // TODO check for API change
+  /*
+  * REST URLS for checking
+  * */
+  /*public staticPath = 'http://18.217.226.103:8080/';
+  public baseUrl = 'http://18.217.226.103:8080/api/1.0/';*/
+  /*
+  * PROD set ul
+  */
   public staticPath = '/';
   public baseUrl = '/api/1.0/';
+
   // REST End points
   public login = this.baseUrl + 'auth/login';
   public register = this.baseUrl + 'auth/signup';
