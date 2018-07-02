@@ -398,6 +398,11 @@ def admin_index():
     LOGGER.info("called ADMIN panel index point")
     return app.send_static_file('public/admin/index.html')
 
+@app.route('/admin/<path:dummy>')
+def admin_fallback(dummy):
+    LOGGER.info("called Admin dummy end point:{}".format(dummy))
+    return app.send_static_file('public/admin/index.html')
+
 @app.route('/<path:dummy>')
 def fallback(dummy):
     LOGGER.info("called dummy end point:{}".format(dummy))
