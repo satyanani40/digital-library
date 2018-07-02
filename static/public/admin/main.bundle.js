@@ -361,8 +361,8 @@ var CategoriesComponent = /** @class */ (function () {
 // API End points
 var AppUrls = /** @class */ (function () {
     function AppUrls() {
-        this.baseUrl = 'http://ec2-18-220-81-9.us-east-2.compute.amazonaws.com:8090/api/1.0/';
-        this.custUrl = 'http://ec2-18-220-81-9.us-east-2.compute.amazonaws.com:8090/';
+        this.baseUrl = '/api/1.0/';
+        this.custUrl = '/';
         // REST End points
         this.login = this.baseUrl + 'auth/login';
         this.register = this.baseUrl + 'auth/signup';

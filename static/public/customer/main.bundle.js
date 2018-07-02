@@ -3059,8 +3059,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // API End points
 var AppUrls = (function () {
     function AppUrls() {
-        this.staticPath = 'http://18.217.226.103:8080/';
-        this.baseUrl = 'http://18.217.226.103:8080/api/1.0/';
+        this.staticPath = '/';
+        this.baseUrl = '/api/1.0/';
         // REST End points
         this.login = this.baseUrl + 'auth/login';
         this.register = this.baseUrl + 'auth/signup';
