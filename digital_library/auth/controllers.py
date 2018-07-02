@@ -402,6 +402,6 @@ def admin_index():
 def fallback(dummy):
     LOGGER.info("called dummy end point:{}".format(dummy))
     if dummy == 'admin':
-        return app.send_static_file('public/index.html')
+        return app.send_static_file('public/admin/index.html')
     return app.send_static_file('public/customer/index.html')
     
