@@ -43,24 +43,24 @@ module.exports = "<app-navbar></app-navbar>\r\n"
 /***/ }),
 
 /***/ "../../../../../src/app/app.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
+
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
         this.title = 'app';
     }
     AppComponent = __decorate([
-        core_1.Component({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-root',
             template: __webpack_require__("../../../../../src/app/app.component.html"),
             styles: [__webpack_require__("../../../../../src/app/app.component.css")]
@@ -68,106 +68,132 @@ var AppComponent = /** @class */ (function () {
     ], AppComponent);
     return AppComponent;
 }());
-exports.AppComponent = AppComponent;
+
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/app.module.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ag_grid_angular__ = __webpack_require__("../../../../ag-grid-angular/main.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ag_grid_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ag_grid_angular__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__config_router_config__ = __webpack_require__("../../../../../src/app/config/router.config.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__navbar_navbar_component__ = __webpack_require__("../../../../../src/app/navbar/navbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__register_register_component__ = __webpack_require__("../../../../../src/app/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__homepage_homepage_component__ = __webpack_require__("../../../../../src/app/homepage/homepage.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__publish_book_publish_book_component__ = __webpack_require__("../../../../../src/app/publish-book/publish-book.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__membership_membership_component__ = __webpack_require__("../../../../../src/app/membership/membership.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_ngx_bootstrap__ = __webpack_require__("../../../../ngx-bootstrap/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__edit_book_edit_book_component__ = __webpack_require__("../../../../../src/app/edit-book/edit-book.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__categories_categories_component__ = __webpack_require__("../../../../../src/app/categories/categories.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__app_pipe__ = __webpack_require__("../../../../../src/app/app.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__orders_orders_component__ = __webpack_require__("../../../../../src/app/orders/orders.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__forgotpassword_forgotpassword_component__ = __webpack_require__("../../../../../src/app/forgotpassword/forgotpassword.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__updatepersons_updatepersons_component__ = __webpack_require__("../../../../../src/app/updatepersons/updatepersons.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__joinedmembers_joinedmembers_component__ = __webpack_require__("../../../../../src/app/joinedmembers/joinedmembers.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_angular2_moment__ = __webpack_require__("../../../../angular2-moment/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_angular2_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24_angular2_moment__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var platform_browser_1 = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var router_1 = __webpack_require__("../../../router/esm5/router.js");
-var ag_grid_angular_1 = __webpack_require__("../../../../ag-grid-angular/main.js");
-var http_1 = __webpack_require__("../../../common/esm5/http.js");
-var app_component_1 = __webpack_require__("../../../../../src/app/app.component.ts");
-var router_config_1 = __webpack_require__("../../../../../src/app/config/router.config.ts");
-var login_component_1 = __webpack_require__("../../../../../src/app/login/login.component.ts");
-var navbar_component_1 = __webpack_require__("../../../../../src/app/navbar/navbar.component.ts");
-var register_component_1 = __webpack_require__("../../../../../src/app/register/register.component.ts");
-var homepage_component_1 = __webpack_require__("../../../../../src/app/homepage/homepage.component.ts");
-var publish_book_component_1 = __webpack_require__("../../../../../src/app/publish-book/publish-book.component.ts");
-var app_service_module_1 = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
-var constant_config_1 = __webpack_require__("../../../../../src/app/config/constant.config.ts");
-var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
-var membership_component_1 = __webpack_require__("../../../../../src/app/membership/membership.component.ts");
-var ngx_bootstrap_1 = __webpack_require__("../../../../ngx-bootstrap/index.js");
-var edit_book_component_1 = __webpack_require__("../../../../../src/app/edit-book/edit-book.component.ts");
-var categories_component_1 = __webpack_require__("../../../../../src/app/categories/categories.component.ts");
-var app_pipe_1 = __webpack_require__("../../../../../src/app/app.pipe.ts");
-var orders_component_1 = __webpack_require__("../../../../../src/app/orders/orders.component.ts");
-var forgotpassword_component_1 = __webpack_require__("../../../../../src/app/forgotpassword/forgotpassword.component.ts");
-var updatepersons_component_1 = __webpack_require__("../../../../../src/app/updatepersons/updatepersons.component.ts");
-var joinedmembers_component_1 = __webpack_require__("../../../../../src/app/joinedmembers/joinedmembers.component.ts");
-var angular2_moment_1 = __webpack_require__("../../../../angular2-moment/index.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        core_1.NgModule({
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
-                app_component_1.AppComponent,
-                login_component_1.LoginComponent,
-                navbar_component_1.NavbarComponent,
-                register_component_1.RegisterComponent,
-                homepage_component_1.HomepageComponent,
-                publish_book_component_1.PublishBookComponent,
-                membership_component_1.MembershipComponent,
-                edit_book_component_1.EditBookComponent,
-                categories_component_1.CategoriesComponent,
-                app_pipe_1.FilterPipe,
-                orders_component_1.OrdersComponent,
-                forgotpassword_component_1.ForgotpasswordComponent,
-                updatepersons_component_1.UpdatepersonsComponent,
-                joinedmembers_component_1.JoinedmembersComponent
+                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_7__login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__navbar_navbar_component__["a" /* NavbarComponent */],
+                __WEBPACK_IMPORTED_MODULE_9__register_register_component__["a" /* RegisterComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__homepage_homepage_component__["a" /* HomepageComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__publish_book_publish_book_component__["a" /* PublishBookComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__membership_membership_component__["a" /* MembershipComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__edit_book_edit_book_component__["a" /* EditBookComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__categories_categories_component__["a" /* CategoriesComponent */],
+                __WEBPACK_IMPORTED_MODULE_19__app_pipe__["a" /* FilterPipe */],
+                __WEBPACK_IMPORTED_MODULE_20__orders_orders_component__["a" /* OrdersComponent */],
+                __WEBPACK_IMPORTED_MODULE_21__forgotpassword_forgotpassword_component__["a" /* ForgotpasswordComponent */],
+                __WEBPACK_IMPORTED_MODULE_22__updatepersons_updatepersons_component__["a" /* UpdatepersonsComponent */],
+                __WEBPACK_IMPORTED_MODULE_23__joinedmembers_joinedmembers_component__["a" /* JoinedmembersComponent */]
             ],
             imports: [
-                platform_browser_1.BrowserModule,
-                angular2_moment_1.MomentModule,
-                http_1.HttpClientModule,
-                forms_1.ReactiveFormsModule,
-                forms_1.FormsModule,
-                router_1.RouterModule.forRoot(router_config_1.routes),
-                ngx_bootstrap_1.BsDatepickerModule.forRoot(),
-                ngx_bootstrap_1.ModalModule.forRoot(),
-                ngx_bootstrap_1.PopoverModule.forRoot(),
-                ngx_bootstrap_1.TooltipModule.forRoot(),
-                ag_grid_angular_1.AgGridModule.withComponents([])
+                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_24_angular2_moment__["MomentModule"],
+                __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_14__angular_forms__["g" /* ReactiveFormsModule */],
+                __WEBPACK_IMPORTED_MODULE_14__angular_forms__["c" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__config_router_config__["a" /* routes */]),
+                __WEBPACK_IMPORTED_MODULE_16_ngx_bootstrap__["a" /* BsDatepickerModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_16_ngx_bootstrap__["c" /* ModalModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_16_ngx_bootstrap__["d" /* PopoverModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_16_ngx_bootstrap__["e" /* TooltipModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_3_ag_grid_angular__["AgGridModule"].withComponents([])
             ],
-            providers: [app_service_module_1.AppServiceModule, constant_config_1.AppUrls, app_service_module_1.AuthService, app_service_module_1.AuthGuardService, app_service_module_1.Languages],
-            bootstrap: [app_component_1.AppComponent]
+            providers: [__WEBPACK_IMPORTED_MODULE_12__shared_app_service_module__["a" /* AppServiceModule */], __WEBPACK_IMPORTED_MODULE_13__config_constant_config__["a" /* AppUrls */], __WEBPACK_IMPORTED_MODULE_12__shared_app_service_module__["c" /* AuthService */], __WEBPACK_IMPORTED_MODULE_12__shared_app_service_module__["b" /* AuthGuardService */], __WEBPACK_IMPORTED_MODULE_12__shared_app_service_module__["d" /* Languages */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
 }());
-exports.AppModule = AppModule;
+
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/app.pipe.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FilterPipe; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
+
 var FilterPipe = /** @class */ (function () {
     function FilterPipe() {
     }
@@ -184,14 +210,14 @@ var FilterPipe = /** @class */ (function () {
         return myItems;
     };
     FilterPipe = __decorate([
-        core_1.Pipe({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({
             name: 'filter',
             pure: false
         })
     ], FilterPipe);
     return FilterPipe;
 }());
-exports.FilterPipe = FilterPipe;
+
 
 
 /***/ }),
@@ -222,10 +248,14 @@ module.exports = "<div class=\"\">\n  <br>\n  <div class=\"row\">\n    <div clas
 /***/ }),
 
 /***/ "../../../../../src/app/categories/categories.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoriesComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ngx_bootstrap_modal__ = __webpack_require__("../../../../ngx-bootstrap/modal/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -235,11 +265,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var app_service_module_1 = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
-var constant_config_1 = __webpack_require__("../../../../../src/app/config/constant.config.ts");
-var modal_1 = __webpack_require__("../../../../ngx-bootstrap/modal/index.js");
+
+
+
+
 var CategoriesComponent = /** @class */ (function () {
     function CategoriesComponent(appService, appUrls, modalService) {
         this.appService = appService;
@@ -307,29 +336,28 @@ var CategoriesComponent = /** @class */ (function () {
         });
     };
     CategoriesComponent = __decorate([
-        core_1.Component({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-categories',
             template: __webpack_require__("../../../../../src/app/categories/categories.component.html"),
             styles: [__webpack_require__("../../../../../src/app/categories/categories.component.css")]
         }),
-        __metadata("design:paramtypes", [app_service_module_1.AppServiceModule,
-            constant_config_1.AppUrls,
-            modal_1.BsModalService])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["a" /* AppServiceModule */],
+            __WEBPACK_IMPORTED_MODULE_2__config_constant_config__["a" /* AppUrls */],
+            __WEBPACK_IMPORTED_MODULE_3_ngx_bootstrap_modal__["a" /* BsModalService */]])
     ], CategoriesComponent);
     return CategoriesComponent;
 }());
-exports.CategoriesComponent = CategoriesComponent;
+
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/config/constant.config.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppUrls; });
 /* Application Constants */
-Object.defineProperty(exports, "__esModule", { value: true });
 // API End points
 var AppUrls = /** @class */ (function () {
     function AppUrls() {
@@ -354,41 +382,52 @@ var AppUrls = /** @class */ (function () {
     }
     return AppUrls;
 }());
-exports.AppUrls = AppUrls;
+
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/config/router.config.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return routes; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__register_register_component__ = __webpack_require__("../../../../../src/app/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__homepage_homepage_component__ = __webpack_require__("../../../../../src/app/homepage/homepage.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__publish_book_publish_book_component__ = __webpack_require__("../../../../../src/app/publish-book/publish-book.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__membership_membership_component__ = __webpack_require__("../../../../../src/app/membership/membership.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__edit_book_edit_book_component__ = __webpack_require__("../../../../../src/app/edit-book/edit-book.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__categories_categories_component__ = __webpack_require__("../../../../../src/app/categories/categories.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__orders_orders_component__ = __webpack_require__("../../../../../src/app/orders/orders.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__forgotpassword_forgotpassword_component__ = __webpack_require__("../../../../../src/app/forgotpassword/forgotpassword.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__updatepersons_updatepersons_component__ = __webpack_require__("../../../../../src/app/updatepersons/updatepersons.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__joinedmembers_joinedmembers_component__ = __webpack_require__("../../../../../src/app/joinedmembers/joinedmembers.component.ts");
 
-Object.defineProperty(exports, "__esModule", { value: true });
-var login_component_1 = __webpack_require__("../../../../../src/app/login/login.component.ts");
-var register_component_1 = __webpack_require__("../../../../../src/app/register/register.component.ts");
-var homepage_component_1 = __webpack_require__("../../../../../src/app/homepage/homepage.component.ts");
-var publish_book_component_1 = __webpack_require__("../../../../../src/app/publish-book/publish-book.component.ts");
-var membership_component_1 = __webpack_require__("../../../../../src/app/membership/membership.component.ts");
-var app_service_module_1 = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
-var edit_book_component_1 = __webpack_require__("../../../../../src/app/edit-book/edit-book.component.ts");
-var categories_component_1 = __webpack_require__("../../../../../src/app/categories/categories.component.ts");
-var orders_component_1 = __webpack_require__("../../../../../src/app/orders/orders.component.ts");
-var forgotpassword_component_1 = __webpack_require__("../../../../../src/app/forgotpassword/forgotpassword.component.ts");
-var updatepersons_component_1 = __webpack_require__("../../../../../src/app/updatepersons/updatepersons.component.ts");
-var joinedmembers_component_1 = __webpack_require__("../../../../../src/app/joinedmembers/joinedmembers.component.ts");
-exports.routes = [
-    { path: 'login', component: login_component_1.LoginComponent },
-    { path: 'register', component: register_component_1.RegisterComponent },
-    { path: 'forgot-password', component: forgotpassword_component_1.ForgotpasswordComponent },
-    { path: 'homepage', component: homepage_component_1.HomepageComponent, canActivate: [app_service_module_1.AuthGuardService] },
-    { path: 'book-catelog', component: publish_book_component_1.PublishBookComponent },
-    { path: 'edit-book/:_id', component: edit_book_component_1.EditBookComponent },
-    { path: 'categories', component: categories_component_1.CategoriesComponent },
-    { path: 'membership', component: membership_component_1.MembershipComponent, canActivate: [app_service_module_1.AuthGuardService] },
-    { path: 'joined-members', component: joinedmembers_component_1.JoinedmembersComponent, canActivate: [app_service_module_1.AuthGuardService] },
-    { path: 'update-person/:_id', component: updatepersons_component_1.UpdatepersonsComponent, canActivate: [app_service_module_1.AuthGuardService] },
-    { path: 'orders', component: orders_component_1.OrdersComponent },
+
+
+
+
+
+
+
+
+
+
+
+var routes = [
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_0__login_login_component__["a" /* LoginComponent */] },
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_1__register_register_component__["a" /* RegisterComponent */] },
+    { path: 'forgot-password', component: __WEBPACK_IMPORTED_MODULE_9__forgotpassword_forgotpassword_component__["a" /* ForgotpasswordComponent */] },
+    { path: 'homepage', component: __WEBPACK_IMPORTED_MODULE_2__homepage_homepage_component__["a" /* HomepageComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_5__shared_app_service_module__["b" /* AuthGuardService */]] },
+    { path: 'book-catelog', component: __WEBPACK_IMPORTED_MODULE_3__publish_book_publish_book_component__["a" /* PublishBookComponent */] },
+    { path: 'edit-book/:_id', component: __WEBPACK_IMPORTED_MODULE_6__edit_book_edit_book_component__["a" /* EditBookComponent */] },
+    { path: 'categories', component: __WEBPACK_IMPORTED_MODULE_7__categories_categories_component__["a" /* CategoriesComponent */] },
+    { path: 'membership', component: __WEBPACK_IMPORTED_MODULE_4__membership_membership_component__["a" /* MembershipComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_5__shared_app_service_module__["b" /* AuthGuardService */]] },
+    { path: 'joined-members', component: __WEBPACK_IMPORTED_MODULE_11__joinedmembers_joinedmembers_component__["a" /* JoinedmembersComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_5__shared_app_service_module__["b" /* AuthGuardService */]] },
+    { path: 'update-person/:_id', component: __WEBPACK_IMPORTED_MODULE_10__updatepersons_updatepersons_component__["a" /* UpdatepersonsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_5__shared_app_service_module__["b" /* AuthGuardService */]] },
+    { path: 'orders', component: __WEBPACK_IMPORTED_MODULE_8__orders_orders_component__["a" /* OrdersComponent */] },
     { path: '',
         redirectTo: '/login',
         pathMatch: 'full'
@@ -424,10 +463,15 @@ module.exports = "<div class=\"\">\n  <h3>Book: {{ bookInfo['book_title'] }}</h3
 /***/ }),
 
 /***/ "../../../../../src/app/edit-book/edit-book.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditBookComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -437,12 +481,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var app_service_module_1 = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
-var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
-var constant_config_1 = __webpack_require__("../../../../../src/app/config/constant.config.ts");
-var router_1 = __webpack_require__("../../../router/esm5/router.js");
+
+
+
+
+
 var EditBookComponent = /** @class */ (function () {
     function EditBookComponent(appService, langs, appUrls, activatedRoute, router) {
         var _this = this;
@@ -457,28 +500,28 @@ var EditBookComponent = /** @class */ (function () {
         this.categories = [];
         this.imagePreview = {};
         this.ebookPreview = {};
-        this.bookForm = new forms_1.FormGroup({
-            book_title: new forms_1.FormControl(),
-            sub_title: new forms_1.FormControl(),
-            book_summary: new forms_1.FormControl(),
-            book_keywords: new forms_1.FormControl(),
-            no_of_pages: new forms_1.FormControl(),
-            book_authors: new forms_1.FormControl(),
-            book_author_desc: new forms_1.FormControl(),
-            availability: new forms_1.FormControl(true),
-            hcopy_price: new forms_1.FormControl(),
-            ecopy_price: new forms_1.FormControl(),
-            book_categories: new forms_1.FormControl(),
-            language: new forms_1.FormControl(),
-            publisher: new forms_1.FormControl(),
-            ISBN_10: new forms_1.FormControl(),
-            ISBN_13: new forms_1.FormControl(),
-            published_date: new forms_1.FormControl(),
-            image_small_thumbnail: new forms_1.FormControl(),
-            image_thumbnail: new forms_1.FormControl(),
-            no_of_copies: new forms_1.FormGroup({
-                outstore: new forms_1.FormControl(0, forms_1.Validators.required),
-                instore: new forms_1.FormControl(1, forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.maxLength(1)]))
+        this.bookForm = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormGroup */]({
+            book_title: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
+            sub_title: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
+            book_summary: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
+            book_keywords: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
+            no_of_pages: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
+            book_authors: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
+            book_author_desc: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
+            availability: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](true),
+            hcopy_price: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
+            ecopy_price: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
+            book_categories: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
+            language: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
+            publisher: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
+            ISBN_10: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
+            ISBN_13: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
+            published_date: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
+            image_small_thumbnail: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
+            image_thumbnail: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
+            no_of_copies: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormGroup */]({
+                outstore: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](0, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
+                instore: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](1, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].maxLength(1)]))
             })
         });
         this.activatedRoute.params.subscribe(function (params) {
@@ -594,28 +637,28 @@ var EditBookComponent = /** @class */ (function () {
         }
     };
     __decorate([
-        core_1.ViewChild('imageUpload'),
-        __metadata("design:type", core_1.ElementRef)
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('imageUpload'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
     ], EditBookComponent.prototype, "imageInput", void 0);
     __decorate([
-        core_1.ViewChild('eBookUpload'),
-        __metadata("design:type", core_1.ElementRef)
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('eBookUpload'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
     ], EditBookComponent.prototype, "eBookInput", void 0);
     EditBookComponent = __decorate([
-        core_1.Component({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-edit-book',
             template: __webpack_require__("../../../../../src/app/edit-book/edit-book.component.html"),
             styles: [__webpack_require__("../../../../../src/app/edit-book/edit-book.component.css")]
         }),
-        __metadata("design:paramtypes", [app_service_module_1.AppServiceModule,
-            app_service_module_1.Languages,
-            constant_config_1.AppUrls,
-            router_1.ActivatedRoute,
-            router_1.Router])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["a" /* AppServiceModule */],
+            __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["d" /* Languages */],
+            __WEBPACK_IMPORTED_MODULE_3__config_constant_config__["a" /* AppUrls */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]])
     ], EditBookComponent);
     return EditBookComponent;
 }());
-exports.EditBookComponent = EditBookComponent;
+
 
 
 /***/ }),
@@ -646,10 +689,11 @@ module.exports = "<div class=\"\">\n  <br><br><br><br><br><br>\n  <div class=\"r
 /***/ }),
 
 /***/ "../../../../../src/app/forgotpassword/forgotpassword.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ForgotpasswordComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -659,15 +703,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
+
 var ForgotpasswordComponent = /** @class */ (function () {
     function ForgotpasswordComponent() {
     }
     ForgotpasswordComponent.prototype.ngOnInit = function () {
     };
     ForgotpasswordComponent = __decorate([
-        core_1.Component({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-forgotpassword',
             template: __webpack_require__("../../../../../src/app/forgotpassword/forgotpassword.component.html"),
             styles: [__webpack_require__("../../../../../src/app/forgotpassword/forgotpassword.component.css")]
@@ -676,7 +719,7 @@ var ForgotpasswordComponent = /** @class */ (function () {
     ], ForgotpasswordComponent);
     return ForgotpasswordComponent;
 }());
-exports.ForgotpasswordComponent = ForgotpasswordComponent;
+
 
 
 /***/ }),
@@ -707,10 +750,15 @@ module.exports = "<div class=\"\">\n  <br>\n  <div class=\"row\">\n    <div clas
 /***/ }),
 
 /***/ "../../../../../src/app/homepage/homepage.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomepageComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ngx_bootstrap__ = __webpack_require__("../../../../ngx-bootstrap/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -720,12 +768,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var app_service_module_1 = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
-var constant_config_1 = __webpack_require__("../../../../../src/app/config/constant.config.ts");
-var router_1 = __webpack_require__("../../../router/esm5/router.js");
-var ngx_bootstrap_1 = __webpack_require__("../../../../ngx-bootstrap/index.js");
+
+
+
+
+
 var HomepageComponent = /** @class */ (function () {
     function HomepageComponent(appService, appUrls, router, activatedRoute, modalService) {
         var _this = this;
@@ -802,20 +849,20 @@ var HomepageComponent = /** @class */ (function () {
         this.router.navigate(['/edit-book', item['_id']]);
     };
     HomepageComponent = __decorate([
-        core_1.Component({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-homepage',
             template: __webpack_require__("../../../../../src/app/homepage/homepage.component.html"),
             styles: [__webpack_require__("../../../../../src/app/homepage/homepage.component.css")]
         }),
-        __metadata("design:paramtypes", [app_service_module_1.AppServiceModule,
-            constant_config_1.AppUrls,
-            router_1.Router,
-            router_1.ActivatedRoute,
-            ngx_bootstrap_1.BsModalService])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["a" /* AppServiceModule */],
+            __WEBPACK_IMPORTED_MODULE_2__config_constant_config__["a" /* AppUrls */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_4_ngx_bootstrap__["b" /* BsModalService */]])
     ], HomepageComponent);
     return HomepageComponent;
 }());
-exports.HomepageComponent = HomepageComponent;
+
 
 
 /***/ }),
@@ -846,10 +893,14 @@ module.exports = "<div class=\"\">\n  <br>\n  <h4 class=\"text-capitalize\">Join
 /***/ }),
 
 /***/ "../../../../../src/app/joinedmembers/joinedmembers.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return JoinedmembersComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -859,11 +910,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var app_service_module_1 = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
-var router_1 = __webpack_require__("../../../router/esm5/router.js");
-var constant_config_1 = __webpack_require__("../../../../../src/app/config/constant.config.ts");
+
+
+
+
 var JoinedmembersComponent = /** @class */ (function () {
     function JoinedmembersComponent(appService, appUrls, activatedRoute, router) {
         var _this = this;
@@ -916,19 +966,19 @@ var JoinedmembersComponent = /** @class */ (function () {
         });
     };
     JoinedmembersComponent = __decorate([
-        core_1.Component({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-joinedmembers',
             template: __webpack_require__("../../../../../src/app/joinedmembers/joinedmembers.component.html"),
             styles: [__webpack_require__("../../../../../src/app/joinedmembers/joinedmembers.component.css")]
         }),
-        __metadata("design:paramtypes", [app_service_module_1.AppServiceModule,
-            constant_config_1.AppUrls,
-            router_1.ActivatedRoute,
-            router_1.Router])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["a" /* AppServiceModule */],
+            __WEBPACK_IMPORTED_MODULE_3__config_constant_config__["a" /* AppUrls */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]])
     ], JoinedmembersComponent);
     return JoinedmembersComponent;
 }());
-exports.JoinedmembersComponent = JoinedmembersComponent;
+
 
 
 /***/ }),
@@ -959,10 +1009,15 @@ module.exports = "<br>\n<div class=\"container\">\n  <div class=\"row\">\n    <d
 /***/ }),
 
 /***/ "../../../../../src/app/login/login.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -972,21 +1027,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var app_service_module_1 = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
-var router_1 = __webpack_require__("../../../router/esm5/router.js");
-var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
-var constant_config_1 = __webpack_require__("../../../../../src/app/config/constant.config.ts");
+
+
+
+
+
 var LoginComponent = /** @class */ (function () {
     function LoginComponent(authService, appService, router, appUrls) {
         this.authService = authService;
         this.appService = appService;
         this.router = router;
         this.appUrls = appUrls;
-        this.lForm = new forms_1.FormGroup({
-            email: new forms_1.FormControl('suryamuppalla@gmail.com'),
-            password: new forms_1.FormControl('surya')
+        this.lForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* FormGroup */]({
+            email: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormControl */]('suryamuppalla@gmail.com'),
+            password: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormControl */]('surya')
         });
     }
     LoginComponent.prototype.ngOnInit = function () {
@@ -1007,19 +1061,19 @@ var LoginComponent = /** @class */ (function () {
         });
     };
     LoginComponent = __decorate([
-        core_1.Component({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-login',
             template: __webpack_require__("../../../../../src/app/login/login.component.html"),
             styles: [__webpack_require__("../../../../../src/app/login/login.component.css")]
         }),
-        __metadata("design:paramtypes", [app_service_module_1.AuthService,
-            app_service_module_1.AppServiceModule,
-            router_1.Router,
-            constant_config_1.AppUrls])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["c" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["a" /* AppServiceModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_4__config_constant_config__["a" /* AppUrls */]])
     ], LoginComponent);
     return LoginComponent;
 }());
-exports.LoginComponent = LoginComponent;
+
 
 
 /***/ }),
@@ -1050,10 +1104,15 @@ module.exports = "<div class=\"\">\r\n  <br>\r\n  <h4 class=\"text-capitalize\">
 /***/ }),
 
 /***/ "../../../../../src/app/membership/membership.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MembershipComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ngx_bootstrap__ = __webpack_require__("../../../../ngx-bootstrap/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1063,12 +1122,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var app_service_module_1 = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
-var constant_config_1 = __webpack_require__("../../../../../src/app/config/constant.config.ts");
-var router_1 = __webpack_require__("../../../router/esm5/router.js");
-var ngx_bootstrap_1 = __webpack_require__("../../../../ngx-bootstrap/index.js");
+
+
+
+
+
 var MembershipComponent = /** @class */ (function () {
     function MembershipComponent(appService, appUrls, activatedRoute, router, modalService) {
         var _this = this;
@@ -1231,20 +1289,20 @@ var MembershipComponent = /** @class */ (function () {
         });
     };
     MembershipComponent = __decorate([
-        core_1.Component({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-persons',
             template: __webpack_require__("../../../../../src/app/membership/membership.component.html"),
             styles: [__webpack_require__("../../../../../src/app/membership/membership.component.css")]
         }),
-        __metadata("design:paramtypes", [app_service_module_1.AppServiceModule,
-            constant_config_1.AppUrls,
-            router_1.ActivatedRoute,
-            router_1.Router,
-            ngx_bootstrap_1.BsModalService])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["a" /* AppServiceModule */],
+            __WEBPACK_IMPORTED_MODULE_2__config_constant_config__["a" /* AppUrls */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_4_ngx_bootstrap__["b" /* BsModalService */]])
     ], MembershipComponent);
     return MembershipComponent;
 }());
-exports.MembershipComponent = MembershipComponent;
+
 
 
 /***/ }),
@@ -1275,10 +1333,14 @@ module.exports = "\n<div class=\"side-menu\" *ngIf=\"authService.isAuthenticated
 /***/ }),
 
 /***/ "../../../../../src/app/navbar/navbar.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavbarComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1288,11 +1350,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var app_service_module_1 = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
-var constant_config_1 = __webpack_require__("../../../../../src/app/config/constant.config.ts");
-var router_1 = __webpack_require__("../../../router/esm5/router.js");
+
+
+
+
 var NavbarComponent = /** @class */ (function () {
     function NavbarComponent(appService, authService, appUrls, route) {
         this.appService = appService;
@@ -1325,19 +1386,19 @@ var NavbarComponent = /** @class */ (function () {
         this.appService.toast('Successfully logged out', '', 's');
     };
     NavbarComponent = __decorate([
-        core_1.Component({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-navbar',
             template: __webpack_require__("../../../../../src/app/navbar/navbar.component.html"),
             styles: [__webpack_require__("../../../../../src/app/navbar/navbar.component.css")]
         }),
-        __metadata("design:paramtypes", [app_service_module_1.AppServiceModule,
-            app_service_module_1.AuthService,
-            constant_config_1.AppUrls,
-            router_1.Router])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["a" /* AppServiceModule */],
+            __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["c" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__config_constant_config__["a" /* AppUrls */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]])
     ], NavbarComponent);
     return NavbarComponent;
 }());
-exports.NavbarComponent = NavbarComponent;
+
 
 
 /***/ }),
@@ -1368,10 +1429,15 @@ module.exports = "<div>\n  <br>\n  <h5><b>Sales logistics</b></h5>\n  <hr>\n  <d
 /***/ }),
 
 /***/ "../../../../../src/app/orders/orders.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrdersComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ngx_bootstrap__ = __webpack_require__("../../../../ngx-bootstrap/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1381,12 +1447,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var app_service_module_1 = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
-var router_1 = __webpack_require__("../../../router/esm5/router.js");
-var constant_config_1 = __webpack_require__("../../../../../src/app/config/constant.config.ts");
-var ngx_bootstrap_1 = __webpack_require__("../../../../ngx-bootstrap/index.js");
+
+
+
+
+
 var OrdersComponent = /** @class */ (function () {
     function OrdersComponent(appService, router, appUrls, activatedRoute, modalService) {
         var _this = this;
@@ -1462,20 +1527,20 @@ var OrdersComponent = /** @class */ (function () {
         });
     };
     OrdersComponent = __decorate([
-        core_1.Component({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-orders',
             template: __webpack_require__("../../../../../src/app/orders/orders.component.html"),
             styles: [__webpack_require__("../../../../../src/app/orders/orders.component.css")]
         }),
-        __metadata("design:paramtypes", [app_service_module_1.AppServiceModule,
-            router_1.Router,
-            constant_config_1.AppUrls,
-            router_1.ActivatedRoute,
-            ngx_bootstrap_1.BsModalService])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["a" /* AppServiceModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_3__config_constant_config__["a" /* AppUrls */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_4_ngx_bootstrap__["b" /* BsModalService */]])
     ], OrdersComponent);
     return OrdersComponent;
 }());
-exports.OrdersComponent = OrdersComponent;
+
 
 
 /***/ }),
@@ -1506,10 +1571,15 @@ module.exports = "<div class=\"\">\r\n  <h3>Book Data Entry with ISBN number</h3
 /***/ }),
 
 /***/ "../../../../../src/app/publish-book/publish-book.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PublishBookComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1519,12 +1589,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var app_service_module_1 = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
-var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
-var constant_config_1 = __webpack_require__("../../../../../src/app/config/constant.config.ts");
-var router_1 = __webpack_require__("../../../router/esm5/router.js");
+
+
+
+
+
 var PublishBookComponent = /** @class */ (function () {
     function PublishBookComponent(appService, langs, appUrls, router) {
         this.appService = appService;
@@ -1536,28 +1605,28 @@ var PublishBookComponent = /** @class */ (function () {
         this.categories = [];
         this.imagePreview = {};
         this.ebookPreview = {};
-        this.bookForm = new forms_1.FormGroup({
-            book_title: new forms_1.FormControl('', forms_1.Validators.required),
-            sub_title: new forms_1.FormControl(''),
-            book_summary: new forms_1.FormControl(),
-            book_keywords: new forms_1.FormControl(),
-            no_of_pages: new forms_1.FormControl('', forms_1.Validators.required),
-            book_authors: new forms_1.FormControl('', forms_1.Validators.required),
-            book_author_desc: new forms_1.FormControl(),
-            availability: new forms_1.FormControl(true),
-            hcopy_price: new forms_1.FormControl(0, forms_1.Validators.required),
-            ecopy_price: new forms_1.FormControl(0, forms_1.Validators.required),
-            book_categories: new forms_1.FormControl('', forms_1.Validators.required),
-            language: new forms_1.FormControl('', forms_1.Validators.required),
-            publisher: new forms_1.FormControl('', forms_1.Validators.required),
-            ISBN_10: new forms_1.FormControl('', forms_1.Validators.required),
-            ISBN_13: new forms_1.FormControl('', forms_1.Validators.required),
-            published_date: new forms_1.FormControl('', forms_1.Validators.required),
-            image_small_thumbnail: new forms_1.FormControl('', forms_1.Validators.required),
-            image_thumbnail: new forms_1.FormControl('', forms_1.Validators.required),
-            no_of_copies: new forms_1.FormGroup({
-                outstore: new forms_1.FormControl(0, forms_1.Validators.required),
-                instore: new forms_1.FormControl(1, forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.maxLength(1)]))
+        this.bookForm = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormGroup */]({
+            book_title: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
+            sub_title: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](''),
+            book_summary: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
+            book_keywords: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
+            no_of_pages: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
+            book_authors: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
+            book_author_desc: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](),
+            availability: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](true),
+            hcopy_price: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](0, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
+            ecopy_price: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](0, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
+            book_categories: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
+            language: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
+            publisher: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
+            ISBN_10: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
+            ISBN_13: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
+            published_date: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
+            image_small_thumbnail: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
+            image_thumbnail: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
+            no_of_copies: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormGroup */]({
+                outstore: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](0, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
+                instore: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](1, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].maxLength(1)]))
             })
         });
     }
@@ -1721,27 +1790,27 @@ var PublishBookComponent = /** @class */ (function () {
         }
     };
     __decorate([
-        core_1.ViewChild('imageUpload'),
-        __metadata("design:type", core_1.ElementRef)
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('imageUpload'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
     ], PublishBookComponent.prototype, "imageInput", void 0);
     __decorate([
-        core_1.ViewChild('eBookUpload'),
-        __metadata("design:type", core_1.ElementRef)
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('eBookUpload'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
     ], PublishBookComponent.prototype, "eBookInput", void 0);
     PublishBookComponent = __decorate([
-        core_1.Component({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-publish-book',
             template: __webpack_require__("../../../../../src/app/publish-book/publish-book.component.html"),
             styles: [__webpack_require__("../../../../../src/app/publish-book/publish-book.component.css")]
         }),
-        __metadata("design:paramtypes", [app_service_module_1.AppServiceModule,
-            app_service_module_1.Languages,
-            constant_config_1.AppUrls,
-            router_1.Router])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["a" /* AppServiceModule */],
+            __WEBPACK_IMPORTED_MODULE_1__shared_app_service_module__["d" /* Languages */],
+            __WEBPACK_IMPORTED_MODULE_3__config_constant_config__["a" /* AppUrls */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]])
     ], PublishBookComponent);
     return PublishBookComponent;
 }());
-exports.PublishBookComponent = PublishBookComponent;
+
 
 
 /***/ }),
@@ -1772,10 +1841,11 @@ module.exports = "<br>\n<div class=\"container\">\n  <div class=\"row\">\n    <d
 /***/ }),
 
 /***/ "../../../../../src/app/register/register.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1785,15 +1855,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
+
 var RegisterComponent = /** @class */ (function () {
     function RegisterComponent() {
     }
     RegisterComponent.prototype.ngOnInit = function () {
     };
     RegisterComponent = __decorate([
-        core_1.Component({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-register',
             template: __webpack_require__("../../../../../src/app/register/register.component.html"),
             styles: [__webpack_require__("../../../../../src/app/register/register.component.css")]
@@ -1802,16 +1871,23 @@ var RegisterComponent = /** @class */ (function () {
     ], RegisterComponent);
     return RegisterComponent;
 }());
-exports.RegisterComponent = RegisterComponent;
+
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/shared/app.service.module.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppServiceModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return AuthService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return AuthGuardService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return Languages; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_BehaviorSubject__ = __webpack_require__("../../../../rxjs/_esm5/BehaviorSubject.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1821,23 +1897,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var http_1 = __webpack_require__("../../../common/esm5/http.js");
-var router_1 = __webpack_require__("../../../router/esm5/router.js");
-var BehaviorSubject_1 = __webpack_require__("../../../../rxjs/_esm5/BehaviorSubject.js");
+
+
+
+
 var AppServiceModule = /** @class */ (function () {
     function AppServiceModule(httpClient) {
         this.httpClient = httpClient;
-        this.CurrentUser = new BehaviorSubject_1.BehaviorSubject({});
+        this.CurrentUser = new __WEBPACK_IMPORTED_MODULE_3_rxjs_BehaviorSubject__["a" /* BehaviorSubject */]({});
         this.userCast = this.CurrentUser.asObservable();
-        this.options = new http_1.HttpHeaders({ 'Content-Type': 'application/json' });
+        this.options = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]({ 'Content-Type': 'application/json' });
     }
     AppServiceModule.prototype.get = function (url, parameters) {
         console.log('get URL -----', url);
         var params;
         // Setup log namespace query parameter
-        params = new http_1.HttpParams();
+        params = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpParams */]();
         params = params.set('rand', Math.random());
         if (parameters) {
             for (var key in parameters) {
@@ -1884,12 +1959,12 @@ var AppServiceModule = /** @class */ (function () {
         return Math.ceil(timeDiff / (1000 * 3600 * 24));
     };
     AppServiceModule = __decorate([
-        core_1.Injectable(),
-        __metadata("design:paramtypes", [http_1.HttpClient])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
     ], AppServiceModule);
     return AppServiceModule;
 }());
-exports.AppServiceModule = AppServiceModule;
+
 var AuthService = /** @class */ (function () {
     function AuthService() {
     }
@@ -1910,12 +1985,12 @@ var AuthService = /** @class */ (function () {
         return true;
     };
     AuthService = __decorate([
-        core_1.Injectable(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [])
     ], AuthService);
     return AuthService;
 }());
-exports.AuthService = AuthService;
+
 var AuthGuardService = /** @class */ (function () {
     function AuthGuardService(auth, router) {
         this.auth = auth;
@@ -1929,12 +2004,12 @@ var AuthGuardService = /** @class */ (function () {
         return true;
     };
     AuthGuardService = __decorate([
-        core_1.Injectable(),
-        __metadata("design:paramtypes", [AuthService, router_1.Router])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [AuthService, __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]])
     ], AuthGuardService);
     return AuthGuardService;
 }());
-exports.AuthGuardService = AuthGuardService;
+
 var Languages = /** @class */ (function () {
     function Languages() {
         this.languages = [
@@ -1947,12 +2022,12 @@ var Languages = /** @class */ (function () {
         return this.languages;
     };
     Languages = __decorate([
-        core_1.Injectable(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [])
     ], Languages);
     return Languages;
 }());
-exports.Languages = Languages;
+
 
 
 /***/ }),
@@ -1983,10 +2058,16 @@ module.exports = "<div class=\"\">\n  <br>\n  <h4><b>Quick Actions on</b></h4>\n
 /***/ }),
 
 /***/ "../../../../../src/app/updatepersons/updatepersons.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UpdatepersonsComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_app_service_module__ = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__config_constant_config__ = __webpack_require__("../../../../../src/app/config/constant.config.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ngx_bootstrap__ = __webpack_require__("../../../../ngx-bootstrap/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1996,13 +2077,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var router_1 = __webpack_require__("../../../router/esm5/router.js");
-var app_service_module_1 = __webpack_require__("../../../../../src/app/shared/app.service.module.ts");
-var constant_config_1 = __webpack_require__("../../../../../src/app/config/constant.config.ts");
-var ngx_bootstrap_1 = __webpack_require__("../../../../ngx-bootstrap/index.js");
-var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
+
+
+
+
+
+
 var UpdatepersonsComponent = /** @class */ (function () {
     function UpdatepersonsComponent(aRoute, appService, authService, router, appUrls, modalService) {
         var _this = this;
@@ -2012,22 +2092,22 @@ var UpdatepersonsComponent = /** @class */ (function () {
         this.router = router;
         this.appUrls = appUrls;
         this.modalService = modalService;
-        this.updateForm = new forms_1.FormGroup({
-            membership_type: new forms_1.FormControl('', forms_1.Validators.required),
-            plan_balance: new forms_1.FormControl(0, forms_1.Validators.required),
-            status: new forms_1.FormControl(true, forms_1.Validators.required),
-            plan_expiry: new forms_1.FormControl(null, forms_1.Validators.required)
+        this.updateForm = new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["b" /* FormGroup */]({
+            membership_type: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].required),
+            plan_balance: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormControl */](0, __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].required),
+            status: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormControl */](true, __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].required),
+            plan_expiry: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormControl */](null, __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].required)
         });
-        this.rForm = new forms_1.FormGroup({
-            email: new forms_1.FormControl('', [forms_1.Validators.required, forms_1.Validators.email]),
-            password: new forms_1.FormControl('', [forms_1.Validators.required]),
-            first_name: new forms_1.FormControl('', [forms_1.Validators.required]),
-            last_name: new forms_1.FormControl('', [forms_1.Validators.required]),
-            mobile_number: new forms_1.FormControl('', [forms_1.Validators.required]),
-            gender: new forms_1.FormControl('male'),
-            status: new forms_1.FormControl('inactive'),
-            city: new forms_1.FormControl(''),
-            user_level: new forms_1.FormControl('user')
+        this.rForm = new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["b" /* FormGroup */]({
+            email: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].email]),
+            password: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].required]),
+            first_name: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].required]),
+            last_name: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].required]),
+            mobile_number: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].required]),
+            gender: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormControl */]('male'),
+            status: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormControl */]('inactive'),
+            city: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormControl */](''),
+            user_level: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormControl */]('user')
         });
         this.myStatus = [
             { text: 'Active', value: true },
@@ -2097,36 +2177,35 @@ var UpdatepersonsComponent = /** @class */ (function () {
         });
     };
     UpdatepersonsComponent = __decorate([
-        core_1.Component({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-updatepersons',
             template: __webpack_require__("../../../../../src/app/updatepersons/updatepersons.component.html"),
             styles: [__webpack_require__("../../../../../src/app/updatepersons/updatepersons.component.css")]
         }),
-        __metadata("design:paramtypes", [router_1.ActivatedRoute,
-            app_service_module_1.AppServiceModule,
-            app_service_module_1.AuthService,
-            router_1.Router,
-            constant_config_1.AppUrls,
-            ngx_bootstrap_1.BsModalService])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__shared_app_service_module__["a" /* AppServiceModule */],
+            __WEBPACK_IMPORTED_MODULE_2__shared_app_service_module__["c" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_3__config_constant_config__["a" /* AppUrls */],
+            __WEBPACK_IMPORTED_MODULE_4_ngx_bootstrap__["b" /* BsModalService */]])
     ], UpdatepersonsComponent);
     return UpdatepersonsComponent;
 }());
-exports.UpdatepersonsComponent = UpdatepersonsComponent;
+
 
 
 /***/ }),
 
 /***/ "../../../../../src/environments/environment.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
 // The file contents for the current environment will overwrite these during build.
 // The build system defaults to the dev environment which uses `environment.ts`, but if you do
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.environment = {
+var environment = {
     production: false
 };
 
@@ -2134,19 +2213,22 @@ exports.environment = {
 /***/ }),
 
 /***/ "../../../../../src/main.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/esm5/platform-browser-dynamic.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var platform_browser_dynamic_1 = __webpack_require__("../../../platform-browser-dynamic/esm5/platform-browser-dynamic.js");
-var app_module_1 = __webpack_require__("../../../../../src/app/app.module.ts");
-var environment_1 = __webpack_require__("../../../../../src/environments/environment.ts");
-if (environment_1.environment.production) {
-    core_1.enableProdMode();
+
+
+
+if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["enableProdMode"])();
 }
-platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule)
+Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
     .catch(function (err) { return console.log(err); });
 
 
