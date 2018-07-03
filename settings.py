@@ -182,6 +182,20 @@ SCHEMAS = {
                             },
                             'return_notes': {
                                 'type': 'string'
+                            },
+                            'is_returned': {
+                                'type': 'boolean'
+                            }
+                        }
+                    },
+                    'renewal_summary': {
+                        'type': 'list',
+                        'schema': {
+                            'renewal_notes': {
+                                'type': 'string'
+                            },
+                            'created_date': {
+                                'type': 'string'
                             }
                         }
                     }

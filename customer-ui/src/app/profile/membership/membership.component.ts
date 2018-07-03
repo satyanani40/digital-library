@@ -13,6 +13,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 export class MembershipComponent implements OnInit {
   public membership: any = {};
   public myParams: any = {};
+  public user: any = {};
   public readingCalculation = {books: 3, months: 3, readingFee: 0, totalAmount: 0};
   public membershipType = {
     '3': 'Economy reader',
@@ -26,6 +27,12 @@ export class MembershipComponent implements OnInit {
               public appUrls: AppUrls,
               public appConstants: AppConstants,
               public activatedRoute: ActivatedRoute) {
+    // Redirect to Login page is user is not logged in
+      if (!this.authService.isAuthenticated()) {
+        this.router.navigate(['/login-now']);
+      } else {
+        this.user = this.authService.getUser();
+      }
     this.activatedRoute.queryParams.subscribe((params: any) => {
       console.log('membership Plan', params);
       this.myParams = params;
@@ -56,7 +63,10 @@ export class MembershipComponent implements OnInit {
     this.readingCalculation['totalAmount'] = this.readingCalculation['readingFee'] + extraCost;
   }
   getMembership() {
-    this.appService.get(this.appUrls.membership).then((data) => {
+    const query: any = {
+      where: {user_id: this.user['_id']}
+    };
+    this.appService.get(this.appUrls.membership, query).then((data) => {
       console.log(data);
       if (data['_items'].length === 0) {
         this.membership = null;
@@ -75,7 +85,7 @@ export class MembershipComponent implements OnInit {
     const notes_first = 'successfully requested for the ',
       notes_second = ' Membership plan, Our executive will call you Shortly!';
     const membership = {
-      user_id: this.authService.getUser()['_id'],
+      user_id: this.user['_id'],
       plan_expiry: plan_expiry,
       books_at_a_time: books,
       no_of_months: months,

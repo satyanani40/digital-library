@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  name: 'DEV',
+  apiUrl: 'http://libraryindia.org'
 };

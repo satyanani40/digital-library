@@ -118,6 +118,11 @@ export class EditBookComponent implements OnInit {
       console.log(err);
     });
   }
+  stopLoading () {
+    setTimeout(() => {
+      this.appUrls.loadingIcon = false;
+    }, 500);
+  }
   updateBook(bookForm) {
     if (typeof bookForm['book_authors'] === 'string') {
       bookForm['book_authors'] = bookForm['book_authors'].split(',');
@@ -136,6 +141,24 @@ export class EditBookComponent implements OnInit {
       this.appService.toast('Something went wrong!', '', 'e');
     });
   }
+  checkEBookUpload(bookForm) {
+    if (this.eBookInput.nativeElement.value) {
+      const formData = new FormData();
+      formData.append('file', this.eBookInput.nativeElement['files'][0]);
+      this.appService.post(this.appUrls.upload_file, formData, true).subscribe((data) => {
+        console.log('Ebook Data', data);
+        if (data && data['data']) {
+          bookForm['ebook'] = data['data']['path'];
+        }
+        this.updateBook(bookForm);
+      }, (err) => {
+        console.log(err);
+        this.stopLoading();
+      });
+    } else {
+      this.updateBook(bookForm);
+    }
+  }
   updateBookDetails(bookForm) {
     if (this.imageInput.nativeElement.value) {
       const formData = new FormData();
@@ -147,12 +170,12 @@ export class EditBookComponent implements OnInit {
           bookForm['image_thumbnail'] = data['data']['path'];
         }
         console.log('Book data', bookForm);
-        this.updateBook(bookForm);
+        this.checkEBookUpload(bookForm);
       }, (err) => {
         console.log(err);
       });
     } else {
-      this.updateBook(bookForm);
+      this.checkEBookUpload(bookForm);
     }
   }
 

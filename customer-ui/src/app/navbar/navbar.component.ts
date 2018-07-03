@@ -54,7 +54,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   }
   ngAfterViewInit() {}
   logout() {
-    const lToken = this.authService.getToken('cutomer_token');
+    const lToken = this.authService.getToken('customer_token');
     this.appService.get(this.appUrls.logout, {login_token: lToken});
     this.authService.removeToken();
     this.route.navigate(['/welcome']);

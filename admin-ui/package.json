@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --prod --deploy-url /static/public/admin/ --base-href /admin/",
+    "start": "ng serve --env=dev",
+    "build": "ng build --env=prod --prod --deploy-url /static/public/admin/ --base-href /admin/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

@@ -26,8 +26,8 @@
 .money-transac .icon-sec {
   border: 1px solid #DDD;
   padding: 13px;
-  width: 50px;
-  height: 50px;
+  width: 20px;
+  height: 20px;
   float: left;
   margin-right: 10px;
   display: flex;
@@ -36,9 +36,6 @@
   position: relative;
 }
 .money-transac .icon-sec i.fa-plus, .money-transac .icon-sec i.fa-minus {
-  position: absolute;
-  top: -4px;
-  right: -6px;
   background: #FFF;
   padding: 3px;
   color: #FF4081;
