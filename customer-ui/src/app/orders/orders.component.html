@@ -24,11 +24,11 @@
       <td>
         <a routerLink="/order-details/{{ item['_id'] }}">{{ item['_id'] }}</a>
       </td>
-      <td>{{ item['books'].length }}</td>
+      <td *ngIf="item['book_id']">{{ item['book_id']['book_title'] }}</td>
       <td>{{ item._created | date: 'dd-MMM-yyyy' }}</td>
       <td>{{ item['delivery_date'] | date: 'dd-MMM-yyyy' }}</td>
       <td>{{ item['delivery_status'] }}</td>
-      <td>{{ item['total_amount'] }}</td>
+      <td>{{ item['rent_fee'] + item['delivery_fee']}}</td>
     </tr>
   </table>
 </div>

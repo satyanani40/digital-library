@@ -14,7 +14,6 @@ export class BookDetailsComponent implements OnInit {
   bookParams: any = {};
   details: any = {};
   myDetails: any = {};
-  cartItems: any = [];
   currentRoute: any = '';
   constructor(private appUrls: AppUrls,
               private appService: AppService,
@@ -37,9 +36,6 @@ export class BookDetailsComponent implements OnInit {
   }
   ngOnInit() {
     this.getBookDetails();
-    this.appService.cartCast.subscribe((data) => {
-      this.cartItems = data;
-    });
   }
   getBookDetails() {
     const url = this.appUrls.book_details + JSON.stringify({'ISBN_13': this.bookParams['isbn']});
@@ -59,26 +55,7 @@ export class BookDetailsComponent implements OnInit {
     if (!this.authService.isAuthenticated()) {
       this.router.navigate(['/login-now'], {queryParams: {return_url: this.currentRoute}});
     } else {
-      const found = this.cartItems.filter((cartItem) => {
-        return cartItem.bId === book._id;
-      });
-      if (found.length && book.availability) {
-        this.appService.toast(book.book_title, 'Already added in Cart', 'e');
-      } else {
-        const cart = {
-          book: book._id,
-          book_type: type,
-          user_id: this.myDetails['_id']
-        };
-        this.appService.post(this.appUrls.cart, cart).then((data) => {
-          cart['_id'] = data['_id'];
-          cart['_created'] = data['_created'];
-          cart['book'] = book;
-          this.cartItems.push(cart);
-          this.appService.updateCart(this.cartItems);
-          this.appService.toast(book.book_title, 'Added to cart', 's');
-        });
-      }
+      this.router.navigate(['/checkout'], {queryParams: {_id: book._id, book_type: type}});
     }
   }
 

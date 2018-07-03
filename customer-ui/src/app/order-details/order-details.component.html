@@ -6,12 +6,12 @@
     <li *ngIf="myOrder" class="active">{{ myOrder['_id'] }}</li>
   </ol>
 
-  <h5><b>Order details</b></h5>
+  <h5 class="entitle">Order details</h5>
   <div class="panel panel-default">
     <div class="panel-body">
       <div class="row">
         <div class="col-lg-4 col-md-4">
-          <table class="table table-hover order-details-table">
+          <table class="table order-details-table">
             <tr>
               <td>Order Id</td>
               <td>{{ myOrder['_id'] }}</td>
@@ -22,7 +22,8 @@
             </tr>
             <tr>
               <td>Total amount</td>
-              <td>{{ myOrder['total_amount'] }}</td>
+              <td>{{ myOrder['rent_fee'] + myOrder['delivery_fee']}}
+                ({{ myOrder['rent_fee'] }} Rent Fee + {{myOrder['delivery_fee'] }} Del Charges)</td>
             </tr>
           </table>
         </div>
@@ -40,46 +41,28 @@
           <h5 class="entitle">Manage Order</h5>
           <div>
             <button class="btn btn-primary btn-xs">
-              Return Book(s)
+              Return Book
             </button>
           </div>
         </div>
       </div> <!-- end row -->
-      <hr>
-      <div class="row" *ngIf="myOrder['book_id']">
-        <div class="col-lg-2">
-          <div class="thumbnail">
-            <img src="{{ myOrder['book_id']['image_thumbnail'] }}" alt="">
-          </div>
-        </div>
-        <div class="col-lg-7">
-          <h4>{{ myOrder['book_id']['book_title'] }}</h4>
-          <p>Authors: {{ myOrder['book_id']['book_authors'] }}</p>
-          <p>Publisher: {{ myOrder['book_id']['publisher'] }}</p>
-          <h2>Total Rs. {{ myOrder['total_amount'] }}/-</h2>
-        </div>
-      </div> <!-- end row-->
     </div>
   </div>
   <!-- Books details -->
-  <h5><b>Books you have requested for Rent</b></h5>
-  <div class="table-responsive" *ngIf="myOrder && myOrder['books']">
+  <h5 class="entitle">Books you have requested for Rent</h5>
+  <div class="table-responsive" *ngIf="myOrder && myOrder['book_id']">
     <table class="table table-bordered table-hover">
       <tr class="text-center">
-        <th class="text-center">Title</th>
-        <th class="text-center">Requested for</th>
-        <th>Rent fee</th>
-        <th>Return date</th>
-        <th>Action</th>
+        <td class="text-center">Title</td>
+        <td class="text-center">Requested for</td>
+        <td>Rent fee</td>
+        <td>Return date</td>
       </tr>
-      <tr *ngFor="let item of myOrder['books']">
-        <td *ngIf="item['book_id']"><b>{{ item['book_id']['book_title'] }}</b></td>
-        <td>{{ item['requested_for'] }}</td>
-        <td>{{ item['rent_fee'] }}</td>
-        <td *ngIf="item['return_summary']">{{ item['return_summary']['return_date'] | date: 'dd-MMM-yyyy' }}</td>
-        <td>
-          <button class="btn btn-primary btn-xs">Return</button>
-        </td>
+      <tr>
+        <td *ngIf="myOrder['book_id']"><b>{{ myOrder['book_id']['book_title'] }}</b></td>
+        <td>{{ myOrder['requested_for'] }}</td>
+        <td>{{ myOrder['rent_fee'] }}</td>
+        <td *ngIf="myOrder['return_summary']">{{ myOrder['return_summary']['return_date'] | date: 'dd-MMM-yyyy' }}</td>
       </tr>
     </table>
   </div>

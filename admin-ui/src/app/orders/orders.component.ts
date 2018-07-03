@@ -11,7 +11,7 @@ import {BsModalService} from 'ngx-bootstrap';
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit {
-  public embedded: any = {'user_id': 1, 'books.book_id': 1};
+  public embedded: any = {'user_id': 1, 'book_id': 1};
   public query: any = {
     sort: '-_created', page: 1, max_results: 15,
     embedded: JSON.stringify(this.embedded)

@@ -90,7 +90,7 @@ export class MembershipComponent implements OnInit {
       books_at_a_time: books,
       no_of_months: months,
       membership_type: this.membershipType[this.readingCalculation['books']],
-      status: false,
+      status: true,
       new_member: true,
       amount: {
         account_balance: -this.readingCalculation['readingFee'],

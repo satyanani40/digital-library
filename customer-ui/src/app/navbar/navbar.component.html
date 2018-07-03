@@ -21,14 +21,14 @@
         <li class="upper-links highlight" *ngIf="authService.isAuthenticated()">
           <a routerLink="/profile/settings">My Profile</a>
         </li>
-        <li routerLinkActive="none" class="upper-links" *ngIf="authService.isAuthenticated()">
+        <!--<li routerLinkActive="none" class="upper-links" *ngIf="authService.isAuthenticated()">
           <a routerLink="/my-cart" class="my-cart-a">
             <i class="fa fa-cart-plus"></i>
             &nbsp;Cart
             <span *ngIf="myCart.length" class="cart-legth"
                   [ngClass]="{'blink-me': myCart.length}">{{ myCart.length }}</span>
           </a>
-        </li>
+        </li>-->
       </div>
       <div class="col-lg-3 largenav top-nav-links pull-right text-right">
         <li class="upper-links pull-right" *ngIf="authService.isAuthenticated()">

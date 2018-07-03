@@ -29,7 +29,7 @@ export class OrdersComponent implements OnInit {
     const query = {
       where: {user_id: this.user['id']},
       sort: '-_created',
-      embedded: {books: 1}
+      embedded: {book_id: 1}
     };
     this.appService.get(this.appUrls.orders, query).then((data) => {
       this.orders = data['_items'];

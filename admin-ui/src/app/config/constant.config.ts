@@ -3,16 +3,8 @@ import {environment} from "../../environments/environment";
 
 // API End points
 export class AppUrls {
-  /*
-  * REST URLS for checking
-  * */
   public custUrl = environment.apiUrl + '/';
   public baseUrl = environment.apiUrl + '/api/1.0/';
-  /*
-  * PROD set up
-  */
-  /*public custUrl = '/';
-  public baseUrl = '/api/1.0/';*/
   // REST End points
   public login = this.baseUrl + 'auth/login';
   public register = this.baseUrl + 'auth/signup';

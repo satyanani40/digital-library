@@ -51,7 +51,7 @@
             </button>
           </td>
           <td>{{ item['_id'] }}</td>
-          <td>{{ item['books'].length }}</td>
+          <td *ngIf="item['book_id']">{{ item['book_id']['book_title'] }}</td>
           <td>{{ item['_created'] | date: 'dd/MM/yyyy hh:mm a' }}</td>
           <td>{{ item['delivery_date'] | date: 'dd/MM/yyyy hh:mm a' }}</td>
           <td>{{ item['delivery_status'] }}</td>
@@ -62,7 +62,7 @@
             <a placement="top" [popover]="addressTemplate" popoverTitle="Address details of {{ item['user_id']['first_name'] }}"
                [outsideClick]="true" (click)="showAddress(item['shipping_address'])">Address details</a>
           </td>
-          <td>Rs. {{ item['total_amount'] }}</td>
+          <td>Rs. {{ item['rent_fee'] + item['delivery_fee'] }}</td>
         </tr>
       </tbody>
     </table>
@@ -101,15 +101,15 @@
                 <p>Email: {{ modalItem['user_id']['email'] }}, Phone: {{ modalItem['user_id']['mobile_number'] }}</p>
               </td>
             </tr>
-            <tr *ngIf="modalItem['books']">
+            <tr *ngIf="modalItem['book_id']">
               <td>
-                Ordered Books <strong>({{ modalItem['books'].length }})</strong>
+                Ordered Book
               </td>
               <td>
-                <p *ngFor="let item of modalItem['books']">
-                  <a *ngIf="item && item['book_id']" target="_blank"
-                     href="{{ appUrls.custUrl + 'book_details/' + parseTitle(item['book_id'].book_title) + '/' + item['book_id'].ISBN_13}}">
-                    {{ item['book_id']['book_title'] }}
+                <p>
+                  <a *ngIf="modalItem['book_id']" target="_blank"
+                     href="{{ appUrls.custUrl + 'book_details/' + parseTitle(modalItem['book_id'].book_title) + '/' + modalItem['book_id'].ISBN_13}}">
+                    {{ modalItem['book_id']['book_title'] }}
                   </a>
                 </p>
               </td>
@@ -138,7 +138,7 @@
             </tr>
             <tr>
               <td>Amount paid</td>
-              <td><b>Rs. {{ modalItem['total_amount'] }}</b></td>
+              <td><b>Rs. {{ modalItem['rent_fee'] + modalItem['delivery_fee'] }}</b></td>
             </tr>
             <tr>
               <td>Notes</td>
