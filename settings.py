@@ -152,52 +152,47 @@ SCHEMAS = {
             }
 
         },
-        'total_amount': {
+        'rent_fee': {
             'type': 'float'
         },
-        'books': {
+        'delivery_fee': {
+            'type': 'float'
+        },
+        'book_id': {
+            'type': 'objectid',
+            'data_relation': {
+                'resource': 'books',
+                'embeddable': True,
+                'field': '_id'
+            }
+        },
+        'requested_for': {
+            'type': 'string'
+        },
+        'return_summary': {
+            'type': 'dict',
+            'schema': {
+                'return_date': {
+                    'type': 'string'
+                },
+                'return_notes': {
+                    'type': 'string'
+                },
+                'is_returned': {
+                    'type': 'boolean'
+                }
+            }
+        },
+        'renewal_summary': {
             'type': 'list',
             'schema': {
                 'type': 'dict',
                 'schema': {
-                    'book_id': {
-                        'type': 'objectid',
-                        'data_relation': {
-                            'resource': 'books',
-                            'embeddable': True,
-                            'field': '_id'
-                        }
-                    },
-                    'requested_for': {
+                    'renewal_notes': {
                         'type': 'string'
                     },
-                    'rent_fee': {
-                        'type': 'float'
-                    },
-                    'return_summary': {
-                        'type': 'dict',
-                        'schema': {
-                            'return_date': {
-                                'type': 'string'
-                            },
-                            'return_notes': {
-                                'type': 'string'
-                            },
-                            'is_returned': {
-                                'type': 'boolean'
-                            }
-                        }
-                    },
-                    'renewal_summary': {
-                        'type': 'list',
-                        'schema': {
-                            'renewal_notes': {
-                                'type': 'string'
-                            },
-                            'created_date': {
-                                'type': 'string'
-                            }
-                        }
+                    'created_date': {
+                        'type': 'string'
                     }
                 }
             }
