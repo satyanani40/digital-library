@@ -87,11 +87,11 @@ div.panel.card {
   visibility: hidden;
   min-width: 250px;
   color: #fff;
-  padding: 16px;
+  padding: 15px;
   position: fixed;
   z-index: 1;
-  right: 20px;
-  top: 5%;
+  right: 45%;
+  top: 1px;
 }
 #toast.green {
   background-color: green;

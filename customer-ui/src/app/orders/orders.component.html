@@ -1,34 +1,40 @@
 <h5 class="entitle">My Orders</h5>
 
 <div class="panel panel-default" *ngIf="!orders.length">
-  <div class="panel-body text-center">
-    <h5>ou haven't ordered anything yet.</h5>
-    <a routerLink="/welcome" class="btn btn-default">
-      Purchase books&nbsp;
-      <i class="fa fa-arrow-right"></i>
-    </a>
-  </div>
+    <div class="panel-body text-center">
+        <h5>ou haven't ordered anything yet.</h5>
+        <a routerLink="/welcome" class="btn btn-default">
+            Purchase books&nbsp;
+            <i class="fa fa-arrow-right"></i>
+        </a>
+    </div>
 </div>
 
 <div class="table-responsive">
-  <table class="table table-bordered table-hover">
-    <tr>
-      <th>Order ID</th>
-      <th>Ordered Books</th>
-      <th>Ordered Date</th>
-      <th>Delivery Date</th>
-      <th>Delivery Status</th>
-      <th>Amount Paid</th>
-    </tr>
-    <tr *ngFor="let item of orders">
-      <td>
-        <a routerLink="/order-details/{{ item['_id'] }}">{{ item['_id'] }}</a>
-      </td>
-      <td *ngIf="item['book_id']">{{ item['book_id']['book_title'] }}</td>
-      <td>{{ item._created | date: 'dd-MMM-yyyy' }}</td>
-      <td>{{ item['delivery_date'] | date: 'dd-MMM-yyyy' }}</td>
-      <td>{{ item['delivery_status'] }}</td>
-      <td>{{ item['rent_fee'] + item['delivery_fee']}}</td>
-    </tr>
-  </table>
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>Order ID</th>
+            <th>Ordered Books</th>
+            <th>Ordered Date</th>
+            <th>Delivery Date</th>
+            <th>Delivery Status</th>
+            <th>Return Date</th>
+            <th>Amount Paid</th>
+            <th>Requested For</th>
+        </tr>
+        <tr *ngFor="let item of orders">
+            <td>
+                <a routerLink="/order-details/{{ item['_id'] }}">{{ item['_id'] }}</a>
+            </td>
+            <td *ngIf="item['book_id']">{{ item['book_id']['book_title'] }}</td>
+            <td>{{ item._created | date: 'dd-MMM-yyyy' }}</td>
+            <td>{{ item['delivery_date'] | date: 'dd-MMM-yyyy' }}</td>
+            <td>{{ item['delivery_status'] }}</td>
+            <td *ngIf="item['return_summary']">
+                {{ item['return_summary']['return_date'] | date: 'dd-MMM-yyyy' }}
+            </td>
+            <td>{{ item['rent_fee'] + item['delivery_fee']}}</td>
+            <td>{{ item['requested_for'] }}</td>
+        </tr>
+    </table>
 </div>
