@@ -175,10 +175,22 @@ SCHEMAS = {
                 'return_date': {
                     'type': 'string'
                 },
+                'returned_on': {
+                    'type': 'string'
+                },
                 'return_notes': {
                     'type': 'string'
                 },
                 'is_returned': {
+                    'type': 'boolean'
+                },
+                'requested_on': {
+                    'type': 'string'
+                },
+                'requested_notes': {
+                    'type': 'string'
+                },
+                'is_requested': {
                     'type': 'boolean'
                 }
             }
