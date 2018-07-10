@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AppServiceModule} from '../shared/app.service.module';
+import {AppServiceModule} from '../../shared/app.service.module';
 import {ActivatedRoute, Router} from '@angular/router';
-import {AppUrls} from '../config/constant.config';
+import {AppUrls} from '../../config/constant.config';
 
 @Component({
   selector: 'app-joinedmembers',

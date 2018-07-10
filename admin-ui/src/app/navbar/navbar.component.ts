@@ -3,6 +3,7 @@ import {AppServiceModule, AuthService} from '../shared/app.service.module';
 import {AppUrls} from '../config/constant.config';
 import {HttpErrorResponse} from '@angular/common/http';
 import {Router} from '@angular/router';
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-navbar',
@@ -11,6 +12,7 @@ import {Router} from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   user: any = {};
+  public environment: any = environment;
   constructor(private appService: AppServiceModule,
               public authService: AuthService,
               public appUrls: AppUrls,

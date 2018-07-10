@@ -1,6 +1,6 @@
 import {Component, OnInit, TemplateRef} from '@angular/core';
-import {AppServiceModule} from '../shared/app.service.module';
-import {AppUrls} from '../config/constant.config';
+import {AppServiceModule} from '../../shared/app.service.module';
+import {AppUrls} from '../../config/constant.config';
 import {ActivatedRoute, Router} from '@angular/router';
 import {BsModalRef} from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import {BsModalService} from 'ngx-bootstrap';

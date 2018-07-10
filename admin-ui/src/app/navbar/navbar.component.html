@@ -17,7 +17,8 @@
         <div class="brand-name-wrapper">
           <a class="navbar-brand" routerLink="/homepage"
              [queryParams]="{page: 1, max_results: 15, sort: '-_updated'}">
-            Brand
+            Library
+            <span *ngIf="environment">{{ environment.name }}</span>
           </a>
         </div>
 
@@ -86,7 +87,9 @@
             </div>
           </div>
         </li>
-        <li routerLinkActive="active"><a routerLink="/orders"><span class="glyphicon glyphicon-signal"></span> Sales logistics</a></li>
+        <li routerLinkActive="active">
+          <a routerLink="/orders-summary/all-orders"><span class="glyphicon glyphicon-signal"></span> Sales Logistics</a>
+        </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </nav>

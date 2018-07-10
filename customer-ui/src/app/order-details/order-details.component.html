@@ -1,69 +1,80 @@
 <div class="container">
-  <br>
-  <ol class="breadcrumb">
-    <li><a routerLink="/welcome">Home</a></li>
-    <li><a routerLink="/profile/my-orders">My orders</a></li>
-    <li *ngIf="myOrder" class="active">{{ myOrder['_id'] }}</li>
-  </ol>
+	<br>
+	<ol class="breadcrumb">
+		<li><a routerLink="/welcome">Home</a></li>
+		<li><a routerLink="/profile/my-orders">My orders</a></li>
+		<li *ngIf="myOrder" class="active">{{ myOrder['_id'] }}</li>
+	</ol>
 
-  <h5 class="entitle">Order details</h5>
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-lg-4 col-md-4">
-          <table class="table order-details-table">
-            <tr>
-              <td>Order Id</td>
-              <td>{{ myOrder['_id'] }}</td>
-            </tr>
-            <tr>
-              <td>Order date</td>
-              <td>{{ myOrder['_created'] | date: 'yyyy-MM-dd hh:mm a' }}</td>
-            </tr>
-            <tr>
-              <td>Total amount</td>
-              <td>{{ myOrder['rent_fee'] + myOrder['delivery_fee']}}
-                ({{ myOrder['rent_fee'] }} Rent Fee + {{myOrder['delivery_fee'] }} Del Charges)</td>
-            </tr>
-          </table>
-        </div>
-        <div class="col-lg-4 col-md-4 delivery-address" *ngIf="myOrder['shipping_address']">
-          <h5 class="entitle">Delivery address</h5>
-          <h5>{{ myOrder['shipping_address']['name'] }}</h5>
-          <p>Phone: {{ myOrder['shipping_address']['phone_number'] }}</p>
-          <p>{{ myOrder['shipping_address']['address']}}</p>
-          <p>
-            {{ myOrder['shipping_address']['city'] }},
-            {{ myOrder['shipping_address']['state'] }},
-            {{ myOrder['shipping_address']['pin_code'] }}</p>
-        </div>
-        <div class="col-lg-4 col-md-4">
-          <h5 class="entitle">Manage Order</h5>
-          <div>
-            <button class="btn btn-primary btn-xs">
-              Return Book
-            </button>
-          </div>
-        </div>
-      </div> <!-- end row -->
-    </div>
-  </div>
-  <!-- Books details -->
-  <h5 class="entitle">Books you have requested for Rent</h5>
-  <div class="table-responsive" *ngIf="myOrder && myOrder['book_id']">
-    <table class="table table-bordered table-hover">
-      <tr class="text-center">
-        <td class="text-center">Title</td>
-        <td class="text-center">Requested for</td>
-        <td>Rent fee</td>
-        <td>Return date</td>
-      </tr>
-      <tr>
-        <td *ngIf="myOrder['book_id']"><b>{{ myOrder['book_id']['book_title'] }}</b></td>
-        <td>{{ myOrder['requested_for'] }}</td>
-        <td>{{ myOrder['rent_fee'] }}</td>
-        <td *ngIf="myOrder['return_summary']">{{ myOrder['return_summary']['return_date'] | date: 'dd-MMM-yyyy' }}</td>
-      </tr>
-    </table>
-  </div>
+	<h5 class="entitle">Order details</h5>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-lg-4 col-md-4">
+					<table class="table order-details-table">
+						<tr>
+							<td>Order Id</td>
+							<td>{{ myOrder['_id'] }}</td>
+						</tr>
+						<tr>
+							<td>Order date</td>
+							<td>{{ myOrder['_created'] | date: 'yyyy-MM-dd hh:mm a' }}</td>
+						</tr>
+						<tr>
+							<td>Total amount</td>
+							<td>{{ myOrder['rent_fee'] + myOrder['delivery_fee']}}
+								({{ myOrder['rent_fee'] }} Rent Fee + {{myOrder['delivery_fee'] }} Del Charges)</td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-lg-4 col-md-4 delivery-address" *ngIf="myOrder['shipping_address']">
+					<h5 class="entitle">Delivery address</h5>
+					<h5>{{ myOrder['shipping_address']['name'] }}</h5>
+					<p>Phone: {{ myOrder['shipping_address']['phone_number'] }}</p>
+					<p>{{ myOrder['shipping_address']['address']}}</p>
+					<p>
+						{{ myOrder['shipping_address']['city'] }},
+						{{ myOrder['shipping_address']['state'] }},
+						{{ myOrder['shipping_address']['pin_code'] }}</p>
+				</div>
+				<div class="col-lg-4 col-md-4" *ngIf="myOrder['return_summary']">
+					<h5 class="entitle">Manage Order</h5>
+					<div *ngIf="!myOrder['return_summary']['is_requested']">
+						<button (click)="returnRequest(myOrder)" class="btn btn-primary btn-xs">
+							Return Book
+						</button>
+					</div>
+					<div *ngIf="myOrder['return_summary']['is_requested']">
+						<h5 class="entitle-success-alert">
+							{{ myOrder['return_summary']['requested_notes'] }}
+						</h5>
+					</div>
+				</div>
+			</div> <!-- end row -->
+		</div>
+	</div>
+	<!-- Books details -->
+	<h5 class="entitle">Note:</h5>
+	<h6 class="entitle-alert">
+		You should return your book on or before
+		<span *ngIf="myOrder['return_summary']">{{ myOrder['return_summary']['return_date'] | date: 'dd-MMM-yyyy' }}</span>.
+		Otherwise, It will renewal automatically.
+	</h6>
+	<h5 class="entitle">Books you have requested for Rent</h5>
+	<div class="table-responsive" *ngIf="myOrder && myOrder['book_id']">
+		<table class="table table-bordered table-hover">
+			<tr class="text-center">
+				<td class="text-center">Title</td>
+				<td class="text-center">Requested for</td>
+				<td>Rent fee</td>
+				<td>Return date</td>
+			</tr>
+			<tr>
+				<td *ngIf="myOrder['book_id']"><b>{{ myOrder['book_id']['book_title'] }}</b></td>
+				<td>{{ myOrder['requested_for'] }}</td>
+				<td>{{ myOrder['rent_fee'] }}</td>
+				<td *ngIf="myOrder['return_summary']">{{ myOrder['return_summary']['return_date'] | date: 'dd-MMM-yyyy' }}</td>
+			</tr>
+		</table>
+	</div>
 </div>

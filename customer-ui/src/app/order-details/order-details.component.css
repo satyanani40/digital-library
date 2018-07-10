@@ -1,20 +1,26 @@
 .book-thumbnail {
-  height: 100px;
-  width: 100px;
+    height: 100px;
+    width: 100px;
 }
 .book-thumbnail img {
-  max-height: 100%;
-  max-width: 100%;
-  height: auto;
-  width: auto;
+    max-height: 100%;
+    max-width: 100%;
+    height: auto;
+    width: auto;
 }
 .order-details-table td {
-  border: 0 solid;
-  padding: 5px;
+    border: 0 solid;
+    padding: 5px;
 }
 .delivery-address, .order-details-table td {
-  font-size: 13px;
+    font-size: 13px;
 }
 .delivery-address * {
-  margin-bottom: 2px;
+    margin-bottom: 2px;
+}
+.entitle-alert {
+    color: red;
+}
+.entitle-success-alert {
+    color: green;
 }

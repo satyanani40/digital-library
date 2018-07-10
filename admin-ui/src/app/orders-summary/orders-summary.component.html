@@ -1,0 +1,18 @@
+<div>
+  <br>
+  <h4>Sales Logistics Summary</h4>
+  <hr>
+  <ul class="nav nav-tabs">
+    <li routerLink="/orders-summary/all-orders" routerLinkActive="active">
+      <a href="" data-toggle="tab" aria-expanded="true">All Orders</a>
+    </li>
+    <li routerLink="/orders-summary/return-requests" routerLinkActive="active">
+      <a href="" data-toggle="tab" aria-expanded="false">Return Requests</a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 import {Component, OnInit, TemplateRef} from '@angular/core';
-import {AppServiceModule} from '../shared/app.service.module';
+import {AppServiceModule} from '../../shared/app.service.module';
 import {ActivatedRoute, Router} from '@angular/router';
-import {AppUrls} from '../config/constant.config';
+import {AppUrls} from '../../config/constant.config';
 import {BsModalRef} from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import {BsModalService} from 'ngx-bootstrap';
 
@@ -30,7 +30,7 @@ export class OrdersComponent implements OnInit {
       const where = {}, params = parameters;
       console.log(params);
       if (Object.keys(parameters).length === 0) {
-        this.router.navigate(['/orders'], {queryParams: this.query});
+        this.router.navigate(['/orders-summary/all-orders'], {queryParams: this.query});
       } else {
         this.query = Object.assign({}, params);
         this.getOrders();

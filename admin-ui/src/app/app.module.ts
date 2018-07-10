@@ -15,16 +15,18 @@ import { PublishBookComponent } from './publish-book/publish-book.component';
 import {AppServiceModule, AuthGuardService, AuthService, Languages} from './shared/app.service.module';
 import {AppUrls} from './config/constant.config';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { MembershipComponent } from './membership/membership.component';
+import { MembershipComponent } from './members-management/membership/membership.component';
 import {BsDatepickerModule, ModalModule, PopoverModule, TooltipModule} from 'ngx-bootstrap';
 import { EditBookComponent } from './edit-book/edit-book.component';
 import { CategoriesComponent } from './categories/categories.component';
 import {FilterPipe} from './app.pipe';
-import { OrdersComponent } from './orders/orders.component';
+import { OrdersComponent } from './orders-summary/orders/orders.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { UpdatepersonsComponent } from './updatepersons/updatepersons.component';
-import { JoinedmembersComponent } from './joinedmembers/joinedmembers.component';
+import { JoinedmembersComponent } from './members-management/joinedmembers/joinedmembers.component';
 import {MomentModule} from 'angular2-moment';
+import { ReturnRequestsComponent } from './orders-summary/return-requests/return-requests.component';
+import { OrdersSummaryComponent } from './orders-summary/orders-summary.component';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import {MomentModule} from 'angular2-moment';
     OrdersComponent,
     ForgotpasswordComponent,
     UpdatepersonsComponent,
-    JoinedmembersComponent
+    JoinedmembersComponent,
+    ReturnRequestsComponent,
+    OrdersSummaryComponent
   ],
   imports: [
     BrowserModule,
