@@ -1,13 +1,13 @@
 <div>
   <br>
   <div class="row">
-    <!--<div class="col-lg-2 col-md-2">
+    <div class="col-lg-2 col-md-2">
       <label>Sort by</label>
       <select name="sort" id="sort" class="form-control" [(ngModel)]="query['sort']" (change)="changeParams(query)">
-        <option value="-_updated">Updated on</option>
-        <option value="-_created">Created on</option>
+        <option value="return_summary.requested_on">Requested On</option>
+        <option value="return_summary.returned_on">Returned on</option>
       </select>
-    </div>-->
+    </div>
     <div class="col-lg-2 col-md-2">
       <label for="max_results">Results per page</label>
       <select name="max_results" id="max_results" class="form-control"

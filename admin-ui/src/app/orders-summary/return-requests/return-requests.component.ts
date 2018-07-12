@@ -1,9 +1,9 @@
 import {Component, OnInit, TemplateRef} from '@angular/core';
-import {AppUrls} from "../../config/constant.config";
-import {ActivatedRoute, Router} from "@angular/router";
-import {BsModalService} from "ngx-bootstrap";
-import {AppServiceModule} from "../../shared/app.service.module";
-import {BsModalRef} from "ngx-bootstrap/modal/bs-modal-ref.service";
+import {AppUrls} from '../../config/constant.config';
+import {ActivatedRoute, Router} from '@angular/router';
+import {BsModalService} from 'ngx-bootstrap';
+import {AppServiceModule} from '../../shared/app.service.module';
+import {BsModalRef} from 'ngx-bootstrap/modal/bs-modal-ref.service';
 
 @Component({
   selector: 'app-return-requests',

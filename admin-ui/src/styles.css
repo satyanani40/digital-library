@@ -52,3 +52,6 @@ div, input, textarea {
 .table-responsive table td, .table-responsive table th {
   min-width: 170px;
 }
+.row-cover {
+  color: #fff;
+}

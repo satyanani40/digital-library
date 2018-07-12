@@ -36,17 +36,18 @@
           <!--<th>Transaction ID</th>-->
           <th>Shipping Address</th>
           <th>Amount Paid</th>
+          <th>Return Date</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let item of orders" class="pointer">
           <td>
-            <button title="View {{ item['_id'] }}" (click)="openModal(viewTemplate, item)" class="btn btn-xs btn-default">
-              <span class="glyphicon glyphicon-eye-open"></span>
-            </button>
-            <button title="Update {{ item['_id'] }}" (click)="openModal(editTemplate, item)" class="btn btn-xs btn-default">
-              <span class="glyphicon glyphicon-edit"></span>
-            </button>
+            <a title="View {{ item['_id'] }}" (click)="openModal(viewTemplate, item)">
+              View
+            </a>
+            <a title="Update {{ item['_id'] }}" (click)="openModal(editTemplate, item)">
+              Update
+            </a>
           </td>
           <td>{{ item['_id'] }}</td>
           <td *ngIf="item['book_id']">{{ item['book_id']['book_title'] }}</td>
@@ -61,6 +62,7 @@
                [outsideClick]="true" (click)="showAddress(item['shipping_address'])">Address details</a>
           </td>
           <td>Rs. {{ item['rent_fee'] + item['delivery_fee'] }}</td>
+          <td *ngIf="item['return_summary']">{{ item['return_summary']['return_date'] | date: 'dd/MMM/yyyy' }}</td>
         </tr>
       </tbody>
     </table>

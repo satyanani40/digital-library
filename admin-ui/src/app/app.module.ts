@@ -28,7 +28,6 @@ import {MomentModule} from 'angular2-moment';
 import { ReturnRequestsComponent } from './orders-summary/return-requests/return-requests.component';
 import { OrdersSummaryComponent } from './orders-summary/orders-summary.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,5 +1,6 @@
 local_run.sh
 *.pyc
+/.idea/
 images/*
 access_logs/*
 *.log

@@ -21,7 +21,7 @@ export class OrdersComponent implements OnInit {
   public orders: any = [];
   public _meta: any = {};
   public checkAddress: any = {};
-  constructor(private appService: AppServiceModule,
+  constructor(public appService: AppServiceModule,
               private router: Router,
               public appUrls: AppUrls,
               private activatedRoute: ActivatedRoute,
@@ -61,7 +61,19 @@ export class OrdersComponent implements OnInit {
     this.appUrls.loadingIcon = true;
     this.appService.get(this.appUrls.orders, this.query).subscribe((data: any) => {
       console.log(data);
-      this.orders = data['_items'];
+      const items = data['_items'];
+      if (items.length) {
+        items.forEach( (item) => {
+          console.log(item);
+          const rSummary = item['return_summary'];
+          if (rSummary) {
+            if (rSummary['is_returned']) {
+              item['rStatusClass'] = 'green';
+            }
+          }
+          this.orders.push(item);
+        });
+      }
       this._meta = data['_meta'];
       this.stopLoading();
     }, (err: any) => {

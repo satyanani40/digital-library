@@ -27,10 +27,10 @@
           <h6>{{ item._created | date: 'yyyy-MM-dd hh:mm a' }}</h6>
         </div>
       </td>
-      <td>
+      <td class="text-center">
         {{ (item.transaction_type === 'debit') ? 'Rs ' + item.amount : '-' }}
       </td>
-      <td>
+      <td class="text-center">
         <h6>
           {{ (item.transaction_type === 'credit') ? 'Rs ' + item.amount : '-' }}
         </h6>
